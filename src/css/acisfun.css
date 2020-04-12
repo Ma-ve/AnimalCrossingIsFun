@@ -1,0 +1,106 @@
+:root {
+    --color-red:       #f77172;
+    --color-blue:      #04a9ab;
+    --color-green:     #70c1a0;
+    --color-lime:      #c6d942;
+    --color-yellow:    #f5db6a;
+    --color-brown:     #5a413e;
+
+    --bg-color:        #f6ede7;
+    --bg-color-darker: #f8e4d7;
+
+    --accent:          var(--color-brown);
+
+    --image-height:    58px;
+
+    --footer-height:   56px;
+    /*--accent:       var(--color-blue);*/
+    /*--accent:       var(--color-green);*/
+    /*--accent:       var(--color-lime);*/
+    /*--accent:       var(--color-yellow);*/
+
+}
+
+body {
+    /*background-image:      url(/img/bg2.jpg);*/
+    background-color:      #9ed0b5;
+    background-repeat:     repeat;
+    background-size:       300px;
+    background-attachment: fixed;
+    margin-bottom:         var(--footer-height);
+}
+
+table {
+    box-sizing:      border-box;
+    border-collapse: collapse;
+}
+
+table tr td {
+    border:  1px solid black;
+    padding: 2px 4px;
+}
+
+.container .item-row-container {
+    border-top:       2px solid #9ed0b5;
+    padding:          16px 0;
+    background-color: var(--bg-color);
+}
+
+.container .item-row {
+}
+
+/*.container .item-row.item-row-main {*/
+/*    padding:          12px 0;*/
+/*}*/
+
+/*.container .item-row.item-row-sub {*/
+/*    padding:          4px 0;*/
+/*}*/
+
+body {
+    color: var(--accent);
+}
+
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: var(--bg-color);
+    background-color: var(--color-brown);
+    text-align: center;
+}
+
+.menu .row > div {
+    border-left: 2px solid var(--bg-color);
+    border-right: 2px solid var(--bg-color);
+    max-height: var(--footer-height);
+    padding: 16px 0;
+}
+
+.menu .row > div:first-child {
+    border-left-width: 4px;
+}
+
+.menu .row > div:last-child {
+    border-right-width: 4px;
+}
+
+.item-row .image-placeholder {
+    min-height: var(--image-height);
+}
+
+.item-row-container img {
+    height: var(--image-height);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.ml--15 {
+    margin-left: -15px !important;
+}
+
+.mr--15 {
+    margin-right: -15px !important;
+}
