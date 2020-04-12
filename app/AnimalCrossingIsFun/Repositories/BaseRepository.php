@@ -33,6 +33,31 @@ abstract class BaseRepository {
     }
 
     /**
+     * @param bool|string $sort
+     *
+     * @return $this
+     */
+    public function sortItems($sort = false) {
+        switch($sort) {
+            case 'name':
+            default:
+                $this->sortByNameAsc();
+                break;
+            case '-name':
+                $this->sortByNameDesc();
+                break;
+            case 'price':
+                $this->sortByPriceAsc();
+                break;
+            case '-price':
+                $this->sortByPriceDesc();
+                break;
+        }
+
+        return $this;
+    }
+
+    /**
      * @param Dto $dtoClass
      *
      * @return Dto[]

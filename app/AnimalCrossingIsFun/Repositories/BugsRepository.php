@@ -3,10 +3,10 @@
 namespace Mave\AnimalCrossingIsFun\Repositories;
 
 use Exception;
-use Mave\AnimalCrossingIsFun\Repositories\Dto\Fish as FishDto;
+use Mave\AnimalCrossingIsFun\Repositories\Dto\Bug as BugDto;
 use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
 
-class FishRepository extends BaseRepository implements IRepository {
+class BugsRepository extends BaseRepository implements IRepository {
 
     /**
      * @param string $name
@@ -21,7 +21,7 @@ class FishRepository extends BaseRepository implements IRepository {
         if(empty($this->contents)) {
             throw new Exception('Must first load data into repository');
         }
-        return parent::map(new FishDto());
+        return parent::map(new BugDto());
     }
 
     /**
@@ -29,25 +29,7 @@ class FishRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = $this->databaseService->loadFromDatabase('fish.json');
-
-        return $this;
-    }
-
-    /**
-     * @return $this
-     */
-    public function sortByShadowSizeAsc() {
-        $this->sort('shadowSize');
-
-        return $this;
-    }
-
-    /**
-     * @return $this
-     */
-    public function sortByShadowSizeDesc() {
-        $this->sort('shadowSize', 'DESC');
+        $this->contents = $this->databaseService->loadFromDatabase('bugs.json');
 
         return $this;
     }
