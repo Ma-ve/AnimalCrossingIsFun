@@ -277,11 +277,17 @@ abstract class Creature extends Dto {
      */
     public function hasIrregularMonths() {
         switch($this->name) {
+            // Fish
             case 'Blue marlin':
             case 'Char':
             case 'Cherry salmon':
             case 'Golden trout':
-                // @TODO: Bugs
+            // Bugs
+            case 'Emperor butterfly':
+            case 'Ladybug':
+            case 'Rajah Brooke\'s birdwing':
+            case 'Violin beetle':
+            case 'Yellow butterfly':
                 // @TODO: Case insensitivity
                 return true;
         }
