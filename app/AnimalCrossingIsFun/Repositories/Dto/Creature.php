@@ -14,6 +14,9 @@ abstract class Creature extends Dto {
     /** @var string */
     protected $imageLink;
 
+    /** @var string */
+    protected $location;
+
     /** @var int */
     protected $price;
 
@@ -90,6 +93,13 @@ abstract class Creature extends Dto {
         $file = str_replace(" ", '-', strtolower($this->name));
 
         return "/img/creatures/{$file}.png";
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation(): string {
+        return $this->location;
     }
 
     /**

@@ -4,6 +4,7 @@ use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Dotenv\Repository\RepositoryBuilder;
+use Mave\AnimalCrossingIsFun\Repositories\BugsRepository;
 use Mave\AnimalCrossingIsFun\Repositories\FishRepository;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
@@ -53,6 +54,18 @@ try {
         $view = Twig::fromRequest($request);
 
         return $view->render($response, 'pages/fish.twig', [
+            'items' => $repository->getAll(),
+        ]);
+    });
+
+    $app->get('/bugs', function(Request $request, Response $response) {
+        $repository = (new BugsRepository(null))
+            ->loadAll()
+            ->sortItems($request->getAttributes()['sort'] ?? false);
+
+        $view = Twig::fromRequest($request);
+
+        return $view->render($response, 'pages/bugs.twig', [
             'items' => $repository->getAll(),
         ]);
     });
