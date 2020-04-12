@@ -9,6 +9,8 @@
     --bg-color:        #f6ede7;
     --bg-color-darker: #f8e4d7;
 
+    --body-color:      #9ed0b5;
+
     --accent:          var(--color-brown);
 
     --image-height:    58px;
@@ -23,7 +25,7 @@
 
 body {
     /*background-image:      url(/img/bg2.jpg);*/
-    background-color:      #9ed0b5;
+    background-color:      var(--body-color);
     background-repeat:     repeat;
     background-size:       300px;
     background-attachment: fixed;
@@ -49,32 +51,47 @@ table tr td {
 .container .item-row {
 }
 
-/*.container .item-row.item-row-main {*/
-/*    padding:          12px 0;*/
-/*}*/
-
-/*.container .item-row.item-row-sub {*/
-/*    padding:          4px 0;*/
-/*}*/
-
-body {
-    color: var(--accent);
+body,
+a,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+    color:           var(--accent);
+    text-decoration: none;
 }
 
 .menu {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: var(--bg-color);
+    position:         fixed;
+    bottom:           0;
+    width:            100%;
     background-color: var(--color-brown);
-    text-align: center;
+    text-align:       center;
+}
+
+.menu,
+.menu a,
+.menu a:visited,
+.menu a:focus,
+.menu a:active {
+    color:      var(--bg-color);
+    transition: background-color 0.1s linear;
+}
+
+.menu a:hover {
+    background-color: var(--body-color);
+    color:            var(--color-brown);
 }
 
 .menu .row > div {
-    border-left: 2px solid var(--bg-color);
+    border-left:  2px solid var(--bg-color);
     border-right: 2px solid var(--bg-color);
-    max-height: var(--footer-height);
+    max-height:   var(--footer-height);
+}
+
+.menu .row a {
     padding: 16px 0;
+    display: block;
 }
 
 .menu .row > div:first-child {
