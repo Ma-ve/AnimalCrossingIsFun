@@ -110,10 +110,10 @@ abstract class Creature extends Dto {
     }
 
     /**
-     * @return string
+     * @return string[]
      */
-    public function getTime(): string {
-        return $this->time;
+    public function getTime(): array {
+        return explode(" & ", $this->time);
     }
 
     /**

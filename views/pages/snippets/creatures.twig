@@ -25,7 +25,11 @@
                     {% else %}
                         <span class="badge badge-info">{{ creature.getPeriodOfYear() }}</span>
                     {% endif %}</div>
-                <div class="col-2"><span class="badge badge-danger">{{ creature.getTime() }}</span></div>
+                <div class="col-2">
+                    {% for creatureTime in creature.getTime() %}
+                        <span class="badge badge-danger">{{ creatureTime }}</span>
+                    {% endfor %}
+                </div>
                 <div class="col-2"><span class="badge badge-warning"><!--
                     --><i class="fad fa-bells"></i> {{ creature.getPrice() }}<!--
                     --></span><!--
