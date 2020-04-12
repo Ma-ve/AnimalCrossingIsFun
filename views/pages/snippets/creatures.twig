@@ -1,0 +1,36 @@
+<div class="item-row-container align-items-center ml--15 mr--15">
+    <div class="row">
+        <div class="col-2 image-placeholder text-align-center"><img src="{{ creature.getImageLink() }}"></div>
+        <div class="col-10">
+            <div class="row item-row item-row-main align-items-center pl-0 pr-0">
+                <div class="col-4"><strong>{{ creature.getName() }}</strong></div>
+                <div class="col-2 offset-6">
+                    <span>[ ]</span>
+                    <span>&gt;&gt;&gt;</span>
+                </div>
+            </div>
+            <div class="row item-row item-row-sub pl-0 pr-0">
+                <div class="col-3">
+                    {% if creature.hasIrregularMonths %}
+                        {% for bullet in creature.getBullets() %}
+                            {% set bulletBadgeClass = '' %}
+                            {% if bullet.value %}
+                                {% set bulletBadgeClass = ' badge-info' %}
+                            {% endif %}
+                            <span class="badge{{ bulletBadgeClass }}">{{ bullet.month }}</span>
+                        {% else %}
+                            <span class="badge">{{ bullet.month }}</span>
+                            {{ bullet|raw }}
+                        {% endfor %}
+                    {% else %}
+                        <span class="badge badge-info">{{ creature.getPeriodOfYear() }}</span>
+                    {% endif %}</div>
+                <div class="col-2"><span class="badge badge-danger">{{ creature.getTime() }}</span></div>
+                <div class="col-2"><span class="badge badge-warning"><!--
+                    --><i class="fad fa-bells"></i> {{ creature.getPrice() }}<!--
+                    --></span><!--
+                --></div>
+            </div>
+        </div>
+    </div>
+</div>

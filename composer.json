@@ -1,0 +1,29 @@
+{
+  "name": "mave/animalcrossing-is-fun",
+  "description": "Open source Animal Crossing checklist",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mave",
+      "email": "mave@mave.me"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mave\\AnimalCrossingIsFun\\": "app/AnimalCrossingIsFun/"
+    },
+    "files": [
+      "app/helpers.php"
+    ]
+  },
+  "require": {
+    "php": "7.2.*",
+    "ext-json": "*",
+    "vlucas/phpdotenv": "^4.1",
+    "nyholm/psr7": "^1.2",
+    "nyholm/psr7-server": "^0.4.1",
+    "slim/slim": "^4.0",
+    "slim/twig-view": "^3.0"
+  }
+}

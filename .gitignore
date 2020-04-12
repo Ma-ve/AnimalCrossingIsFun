@@ -1,0 +1,5 @@
+.patches/
+vendor/
+.idea/
+
+.env
