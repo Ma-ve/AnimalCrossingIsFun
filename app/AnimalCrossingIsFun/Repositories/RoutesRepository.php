@@ -20,16 +20,22 @@ class RoutesRepository {
                 'url'        => '/fish',
                 'twigView'   => 'pages/fish.twig',
                 'repository' => (new FishRepository(null)),
+                'icon'       => 'fa-fish',
+                'label'      => 'Fish',
             ]),
             new Route([
                 'url'        => '/bugs',
                 'twigView'   => 'pages/bugs.twig',
                 'repository' => (new BugsRepository(null)),
+                'icon'       => 'fa-bug',
+                'label'      => 'Bugs',
             ]),
             new Route([
                 'url'        => '/fossils',
                 'twigView'   => 'pages/fossils.twig',
                 'repository' => (new FossilsRepository(null)),
+                'icon'       => 'fa-bone',
+                'label'      => 'Fossils',
             ]),
         ];
     }

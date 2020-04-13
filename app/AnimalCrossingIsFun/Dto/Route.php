@@ -17,6 +17,12 @@ class Route extends Dto {
     /** @var BaseRepository */
     protected $repository;
 
+    /** @var string */
+    protected $icon;
+
+    /** @var string */
+    protected $label;
+
     /**
      * @return string
      */
@@ -36,6 +42,20 @@ class Route extends Dto {
      */
     public function getRepository(): BaseRepository {
         return $this->repository;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIcon(): string {
+        return $this->icon;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel(): string {
+        return $this->label;
     }
 
 }
