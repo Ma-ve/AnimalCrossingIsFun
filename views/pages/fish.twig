@@ -3,14 +3,6 @@
 {% block content %}
     {% include "pages/snippets/table-header.twig" %}
 
-    {% for item in items %}
-        {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
-            {% block subRow %}
-                {% include "pages/snippets/table-row-sub.twig" with {'item': item} only %}
-            {% endblock %}
-        {% endembed %}
-
-
-    {% endfor %}
+    {% include "pages/snippets/creatures-table.twig" with {'items': items} only %}
 
 {% endblock %}
