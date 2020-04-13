@@ -6,7 +6,7 @@
     --color-yellow:        #f5db6a;
     --color-brown:         #5a413e;
 
-    --color-brown-lighter: #867472;
+    --color-brown-lighter: #afa09f;
 
     --bg-color:            #f6ede7;
     --bg-color-darker:     #f5dac9;
@@ -143,14 +143,16 @@ a:hover {
 
 /*noinspection CssNoGenericFontName*/
 .caught-checkbox input[type="checkbox"] + label::after {
-    font-family: "Font Awesome 5 Duotone";
-    content:     "\10f335";
+    font-family: "Font Awesome 5 Pro";
+    content:     "\f336";
+    font-weight: 400;
     font-size:   34px;
     color:       var(--color-brown-lighter);
-    transition: color 0.1s linear;
+    transition:  color 0.1s linear, text-shadow 0.1s linear;
+    cursor:      pointer;
 }
 
-/*noinspection CssNoGenericFontName*/
+/* Hover must be defined before the :checked part, as we don't want :checked being able to be hovered on */
 .caught-checkbox input[type="checkbox"]:hover + label::after,
 .navigation-column span a:hover {
     color: var(--body-color);
@@ -163,13 +165,20 @@ a:hover {
     color:       var(--green);
 }
 
+/*noinspection CssNoGenericFontName*/
+.caught-checkbox input[type="checkbox"]:checked + label:hover::after {
+    text-shadow: 1px 1px 2px rgba(40, 167, 69, 0.2),
+                 0 0 1em rgba(40, 167, 69, 0.2),
+                 0 0 0.2em rgba(40, 167, 69, 0.2);
+}
+
 @media (max-width: 992px) {
     .caught-checkbox input,
     .caught-checkbox input + label::before,
     .caught-checkbox input + label::after {
         right: 7rem !important;
         left:  unset !important;
-        top:   -3rem;
+        top:   -4.5rem;
     }
 
     .caught-checkbox input + label {
