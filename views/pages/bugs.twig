@@ -1,14 +1,7 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-    <div class="item-row-container ml--15 mr--15">
-        <div class="row item-row align-items-center">
-            <div class="col-2"></div>
-            <div class="col-4"><strong>Name</strong></div>
-            <div class="col-4"><strong>Price</strong></div>
-            <div class="col-2"><strong>Caught</strong></div>
-        </div>
-    </div>
+    {% include "pages/snippets/table-header.twig" %}
 
     {% for creature in items %}
         {% include "pages/snippets/creatures.twig" %}
