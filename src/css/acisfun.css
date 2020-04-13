@@ -163,6 +163,20 @@ a:hover {
     color:       var(--green);
 }
 
+@media (max-width: 992px) {
+    .caught-checkbox input,
+    .caught-checkbox input + label::before,
+    .caught-checkbox input + label::after {
+        right: 7rem !important;
+        left:  unset !important;
+        top:   -3rem;
+    }
+
+    .caught-checkbox input + label {
+        width: 100%;
+    }
+}
+
 .navigation-column {
     position: relative;
 }
