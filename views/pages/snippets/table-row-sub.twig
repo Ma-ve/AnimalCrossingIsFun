@@ -1,0 +1,25 @@
+<div class="col-3">
+    {% if item.hasIrregularMonths %}
+        {% for bullet in item.getBullets() %}
+            {% set bulletBadgeClass = '' %}
+            {% if bullet.value %}
+                {% set bulletBadgeClass = ' badge-info' %}
+            {% endif %}
+            <span class="badge{{ bulletBadgeClass }}">{{ bullet.month }}</span>
+        {% else %}
+            <span class="badge">{{ bullet.month }}</span>
+            {{ bullet|raw }}
+        {% endfor %}
+    {% else %}
+        <span class="badge badge-info">{{ item.getPeriodOfYear() }}</span>
+    {% endif %}
+</div>
+<div class="col-2">
+    {% for creatureTime in item.getTime() %}
+        <span class="badge badge-danger">{{ creatureTime }}</span>
+    {% endfor %}
+</div>
+<div class="col-2"><span class="badge badge-warning"><!--
+    --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
+    --></span><!--
+--></div>

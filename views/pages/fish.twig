@@ -3,8 +3,8 @@
 {% block content %}
     {% include "pages/snippets/table-header.twig" %}
 
-    {% for creature in items %}
-        {% include "pages/snippets/creatures.twig" %}
+    {% for item in items %}
+        {% include "pages/snippets/table-content.twig" with {'item': item} only %}
 
     {% endfor %}
 
