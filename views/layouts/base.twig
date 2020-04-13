@@ -16,22 +16,7 @@
         {% block content %}{% endblock %}
     </div>
     <nav class="menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-3 pl-0 pr-0">
-                    <a href="/fish"><i class="fad fa-fish"></i> Fish</a>
-                </div>
-                <div class="col-3 pl-0 pr-0">
-                    <a href="/bugs"><i class="fad fa-bug"></i> Bugs</a>
-                </div>
-                <div class="col-3 pl-0 pr-0">
-                    <a href="/fossils"> <i class="fad fa-bone"></i> Fossils</a>
-                </div>
-                <div class="col-3 pl-0 pr-0">
-                    <a href="/recipes"><i class="fad fa-tools"></i> Recipes</a>
-                </div>
-            </div>
-        </div>
+        {% include "layouts/menu.twig" %}
     </nav>
 </body>
 </html>

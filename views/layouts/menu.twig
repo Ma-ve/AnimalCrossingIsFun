@@ -1,0 +1,35 @@
+{% set menuItems = [
+    {
+        'url': '/fish',
+        'icon': 'fa-fish',
+        'label': 'Fish'
+    },
+    {
+        'url': '/bugs',
+        'icon': 'fa-bug',
+        'label': 'Bugs'
+    },
+    {
+        'url': '/fossils',
+        'icon': 'fa-bone',
+        'label': 'Fossils'
+    },
+    {
+        'url': '/recipes',
+        'icon': 'fa-tools',
+        'label': 'Recipes'
+    },
+] %}
+
+<div class="container">
+    <div class="row">
+        {% for menuItem in menuItems %}
+        <div class="col-3 pl-0 pr-0">
+            {% set class = current_url() == menuItem.url ? 'active' : '' %}
+
+            <a href="{{ menuItem.url }}" class="{{ class }}"><i class="fad {{ menuItem.icon }}"></i> {{ menuItem.label }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
