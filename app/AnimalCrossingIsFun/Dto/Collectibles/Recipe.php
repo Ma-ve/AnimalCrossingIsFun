@@ -8,7 +8,7 @@ use Mave\AnimalCrossingIsFun\Dto\Dto;
 
 class Recipe extends Dto {
 
-    protected const IMAGE_PATH = 'recipe';
+    protected const IMAGE_PATH = 'recipes';
 
     /** @var string[] */
     protected $requirements;
