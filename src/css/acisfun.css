@@ -17,7 +17,7 @@
 
     --image-height:        58px;
 
-    --footer-height:   56px;
+    --footer-height:       56px;
     /*--accent:       var(--color-blue);*/
     /*--accent:       var(--color-green);*/
     /*--accent:       var(--color-lime);*/
@@ -48,11 +48,11 @@ table tr td {
     border-top:       2px solid #9ed0b5;
     padding:          16px 0;
     background-color: var(--bg-color);
-    position: relative;
+    position:         relative;
 }
 
 .caught-checkbox {
-    position: initial;
+    position:     initial;
     padding-left: initial;
 }
 
@@ -181,11 +181,11 @@ a:hover {
     .caught-checkbox input + label::before,
     .caught-checkbox input + label::after,
     .navigation-column a {
-        right: 15px; /** to offset the row -15px */
-        left: 0;
+        right:  15px; /** to offset the row -15px */
+        left:   0;
         margin: auto;
 
-        top: -50px;
+        top:    -50px;
 
         /*right: 7rem !important;*/
         /*left:  unset !important;*/
@@ -193,7 +193,7 @@ a:hover {
     }
 
     .navigation-column a {
-        top:   -10px !important;
+        top: -10px !important;
     }
 
     .caught-checkbox input + label {
