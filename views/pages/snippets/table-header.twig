@@ -3,6 +3,9 @@
         <div class="col-2"></div>
         <div class="col-10">
             <div class="row">
+                {% if columnConfiguration is not empty %}
+                    {{ columnConfiguration }}
+                {% else %}
                 <div class="col-3">
                     {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
                     {% include "pages/snippets/table-header-column.twig" with vars only %}
@@ -14,8 +17,9 @@
 
                 </div>
                 <div class="col-2 offset-1">
-                    <strong>Caught</strong>
+                    <strong>{{ checkboxLabel|default('Caught') }}</strong>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

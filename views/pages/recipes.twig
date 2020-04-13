@@ -1,0 +1,58 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+    {% set columnConfiguration %}
+            <div class="col-3">
+                {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
+                {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+            </div>
+            <div class="col-2 offset-1">
+                {% set vars = {'sort': sort, 'label': 'Bells', 'property': 'price', 'sortIcon': 'numeric'} %}
+                {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+            </div>
+            <div class="col-2 offset-2">
+                <strong>Caught</strong>
+            </div>
+            <div class="col-1"></div>
+
+    {% endset %}
+
+    {% include "pages/snippets/table-header.twig" with {
+        'checkboxLabel':       'Learned',
+        'columnConfiguration': columnConfiguration
+    } %}
+
+    {% for item in items %}
+
+        {% set lastColumn %}
+        <div class="col-2 navigation-column">
+            <span>
+                <a href="/recipes/cherry-blossom-season/{{ item.getName() }}"><i class="fad fa-chevron-double-right"></i></a>
+            </span>
+        </div>
+        {% endset %}
+
+
+        {% embed "pages/snippets/table-content.twig" with {
+            'item':                 item,
+            'caughtCheckboxOffset': 4,
+            'lastColumn':           lastColumn
+        } only %}
+            {% block subRow %}
+                <div class="col-3">
+                    {% if item.getCategory() %}
+                        <span class="badge badge-danger">{{ item.getCategory() }}</span>
+                    {% endif %}
+                </div>
+                <div class="col-2 offset-1"><span class="badge badge-warning"><!--
+                    --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
+                    --></span><!--
+                --></div>
+            {% endblock %}
+        {% endembed %}
+
+    {% endfor %}
+
+{% endblock %}

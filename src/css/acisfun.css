@@ -158,3 +158,19 @@ a:hover {
     content:     "\10f336";
     color:       var(--green);
 }
+
+.navigation-column {
+    position: relative;
+}
+
+.navigation-column span {
+    display: block;
+    width:   16px;
+    height:  16px;
+}
+
+.navigation-column span a {
+    position:  absolute;
+    font-size: 34px;
+    top:       0;
+}
