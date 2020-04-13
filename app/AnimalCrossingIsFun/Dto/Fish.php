@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mave\AnimalCrossingIsFun\Repositories\Dto;
+namespace Mave\AnimalCrossingIsFun\Dto;
 
 class Fish extends Creature {
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mave\AnimalCrossingIsFun\Repositories;
+namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
-use Mave\AnimalCrossingIsFun\Repositories\Dto\Dto;
+use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
 use Mave\AnimalCrossingIsFun\Repositories\Services\JsonService;
 use Mave\AnimalCrossingIsFun\Repositories\Services\SortService;

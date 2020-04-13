@@ -1,9 +1,11 @@
 <?php
 
-namespace Mave\AnimalCrossingIsFun\Repositories;
+declare(strict_types=1);
+
+namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
-use Mave\AnimalCrossingIsFun\Repositories\Dto\Bug as BugDto;
+use Mave\AnimalCrossingIsFun\Dto\Bug as BugDto;
 use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
 
 class BugsRepository extends BaseRepository implements IRepository {

@@ -3,9 +3,9 @@
 use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
-use Mave\AnimalCrossingIsFun\Repositories\BugsRepository;
-use Mave\AnimalCrossingIsFun\Repositories\FishRepository;
-use Mave\AnimalCrossingIsFun\Repositories\FossilsRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugsRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilsRepository;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
@@ -45,6 +45,25 @@ try {
     $app->add(TwigMiddleware::create($app, $twig));
 
     $app->addErrorMiddleware(env('IS_DEV', false), env('IS_DEV', false), env('IS_DEV', false));
+
+
+    $collectibleRoutes = [
+        [
+            'url'        => '/fish',
+            'view'       => 'pages/fish.twig',
+            'repository' => (new FishRepository(null)),
+        ],
+        [
+            'url'        => '/bugs',
+            'view'       => 'pages/fish.twig',
+            'repository' => (new FishRepository(null)),
+        ],
+        [
+            'url'        => '/fish',
+            'view'       => 'pages/fish.twig',
+            'repository' => (new FishRepository(null)),
+        ],
+    ];
 
 
 

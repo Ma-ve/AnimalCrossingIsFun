@@ -1,9 +1,11 @@
 <?php
 
-namespace Mave\AnimalCrossingIsFun\Repositories;
+declare(strict_types=1);
+
+namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
-use Mave\AnimalCrossingIsFun\Repositories\Dto\Fish as FishDto;
+use Mave\AnimalCrossingIsFun\Dto\Fish as FishDto;
 use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
 
 class FishRepository extends BaseRepository implements IRepository {
