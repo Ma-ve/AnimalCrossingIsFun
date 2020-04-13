@@ -8,11 +8,7 @@ use Exception;
 
 abstract class Creature extends Dto {
 
-    /** @var string */
-    protected $name;
-
-    /** @var string */
-    protected $imageLink;
+    protected const IMAGE_PATH = 'creatures';
 
     /** @var string */
     protected $location;
@@ -76,23 +72,6 @@ abstract class Creature extends Dto {
             $properties['may'], $properties['jun'], $properties['jul'], $properties['aug'],
             $properties['sep'], $properties['oct'], $properties['nov'], $properties['dec'],
         ];
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     * @throws Exception
-     */
-    public function getImageLink(): string {
-        $file = str_replace(" ", '-', strtolower($this->name));
-
-        return "/img/creatures/{$file}.png";
     }
 
     /**
