@@ -186,18 +186,19 @@ a:hover {
         margin: auto;
 
         top:    -50px;
-
-        /*right: 7rem !important;*/
-        /*left:  unset !important;*/
-        /*top:   -4.5rem;*/
     }
 
     .navigation-column a {
-        top: -10px !important;
+        top:  -16px !important;
+        left: 15px;
     }
 
     .caught-checkbox input + label {
         width: 100%;
+    }
+
+    .m-top--24 {
+        margin-top: -24px;
     }
 }
 
@@ -214,6 +215,6 @@ a:hover {
 .navigation-column span a {
     position:   absolute;
     font-size:  34px;
-    top:        0;
+    top:        4px;
     transition: color 0.1s linear;
 }

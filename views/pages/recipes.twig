@@ -27,7 +27,7 @@
     {% for item in items %}
 
         {% set lastColumn %}
-        <div class="col-lg-2 navigation-column">
+        <div class="col-lg-2 col-4 offset-lg-0 offset-8 text-lg-left text-center navigation-column">
             <span>
                 <a href="/recipes/cherry-blossom-season/{{ item.getSafeName() }}"><i class="fad fa-chevron-double-right"></i></a>
             </span>
@@ -41,7 +41,7 @@
             'lastColumn':           lastColumn
         } only %}
             {% block subRow %}
-                <div class="col-lg-3 col-4 text-lg-left text-center">
+                <div class="col-lg-3 col-5 text-lg-left text-center">
                     {% if item.getCategory() %}
                         <span class="badge badge-danger">{{ item.getCategory() }}</span>
                     {% endif %}
