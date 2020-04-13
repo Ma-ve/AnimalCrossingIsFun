@@ -2,8 +2,39 @@
 
 {% block content %}
 
-    <div style="background-color: #f6ede7; padding: 16px;">
-        {{ dump(item) }}
+    <div class="row text-center" style="background-color: #f6ede7; padding: 16px;">
+        <div class="col-12">
+            <img src="{{ item.getImageLink() }}">
+        </div>
+        <div class="col-4">
+            <em>Category</em>
+            <br>
+            <span class="badge badge-danger">{{ item.getCategory() }}</span>
+        </div>
+        <div class="col-4">
+            <em>Name</em>
+            <br>
+            <strong>{{ item.getName() }}</strong>
+        </div>
+        <div class="col-4">
+            <em>Price</em>
+            <br>
+            <span class="badge badge-warning"><!--
+                --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
+            --></span>
+        </div>
+        <div class="col-8">
+            <em>Crafting materials</em>
+            <br>
+            {% for requirement in item.getRequirements() %}
+                <span class="badge badge-dark">{{ requirement }}</span>
+            {% endfor %}
+        </div>
+        <div class="col-4">
+            <em>Space on floor</em>
+            <br>
+            <span class="badge badge-info">{{ item.getSquareSize() }}</span>
+        </div>
     </div>
 
 {% endblock %}
