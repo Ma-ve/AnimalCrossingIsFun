@@ -1,7 +1,9 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-    {% include "pages/snippets/table-header.twig" %}
+    {% include "pages/snippets/table-header.twig" with {
+        'checkboxLabel': 'Found'
+    } %}
 
     {% for item in items %}
         {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
