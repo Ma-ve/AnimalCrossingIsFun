@@ -1,12 +1,12 @@
 
-<div class="item-row-container align-items-center ml--15 mr--15">
+<div class="item-row-container ml--15 mr--15">
     <div class="row">
         <div class="col-lg-2 image-placeholder text-center">
             <img src="{{ item.getImageLink() }}">
         </div>
 
         <div class="col-lg-10">
-            <div class="row item-row item-row-main align-items-center pl-lg-0 pr-lg-0">
+            <div class="row item-row item-row-main pl-lg-0 pr-lg-0">
                 {% include "pages/snippets/table-row-main.twig" with {
                     'item':                 item,
                     'caughtCheckboxOffset': caughtCheckboxOffset,

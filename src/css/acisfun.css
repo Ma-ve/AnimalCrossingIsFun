@@ -48,6 +48,12 @@ table tr td {
     border-top:       2px solid #9ed0b5;
     padding:          16px 0;
     background-color: var(--bg-color);
+    position: relative;
+}
+
+.caught-checkbox {
+    position: initial;
+    padding-left: initial;
 }
 
 .container .item-row-container.table-header {
@@ -68,9 +74,6 @@ a:hover {
 }
 
 .menu {
-    position:         fixed;
-    bottom:           0;
-    width:            100%;
     background-color: var(--color-brown);
     text-align:       center;
 }
@@ -150,6 +153,7 @@ a:hover {
     color:       var(--color-brown-lighter);
     transition:  color 0.1s linear, text-shadow 0.1s linear;
     cursor:      pointer;
+    left:        0;
 }
 
 /* Hover must be defined before the :checked part, as we don't want :checked being able to be hovered on */
@@ -177,9 +181,15 @@ a:hover {
     .caught-checkbox input + label::before,
     .caught-checkbox input + label::after,
     .navigation-column a {
-        right: 7rem !important;
-        left:  unset !important;
-        top:   -4.5rem;
+        right: 15px; /** to offset the row -15px */
+        left: 0;
+        margin: auto;
+
+        top: -50px;
+
+        /*right: 7rem !important;*/
+        /*left:  unset !important;*/
+        /*top:   -4.5rem;*/
     }
 
     .navigation-column a {
