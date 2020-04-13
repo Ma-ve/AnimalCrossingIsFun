@@ -1,19 +1,21 @@
 :root {
-    --color-red:       #f77172;
-    --color-blue:      #04a9ab;
-    --color-green:     #70c1a0;
-    --color-lime:      #c6d942;
-    --color-yellow:    #f5db6a;
-    --color-brown:     #5a413e;
+    --color-red:           #f77172;
+    --color-blue:          #04a9ab;
+    --color-green:         #70c1a0;
+    --color-lime:          #c6d942;
+    --color-yellow:        #f5db6a;
+    --color-brown:         #5a413e;
 
-    --bg-color:        #f6ede7;
-    --bg-color-darker: #f8e4d7;
+    --color-brown-lighter: #867472;
 
-    --body-color:      #9ed0b5;
+    --bg-color:            #f6ede7;
+    --bg-color-darker:     #f5dac9;
 
-    --accent:          var(--color-brown);
+    --body-color:          #9ed0b5;
 
-    --image-height:    58px;
+    --accent:              var(--color-brown);
+
+    --image-height:        58px;
 
     --footer-height:   56px;
     /*--accent:       var(--color-blue);*/
@@ -46,6 +48,10 @@ table tr td {
     border-top:       2px solid #9ed0b5;
     padding:          16px 0;
     background-color: var(--bg-color);
+}
+
+.container .item-row-container.table-header {
+    background-color: var(--bg-color-darker);
 }
 
 .container .item-row {
@@ -121,4 +127,34 @@ a:hover {
 
 .mr--15 {
     margin-right: -15px !important;
+}
+
+.custom-control-input ~ .custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:active ~ .custom-control-label::before,
+.custom-control-input:hover ~ .custom-control-label::before,
+.custom-control-input:focus ~ .custom-control-label::before,
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    background: none;
+    border:     0;
+    box-shadow: none;
+    outline:    none;
+}
+
+/*noinspection CssNoGenericFontName*/
+.caught-checkbox input[type="checkbox"] + label::after,
+.caught-checkbox input[type="radio"] + label::after {
+    font-family: "Font Awesome 5 Duotone";
+    content:     "\10f335";
+    font-size:   34px;
+    color:       var(--color-brown-lighter);
+    transition: color 0.1s linear;
+}
+
+/*noinspection CssNoGenericFontName*/
+.caught-checkbox input[type="checkbox"]:checked + label::after,
+.caught-checkbox input[type="radio"]:checked + label::after {
+    font-family: "Font Awesome 5 Duotone";
+    content:     "\10f336";
+    color:       var(--green);
 }
