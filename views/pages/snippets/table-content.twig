@@ -8,9 +8,11 @@
         <div class="col-lg-10">
             <div class="row item-row item-row-main pl-lg-0 pr-lg-0">
                 {% include "pages/snippets/table-row-main.twig" with {
-                    'item':                 item,
-                    'caughtCheckboxOffset': caughtCheckboxOffset,
-                    'lastColumn':           lastColumn
+                    'item':                  item,
+                    'caughtCheckboxOffset':  caughtCheckboxOffset,
+                    'lastColumn':            lastColumn,
+                    'nameColumnClasses':     'col-12 offset-0',
+                    'checkboxColumnClasses': 'col-4 offset-8 m-top--24'
                 } only %}
             </div>
             <div class="row item-row item-row-sub pl-lg-0 pr-lg-0">
