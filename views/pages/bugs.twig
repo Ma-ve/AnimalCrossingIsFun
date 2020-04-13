@@ -4,7 +4,12 @@
     {% include "pages/snippets/table-header.twig" %}
 
     {% for item in items %}
-        {% include "pages/snippets/table-content.twig" with {'item': item} only %}
+        {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
+            {% block subRow %}
+                {% include "pages/snippets/table-row-sub.twig" with {'item': item} only %}
+            {% endblock %}
+        {% endembed %}
+
 
     {% endfor %}
 
