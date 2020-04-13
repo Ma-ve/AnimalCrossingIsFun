@@ -36,6 +36,7 @@
 
         {% embed "pages/snippets/table-content.twig" with {
             'item':                 item,
+            'index':                loop.index,
             'caughtCheckboxOffset': 4,
             'lastColumn':           lastColumn
         } only %}
