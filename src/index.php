@@ -3,9 +3,7 @@
 use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugsRepository;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilsRepository;
+use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
@@ -47,65 +45,21 @@ try {
     $app->addErrorMiddleware(env('IS_DEV', false), env('IS_DEV', false), env('IS_DEV', false));
 
 
-    $collectibleRoutes = [
-        [
-            'url'        => '/fish',
-            'view'       => 'pages/fish.twig',
-            'repository' => (new FishRepository(null)),
-        ],
-        [
-            'url'        => '/bugs',
-            'view'       => 'pages/fish.twig',
-            'repository' => (new FishRepository(null)),
-        ],
-        [
-            'url'        => '/fish',
-            'view'       => 'pages/fish.twig',
-            'repository' => (new FishRepository(null)),
-        ],
-    ];
+    $routesRepository = new RoutesRepository();
+    foreach($routesRepository->getAll() as $route) {
+        $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
+            $repository = $route->getRepository()
+                ->loadAll()
+                ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
 
+            $view = Twig::fromRequest($request);
 
-
-// Add routes
-    $app->get('/fish', function(Request $request, Response $response) {
-        $repository = (new FishRepository(null))
-            ->loadAll()
-            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false ?? false));
-
-        $view = Twig::fromRequest($request);
-
-        return $view->render($response, 'pages/fish.twig', [
-            'items' => $repository->getAll(),
-            'sort'  => $sort,
-        ]);
-    });
-
-    $app->get('/bugs', function(Request $request, Response $response) {
-        $repository = (new BugsRepository(null))
-            ->loadAll()
-            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
-
-        $view = Twig::fromRequest($request);
-
-        return $view->render($response, 'pages/bugs.twig', [
-            'items' => $repository->getAll(),
-            'sort'  => $sort,
-        ]);
-    });
-
-    $app->get('/fossils', function(Request $request, Response $response) {
-        $repository = (new FossilsRepository(null))
-            ->loadAll()
-            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
-
-        $view = Twig::fromRequest($request);
-
-        return $view->render($response, 'pages/fossils.twig', [
-            'items' => $repository->getAll(),
-            'sort'  => $sort,
-        ]);
-    });
+            return $view->render($response, $route->getTwigView(), [
+                'items' => $repository->getAll(),
+                'sort'  => $sort,
+            ]);
+        });
+    }
 
     $app->run();
 
