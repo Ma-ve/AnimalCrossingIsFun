@@ -1,0 +1,19 @@
+<div class="item-row-container ml--15 mr--15">
+    <div class="row item-row align-items-center">
+        <div class="col-2"></div>
+        <div class="col-4">
+            {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
+            {% include "pages/snippets/table-column.twig" with vars only %}
+
+        </div>
+        <div class="col-4">
+            <!-- maybe use fal rather than fa -->
+            {% set vars = {'sort': sort, 'label': 'Bells', 'property': 'price', 'sortIcon': 'numeric'} %}
+            {% include "pages/snippets/table-column.twig" with vars only %}
+
+        </div>
+        <div class="col-2">
+            <strong>Caught</strong>
+        </div>
+    </div>
+</div>
