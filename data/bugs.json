@@ -193,7 +193,7 @@
     "name": "Rajah Brooke's birdwing",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e2/NH-Icon-rajahbrookesbirdwing.png/revision/latest?cb=20200401005428",
     "price": 2500,
-    "location": "Flying by Purple Flowers",
+    "location": "Flying",
     "time": "8 AM - 5 PM",
     "jan": true,
     "feb": true,
@@ -1123,7 +1123,7 @@
   {
     "name": "Golden stag",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/82/NH-Icon-goldenstag.png/revision/latest?cb=20200401005428",
-    "price": "?",
+    "price": 12000,
     "location": "On Trees (Coconut)",
     "time": "5 PM - 8 AM",
     "jan": false,
@@ -1142,7 +1142,7 @@
   {
     "name": "Giraffe stag",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7c/NH-Icon-giraffestag.png/revision/latest?cb=20200401005428",
-    "price": "?",
+    "price": 12000,
     "location": "On Trees (Coconut?)",
     "time": "5 PM - 8 AM",
     "jan": false,
@@ -1218,7 +1218,7 @@
   {
     "name": "Horned hercules",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c2/NH-Icon-hornedhercules.png/revision/latest?cb=20200401005428",
-    "price": "?",
+    "price": 12000,
     "location": "On Trees (Coconut)",
     "time": "5 PM - 8 AM",
     "jan": false,
