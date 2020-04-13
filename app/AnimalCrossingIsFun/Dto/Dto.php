@@ -16,6 +16,9 @@ abstract class Dto {
     /** @var string */
     protected $imageLink;
 
+    /** @var string */
+    protected $safeName;
+
     /**
      * @param array $properties
      */
@@ -37,11 +40,17 @@ abstract class Dto {
      * @throws Exception
      */
     public function getImageLink(): string {
-        $file = str_replace(" ", '-', strtolower($this->name));
-
         $path = static::IMAGE_PATH;
 
-        return "/img/{$path}/{$file}.png";
+        return "/img/{$path}/{$this->getSafeName()}.png";
+    }
+
+    /**
+     * @return string
+     * @throws Exception
+     */
+    public function getSafeName(): string {
+        return str_replace('--', '-', strtolower(preg_replace("/[^\da-z]/i", "-", $this->name)));
     }
 
 }

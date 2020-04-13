@@ -16,7 +16,15 @@ class RecipeRepository extends BaseRepository implements IRepository {
      * @return bool|mixed
      */
     public function get(string $name) {
-        return $this->contents[$name] ?? false;
+        $search = array_search($name, array_map(function($name) {
+            return str_replace(" ", '-', strtolower($name));
+        }, array_column($this->contents, 'name')));
+
+        if(false === $search) {
+            return false;
+        }
+
+        return new RecipeDto($this->contents[$search]);
     }
 
     public function getAll(): array {

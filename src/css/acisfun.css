@@ -142,8 +142,7 @@ a:hover {
 }
 
 /*noinspection CssNoGenericFontName*/
-.caught-checkbox input[type="checkbox"] + label::after,
-.caught-checkbox input[type="radio"] + label::after {
+.caught-checkbox input[type="checkbox"] + label::after {
     font-family: "Font Awesome 5 Duotone";
     content:     "\10f335";
     font-size:   34px;
@@ -152,8 +151,13 @@ a:hover {
 }
 
 /*noinspection CssNoGenericFontName*/
-.caught-checkbox input[type="checkbox"]:checked + label::after,
-.caught-checkbox input[type="radio"]:checked + label::after {
+.caught-checkbox input[type="checkbox"]:hover + label::after,
+.navigation-column span a:hover {
+    color: var(--body-color);
+}
+
+/*noinspection CssNoGenericFontName*/
+.caught-checkbox input[type="checkbox"]:checked + label::after {
     font-family: "Font Awesome 5 Duotone";
     content:     "\10f336";
     color:       var(--green);
@@ -170,7 +174,8 @@ a:hover {
 }
 
 .navigation-column span a {
-    position:  absolute;
-    font-size: 34px;
-    top:       0;
+    position:   absolute;
+    font-size:  34px;
+    top:        0;
+    transition: color 0.1s linear;
 }

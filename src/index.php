@@ -3,6 +3,7 @@
 use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
@@ -63,6 +64,23 @@ try {
             ]);
         });
     }
+
+    $app->get('/recipes/{category}/{recipe}', function(Request $request, Response $response, $args) {
+        $item = (new CherryBlossomRecipeRepository(null))
+            ->loadAll()
+            ->get($args['recipe']);
+
+        $view = Twig::fromRequest($request);
+
+        if(false === $item) {
+            return $view->render($response, '404');
+        }
+
+        return $view->render($response, 'pages/detail/recipe.twig', [
+            'item' => $item,
+        ]);
+    });
+
 
     $app->run();
 
