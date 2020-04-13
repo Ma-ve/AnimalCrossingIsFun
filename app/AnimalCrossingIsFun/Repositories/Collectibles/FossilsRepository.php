@@ -6,7 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Fossil as FossilDto;
-use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
 class FossilsRepository extends BaseRepository implements IRepository {
 

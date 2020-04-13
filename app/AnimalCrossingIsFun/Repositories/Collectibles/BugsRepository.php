@@ -6,7 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Bug as BugDto;
-use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
 class BugsRepository extends BaseRepository implements IRepository {
 
