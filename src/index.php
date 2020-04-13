@@ -5,6 +5,7 @@ use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\Repositories\BugsRepository;
 use Mave\AnimalCrossingIsFun\Repositories\FishRepository;
+use Mave\AnimalCrossingIsFun\Repositories\FossilsRepository;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
@@ -69,6 +70,19 @@ try {
 
         return $view->render($response, 'pages/bugs.twig', [
             'items' => $repository->getAll(),
+        ]);
+    });
+
+    $app->get('/fossils', function(Request $request, Response $response) {
+        $repository = (new FossilsRepository(null))
+            ->loadAll()
+            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
+
+        $view = Twig::fromRequest($request);
+
+        return $view->render($response, 'pages/fossils.twig', [
+            'items' => $repository->getAll(),
+            'sort'  => $sort,
         ]);
     });
 

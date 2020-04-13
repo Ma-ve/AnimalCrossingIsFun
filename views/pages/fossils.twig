@@ -1,0 +1,11 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+    {% include "pages/snippets/table-header.twig" %}
+
+    {% for fossil in items %}
+        {% include "pages/snippets/fossils.twig" %}
+
+    {% endfor %}
+
+{% endblock %}
