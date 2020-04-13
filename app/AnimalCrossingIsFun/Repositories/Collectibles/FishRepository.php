@@ -6,7 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Fish as FishDto;
-use Mave\AnimalCrossingIsFun\Repositories\Interfaces\IRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
 class FishRepository extends BaseRepository implements IRepository {
 

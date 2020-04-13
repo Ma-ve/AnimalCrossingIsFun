@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mave\AnimalCrossingIsFun\Repositories\Interfaces;
+namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces;
 
 interface IRepository {
 
