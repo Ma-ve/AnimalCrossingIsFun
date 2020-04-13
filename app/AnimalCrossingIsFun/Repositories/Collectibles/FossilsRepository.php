@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
-use Mave\AnimalCrossingIsFun\Dto\Fossil as FossilDto;
+use Mave\AnimalCrossingIsFun\Dto\Collectibles\Fossil as FossilDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
 class FossilsRepository extends BaseRepository implements IRepository {

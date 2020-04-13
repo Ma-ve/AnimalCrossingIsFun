@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mave\AnimalCrossingIsFun\Dto;
+namespace Mave\AnimalCrossingIsFun\Dto\Collectibles;
+
+use Mave\AnimalCrossingIsFun\Dto\Dto;
 
 class Fossil extends Dto {
 
