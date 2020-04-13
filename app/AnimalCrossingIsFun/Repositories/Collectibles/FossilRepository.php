@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Exception;
-use Mave\AnimalCrossingIsFun\Dto\Collectibles\Bug as BugDto;
+use Mave\AnimalCrossingIsFun\Dto\Collectibles\Fossil as FossilDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
-class BugsRepository extends BaseRepository implements IRepository {
+class FossilRepository extends BaseRepository implements IRepository {
 
     /**
      * @param string $name
@@ -23,7 +23,7 @@ class BugsRepository extends BaseRepository implements IRepository {
         if(empty($this->contents)) {
             throw new Exception('Must first load data into repository');
         }
-        return parent::map(new BugDto());
+        return parent::map(new FossilDto());
     }
 
     /**
@@ -31,7 +31,7 @@ class BugsRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = $this->databaseService->loadFromDatabase('bugs.json');
+        $this->contents = $this->databaseService->loadFromDatabase('fossils.json');
 
         return $this;
     }

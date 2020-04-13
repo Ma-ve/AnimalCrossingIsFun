@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Repositories;
 
 use Mave\AnimalCrossingIsFun\Dto\Route;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugsRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilsRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
 
 class RoutesRepository {
 
@@ -26,14 +26,14 @@ class RoutesRepository {
             new Route([
                 'url'        => '/bugs',
                 'twigView'   => 'pages/bugs.twig',
-                'repository' => (new BugsRepository(null)),
+                'repository' => (new BugRepository(null)),
                 'icon'       => 'fa-bug',
                 'label'      => 'Bugs',
             ]),
             new Route([
                 'url'        => '/fossils',
                 'twigView'   => 'pages/fossils.twig',
-                'repository' => (new FossilsRepository(null)),
+                'repository' => (new FossilRepository(null)),
                 'icon'       => 'fa-bone',
                 'label'      => 'Fossils',
             ]),
