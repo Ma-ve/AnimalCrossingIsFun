@@ -10,7 +10,7 @@
                 {% include "pages/snippets/table-row-main.twig" with {'item': item} only %}
             </div>
             <div class="row item-row item-row-sub pl-0 pr-0">
-                {% include "pages/snippets/table-row-sub.twig" with {'item': item} only %}
+                {% block subRow %}{% endblock %}
             </div>
         </div>
     </div>

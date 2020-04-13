@@ -3,8 +3,20 @@
 {% block content %}
     {% include "pages/snippets/table-header.twig" %}
 
-    {% for fossil in items %}
-        {% include "pages/snippets/fossils.twig" %}
+    {% for item in items %}
+        {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
+            {% block subRow %}
+                <div class="col-4">
+                    {% if item.getCategory() %}
+                        <span class="badge badge-info">{{ item.getCategory() }}</span>
+                    {% endif %}
+                </div>
+                <div class="col-2"><span class="badge badge-warning"><!--
+                    --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
+                    --></span><!--
+                --></div>
+            {% endblock %}
+        {% endembed %}
 
     {% endfor %}
 
