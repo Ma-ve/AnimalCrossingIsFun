@@ -52,24 +52,26 @@ try {
     $app->get('/fish', function(Request $request, Response $response) {
         $repository = (new FishRepository(null))
             ->loadAll()
-            ->sortItems($request->getAttributes()['sort'] ?? false);
+            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false ?? false));
 
         $view = Twig::fromRequest($request);
 
         return $view->render($response, 'pages/fish.twig', [
             'items' => $repository->getAll(),
+            'sort'  => $sort,
         ]);
     });
 
     $app->get('/bugs', function(Request $request, Response $response) {
         $repository = (new BugsRepository(null))
             ->loadAll()
-            ->sortItems($request->getAttributes()['sort'] ?? false);
+            ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
 
         $view = Twig::fromRequest($request);
 
         return $view->render($response, 'pages/bugs.twig', [
             'items' => $repository->getAll(),
+            'sort'  => $sort,
         ]);
     });
 
