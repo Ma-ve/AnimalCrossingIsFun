@@ -1,8 +1,8 @@
-<div class="col-4">
+<div class="col-md-4 col-sm-8 text-md-left text-sm-center">
     <strong>{{ item.getName() }}</strong>
 </div>
 {% set caughtCheckboxOffset = caughtCheckboxOffset ? caughtCheckboxOffset : 6 %}
-<div class="col-2 offset-{{ caughtCheckboxOffset }}">
+<div class="col-md-2 offset-md-{{ caughtCheckboxOffset }} col-sm-4">
     <div class="custom-control caught-checkbox" style="position: relative;">
         <input type="checkbox" class="custom-control-input" id="check-{{ item.getName() }}" style="position: absolute;">
         <label class="custom-control-label" for="check-{{ item.getName() }}"></label>

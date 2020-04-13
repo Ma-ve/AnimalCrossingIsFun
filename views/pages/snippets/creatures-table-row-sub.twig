@@ -1,4 +1,4 @@
-<div class="col-3">
+<div class="col-md-3 text-md-left col-sm-4 text-sm-center">
     {% if item.hasIrregularMonths %}
         {% for bullet in item.getBullets() %}
             {% set bulletBadgeClass = '' %}
@@ -14,12 +14,12 @@
         <span class="badge badge-info">{{ item.getPeriodOfYear() }}</span>
     {% endif %}
 </div>
-<div class="col-2">
+<div class="col-md-2 text-md-left col-sm-4 text-sm-center">
     {% for creatureTime in item.getTime() %}
         <span class="badge badge-danger">{{ creatureTime }}</span>
     {% endfor %}
 </div>
-<div class="col-2"><span class="badge badge-warning"><!--
+<div class="col-md-2 text-md-left col-sm-4 text-sm-center"><span class="badge badge-warning"><!--
     --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
     --></span><!--
 --></div>
