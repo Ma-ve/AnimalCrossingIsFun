@@ -40,12 +40,15 @@ try {
         $twig->addExtension(new DebugExtension());
     }
 
+    $routesRepository = new RoutesRepository();;
+    $twig->getEnvironment()->addGlobal('routesRepository', $routesRepository);
+
     $app->add(TwigMiddleware::create($app, $twig));
 
     $app->addErrorMiddleware(env('IS_DEV', false), env('IS_DEV', false), env('IS_DEV', false));
 
 
-    $routesRepository = new RoutesRepository();
+
     foreach($routesRepository->getAll() as $route) {
         $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
             $repository = $route->getRepository()
