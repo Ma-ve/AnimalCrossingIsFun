@@ -78,6 +78,7 @@ a:hover {
     transition: background-color 0.1s linear;
 }
 
+.menu a.active,
 .menu a:hover {
     background-color: var(--body-color);
     color:            var(--color-brown);
