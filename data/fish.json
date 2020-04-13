@@ -2,7 +2,7 @@
   {
     "name": "Bitterling",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ea/NH-Icon-bitterling.png/revision/latest?cb=20200401003128",
-    "price": "900",
+    "price": 900,
     "location": "River",
     "shadowSize": "1",
     "time": "All day",
@@ -22,7 +22,7 @@
   {
     "name": "Pale chub",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-palechub.png/revision/latest?cb=20200401003129",
-    "price": "200",
+    "price": 200,
     "location": "River",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -42,7 +42,7 @@
   {
     "name": "Crucian carp",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/0/03/NH-Icon-cruciancarp.png/revision/latest?cb=20200401003129",
-    "price": "160",
+    "price": 160,
     "location": "River",
     "shadowSize": "2",
     "time": "All day",
@@ -62,7 +62,7 @@
   {
     "name": "Dace",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-dace.png/revision/latest?cb=20200401003129",
-    "price": "240",
+    "price": 240,
     "location": "River",
     "shadowSize": "3",
     "time": "4 PM - 9 AM",
@@ -82,7 +82,7 @@
   {
     "name": "Carp",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-carp.png/revision/latest?cb=20200401003129",
-    "price": "300",
+    "price": 300,
     "location": "Pond",
     "shadowSize": "4",
     "time": "All day",
@@ -102,7 +102,7 @@
   {
     "name": "Koi",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/74/NH-Icon-koi.png/revision/latest?cb=20200401003129",
-    "price": "4000",
+    "price": 4000,
     "location": "Pond",
     "shadowSize": "4",
     "time": "4 PM - 9 AM",
@@ -122,7 +122,7 @@
   {
     "name": "Goldfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ed/NH-Icon-goldfish.png/revision/latest?cb=20200401003129",
-    "price": "1300",
+    "price": 1300,
     "location": "Pond",
     "shadowSize": "1",
     "time": "All day",
@@ -142,7 +142,7 @@
   {
     "name": "Pop-eyed goldfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c9/NH-Icon-popeyedgoldfish.png/revision/latest?cb=20200401003129",
-    "price": "1300",
+    "price": 1300,
     "location": "Pond",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -162,7 +162,7 @@
   {
     "name": "Ranchu goldfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-ranchugoldfish.png/revision/latest?cb=20200401003129",
-    "price": "4500",
+    "price": 4500,
     "location": "Pond",
     "shadowSize": "2",
     "time": "9 AM - 4 PM",
@@ -182,7 +182,7 @@
   {
     "name": "Killifish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-killifish.png/revision/latest?cb=20200401003129",
-    "price": "300",
+    "price": 300,
     "location": "Pond",
     "shadowSize": "1",
     "time": "All day",
@@ -202,7 +202,7 @@
   {
     "name": "Crawfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/cd/NH-Icon-crawfish.png/revision/latest?cb=20200401003129",
-    "price": "200",
+    "price": 200,
     "location": "Pond",
     "shadowSize": "2",
     "time": "All day",
@@ -222,7 +222,7 @@
   {
     "name": "Soft-shelled turtle",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-softshelledturtle.png/revision/latest?cb=20200401003129",
-    "price": "3750",
+    "price": 3750,
     "location": "River",
     "shadowSize": "4",
     "time": "4 PM - 9 AM",
@@ -242,7 +242,7 @@
   {
     "name": "Snapping Turtle",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-snappingturtle.png/revision/latest?cb=20200401003129",
-    "price": "5000",
+    "price": 5000,
     "location": "River",
     "shadowSize": "5",
     "time": "9 PM - 4 AM",
@@ -262,7 +262,7 @@
   {
     "name": "Tadpole",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-tadpole.png/revision/latest?cb=20200401003129",
-    "price": "100",
+    "price": 100,
     "location": "Pond",
     "shadowSize": "1",
     "time": "All day",
@@ -282,7 +282,7 @@
   {
     "name": "Frog",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6b/NH-Icon-frog.png/revision/latest?cb=20200401003129",
-    "price": "120",
+    "price": 120,
     "location": "Pond",
     "shadowSize": "2",
     "time": "All day",
@@ -302,7 +302,7 @@
   {
     "name": "Freshwater goby",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ee/NH-Icon-freshwatergoby.png/revision/latest?cb=20200401003129",
-    "price": "400",
+    "price": 400,
     "location": "River",
     "shadowSize": "2",
     "time": "4 PM - 9 AM",
@@ -322,7 +322,7 @@
   {
     "name": "Loach",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/77/NH-Icon-loach.png/revision/latest?cb=20200401003129",
-    "price": "400",
+    "price": 400,
     "location": "River",
     "shadowSize": "2",
     "time": "All day",
@@ -342,7 +342,7 @@
   {
     "name": "Catfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/29/NH-Icon-catfish.png/revision/latest?cb=20200401003129",
-    "price": "800",
+    "price": 800,
     "location": "Pond",
     "shadowSize": "4",
     "time": "4 PM - 9 AM",
@@ -362,7 +362,7 @@
   {
     "name": "Giant snakehead",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/0/0c/NH-Icon-giantsnakehead.png/revision/latest?cb=20200401003129",
-    "price": "5500",
+    "price": 5500,
     "location": "Pond",
     "shadowSize": "5",
     "time": "9 AM - 4 PM",
@@ -382,7 +382,7 @@
   {
     "name": "Bluegill",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/69/NH-Icon-bluegill.png/revision/latest?cb=20200401003129",
-    "price": "180",
+    "price": 180,
     "location": "River",
     "shadowSize": "2",
     "time": "9 AM - 4 PM",
@@ -402,7 +402,7 @@
   {
     "name": "Yellow perch",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1d/NH-Icon-yellowperch.png/revision/latest?cb=20200401003129",
-    "price": "300",
+    "price": 300,
     "location": "River",
     "shadowSize": "3",
     "time": "All day",
@@ -422,7 +422,7 @@
   {
     "name": "Black bass",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e2/NH-Icon-blackbass.png/revision/latest?cb=20200401003129",
-    "price": "400",
+    "price": 400,
     "location": "River",
     "shadowSize": "4",
     "time": "All day",
@@ -442,7 +442,7 @@
   {
     "name": "Tilapia",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/53/NH-Icon-tilapia.png/revision/latest?cb=20200401003129",
-    "price": "800",
+    "price": 800,
     "location": "River",
     "shadowSize": "3",
     "time": "All day",
@@ -462,7 +462,7 @@
   {
     "name": "Pike",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dc/NH-Icon-pike.png/revision/latest?cb=20200401003130",
-    "price": "1800",
+    "price": 1800,
     "location": "River",
     "shadowSize": "5",
     "time": "All day",
@@ -482,7 +482,7 @@
   {
     "name": "Pond smelt",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/4/41/NH-Icon-pondsmelt.png/revision/latest?cb=20200401003130",
-    "price": "500",
+    "price": 500,
     "location": "River",
     "shadowSize": "2",
     "time": "All day",
@@ -502,7 +502,7 @@
   {
     "name": "Sweetfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/4/40/NH-Icon-sweetfish.png/revision/latest?cb=20200401003129",
-    "price": "900",
+    "price": 900,
     "location": "River",
     "shadowSize": "3",
     "time": "All day",
@@ -522,7 +522,7 @@
   {
     "name": "Cherry salmon",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5f/NH-Icon-cherrysalmon.png/revision/latest?cb=20200401003129",
-    "price": "1000",
+    "price": 1000,
     "location": "River (Clifftop)  Pond",
     "shadowSize": "3",
     "time": "4 PM - 9 AM",
@@ -542,7 +542,7 @@
   {
     "name": "Char",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/15/NH-Icon-char.png/revision/latest?cb=20200401003129",
-    "price": "3800",
+    "price": 3800,
     "location": "River (Clifftop)  Pond",
     "shadowSize": "3",
     "time": "4 PM - 9 AM",
@@ -562,7 +562,7 @@
   {
     "name": "Golden trout",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5c/NH-Icon-goldentrout.png/revision/latest?cb=20200401003129",
-    "price": "15000",
+    "price": 15000,
     "location": "River (Clifftop)",
     "shadowSize": "3",
     "time": "4 PM - 9 AM",
@@ -582,7 +582,7 @@
   {
     "name": "Stringfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-stringfish.png/revision/latest?cb=20200401003129",
-    "price": "15000",
+    "price": 15000,
     "location": "River (Clifftop)",
     "shadowSize": "5",
     "time": "4 PM - 9 AM",
@@ -602,7 +602,7 @@
   {
     "name": "Salmon",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fb/NH-Icon-salmon.png/revision/latest?cb=20200401003129",
-    "price": "700",
+    "price": 700,
     "location": "River (Mouth)",
     "shadowSize": "4",
     "time": "All day",
@@ -622,7 +622,7 @@
   {
     "name": "King salmon",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fd/NH-Icon-kingsalmon.png/revision/latest?cb=20200401003129",
-    "price": "1800",
+    "price": 1800,
     "location": "River (Mouth)",
     "shadowSize": "6",
     "time": "All day",
@@ -642,7 +642,7 @@
   {
     "name": "Mitten crab",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e3/NH-Icon-mittencrab.png/revision/latest?cb=20200401003129",
-    "price": "2000",
+    "price": 2000,
     "location": "River",
     "shadowSize": "2",
     "time": "4 PM - 9 AM",
@@ -662,7 +662,7 @@
   {
     "name": "Guppy",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-guppy.png/revision/latest?cb=20200401003129",
-    "price": "1300",
+    "price": 1300,
     "location": "River",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -682,7 +682,7 @@
   {
     "name": "Nibble fish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/89/NH-Icon-nibblefish.png/revision/latest?cb=20200401003129",
-    "price": "1500",
+    "price": 1500,
     "location": "River",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -702,7 +702,7 @@
   {
     "name": "Angelfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-angelfish.png/revision/latest?cb=20200401003128",
-    "price": "3000",
+    "price": 3000,
     "location": "River",
     "shadowSize": "2",
     "time": "4 PM - 9 AM",
@@ -722,7 +722,7 @@
   {
     "name": "Betta",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7c/NH-Icon-betta.png/revision/latest?cb=20200401003129",
-    "price": "2500",
+    "price": 2500,
     "location": "River",
     "shadowSize": "2",
     "time": "9 AM - 4 PM",
@@ -742,7 +742,7 @@
   {
     "name": "Neon tetra",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/da/NH-Icon-neontetra.png/revision/latest?cb=20200401003129",
-    "price": "500",
+    "price": 500,
     "location": "River",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -762,7 +762,7 @@
   {
     "name": "Rainbowfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/68/NH-Icon-rainbowfish.png/revision/latest?cb=20200401003129",
-    "price": "800",
+    "price": 800,
     "location": "River",
     "shadowSize": "1",
     "time": "9 AM - 4 PM",
@@ -782,7 +782,7 @@
   {
     "name": "Piranha",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-piranha.png/revision/latest?cb=20200401003130",
-    "price": "2500",
+    "price": 2500,
     "location": "River",
     "shadowSize": "2",
     "time": "9 AM - 4 PM & 9 PM - 4 AM",
@@ -802,7 +802,7 @@
   {
     "name": "Arowana",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/b/bf/NH-Icon-arowana.png/revision/latest?cb=20200401003128",
-    "price": "10000",
+    "price": 10000,
     "location": "River",
     "shadowSize": "4",
     "time": "4 PM - 9 AM",
@@ -822,7 +822,7 @@
   {
     "name": "Dorado",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/df/NH-Icon-dorado.png/revision/latest?cb=20200401003129",
-    "price": "15000",
+    "price": 15000,
     "location": "River",
     "shadowSize": "5",
     "time": "4 AM - 9 PM",
@@ -842,7 +842,7 @@
   {
     "name": "Gar",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9f/NH-Icon-gar.png/revision/latest?cb=20200401003129",
-    "price": "6000",
+    "price": 6000,
     "location": "Pond",
     "shadowSize": "6",
     "time": "4 PM - 9 AM",
@@ -862,7 +862,7 @@
   {
     "name": "Arapaima",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7f/NH-Icon-arapaima.png/revision/latest?cb=20200401003128",
-    "price": "10000",
+    "price": 10000,
     "location": "River",
     "shadowSize": "6",
     "time": "4 PM - 9 AM",
@@ -882,7 +882,7 @@
   {
     "name": "Saddled bichir",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a0/NH-Icon-saddledbichir.png/revision/latest?cb=20200401003130",
-    "price": "4000",
+    "price": 4000,
     "location": "River",
     "shadowSize": "4",
     "time": "9 PM - 4 AM",
@@ -902,7 +902,7 @@
   {
     "name": "Sturgeon",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/9/98/NH-Icon-sturgeon.png/revision/latest?cb=20200401003129",
-    "price": "10000",
+    "price": 10000,
     "location": "River (Mouth)",
     "shadowSize": "6",
     "time": "All day",
@@ -922,7 +922,7 @@
   {
     "name": "Sea butterfly",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8f/NH-Icon-seabutterfly.png/revision/latest?cb=20200401003129",
-    "price": "1000",
+    "price": 1000,
     "location": "Sea",
     "shadowSize": "1",
     "time": "All day",
@@ -942,7 +942,7 @@
   {
     "name": "Sea horse",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/55/NH-Icon-seahorse.png/revision/latest?cb=20200401003129",
-    "price": "1100",
+    "price": 1100,
     "location": "Sea",
     "shadowSize": "1",
     "time": "All day",
@@ -962,7 +962,7 @@
   {
     "name": "Clown fish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-clownfish.png/revision/latest?cb=20200401003129",
-    "price": "650",
+    "price": 650,
     "location": "Sea",
     "shadowSize": "1",
     "time": "All day",
@@ -982,7 +982,7 @@
   {
     "name": "Surgeonfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/11/NH-Icon-surgeonfish.png/revision/latest?cb=20200401003129",
-    "price": "1000",
+    "price": 1000,
     "location": "Sea",
     "shadowSize": "2",
     "time": "All day",
@@ -1002,7 +1002,7 @@
   {
     "name": "Butterfly fish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8e/NH-Icon-butterflyfish.png/revision/latest?cb=20200401003129",
-    "price": "1000",
+    "price": 1000,
     "location": "Sea",
     "shadowSize": "2",
     "time": "All day",
@@ -1022,7 +1022,7 @@
   {
     "name": "Napoleonfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6f/NH-Icon-napoleonfish.png/revision/latest?cb=20200401003129",
-    "price": "10000",
+    "price": 10000,
     "location": "Sea",
     "shadowSize": "6",
     "time": "4 AM - 9 PM",
@@ -1042,7 +1042,7 @@
   {
     "name": "Zebra turkeyfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-zebraturkeyfish.png/revision/latest?cb=20200401003130",
-    "price": "500",
+    "price": 500,
     "location": "Sea",
     "shadowSize": "3",
     "time": "All day",
@@ -1062,7 +1062,7 @@
   {
     "name": "Blowfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/39/NH-Icon-blowfish.png/revision/latest?cb=20200401003129",
-    "price": "5000",
+    "price": 5000,
     "location": "Sea",
     "shadowSize": "3",
     "time": "9 PM - 4 AM",
@@ -1082,7 +1082,7 @@
   {
     "name": "Puffer fish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1f/NH-Icon-pufferfish.png/revision/latest?cb=20200401003130",
-    "price": "250",
+    "price": 250,
     "location": "Sea",
     "shadowSize": "3",
     "time": "All day",
@@ -1102,7 +1102,7 @@
   {
     "name": "Anchovy",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-anchovy.png/revision/latest?cb=20200401003129",
-    "price": "200",
+    "price": 200,
     "location": "Sea",
     "shadowSize": "2",
     "time": "4 AM - 9 PM",
@@ -1122,7 +1122,7 @@
   {
     "name": "Horse mackerel",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/d5/NH-Icon-horsemackerel.png/revision/latest?cb=20200401003129",
-    "price": "150",
+    "price": 150,
     "location": "Sea",
     "shadowSize": "2",
     "time": "All day",
@@ -1142,7 +1142,7 @@
   {
     "name": "Barred knifejaw",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8c/NH-Icon-barredknifejaw.png/revision/latest?cb=20200401003128",
-    "price": "5000",
+    "price": 5000,
     "location": "Sea",
     "shadowSize": "3",
     "time": "All day",
@@ -1162,7 +1162,7 @@
   {
     "name": "Sea bass",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-seabass.png/revision/latest?cb=20200401003130",
-    "price": "400",
+    "price": 400,
     "location": "Sea",
     "shadowSize": "5",
     "time": "All day",
@@ -1182,7 +1182,7 @@
   {
     "name": "Red snapper",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dd/NH-Icon-redsnapper.png/revision/latest?cb=20200401003130",
-    "price": "3000",
+    "price": 3000,
     "location": "Sea",
     "shadowSize": "4",
     "time": "All day",
@@ -1202,7 +1202,7 @@
   {
     "name": "Dab",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c6/NH-Icon-dab.png/revision/latest?cb=20200401003129",
-    "price": "300",
+    "price": 300,
     "location": "Sea",
     "shadowSize": "3",
     "time": "All day",
@@ -1222,7 +1222,7 @@
   {
     "name": "Olive flounder",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9e/NH-Icon-oliveflounder.png/revision/latest?cb=20200401003129",
-    "price": "800",
+    "price": 800,
     "location": "Sea",
     "shadowSize": "5",
     "time": "All day",
@@ -1242,7 +1242,7 @@
   {
     "name": "Squid",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/NH-Icon-squid.png/revision/latest?cb=20200401003130",
-    "price": "500",
+    "price": 500,
     "location": "Sea",
     "shadowSize": "3",
     "time": "All day",
@@ -1262,7 +1262,7 @@
   {
     "name": "Moray eel",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e5/NH-Icon-morayeel.png/revision/latest?cb=20200401003130",
-    "price": "2000",
+    "price": 2000,
     "location": "Sea",
     "shadowSize": "Narrow",
     "time": "All day",
@@ -1282,7 +1282,7 @@
   {
     "name": "Ribbon eel",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/a/ac/NH-Icon-ribboneel.png/revision/latest?cb=20200401003129",
-    "price": "600",
+    "price": 600,
     "location": "Sea",
     "shadowSize": "Narrow",
     "time": "All day",
@@ -1302,7 +1302,7 @@
   {
     "name": "Tuna",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/50/NH-Icon-tuna.png/revision/latest?cb=20200401003129",
-    "price": "7000",
+    "price": 7000,
     "location": "Pier",
     "shadowSize": "6",
     "time": "All day",
@@ -1322,7 +1322,7 @@
   {
     "name": "Blue marlin",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-bluemarlin.png/revision/latest?cb=20200401003129",
-    "price": "10000",
+    "price": 10000,
     "location": "Pier",
     "shadowSize": "6",
     "time": "All day",
@@ -1342,7 +1342,7 @@
   {
     "name": "Giant trevally",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-gianttrevally.png/revision/latest?cb=20200401003129",
-    "price": "4500",
+    "price": 4500,
     "location": "Pier",
     "shadowSize": "5",
     "time": "All day",
@@ -1362,7 +1362,7 @@
   {
     "name": "Mahi-mahi",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/8/82/NH-Icon-mahimahi.png/revision/latest?cb=20200401003129",
-    "price": "6000",
+    "price": 6000,
     "location": "Pier",
     "shadowSize": "5",
     "time": "All day",
@@ -1382,7 +1382,7 @@
   {
     "name": "Ocean sunfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/5/52/NH-Icon-oceansunfish.png/revision/latest?cb=20200401003129",
-    "price": "4000",
+    "price": 4000,
     "location": "Sea",
     "shadowSize": "6 (Fin)",
     "time": "4 AM - 9 PM",
@@ -1402,7 +1402,7 @@
   {
     "name": "Ray",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/d/db/NH-Icon-ray.png/revision/latest?cb=20200401003129",
-    "price": "3000",
+    "price": 3000,
     "location": "Sea",
     "shadowSize": "5",
     "time": "4 AM - 9 PM",
@@ -1422,7 +1422,7 @@
   {
     "name": "Saw shark",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/7/73/NH-Icon-sawshark.png/revision/latest?cb=20200401003129",
-    "price": "12000",
+    "price": 12000,
     "location": "Sea",
     "shadowSize": "6 (Fin)",
     "time": "4 PM - 9 AM",
@@ -1442,7 +1442,7 @@
   {
     "name": "Hammerhead shark",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/2/25/NH-Icon-hammerheadshark.png/revision/latest?cb=20200401003129",
-    "price": "8000",
+    "price": 8000,
     "location": "Sea",
     "shadowSize": "6 (Fin)",
     "time": "4 PM - 9 AM",
@@ -1462,7 +1462,7 @@
   {
     "name": "Great white shark",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/38/NH-Icon-greatwhiteshark.png/revision/latest?cb=20200401003129",
-    "price": "15000",
+    "price": 15000,
     "location": "Sea",
     "shadowSize": "6 (Fin)",
     "time": "4 PM - 9 AM",
@@ -1482,7 +1482,7 @@
   {
     "name": "Whale shark",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-whaleshark.png/revision/latest?cb=20200401003129",
-    "price": "13000",
+    "price": 13000,
     "location": "Sea",
     "shadowSize": "6 (Fin)",
     "time": "All day",
@@ -1502,7 +1502,7 @@
   {
     "name": "Suckerfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-suckerfish.png/revision/latest?cb=20200401003131",
-    "price": "1500",
+    "price": 1500,
     "location": "Sea",
     "shadowSize": "4 (Fin)",
     "time": "All day",
@@ -1522,7 +1522,7 @@
   {
     "name": "Football fish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/NH-Icon-footballfish.png/revision/latest?cb=20200401003129",
-    "price": "2500",
+    "price": 2500,
     "location": "Sea",
     "shadowSize": "4",
     "time": "4 PM - 9 AM",
@@ -1542,7 +1542,7 @@
   {
     "name": "Oarfish",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/33/NH-Icon-oarfish.png/revision/latest?cb=20200401003129",
-    "price": "9000",
+    "price": 9000,
     "location": "Sea",
     "shadowSize": "6",
     "time": "All day",
@@ -1562,7 +1562,7 @@
   {
     "name": "Barreleye",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c7/NH-Icon-barreleye.png/revision/latest?cb=20200401003128",
-    "price": "15000",
+    "price": 15000,
     "location": "Sea",
     "shadowSize": "2",
     "time": "9 PM - 4 AM",
@@ -1582,7 +1582,7 @@
   {
     "name": "Coelacanth",
     "imageLink": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/31/NH-Icon-coelacanth.png/revision/latest?cb=20200401003129",
-    "price": "15000",
+    "price": 15000,
     "location": "Sea (Raining)",
     "shadowSize": "6",
     "time": "All day",
