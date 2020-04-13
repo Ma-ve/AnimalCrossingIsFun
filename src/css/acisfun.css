@@ -44,6 +44,11 @@ table tr td {
     padding: 2px 4px;
 }
 
+.container {
+    display:        flex;
+    flex-direction: column;
+}
+
 .container .item-row-container {
     border-top:       2px solid #9ed0b5;
     padding:          16px 0;

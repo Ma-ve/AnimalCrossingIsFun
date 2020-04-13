@@ -6,7 +6,10 @@
     } %}
 
     {% for item in items %}
-        {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
+        {% embed "pages/snippets/table-content.twig" with {
+            'item':  item,
+            'index': loop.index
+        } only %}
             {% block subRow %}
                 <div class="col-lg-4 col-4 order-lg-0 order-1 text-lg-left text-center">
                     {% if item.getCategory() %}

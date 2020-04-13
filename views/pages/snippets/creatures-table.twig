@@ -1,5 +1,8 @@
 {% for item in items %}
-    {% embed "pages/snippets/table-content.twig" with {'item': item} only %}
+    {% embed "pages/snippets/table-content.twig" with {
+        'item':  item,
+        'index': loop.index
+    } only %}
         {% block subRow %}
             {% include "pages/snippets/creatures-table-row-sub.twig" with {'item': item} only %}
         {% endblock %}
