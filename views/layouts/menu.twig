@@ -1,12 +1,20 @@
 {% set menuItems = routesRepository.getAll() %}
 <div class="container">
     <div class="row">
-        {% for menuItem in menuItems %}
-        <div class="col-3 pl-0 pr-0">
-            {% set class = current_url() == menuItem.getUrl() ? 'active' : '' %}
-
-            <a href="{{ menuItem.getUrl() }}" class="{{ class }}"><i class="fad {{ menuItem.getIcon() }}"></i> {{ menuItem.getLabel() }}</a>
+        <div class="col-2 pl-0 pr-0">
+            {% set class = is_current_url('/') ? 'active' : '' %}
+            <a href="/" class="{{ class }}"><i class="fad fa-house"></i></a>
         </div>
+
+        {% for menuItem in menuItems %}
+            {% set colWidth = loop.index <= 2 ? 2 : 3 %}
+            <div class="col-{{ colWidth }} pl-0 pr-0">
+                {% set class = is_current_url(menuItem.getUrl()) ? 'active' : '' %}
+
+                <a href="{{ menuItem.getUrl() }}" class="{{ class }}">
+                    <i class="fad {{ menuItem.getIcon() }}"></i> {{ menuItem.getLabel() }}
+                </a>
+            </div>
         {% endfor %}
     </div>
 </div>

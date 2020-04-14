@@ -1,0 +1,94 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+
+    {% set progressItems = [
+        {
+            'icon': 'fish',
+            'label': 'Fish',
+            'width': '25',
+            'text': '20 / 80',
+        },
+        {
+            'icon': 'bug',
+            'label': 'Bugs',
+            'width': '68',
+            'text': '57 / 80',
+        },
+        {
+            'icon': 'bone',
+            'label': 'Fossils',
+            'width': '3',
+            'text': '1 / 60',
+        },
+        {
+            'icon': 'tools',
+            'label': 'Recipes',
+            'width': '100',
+            'text': '13 / 13',
+        }
+    ] %}
+
+    <div class="card row" style="background-color: var(--bg-color);">
+        <div class="col-12 pt-2">
+            <div class="col-12">
+                <h3>Your progress</h3>
+            </div>
+        </div>
+        <div class="col-12 progress-bars-container">
+            {% for progressItem in progressItems %}
+                <div class="col-12">
+                    <div class="row" style="padding: 16px 0;">
+                        <div class="col-4 col-lg-2">
+                            <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
+                        </div>
+                        <div class="col-6 col-lg-8">
+                            <div class="progress" style="height: 100%;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {{ progressItem.width }}%;" aria-valuenow="{{ progressItem.width }}" aria-valuemin="0" aria-valuemax="100">
+                                    25%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-lg-2">
+                            <span class="badge badge-danger">{{ progressItem.text }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="card row mt-5" style="background-color: var(--bg-color);">
+        <div class="col-12 pt-2">
+            <div class="col-12">
+                <h3>Stats for {{ date()|date('F') }}</h3>
+            </div>
+        </div>
+        <div class="col-12 progress-bars-container">
+            {% for progressItem in progressItems|slice(0, 2) %}
+                <div class="col-12">
+                    <div class="row" style="padding: 16px 0;">
+                        <div class="col-4 col-lg-2">
+                            <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
+                        </div>
+                        <div class="col-6 col-lg-7">
+                            <div class="progress" style="height: 100%;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {{ progressItem.width }}%;" aria-valuenow="{{ progressItem.width }}" aria-valuemin="0" aria-valuemax="100">
+                                    25%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 col-lg-1">
+                            <span class="badge badge-danger">{{ progressItem.text }}</span>
+                        </div>
+                        <div class="col-6 col-lg-1 offset-4 offset-lg-0 text-center text-lg-left mt-3 mt-lg-0">
+                            <a href="/{{ progressItem.label|lower() }}" class="badge badge-warning"><i class="fad fa-chevron-double-right"></i>
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
