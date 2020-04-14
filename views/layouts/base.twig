@@ -13,7 +13,22 @@
     <link rel="stylesheet" href="/css/acisfun.css">
     <title>AC is fun</title>
 </head>
-<body>
+<body class="body{{ current_url()|split('/')|join(' ') }}">
+    <div class="top" style="color: #f6ede7;">
+        <section class="wave-container">
+            <div class="wave"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 pl-lg-0 pl-sm-3">
+                        <h2>AC is fun</h2>
+                    </div>
+                    <div class="col-lg-4 col-12 offset-lg-4 offset-0 pl-0 text-lg-right text-center pr-0">
+                        <span>Sign in through Reddit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <div class="container">
         {% block content %}{% endblock %}
     </div>

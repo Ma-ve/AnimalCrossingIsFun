@@ -44,16 +44,29 @@ table tr td {
     padding: 2px 4px;
 }
 
+.top + .container {
+    margin-top: -24px;
+}
+
+.container .item-row-container.table-header {
+    border-top:    2px solid var(--color-brown);
+    border-bottom: 1px solid var(--color-brown);
+}
+
 .container {
     display:        flex;
     flex-direction: column;
 }
 
 .container .item-row-container {
-    border-top:       2px solid #9ed0b5;
+    border-bottom:    2px solid #9ed0b5;
     padding:          16px 0;
     background-color: var(--bg-color);
     position:         relative;
+}
+
+.container .item-row-container:last-child {
+    border-bottom: 1px solid var(--color-brown);
 }
 
 .caught-checkbox {
@@ -123,10 +136,6 @@ a:hover {
 
 .item-row-container img {
     height: var(--image-height);
-}
-
-.text-align-center {
-    text-align: center;
 }
 
 .ml--15 {
@@ -222,4 +231,40 @@ a:hover {
     font-size:  34px;
     top:        4px;
     transition: color 0.1s linear;
+}
+
+.wave-container {
+    position: relative;
+    background: #2c3e50;
+    height: 100px;
+}
+
+.wave {
+    position: absolute;
+    height: 32px;
+    width: 100%;
+    background: #2c3e50;
+    bottom: 0;
+}
+
+.wave::before, .wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+}
+
+.wave::before {
+    width: 53.5%;
+    height: 110%;
+    background-color: var(--body-color);
+    right: 0;
+    top: 60%;
+}
+.wave::after {
+    width: 53.5%;
+    height: 100%;
+    background-color: #2c3e50;
+    left: 0;
+    top: 40%;
 }
