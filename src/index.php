@@ -49,6 +49,12 @@ try {
     $app->addErrorMiddleware(env('IS_DEV', false), env('IS_DEV', false), env('IS_DEV', false));
 
 
+    $app->get('/', function(Request $request, Response $response) {
+        $view = Twig::fromRequest($request);
+
+        return $view->render($response, 'pages/home.twig');
+    })
+        ->setName('/');
 
     foreach($routesRepository->getAll() as $route) {
         $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
@@ -62,7 +68,8 @@ try {
                 'items' => $repository->getAll(),
                 'sort'  => $sort,
             ]);
-        });
+        })
+            ->setName($route->getUrl());
     }
 
     $app->get('/recipes/{category}/{recipe}', function(Request $request, Response $response, $args) {

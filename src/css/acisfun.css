@@ -1,28 +1,26 @@
 :root {
-    --color-red:           #f77172;
-    --color-blue:          #04a9ab;
-    --color-green:         #70c1a0;
-    --color-lime:          #c6d942;
-    --color-yellow:        #f5db6a;
-    --color-brown:         #5a413e;
+    --color-red:                  #f77172;
+    --color-blue:                 #04a9ab;
+    --color-green:                #70c1a0;
+    --color-lime:                 #c6d942;
+    --color-yellow:               #f5db6a;
+    --color-brown:                #5a413e;
 
-    --color-brown-lighter: #afa09f;
+    --color-brown-lighter:        #afa09f;
 
-    --bg-color:            #f6ede7;
-    --bg-color-darker:     #f5dac9;
+    --bg-color:                   #fffaf6;
+    --bg-color-darker:            #f5dac9;
 
-    --body-color:          #9ed0b5;
+    --body-color:                 #9ed0b5;
 
-    --accent:              var(--color-brown);
+    --accent:                     var(--color-brown);
 
-    --image-height:        58px;
+    --color-bluewood:             #2c3e50;
+    --color-bluewood-translucent: rgba(44, 62, 80, 0.3);
 
-    --footer-height:       56px;
-    /*--accent:       var(--color-blue);*/
-    /*--accent:       var(--color-green);*/
-    /*--accent:       var(--color-lime);*/
-    /*--accent:       var(--color-yellow);*/
+    --image-height:               58px;
 
+    --footer-height:              56px;
 }
 
 body {
@@ -45,7 +43,11 @@ table tr td {
 }
 
 .top + .container {
-    margin-top: -24px;
+    margin-top: 24px;
+}
+
+.top + .container > .table-header {
+    margin-top: -48px;
 }
 
 .container .item-row-container.table-header {
@@ -87,8 +89,12 @@ a:visited,
 a:focus,
 a:active,
 a:hover {
-    color:           var(--accent);
     text-decoration: none;
+}
+
+.table-header a,
+.item-row-container a {
+    color: var(--accent);
 }
 
 .menu {
@@ -234,37 +240,51 @@ a:hover {
 }
 
 .wave-container {
-    position: relative;
-    background: #2c3e50;
-    height: 100px;
+    position:   relative;
+    background: var(--color-bluewood);
+    height:     100px;
 }
 
 .wave {
-    position: absolute;
-    height: 32px;
-    width: 100%;
-    background: #2c3e50;
-    bottom: 0;
+    position:   absolute;
+    height:     32px;
+    width:      100%;
+    background: var(--color-bluewood);
+    bottom:     0;
 }
 
 .wave::before, .wave::after {
-    content: "";
-    display: block;
-    position: absolute;
+    content:       "";
+    display:       block;
+    position:      absolute;
     border-radius: 100% 50%;
 }
 
 .wave::before {
-    width: 53.5%;
-    height: 110%;
+    width:            53.5%;
+    height:           110%;
     background-color: var(--body-color);
-    right: 0;
-    top: 60%;
+    right:            0;
+    top:              60%;
 }
+
 .wave::after {
-    width: 53.5%;
-    height: 100%;
-    background-color: #2c3e50;
-    left: 0;
-    top: 40%;
+    width:            53.5%;
+    height:           100%;
+    background-color: var(--color-bluewood);
+    left:             0;
+    top:              40%;
+}
+
+.progress-bars-container .badge {
+    vertical-align: text-top;
+}
+
+.progress {
+    border: 1px solid var(--color-bluewood-translucent);
+}
+
+.top {
+    font-variant:   small-caps;
+    text-transform: lowercase;
 }
