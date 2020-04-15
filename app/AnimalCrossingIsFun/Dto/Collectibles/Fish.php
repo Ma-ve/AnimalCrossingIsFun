@@ -12,6 +12,9 @@ class Fish extends Creature {
     /** @var int */
     protected $shadowSize;
 
+    /** @var string */
+    protected $group = 'fish';
+
     /**
      * @return string
      */

@@ -6,4 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Dto\Collectibles;
 
 class Bug extends Creature {
 
+    /** @var string */
+    protected $group = 'bugs';
+
 }

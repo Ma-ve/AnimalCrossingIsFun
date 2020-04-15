@@ -19,6 +19,9 @@ class Fossil extends Dto {
     /** @var string */
     protected $category;
 
+    /** @var string */
+    protected $group = 'fossils';
+
     /**
      * @return bool
      */
