@@ -3,8 +3,13 @@
 </div>
 <div class="col-lg-2 offset-lg-{{ caughtCheckboxOffset|default('6') }} {{ checkboxColumnClasses|default('col-4') }}">
     <div class="custom-control caught-checkbox">
-        <input type="checkbox" class="custom-control-input" id="check-{{ item.getName() }}">
-        <label class="custom-control-label" for="check-{{ item.getName() }}"></label>
+        {% set safeName = item.getSafeName() %}
+        <input type="checkbox" class="custom-control-input"
+               id="check-{{ safeName }}"
+               data-group="{{ item.getGroup() }}"
+               data-identifier="{{ safeName }}"
+        >
+        <label class="custom-control-label" for="check-{{ safeName }}"></label>
     </div>
 </div>
 {% if lastColumn is not empty %}
