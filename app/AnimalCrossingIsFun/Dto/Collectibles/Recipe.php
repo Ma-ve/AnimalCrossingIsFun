@@ -25,6 +25,9 @@ class Recipe extends Dto {
     /** @var string */
     protected $category;
 
+    /** @var string */
+    protected $group = 'recipes';
+
     /**
      * @return string[]
      */

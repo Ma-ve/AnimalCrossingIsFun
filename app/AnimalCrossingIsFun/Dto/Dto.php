@@ -16,6 +16,9 @@ abstract class Dto {
     /** @var string */
     protected $imageLink;
 
+    /** @var null|string */
+    protected $group;
+
     /** @var string */
     protected $safeName;
 
@@ -43,6 +46,10 @@ abstract class Dto {
         $path = static::IMAGE_PATH;
 
         return "/img/{$path}/{$this->getSafeName()}.png";
+    }
+
+    public function getGroup(): ?string {
+        return $this->group;
     }
 
     /**
