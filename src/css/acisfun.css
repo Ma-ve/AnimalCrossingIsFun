@@ -97,7 +97,7 @@ a:hover {
     color: var(--accent);
 }
 
-.menu {
+.menu-items-container {
     background-color: var(--color-brown);
     text-align:       center;
 }
@@ -280,11 +280,35 @@ a:hover {
     vertical-align: text-top;
 }
 
-.progress {
+.progress-bars-container .progress {
     border: 1px solid var(--color-bluewood-translucent);
 }
 
 .top {
     font-variant:   small-caps;
     text-transform: lowercase;
+}
+
+
+body.home .menu .progress {
+    display: none;
+}
+
+.menu .progress {
+    height:           8px;
+    background-color: unset;
+    border-radius:    0;
+    transition:       height 0.1s linear;
+}
+
+.menu .progress .menu-progress-label {
+    display: none;
+}
+
+.menu .progress:hover {
+    height: 20px;
+}
+
+.menu .progress:hover .menu-progress-label {
+    display: initial;
 }
