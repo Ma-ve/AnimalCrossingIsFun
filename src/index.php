@@ -3,6 +3,7 @@
 use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
+use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Nyholm\Psr7\ServerRequest as Request;
@@ -55,6 +56,24 @@ try {
         return $view->render($response, 'pages/home.twig');
     })
         ->setName('/');
+
+    $app->group('/auth', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
+        session_start();
+
+        $collectorProxy->get('/reddit/login', function() {
+            (new RedditProvider())
+                ->start();
+        });
+
+        $collectorProxy->get('/reddit/callback', function(Request $request, Response $response) {
+            (new RedditProvider())
+                ->handleCallback($request);
+
+            header("Location: /");
+            exit;
+        });
+    });
+
 
     foreach($routesRepository->getAll() as $route) {
         $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
