@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Dto\Collectibles;
 
-use Exception;
-use Mave\AnimalCrossingIsFun\Dto\Dto;
-
-abstract class Creature extends Dto {
+abstract class Creature extends Collectible {
 
     protected const IMAGE_PATH = 'creatures';
 

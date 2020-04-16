@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Dto\Collectibles;
 
-use Mave\AnimalCrossingIsFun\Dto\Dto;
-
-class Recipe extends Dto {
+class Recipe extends Collectible {
 
     protected const IMAGE_PATH = 'recipes';
 
