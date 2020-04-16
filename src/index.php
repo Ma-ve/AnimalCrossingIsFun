@@ -60,6 +60,24 @@ try {
     $app->group('/auth', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
         session_start();
 
+        $collectorProxy->get('/me', function(Request $request, Response $response) {
+            $user = user();
+            $data = false;
+            if($user) {
+                $data = [
+                    'name' => $user->getUsername(),
+                ];
+            }
+
+            $response
+                ->getBody()
+                ->write(json_encode([
+                    'data' => $data,
+                ]));
+
+            return $response->withHeader('Content-Type', 'application/json');
+        });
+
         $collectorProxy->get('/reddit/login', function() {
             (new RedditProvider())
                 ->start();
