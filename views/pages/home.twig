@@ -32,10 +32,10 @@
     <div class="card row" style="background-color: var(--bg-color);">
         <div class="col-12 pt-2">
             <div class="col-12">
-                <h3>Your progress</h3>
+                <h3><span style="text-decoration: line-through; opacity: 0.3;">Your progress</span> <small>Coming soon!</small></h3>
             </div>
         </div>
-        <div class="col-12 progress-bars-container">
+        <div class="col-12 progress-bars-container" style="opacity: 0.3; pointer-events: none;">
             {% for progressItem in progressItems %}
                 <div class="col-12">
                     <div class="row" style="padding: 16px 0;">
@@ -61,10 +61,10 @@
     <div class="card row mt-5" style="background-color: var(--bg-color);">
         <div class="col-12 pt-2">
             <div class="col-12">
-                <h3>Stats for {{ date()|date('F') }}</h3>
+                <h3><span style="text-decoration: line-through; opacity: 0.3;">Stats for {{ date()|date('F') }}</span> <small>Coming soon!</small></h3>
             </div>
         </div>
-        <div class="col-12 progress-bars-container">
+        <div class="col-12 progress-bars-container" style="opacity: 0.3; pointer-events: none;">
             {% for progressItem in progressItems|slice(0, 2) %}
                 <div class="col-12">
                     <div class="row" style="padding: 16px 0;">
