@@ -18,6 +18,8 @@ $(function () {
     $('.caught-checkbox input').on('change', toggleCaughtCallback);
 
     checkItemsOnLoad(progress);
+
+    checkLogin();
 });
 
 function checkItemsOnLoad(progressClass) {
@@ -113,6 +115,16 @@ function setProgressBarWidth(progressClass) {
     $('.menu .progress .js-menu-progress-label').text(countItemsInStorage + ' / ' + countItemsOnPage);
 }
 
+function checkLogin() {
+    let authContainer = $('.js-auth-container');
+    $.get('/auth/me', function(data) {
+        if(data && 'data' in data && data.data && 'name' in data.data && data.data.name) {
+            authContainer.text(data.data.name);
+        }
+    }).always(function() {
+        authContainer.css('display', 'block');
+    });
+}
 
 class ProgressClass {
 
