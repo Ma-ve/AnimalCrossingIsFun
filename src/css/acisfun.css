@@ -316,3 +316,7 @@ body.home .menu .progress {
 .menu .progress:hover .menu-progress-label {
     display: initial;
 }
+
+.auth-container {
+    display: none;
+}
