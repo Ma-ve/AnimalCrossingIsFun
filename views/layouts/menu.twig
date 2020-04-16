@@ -18,7 +18,7 @@
                     {% set class = is_current_url(menuItem.getUrl()) ? 'active' : '' %}
 
                     <a href="{{ menuItem.getUrl() }}" class="{{ class }}">
-                        <i class="fad {{ menuItem.getIcon() }}"></i> {{ menuItem.getLabel() }}
+                        <i class="fad {{ menuItem.getIcon() }} d-none d-md-inline-block"></i> {{ menuItem.getLabel() }}
                     </a>
                 </div>
             {% endfor %}
