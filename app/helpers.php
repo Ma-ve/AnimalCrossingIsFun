@@ -1,5 +1,7 @@
 <?php
 
+use Mave\AnimalCrossingIsFun\Dto\User;
+
 if(!function_exists('env')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
@@ -56,5 +58,11 @@ if(!function_exists('value')) {
      */
     function value($value) {
         return $value instanceof Closure ? $value() : $value;
+    }
+}
+
+if(!function_exists('user')) {
+    function user(): ?User {
+        return \Mave\AnimalCrossingIsFun\Services\UserService::getUser();
     }
 }
