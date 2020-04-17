@@ -65,11 +65,19 @@ try {
 
             return $view->render($response, 'pages/profile.twig');
         });
-    });
+    })
+        ->add(function(Request $request, Psr\Http\Server\RequestHandlerInterface $requestHandler) {
+            session_start();
+
+            if(empty($_SESSION)) {
+                header("Location: /");
+                exit;
+            }
+
+            return $requestHandler->handle($request);
+        });
 
     $app->group('/auth', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
-        session_start();
-
         $collectorProxy->get('/me', function(Request $request, Response $response) {
             $user = user();
             $data = false;
@@ -88,6 +96,13 @@ try {
             return $response->withHeader('Content-Type', 'application/json');
         });
 
+        $collectorProxy->get('/logout', function() {
+            $_SESSION = [];
+            session_destroy();
+            header("Location: /");
+            exit;
+        });
+
         $collectorProxy->get('/reddit/login', function() {
             (new RedditProvider())
                 ->start();
@@ -100,7 +115,12 @@ try {
             header("Location: /");
             exit;
         });
-    });
+    })
+        ->add(function(Request $request, Psr\Http\Server\RequestHandlerInterface $requestHandler) {
+            session_start();
+
+            return $requestHandler->handle($request);
+        });;
 
 
     foreach($routesRepository->getAll() as $route) {
