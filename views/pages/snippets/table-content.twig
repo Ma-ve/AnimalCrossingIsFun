@@ -1,5 +1,5 @@
 
-<div class="item-row-container" style="order: {{ index }};">
+<div class="item-row-container" style="order: {{ index }};" id="{{ item.getSafeName() }}">
     <div class="row mx-0 m-sm-n2">
         <div class="col-lg-2 image-placeholder text-center">
             <img src="{{ item.getImageLink() }}">
