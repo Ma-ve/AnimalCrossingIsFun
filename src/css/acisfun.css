@@ -276,10 +276,6 @@ a:hover {
     top:              40%;
 }
 
-.progress-bars-container .badge {
-    vertical-align: text-top;
-}
-
 .progress-bars-container .progress {
     border: 1px solid var(--color-bluewood-translucent);
 }
