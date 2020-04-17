@@ -36,8 +36,9 @@ $(function () {
             break;
     }
 
-    promiseObj.then(checkLogin, function(Error) {
-    });
+
+    let checkLoginFuncs = checkLogin();
+    promiseObj.then(checkLoginFuncs[0], checkLoginFuncs[1]);
 
     for(let i = 0; i < promiseFuncs.length; i++) {
         promiseObj.then(promiseFuncs[i], function(Error) {
@@ -169,16 +170,22 @@ function makeAuthRequest(success, always) {
     return false;
 }
 
-function checkLogin(data) {
+function checkLogin() {
     let authContainer = $('.js-auth-container');
 
-    if ('name' in data.data && data.data.name) {
-        authContainer.text(data.data.name);
-        user = new User();
-        user.setUser(data.data);
-    }
-
-    authContainer.css('display', 'block');
+    return [
+        function(data) {
+            if ('name' in data.data && data.data.name) {
+                authContainer.text(data.data.name);
+                user = new User();
+                user.setUser(data.data);
+            }
+            authContainer.css('display', 'block')
+        },
+        function(Error) {
+            authContainer.css('display', 'block');
+        }
+    ];
 }
 
 function checkProfile(data) {
