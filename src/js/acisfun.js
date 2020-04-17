@@ -8,6 +8,8 @@ const AC_LOCALSTORAGE_VERSION_HISTORY = [
     AC_LOCALSTORAGE_VERSION_V2020_04_05
 ];
 
+let user = false;
+
 $(function () {
     let progress = new ProgressClass();
 
@@ -17,10 +19,48 @@ $(function () {
 
     $('.caught-checkbox input').on('change', toggleCaughtCallback);
 
-    checkItemsOnLoad(progress);
 
-    checkLogin();
+    let promiseFuncs = [];
+    let promiseObj = loginPromise();
+
+    let path = window.location.pathname;
+    switch(path) {
+        case '/bugs':
+        case '/fish':
+        case '/fossils':
+        case '/recipes':
+            checkItemsOnLoad(progress);
+            break;
+        case '/profile/':
+            promiseFuncs.push(checkProfile);
+            break;
+    }
+
+    promiseObj.then(checkLogin, function(Error) {
+    });
+
+    for(let i = 0; i < promiseFuncs.length; i++) {
+        promiseObj.then(promiseFuncs[i], function(Error) {
+        });
+    }
+
+
 });
+
+function loginPromise() {
+    return new Promise(function(resolve, reject) {
+        $.get('/auth/me', function(data, text, xhr) {
+            if(
+                200 === xhr.status &&
+                (data && 'data' in data && data.data)
+            ) {
+                resolve(data);
+            } else {
+                reject(Error('Unexpected response in response or data; xhr.status: ' + xhr.status));
+            }
+        });
+    });
+}
 
 function checkItemsOnLoad(progressClass) {
     // Reset all inputs to unchecked, and then set them to checked
@@ -85,7 +125,6 @@ function toggleCaught(event, progressClass) {
     setProgressBarWidth(progressClass);
 }
 
-
 function setProgressBarWidth(progressClass) {
     let countItemsOnPage = $('.caught-checkbox input').length;
     if (countItemsOnPage <= 0) {
@@ -109,22 +148,49 @@ function setProgressBarWidth(progressClass) {
     if (currentPercentage > 100) {
         throw new Error('Someone messed something up');
     }
-    console.log('currentPercentage: ', currentPercentage);
 
     $('.menu .progress .progress-bar').css('width', currentPercentage + '%');
     $('.menu .progress .js-menu-progress-label').text(countItemsInStorage + ' / ' + countItemsOnPage);
 }
 
-function checkLogin() {
-    let authContainer = $('.js-auth-container');
-    $.get('/auth/me', function(data) {
-        if(data && 'data' in data && data.data && 'name' in data.data && data.data.name) {
-            authContainer.text(data.data.name);
+function makeAuthRequest(success, always) {
+    let result = false;
+    $.get('/auth/me', function (data) {
+        if (data && 'data' in data && data.data && 'name' in data.data && data.data.name) {
+            (typeof success === 'function') && success(data);
+
+            return result = true;
         }
-    }).always(function() {
-        authContainer.css('display', 'block');
+
+        return result = false;
+    }).always(typeof always === 'function' ? always : function () {
     });
+
+    return false;
 }
+
+function checkLogin(data) {
+    let authContainer = $('.js-auth-container');
+
+    if ('name' in data.data && data.data.name) {
+        authContainer.text(data.data.name);
+        user = new User();
+        user.setUser(data.data);
+    }
+
+    authContainer.css('display', 'block');
+}
+
+function checkProfile(data) {
+    if(!user) {
+        window.location = '/';
+        return;
+    }
+
+    $('.profile .name').text(user.get().name);
+}
+
+
 
 class ProgressClass {
 
@@ -146,6 +212,24 @@ class ProgressClass {
     save(data) {
         this.currentStorage = data;
         localStorage.setItem(AC_LOCALSTORAGE_VERSION, JSON.stringify(data));
+    }
+
+}
+
+
+
+class User {
+
+    constructor() {
+        this.user = false;
+    }
+
+    setUser(data) {
+        this.user = data;
+    }
+
+    get() {
+        return this.user;
     }
 
 }

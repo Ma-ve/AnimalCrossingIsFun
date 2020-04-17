@@ -57,6 +57,16 @@ try {
     })
         ->setName('/');
 
+    $app->group('/profile', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
+        $collectorProxy->redirect('', '/profile/');
+
+        $collectorProxy->get('/', function(Request $request, Response $response) {
+            $view = Twig::fromRequest($request);
+
+            return $view->render($response, 'pages/profile.twig');
+        });
+    });
+
     $app->group('/auth', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
         session_start();
 
