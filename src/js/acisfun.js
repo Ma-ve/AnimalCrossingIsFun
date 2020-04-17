@@ -176,9 +176,9 @@ function checkLogin() {
     return [
         function(data) {
             if ('name' in data.data && data.data.name) {
-                authContainer.text(data.data.name);
                 user = new User();
                 user.setUser(data.data);
+                authContainer.html('<a href="/profile/">' + user.get().name + '</a>');
             }
             authContainer.css('display', 'block')
         },
