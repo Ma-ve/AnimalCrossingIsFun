@@ -316,3 +316,8 @@ body.home .menu .progress {
 .auth-container {
     display: none;
 }
+
+.creature-month-container {
+    position: absolute;
+    top:      12px;
+}
