@@ -5,6 +5,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/c/cc/NH-Furniture-acanthostega.png/revision/latest?cb=20200404013825',
     'price' => 2000,
     'isMultipart' => false,
+    'safeName' => 'acanthostega',
   ),
   1 => 
   array (
@@ -12,6 +13,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/3/32/NH-Furniture-amber.png/revision/latest?cb=20200404013825',
     'price' => 1200,
     'isMultipart' => false,
+    'safeName' => 'amber',
   ),
   2 => 
   array (
@@ -19,6 +21,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/3/32/NH-Furniture-ammonite.png/revision/latest?cb=20200404013825',
     'price' => 1100,
     'isMultipart' => false,
+    'safeName' => 'ammonite',
   ),
   3 => 
   array (
@@ -26,6 +29,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/2/2e/NH-Furniture-anomalocaris.png/revision/latest?cb=20200404013826',
     'price' => 2000,
     'isMultipart' => false,
+    'safeName' => 'anomalocaris',
   ),
   4 => 
   array (
@@ -33,6 +37,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/9/99/NH-Furniture-archaeopteryx.png/revision/latest?cb=20200404013826',
     'price' => 1300,
     'isMultipart' => false,
+    'safeName' => 'archaeopteryx',
   ),
   5 => 
   array (
@@ -40,6 +45,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/b/b0/NH-Furniture-australopith.png/revision/latest?cb=20200404013826',
     'price' => 1100,
     'isMultipart' => false,
+    'safeName' => 'australopith',
   ),
   6 => 
   array (
@@ -47,6 +53,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/0/04/NH-Furniture-coprolite.png/revision/latest?cb=20200404013826',
     'price' => 1100,
     'isMultipart' => false,
+    'safeName' => 'coprolite',
   ),
   7 => 
   array (
@@ -54,6 +61,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/NH-Furniture-dinosaurtrack.png/revision/latest?cb=20200404013826',
     'price' => 1000,
     'isMultipart' => false,
+    'safeName' => 'dinosaur-track',
   ),
   8 => 
   array (
@@ -61,6 +69,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/0/0c/NH-Furniture-dunkleosteus.png/revision/latest?cb=20200404013826',
     'price' => 3500,
     'isMultipart' => false,
+    'safeName' => 'dunkleosteus',
   ),
   9 => 
   array (
@@ -68,6 +77,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/8/8c/NH-Furniture-eusthenopteron.png/revision/latest?cb=20200404013826',
     'price' => 2000,
     'isMultipart' => false,
+    'safeName' => 'eusthenopteron',
   ),
   10 => 
   array (
@@ -75,6 +85,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/7/73/NH-Furniture-juramaia.png/revision/latest?cb=20200404013826',
     'price' => 1000,
     'isMultipart' => false,
+    'safeName' => 'juramaia',
   ),
   11 => 
   array (
@@ -82,6 +93,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/f/fb/NH-Furniture-myllokunmingia.png/revision/latest?cb=20200404013826',
     'price' => 1500,
     'isMultipart' => false,
+    'safeName' => 'myllokunmingia',
   ),
   12 => 
   array (
@@ -89,6 +101,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/4/44/NH-Furniture-sharktoothpattern.png/revision/latest?cb=20200404013826',
     'price' => 1000,
     'isMultipart' => false,
+    'safeName' => 'shark-tooth-pattern',
   ),
   13 => 
   array (
@@ -96,6 +109,7 @@
     'imageLink' => 'https://vignette.wikia.nocookie.net/animalcrossing/images/4/42/NH-Furniture-trilobite.png/revision/latest?cb=20200404013827',
     'price' => 1300,
     'isMultipart' => false,
+    'safeName' => 'trilobite',
   ),
   14 => 
   array (
@@ -104,6 +118,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Ankylosaurus',
+    'safeName' => 'ankylo-skull',
   ),
   15 => 
   array (
@@ -112,6 +127,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Ankylosaurus',
+    'safeName' => 'ankylo-torso',
   ),
   16 => 
   array (
@@ -120,6 +136,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Ankylosaurus',
+    'safeName' => 'ankylo-tail',
   ),
   17 => 
   array (
@@ -128,6 +145,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Archelon',
+    'safeName' => 'archelon-skull',
   ),
   18 => 
   array (
@@ -136,6 +154,7 @@
     'price' => 3500,
     'isMultipart' => true,
     'category' => 'Archelon',
+    'safeName' => 'archelon-tail',
   ),
   19 => 
   array (
@@ -144,6 +163,7 @@
     'price' => 6000,
     'isMultipart' => true,
     'category' => 'Brachiosaurus',
+    'safeName' => 'brachio-skull',
   ),
   20 => 
   array (
@@ -152,6 +172,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Brachiosaurus',
+    'safeName' => 'brachio-chest',
   ),
   21 => 
   array (
@@ -160,6 +181,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Brachiosaurus',
+    'safeName' => 'brachio-pelvis',
   ),
   22 => 
   array (
@@ -168,6 +190,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Brachiosaurus',
+    'safeName' => 'brachio-tail',
   ),
   23 => 
   array (
@@ -176,6 +199,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Deinonychus',
+    'safeName' => 'deinony-torso',
   ),
   24 => 
   array (
@@ -184,6 +208,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Deinonychus',
+    'safeName' => 'deinony-tail',
   ),
   25 => 
   array (
@@ -192,6 +217,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Dimetrodon',
+    'safeName' => 'dimetrodon-skull',
   ),
   26 => 
   array (
@@ -200,6 +226,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Dimetrodon',
+    'safeName' => 'dimetrodon-torso',
   ),
   27 => 
   array (
@@ -208,6 +235,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-skull',
   ),
   28 => 
   array (
@@ -216,6 +244,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-neck',
   ),
   29 => 
   array (
@@ -224,6 +253,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-chest',
   ),
   30 => 
   array (
@@ -232,6 +262,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-pelvis',
   ),
   31 => 
   array (
@@ -240,6 +271,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-tail',
   ),
   32 => 
   array (
@@ -248,6 +280,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Diplodocus',
+    'safeName' => 'diplo-tail-tip',
   ),
   33 => 
   array (
@@ -256,6 +289,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Iguanodon',
+    'safeName' => 'iguanodon-skull',
   ),
   34 => 
   array (
@@ -264,6 +298,7 @@
     'price' => 3500,
     'isMultipart' => true,
     'category' => 'Iguanodon',
+    'safeName' => 'iguanodon-torso',
   ),
   35 => 
   array (
@@ -272,6 +307,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Iguanodon',
+    'safeName' => 'iguanodon-tail',
   ),
   36 => 
   array (
@@ -280,6 +316,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Mammoth',
+    'safeName' => 'mammoth-skull',
   ),
   37 => 
   array (
@@ -288,6 +325,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Mammoth',
+    'safeName' => 'mammoth-torso',
   ),
   38 => 
   array (
@@ -296,6 +334,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Megacerops',
+    'safeName' => 'megacero-skull',
   ),
   39 => 
   array (
@@ -304,6 +343,7 @@
     'price' => 3500,
     'isMultipart' => true,
     'category' => 'Megacerops',
+    'safeName' => 'megacero-torso',
   ),
   40 => 
   array (
@@ -312,6 +352,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Megacerops',
+    'safeName' => 'megacero-tail',
   ),
   41 => 
   array (
@@ -320,6 +361,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Megaloceros',
+    'safeName' => 'left-megalo-side',
   ),
   42 => 
   array (
@@ -328,6 +370,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Megaloceros',
+    'safeName' => 'right-megalo-side',
   ),
   43 => 
   array (
@@ -336,6 +379,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Ophthalmosaurus',
+    'safeName' => 'ophthalmo-skull',
   ),
   44 => 
   array (
@@ -344,6 +388,7 @@
     'price' => 2000,
     'isMultipart' => true,
     'category' => 'Ophthalmosaurus',
+    'safeName' => 'ophthalmo-torso',
   ),
   45 => 
   array (
@@ -352,6 +397,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Pachycephalosaurus',
+    'safeName' => 'pachysaurus-skull',
   ),
   46 => 
   array (
@@ -360,6 +406,7 @@
     'price' => 3500,
     'isMultipart' => true,
     'category' => 'Pachycephalosaurus',
+    'safeName' => 'pachysaurus-tail',
   ),
   47 => 
   array (
@@ -368,6 +415,7 @@
     'price' => 3500,
     'isMultipart' => true,
     'category' => 'Parasaurolophus',
+    'safeName' => 'parasaur-skull',
   ),
   48 => 
   array (
@@ -376,6 +424,7 @@
     'price' => 3000,
     'isMultipart' => true,
     'category' => 'Parasaurolophus',
+    'safeName' => 'parasaur-torso',
   ),
   49 => 
   array (
@@ -384,6 +433,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Parasaurolophus',
+    'safeName' => 'parasaur-tail',
   ),
   50 => 
   array (
@@ -392,6 +442,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Plesiosaurus',
+    'safeName' => 'plesio-skull',
   ),
   51 => 
   array (
@@ -400,6 +451,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Plesiosaurus',
+    'safeName' => 'plesio-tail',
   ),
   52 => 
   array (
@@ -408,6 +460,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Plesiosaurus',
+    'safeName' => 'plesio-body',
   ),
   53 => 
   array (
@@ -416,6 +469,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Pteranodon',
+    'safeName' => 'right-ptera-wing',
   ),
   54 => 
   array (
@@ -424,6 +478,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Pteranodon',
+    'safeName' => 'ptera-body',
   ),
   55 => 
   array (
@@ -432,6 +487,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Pteranodon',
+    'safeName' => 'left-ptera-wing',
   ),
   56 => 
   array (
@@ -440,6 +496,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Quetzalcoatlus',
+    'safeName' => 'right-quetzal-wing',
   ),
   57 => 
   array (
@@ -448,6 +505,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Quetzalcoatlus',
+    'safeName' => 'quetzal-torso',
   ),
   58 => 
   array (
@@ -456,6 +514,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Quetzalcoatlus',
+    'safeName' => 'left-quetzal-wing',
   ),
   59 => 
   array (
@@ -464,6 +523,7 @@
     'price' => 2500,
     'isMultipart' => true,
     'category' => 'Sabertooth tiger',
+    'safeName' => 'sabertooth-skull',
   ),
   60 => 
   array (
@@ -472,6 +532,7 @@
     'price' => 2000,
     'isMultipart' => true,
     'category' => 'Sabertooth tiger',
+    'safeName' => 'sabertooth-tail',
   ),
   61 => 
   array (
@@ -480,6 +541,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Spinosaurus',
+    'safeName' => 'spino-skull',
   ),
   62 => 
   array (
@@ -488,6 +550,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Spinosaurus',
+    'safeName' => 'spino-torso',
   ),
   63 => 
   array (
@@ -496,6 +559,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Spinosaurus',
+    'safeName' => 'spino-tail',
   ),
   64 => 
   array (
@@ -504,6 +568,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Stegosaurus',
+    'safeName' => 'stego-skull',
   ),
   65 => 
   array (
@@ -512,6 +577,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Stegosaurus',
+    'safeName' => 'stego-torso',
   ),
   66 => 
   array (
@@ -520,6 +586,7 @@
     'price' => 4000,
     'isMultipart' => true,
     'category' => 'Stegosaurus',
+    'safeName' => 'stego-tail',
   ),
   67 => 
   array (
@@ -528,6 +595,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Triceratops',
+    'safeName' => 'tricera-skull',
   ),
   68 => 
   array (
@@ -536,6 +604,7 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Triceratops',
+    'safeName' => 'tricera-torso',
   ),
   69 => 
   array (
@@ -544,6 +613,7 @@
     'price' => 4500,
     'isMultipart' => true,
     'category' => 'Triceratops',
+    'safeName' => 'tricera-tail',
   ),
   70 => 
   array (
@@ -552,6 +622,7 @@
     'price' => 6000,
     'isMultipart' => true,
     'category' => 'Tyrannosaurus rex',
+    'safeName' => 't-rex-skull',
   ),
   71 => 
   array (
@@ -560,6 +631,7 @@
     'price' => 5500,
     'isMultipart' => true,
     'category' => 'Tyrannosaurus rex',
+    'safeName' => 't-rex-torso',
   ),
   72 => 
   array (
@@ -568,5 +640,6 @@
     'price' => 5000,
     'isMultipart' => true,
     'category' => 'Tyrannosaurus rex',
+    'safeName' => 't-rex-tail',
   ),
 );

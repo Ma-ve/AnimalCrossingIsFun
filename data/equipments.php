@@ -15,6 +15,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'acorn-pochette',
   ),
   1 => 
   array (
@@ -33,6 +34,7 @@
     'obtainedFrom' => NULL,
     'price' => 1600,
     'isRecipeItem' => NULL,
+    'safeName' => 'apple-dress',
   ),
   2 => 
   array (
@@ -51,6 +53,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'apple-hat',
   ),
   3 => 
   array (
@@ -69,6 +72,7 @@
     'obtainedFrom' => NULL,
     'price' => 1400,
     'isRecipeItem' => NULL,
+    'safeName' => 'apple-umbrella',
   ),
   4 => 
   array (
@@ -87,6 +91,7 @@
     'obtainedFrom' => NULL,
     'price' => 3000,
     'isRecipeItem' => NULL,
+    'safeName' => 'armor-shoes',
   ),
   5 => 
   array (
@@ -105,6 +110,7 @@
     'obtainedFrom' => NULL,
     'price' => 200,
     'isRecipeItem' => NULL,
+    'safeName' => 'bamboo-hat',
   ),
   6 => 
   array (
@@ -123,6 +129,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'basket-pack',
   ),
   7 => 
   array (
@@ -139,6 +146,7 @@
     'obtainedFrom' => NULL,
     'price' => 12000,
     'isRecipeItem' => NULL,
+    'safeName' => 'blue-rose-crown',
   ),
   8 => 
   array (
@@ -172,6 +180,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'bunny-day-bag',
   ),
   9 => 
   array (
@@ -205,6 +214,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'bunny-day-crown',
   ),
   10 => 
   array (
@@ -223,6 +233,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'cherry-blossom-pochette',
   ),
   11 => 
   array (
@@ -241,6 +252,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2800,
     'isRecipeItem' => NULL,
+    'safeName' => 'cherry-blossom-umbrella',
   ),
   12 => 
   array (
@@ -259,6 +271,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1600,
     'isRecipeItem' => NULL,
+    'safeName' => 'cherry-dress',
   ),
   13 => 
   array (
@@ -277,6 +290,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'cherry-hat',
   ),
   14 => 
   array (
@@ -295,6 +309,7 @@
     'obtainedFrom' => NULL,
     'price' => 1400,
     'isRecipeItem' => NULL,
+    'safeName' => 'cherry-umbrella',
   ),
   15 => 
   array (
@@ -316,6 +331,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'chic-mum-crown',
   ),
   16 => 
   array (
@@ -332,6 +348,7 @@
     'obtainedFrom' => NULL,
     'price' => 2880,
     'isRecipeItem' => NULL,
+    'safeName' => 'chic-rose-crown',
   ),
   17 => 
   array (
@@ -348,6 +365,7 @@
     'obtainedFrom' => NULL,
     'price' => 1440,
     'isRecipeItem' => NULL,
+    'safeName' => 'chic-tulip-crown',
   ),
   18 => 
   array (
@@ -369,6 +387,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'cool-pansy-crown',
   ),
   19 => 
   array (
@@ -393,6 +412,7 @@
     'obtainedFrom' => NULL,
     'price' => 1280,
     'isRecipeItem' => NULL,
+    'safeName' => 'cool-hyacinth-crown',
   ),
   20 => 
   array (
@@ -414,6 +434,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'cool-windflower-crown',
   ),
   21 => 
   array (
@@ -438,6 +459,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 560,
     'isRecipeItem' => NULL,
+    'safeName' => 'cosmos-crown',
   ),
   22 => 
   array (
@@ -462,6 +484,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'cute-lily-crown',
   ),
   23 => 
   array (
@@ -483,6 +506,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'cute-rose-crown',
   ),
   24 => 
   array (
@@ -499,6 +523,7 @@
     'obtainedFrom' => NULL,
     'price' => 3360,
     'isRecipeItem' => NULL,
+    'safeName' => 'dark-cosmos-crown',
   ),
   25 => 
   array (
@@ -515,6 +540,7 @@
     'obtainedFrom' => NULL,
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'dark-lily-crown',
   ),
   26 => 
   array (
@@ -531,6 +557,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'dark-tulip-crown',
   ),
   27 => 
   array (
@@ -549,6 +576,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'earth-egg-outfit',
   ),
   28 => 
   array (
@@ -567,6 +595,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'earth-egg-shell',
   ),
   29 => 
   array (
@@ -585,6 +614,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'earth-egg-shoes',
   ),
   30 => 
   array (
@@ -618,6 +648,7 @@
     'obtainedFrom' => NULL,
     'price' => 7200,
     'isRecipeItem' => NULL,
+    'safeName' => 'egg-party-dress',
   ),
   31 => 
   array (
@@ -651,6 +682,7 @@
     'obtainedFrom' => NULL,
     'price' => 4800,
     'isRecipeItem' => NULL,
+    'safeName' => 'egg-party-hat',
   ),
   32 => 
   array (
@@ -669,6 +701,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 80000,
     'isRecipeItem' => NULL,
+    'safeName' => 'gold-armor',
   ),
   33 => 
   array (
@@ -685,6 +718,7 @@
     'obtainedFrom' => NULL,
     'price' => 40000,
     'isRecipeItem' => NULL,
+    'safeName' => 'gold-armor-shoes',
   ),
   34 => 
   array (
@@ -701,6 +735,7 @@
     'obtainedFrom' => NULL,
     'price' => 50000,
     'isRecipeItem' => NULL,
+    'safeName' => 'gold-helmet',
   ),
   35 => 
   array (
@@ -717,6 +752,7 @@
     'obtainedFrom' => NULL,
     'price' => 12000,
     'isRecipeItem' => NULL,
+    'safeName' => 'gold-rose-crown',
   ),
   36 => 
   array (
@@ -735,6 +771,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 140,
     'isRecipeItem' => NULL,
+    'safeName' => 'grass-skirt',
   ),
   37 => 
   array (
@@ -753,6 +790,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 140,
     'isRecipeItem' => NULL,
+    'safeName' => 'green-grass-skirt',
   ),
   38 => 
   array (
@@ -777,6 +815,7 @@
     'obtainedFrom' => NULL,
     'price' => 640,
     'isRecipeItem' => NULL,
+    'safeName' => 'hyacinth-crown',
   ),
   39 => 
   array (
@@ -795,6 +834,7 @@
     'obtainedFrom' => NULL,
     'price' => 6000,
     'isRecipeItem' => NULL,
+    'safeName' => 'iron-armor',
   ),
   40 => 
   array (
@@ -813,6 +853,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 3750,
     'isRecipeItem' => NULL,
+    'safeName' => 'knight-s-helmet',
   ),
   41 => 
   array (
@@ -831,6 +872,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 400,
     'isRecipeItem' => NULL,
+    'safeName' => 'knitted-grass-backpack',
   ),
   42 => 
   array (
@@ -849,6 +891,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 80,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf',
   ),
   43 => 
   array (
@@ -867,6 +910,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 200,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf-mask',
   ),
   44 => 
   array (
@@ -885,6 +929,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 300,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf-umbrella',
   ),
   45 => 
   array (
@@ -903,6 +948,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf-egg-outfit',
   ),
   46 => 
   array (
@@ -921,6 +967,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf-egg-shell',
   ),
   47 => 
   array (
@@ -939,6 +986,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'leaf-egg-shoes',
   ),
   48 => 
   array (
@@ -963,6 +1011,7 @@
     'obtainedFrom' => NULL,
     'price' => 480,
     'isRecipeItem' => NULL,
+    'safeName' => 'lily-crown',
   ),
   49 => 
   array (
@@ -984,6 +1033,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 960,
     'isRecipeItem' => NULL,
+    'safeName' => 'log-pack',
   ),
   50 => 
   array (
@@ -1000,6 +1050,7 @@
     'obtainedFrom' => NULL,
     'price' => 1120,
     'isRecipeItem' => NULL,
+    'safeName' => 'lovely-cosmos-crown',
   ),
   51 => 
   array (
@@ -1016,6 +1067,7 @@
     'obtainedFrom' => NULL,
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'maple-leaf-pochette',
   ),
   52 => 
   array (
@@ -1032,6 +1084,7 @@
     'obtainedFrom' => NULL,
     'price' => 2800,
     'isRecipeItem' => NULL,
+    'safeName' => 'maple-leaf-umbrella',
   ),
   53 => 
   array (
@@ -1056,6 +1109,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => NULL,
+    'safeName' => 'mum-crown',
   ),
   54 => 
   array (
@@ -1072,6 +1126,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'mush-umbrella',
   ),
   55 => 
   array (
@@ -1090,6 +1145,7 @@
     'obtainedFrom' => NULL,
     'price' => 1600,
     'isRecipeItem' => NULL,
+    'safeName' => 'orange-dress',
   ),
   56 => 
   array (
@@ -1108,6 +1164,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'orange-hat',
   ),
   57 => 
   array (
@@ -1126,6 +1183,7 @@
     'obtainedFrom' => NULL,
     'price' => 1400,
     'isRecipeItem' => NULL,
+    'safeName' => 'orange-umbrella',
   ),
   58 => 
   array (
@@ -1150,6 +1208,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => NULL,
+    'safeName' => 'pansy-crown',
   ),
   59 => 
   array (
@@ -1168,6 +1227,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1600,
     'isRecipeItem' => NULL,
+    'safeName' => 'peach-dress',
   ),
   60 => 
   array (
@@ -1186,6 +1246,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'peach-hat',
   ),
   61 => 
   array (
@@ -1204,6 +1265,7 @@
     'obtainedFrom' => NULL,
     'price' => 1400,
     'isRecipeItem' => NULL,
+    'safeName' => 'peach-umbrella',
   ),
   62 => 
   array (
@@ -1222,6 +1284,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1600,
     'isRecipeItem' => NULL,
+    'safeName' => 'pear-dress',
   ),
   63 => 
   array (
@@ -1240,6 +1303,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'pear-hat',
   ),
   64 => 
   array (
@@ -1258,6 +1322,7 @@
     'obtainedFrom' => NULL,
     'price' => 1400,
     'isRecipeItem' => NULL,
+    'safeName' => 'pear-umbrella',
   ),
   65 => 
   array (
@@ -1274,6 +1339,7 @@
     'obtainedFrom' => NULL,
     'price' => 2880,
     'isRecipeItem' => NULL,
+    'safeName' => 'purple-hyacinth-crown',
   ),
   66 => 
   array (
@@ -1292,6 +1358,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 2880,
     'isRecipeItem' => NULL,
+    'safeName' => 'purple-pansy-crown',
   ),
   67 => 
   array (
@@ -1308,6 +1375,7 @@
     'obtainedFrom' => NULL,
     'price' => 2880,
     'isRecipeItem' => NULL,
+    'safeName' => 'purple-windflower-crown',
   ),
   68 => 
   array (
@@ -1326,6 +1394,7 @@
     'obtainedFrom' => NULL,
     'price' => 40,
     'isRecipeItem' => NULL,
+    'safeName' => 'recycled-boots',
   ),
   69 => 
   array (
@@ -1350,6 +1419,7 @@
     'obtainedFrom' => NULL,
     'price' => 480,
     'isRecipeItem' => NULL,
+    'safeName' => 'rose-crown',
   ),
   70 => 
   array (
@@ -1371,6 +1441,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 10800,
     'isRecipeItem' => NULL,
+    'safeName' => 'shellfish-pochette',
   ),
   71 => 
   array (
@@ -1387,6 +1458,7 @@
     'obtainedFrom' => NULL,
     'price' => 2880,
     'isRecipeItem' => NULL,
+    'safeName' => 'simple-mum-crown',
   ),
   72 => 
   array (
@@ -1405,6 +1477,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'sky-egg-outfit',
   ),
   73 => 
   array (
@@ -1423,6 +1496,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'sky-egg-shell',
   ),
   74 => 
   array (
@@ -1441,6 +1515,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'sky-egg-shoes',
   ),
   75 => 
   array (
@@ -1457,6 +1532,7 @@
     'obtainedFrom' => NULL,
     'price' => 2400,
     'isRecipeItem' => NULL,
+    'safeName' => 'snowflake-pochette',
   ),
   76 => 
   array (
@@ -1473,6 +1549,7 @@
     'obtainedFrom' => NULL,
     'price' => 7000,
     'isRecipeItem' => NULL,
+    'safeName' => 'snowperson-head',
   ),
   77 => 
   array (
@@ -1489,6 +1566,7 @@
     'obtainedFrom' => NULL,
     'price' => 2500,
     'isRecipeItem' => NULL,
+    'safeName' => 'star-head',
   ),
   78 => 
   array (
@@ -1505,6 +1583,7 @@
     'obtainedFrom' => NULL,
     'price' => 3000,
     'isRecipeItem' => NULL,
+    'safeName' => 'star-pochette',
   ),
   79 => 
   array (
@@ -1523,6 +1602,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 200,
     'isRecipeItem' => NULL,
+    'safeName' => 'straw-umbrella-hat',
   ),
   80 => 
   array (
@@ -1541,6 +1621,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'stone-egg-outfit',
   ),
   81 => 
   array (
@@ -1559,6 +1640,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'stone-egg-shell',
   ),
   82 => 
   array (
@@ -1577,6 +1659,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'stone-egg-shoes',
   ),
   83 => 
   array (
@@ -1595,6 +1678,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 160,
     'isRecipeItem' => NULL,
+    'safeName' => 'traditional-straw-coat',
   ),
   84 => 
   array (
@@ -1619,6 +1703,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 400,
     'isRecipeItem' => NULL,
+    'safeName' => 'tulip-crown',
   ),
   85 => 
   array (
@@ -1637,6 +1722,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'water-egg-outfit',
   ),
   86 => 
   array (
@@ -1655,6 +1741,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'water-egg-shell',
   ),
   87 => 
   array (
@@ -1673,6 +1760,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'water-egg-shoes',
   ),
   88 => 
   array (
@@ -1697,6 +1785,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => NULL,
+    'safeName' => 'windflower-crown',
   ),
   89 => 
   array (
@@ -1715,6 +1804,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => NULL,
+    'safeName' => 'wood-egg-outfit',
   ),
   90 => 
   array (
@@ -1733,6 +1823,7 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'wood-egg-shell',
   ),
   91 => 
   array (
@@ -1751,5 +1842,6 @@
     'obtainedFrom' => NULL,
     'price' => 800,
     'isRecipeItem' => NULL,
+    'safeName' => 'wood-egg-shoes',
   ),
 );

@@ -17,6 +17,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 200,
     'isRecipeItem' => true,
+    'safeName' => 'flimsy-axe',
   ),
   1 => 
   array (
@@ -38,6 +39,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 560,
     'isRecipeItem' => false,
+    'safeName' => 'stone-axe',
   ),
   2 => 
   array (
@@ -62,6 +64,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 625,
     'isRecipeItem' => true,
+    'safeName' => 'axe',
   ),
   3 => 
   array (
@@ -83,6 +86,7 @@
     'obtainedFrom' => NULL,
     'price' => 10655,
     'isRecipeItem' => false,
+    'safeName' => 'golden-axe',
   ),
   4 => 
   array (
@@ -101,6 +105,7 @@
     'obtainedFrom' => 'Blathers',
     'price' => 200,
     'isRecipeItem' => true,
+    'safeName' => 'flimsy-shovel',
   ),
   5 => 
   array (
@@ -122,6 +127,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 600,
     'isRecipeItem' => true,
+    'safeName' => 'shovel',
   ),
   6 => 
   array (
@@ -143,6 +149,7 @@
     'obtainedFrom' => NULL,
     'price' => 10675,
     'isRecipeItem' => false,
+    'safeName' => 'golden-shovel',
   ),
   7 => 
   array (
@@ -161,6 +168,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 100,
     'isRecipeItem' => true,
+    'safeName' => 'flimsy-fishing-rod',
   ),
   8 => 
   array (
@@ -182,6 +190,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 600,
     'isRecipeItem' => true,
+    'safeName' => 'fishing-rod',
   ),
   9 => 
   array (
@@ -203,6 +212,7 @@
     'obtainedFrom' => NULL,
     'price' => 10400,
     'isRecipeItem' => false,
+    'safeName' => 'golden-rod',
   ),
   10 => 
   array (
@@ -221,6 +231,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 100,
     'isRecipeItem' => true,
+    'safeName' => 'flimsy-net',
   ),
   11 => 
   array (
@@ -242,6 +253,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 600,
     'isRecipeItem' => true,
+    'safeName' => 'net',
   ),
   12 => 
   array (
@@ -263,6 +275,7 @@
     'obtainedFrom' => NULL,
     'price' => 10400,
     'isRecipeItem' => false,
+    'safeName' => 'golden-net',
   ),
   13 => 
   array (
@@ -281,6 +294,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 200,
     'isRecipeItem' => true,
+    'safeName' => 'flimsy-watering-can',
   ),
   14 => 
   array (
@@ -302,6 +316,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 600,
     'isRecipeItem' => true,
+    'safeName' => 'watering-can',
   ),
   15 => 
   array (
@@ -323,6 +338,7 @@
     'obtainedFrom' => NULL,
     'price' => 10675,
     'isRecipeItem' => false,
+    'safeName' => 'golden-watering-can',
   ),
   16 => 
   array (
@@ -341,6 +357,7 @@
     'obtainedFrom' => 'Timmy',
     'price' => 225,
     'isRecipeItem' => true,
+    'safeName' => 'slingshot',
   ),
   17 => 
   array (
@@ -362,6 +379,7 @@
     'obtainedFrom' => NULL,
     'price' => 10300,
     'isRecipeItem' => false,
+    'safeName' => 'golden-slingshot',
   ),
   18 => 
   array (
@@ -380,6 +398,7 @@
     'obtainedFrom' => 'Blathers',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'vaulting-pole',
   ),
   19 => 
   array (
@@ -404,6 +423,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'ladder',
   ),
   20 => 
   array (
@@ -425,6 +445,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => 6500,
     'isRecipeItem' => false,
+    'safeName' => 'star-wand',
   ),
   21 => 
   array (
@@ -446,6 +467,7 @@
     'obtainedFrom' => NULL,
     'price' => 3900,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-wand',
   ),
   22 => 
   array (
@@ -462,6 +484,7 @@
     'obtainedFrom' => NULL,
     'price' => 3300,
     'isRecipeItem' => false,
+    'safeName' => 'mushroom-wand',
   ),
   23 => 
   array (
@@ -483,6 +506,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2700,
     'isRecipeItem' => false,
+    'safeName' => 'cherry-blossom-wand',
   ),
   24 => 
   array (
@@ -502,6 +526,7 @@
     'obtainedFrom' => 'Zipper',
     'price' => 11100,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-wand',
   ),
   25 => 
   array (
@@ -518,6 +543,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'cosmos-wand',
   ),
   26 => 
   array (
@@ -534,6 +560,7 @@
     'obtainedFrom' => NULL,
     'price' => 1660,
     'isRecipeItem' => false,
+    'safeName' => 'hyacinth-wand',
   ),
   27 => 
   array (
@@ -550,6 +577,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'lily-wand',
   ),
   28 => 
   array (
@@ -566,6 +594,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'mums-wand',
   ),
   29 => 
   array (
@@ -587,6 +616,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'pansy-wand',
   ),
   30 => 
   array (
@@ -603,6 +633,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'rose-wand',
   ),
   31 => 
   array (
@@ -624,6 +655,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'tulip-wand',
   ),
   32 => 
   array (
@@ -645,6 +677,7 @@
     'obtainedFrom' => NULL,
     'price' => 1580,
     'isRecipeItem' => false,
+    'safeName' => 'windflower-wand',
   ),
   33 => 
   array (
@@ -661,6 +694,7 @@
     'obtainedFrom' => NULL,
     'price' => 5100,
     'isRecipeItem' => false,
+    'safeName' => 'shell-wand',
   ),
   34 => 
   array (
@@ -677,6 +711,7 @@
     'obtainedFrom' => NULL,
     'price' => 6500,
     'isRecipeItem' => false,
+    'safeName' => 'ice-wand',
   ),
   35 => 
   array (
@@ -698,6 +733,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => 20750,
     'isRecipeItem' => false,
+    'safeName' => 'golden-wand',
   ),
   36 => 
   array (
@@ -716,6 +752,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => false,
+    'safeName' => 'wand',
   ),
   37 => 
   array (
@@ -736,6 +773,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => 1550,
     'isRecipeItem' => false,
+    'safeName' => 'tree-branch-wand',
   ),
   38 => 
   array (
@@ -752,5 +790,6 @@
     'obtainedFrom' => 'Celeste',
     'price' => 3750,
     'isRecipeItem' => false,
+    'safeName' => 'iron-wand',
   ),
 );

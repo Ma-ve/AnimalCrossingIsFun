@@ -17,6 +17,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 3210,
     'isRecipeItem' => false,
+    'safeName' => 'acoustic-guitar',
   ),
   1 => 
   array (
@@ -33,6 +34,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'angled-signpost',
   ),
   2 => 
   array (
@@ -54,6 +56,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 2480,
     'isRecipeItem' => false,
+    'safeName' => 'apple-chair',
   ),
   3 => 
   array (
@@ -70,6 +73,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'aquarius-urn',
   ),
   4 => 
   array (
@@ -97,6 +101,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => 12125,
     'isRecipeItem' => false,
+    'safeName' => 'aries-rocking-chair',
   ),
   5 => 
   array (
@@ -113,6 +118,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'asteroid',
   ),
   6 => 
   array (
@@ -134,6 +140,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'astronaut-suit',
   ),
   7 => 
   array (
@@ -152,6 +159,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 1120,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-basket',
   ),
   8 => 
   array (
@@ -170,6 +178,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 1280,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-bench',
   ),
   9 => 
   array (
@@ -188,6 +197,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2400,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-doll',
   ),
   10 => 
   array (
@@ -206,6 +216,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1280,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-floor-lamp',
   ),
   11 => 
   array (
@@ -227,6 +238,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 3160,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-noodle-slide',
   ),
   12 => 
   array (
@@ -248,6 +260,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2020,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-partition',
   ),
   13 => 
   array (
@@ -266,6 +279,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2400,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-shelf',
   ),
   14 => 
   array (
@@ -287,6 +301,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1230,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-speaker',
   ),
   15 => 
   array (
@@ -305,6 +320,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 800,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-stool',
   ),
   16 => 
   array (
@@ -323,6 +339,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => false,
+    'safeName' => 'bamboo-stopblock',
   ),
   17 => 
   array (
@@ -341,6 +358,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 7500,
     'isRecipeItem' => false,
+    'safeName' => 'barbell',
   ),
   18 => 
   array (
@@ -362,6 +380,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 2100,
     'isRecipeItem' => false,
+    'safeName' => 'barrel',
   ),
   19 => 
   array (
@@ -383,6 +402,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'beekeeper-s-hive',
   ),
   20 => 
   array (
@@ -399,6 +419,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'big-festive-tree',
   ),
   21 => 
   array (
@@ -417,6 +438,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 400,
     'isRecipeItem' => false,
+    'safeName' => 'birdbath',
   ),
   22 => 
   array (
@@ -435,6 +457,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'birdcage',
   ),
   23 => 
   array (
@@ -456,6 +479,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 840,
     'isRecipeItem' => false,
+    'safeName' => 'birdhouse',
   ),
   24 => 
   array (
@@ -477,6 +501,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2880,
     'isRecipeItem' => false,
+    'safeName' => 'blossom-viewing-lantern',
   ),
   25 => 
   array (
@@ -498,6 +523,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1230,
     'isRecipeItem' => false,
+    'safeName' => 'bonfire',
   ),
   26 => 
   array (
@@ -522,6 +548,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'bonsai-shelf',
   ),
   27 => 
   array (
@@ -546,6 +573,7 @@
     'obtainedFrom' => 'Wildest Dreams DIY',
     'price' => 3820,
     'isRecipeItem' => false,
+    'safeName' => 'brick-oven',
   ),
   28 => 
   array (
@@ -570,6 +598,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 2800,
     'isRecipeItem' => false,
+    'safeName' => 'brick-well',
   ),
   29 => 
   array (
@@ -603,6 +632,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 4800,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-arch',
   ),
   30 => 
   array (
@@ -636,6 +666,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 2400,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-bed',
   ),
   31 => 
   array (
@@ -661,6 +692,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-festive-balloons',
   ),
   32 => 
   array (
@@ -685,6 +717,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-merry-balloons',
   ),
   33 => 
   array (
@@ -703,6 +736,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-stool',
   ),
   34 => 
   array (
@@ -721,6 +755,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1600,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-table',
   ),
   35 => 
   array (
@@ -739,6 +774,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1600,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-vanity',
   ),
   36 => 
   array (
@@ -757,6 +793,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 1600,
     'isRecipeItem' => false,
+    'safeName' => 'bunny-day-wardrobe',
   ),
   37 => 
   array (
@@ -778,6 +815,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1980,
     'isRecipeItem' => false,
+    'safeName' => 'butter-churn',
   ),
   38 => 
   array (
@@ -796,6 +834,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 30,
     'isRecipeItem' => true,
+    'safeName' => 'campfire',
   ),
   39 => 
   array (
@@ -812,6 +851,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'cancer-table',
   ),
   40 => 
   array (
@@ -828,6 +868,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'capricorn-ornament',
   ),
   41 => 
   array (
@@ -846,6 +887,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 240,
     'isRecipeItem' => false,
+    'safeName' => 'cardboard-bed',
   ),
   42 => 
   array (
@@ -864,6 +906,7 @@
     'obtainedFrom' => NULL,
     'price' => 60,
     'isRecipeItem' => false,
+    'safeName' => 'cardboard-chair',
   ),
   43 => 
   array (
@@ -882,6 +925,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 120,
     'isRecipeItem' => false,
+    'safeName' => 'cardboard-sofa',
   ),
   44 => 
   array (
@@ -900,6 +944,7 @@
     'obtainedFrom' => NULL,
     'price' => 240,
     'isRecipeItem' => false,
+    'safeName' => 'cardboard-table',
   ),
   45 => 
   array (
@@ -921,6 +966,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 3500,
     'isRecipeItem' => false,
+    'safeName' => 'cherry-speakers',
   ),
   46 => 
   array (
@@ -945,6 +991,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 4240,
     'isRecipeItem' => false,
+    'safeName' => 'cherry-blossom-branches',
   ),
   47 => 
   array (
@@ -963,6 +1010,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2000,
     'isRecipeItem' => false,
+    'safeName' => 'cherry-blossom-petal-pile',
   ),
   48 => 
   array (
@@ -984,6 +1032,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2700,
     'isRecipeItem' => false,
+    'safeName' => 'cherry-blossom-pond-stone',
   ),
   49 => 
   array (
@@ -1005,6 +1054,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'clackercart',
   ),
   50 => 
   array (
@@ -1023,6 +1073,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 100,
     'isRecipeItem' => false,
+    'safeName' => 'clothesline',
   ),
   51 => 
   array (
@@ -1044,6 +1095,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'cosmos-shower',
   ),
   52 => 
   array (
@@ -1060,6 +1112,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'crescent-moon-chair',
   ),
   53 => 
   array (
@@ -1076,6 +1129,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'crewed-spaceship',
   ),
   54 => 
   array (
@@ -1100,6 +1154,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 1740,
     'isRecipeItem' => false,
+    'safeName' => 'deer-scare',
   ),
   55 => 
   array (
@@ -1121,6 +1176,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'destinations-signpost',
   ),
   56 => 
   array (
@@ -1151,6 +1207,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'diy-workbench',
   ),
   57 => 
   array (
@@ -1172,6 +1229,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 2040,
     'isRecipeItem' => false,
+    'safeName' => 'doghouse',
   ),
   58 => 
   array (
@@ -1193,6 +1251,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 2700,
     'isRecipeItem' => true,
+    'safeName' => 'drinking-fountain',
   ),
   59 => 
   array (
@@ -1209,6 +1268,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'festive-tree',
   ),
   60 => 
   array (
@@ -1227,6 +1287,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 3000,
     'isRecipeItem' => false,
+    'safeName' => 'flat-garden-rock',
   ),
   61 => 
   array (
@@ -1260,6 +1321,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'flower-stand',
   ),
   62 => 
   array (
@@ -1281,6 +1343,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'flying-saucer',
   ),
   63 => 
   array (
@@ -1305,6 +1368,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 11700,
     'isRecipeItem' => false,
+    'safeName' => 'fountain',
   ),
   64 => 
   array (
@@ -1321,6 +1385,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-arch',
   ),
   65 => 
   array (
@@ -1337,6 +1402,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-bed',
   ),
   66 => 
   array (
@@ -1353,6 +1419,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-chair',
   ),
   67 => 
   array (
@@ -1369,6 +1436,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-counter',
   ),
   68 => 
   array (
@@ -1385,6 +1453,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-partition',
   ),
   69 => 
   array (
@@ -1401,6 +1470,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-pillar',
   ),
   70 => 
   array (
@@ -1417,6 +1487,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-sculpture',
   ),
   71 => 
   array (
@@ -1433,6 +1504,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-table',
   ),
   72 => 
   array (
@@ -1449,6 +1521,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'frozen-tree',
   ),
   73 => 
   array (
@@ -1470,6 +1543,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 4440,
     'isRecipeItem' => false,
+    'safeName' => 'garden-bench',
   ),
   74 => 
   array (
@@ -1488,6 +1562,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2250,
     'isRecipeItem' => false,
+    'safeName' => 'garden-rock',
   ),
   75 => 
   array (
@@ -1518,6 +1593,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'garden-wagon',
   ),
   76 => 
   array (
@@ -1534,6 +1610,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'gemini-closet',
   ),
   77 => 
   array (
@@ -1558,6 +1635,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'giant-teddy-bear',
   ),
   78 => 
   array (
@@ -1574,6 +1652,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'golden-casket',
   ),
   79 => 
   array (
@@ -1592,6 +1671,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 50000,
     'isRecipeItem' => true,
+    'safeName' => 'golden-seat',
   ),
   80 => 
   array (
@@ -1608,6 +1688,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'golden-toilet',
   ),
   81 => 
   array (
@@ -1629,6 +1710,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 5100,
     'isRecipeItem' => false,
+    'safeName' => 'gong',
   ),
   82 => 
   array (
@@ -1651,6 +1733,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => false,
+    'safeName' => 'grass-standee',
   ),
   83 => 
   array (
@@ -1672,6 +1755,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'green-leaf-pile',
   ),
   84 => 
   array (
@@ -1690,6 +1774,7 @@
     'obtainedFrom' => NULL,
     'price' => 400,
     'isRecipeItem' => false,
+    'safeName' => 'hay-bed',
   ),
   85 => 
   array (
@@ -1717,6 +1802,7 @@
     'obtainedFrom' => 'Wildest Dreams DIY',
     'price' => 5470,
     'isRecipeItem' => false,
+    'safeName' => 'hearth',
   ),
   86 => 
   array (
@@ -1738,6 +1824,7 @@
     'obtainedFrom' => 'Villager',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'hedge-standee',
   ),
   87 => 
   array (
@@ -1754,6 +1841,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'illuminated-present',
   ),
   88 => 
   array (
@@ -1770,6 +1858,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'illuminated-reindeer',
   ),
   89 => 
   array (
@@ -1786,6 +1875,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'illuminated-snowflakes',
   ),
   90 => 
   array (
@@ -1802,6 +1892,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'illuminated-tree',
   ),
   91 => 
   array (
@@ -1820,6 +1911,7 @@
     'obtainedFrom' => NULL,
     'price' => 9000,
     'isRecipeItem' => false,
+    'safeName' => 'iron-closet',
   ),
   92 => 
   array (
@@ -1838,6 +1930,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 15000,
     'isRecipeItem' => false,
+    'safeName' => 'iron-frame',
   ),
   93 => 
   array (
@@ -1856,6 +1949,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 6000,
     'isRecipeItem' => false,
+    'safeName' => 'iron-garden-bench',
   ),
   94 => 
   array (
@@ -1874,6 +1968,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2250,
     'isRecipeItem' => false,
+    'safeName' => 'iron-garden-chair',
   ),
   95 => 
   array (
@@ -1892,6 +1987,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 3750,
     'isRecipeItem' => false,
+    'safeName' => 'iron-garden-table',
   ),
   96 => 
   array (
@@ -1910,6 +2006,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'iron-hanger-stand',
   ),
   97 => 
   array (
@@ -1928,6 +2025,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 7500,
     'isRecipeItem' => false,
+    'safeName' => 'iron-worktable',
   ),
   98 => 
   array (
@@ -1946,6 +2044,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 10500,
     'isRecipeItem' => false,
+    'safeName' => 'iron-shelf',
   ),
   99 => 
   array (
@@ -1967,6 +2066,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-bed',
   ),
   100 => 
   array (
@@ -1988,6 +2088,7 @@
     'obtainedFrom' => NULL,
     'price' => 3720,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-cart',
   ),
   101 => 
   array (
@@ -2009,6 +2110,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-chair',
   ),
   102 => 
   array (
@@ -2033,6 +2135,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-cupboard',
   ),
   103 => 
   array (
@@ -2057,6 +2160,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 8520,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-diy-workbench',
   ),
   104 => 
   array (
@@ -2078,6 +2182,7 @@
     'obtainedFrom' => NULL,
     'price' => 3840,
     'isRecipeItem' => true,
+    'safeName' => 'ironwood-dresser',
   ),
   105 => 
   array (
@@ -2105,6 +2210,7 @@
     'obtainedFrom' => 'Wildest Dreams DIY',
     'price' => 7560,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-kitchenette',
   ),
   106 => 
   array (
@@ -2126,6 +2232,7 @@
     'obtainedFrom' => NULL,
     'price' => 3720,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-low-table',
   ),
   107 => 
   array (
@@ -2147,6 +2254,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 5940,
     'isRecipeItem' => false,
+    'safeName' => 'ironwood-table',
   ),
   108 => 
   array (
@@ -2165,6 +2273,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 3750,
     'isRecipeItem' => false,
+    'safeName' => 'jail-bars',
   ),
   109 => 
   array (
@@ -2186,6 +2295,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 3500,
     'isRecipeItem' => false,
+    'safeName' => 'juicy-apple-tv',
   ),
   110 => 
   array (
@@ -2210,6 +2320,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 6270,
     'isRecipeItem' => false,
+    'safeName' => 'kettle-bathtub',
   ),
   111 => 
   array (
@@ -2228,6 +2339,7 @@
     'obtainedFrom' => NULL,
     'price' => 300,
     'isRecipeItem' => false,
+    'safeName' => 'large-cardboard-boxes',
   ),
   112 => 
   array (
@@ -2252,6 +2364,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'leaf-campfire',
   ),
   113 => 
   array (
@@ -2268,6 +2381,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'leaf-stool',
   ),
   114 => 
   array (
@@ -2292,6 +2406,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'lily-record-player',
   ),
   115 => 
   array (
@@ -2310,6 +2425,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 3600,
     'isRecipeItem' => false,
+    'safeName' => 'log-bed',
   ),
   116 => 
   array (
@@ -2328,6 +2444,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 600,
     'isRecipeItem' => true,
+    'safeName' => 'log-bench',
   ),
   117 => 
   array (
@@ -2349,6 +2466,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'log-decorative-shelves',
   ),
   118 => 
   array (
@@ -2367,6 +2485,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1800,
     'isRecipeItem' => false,
+    'safeName' => 'log-dining-table',
   ),
   119 => 
   array (
@@ -2383,6 +2502,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'log-extra-long-sofa',
   ),
   120 => 
   array (
@@ -2401,6 +2521,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'log-garden-lounge',
   ),
   121 => 
   array (
@@ -2419,6 +2540,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1800,
     'isRecipeItem' => false,
+    'safeName' => 'log-round-table',
   ),
   122 => 
   array (
@@ -2437,6 +2559,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'log-sofa',
   ),
   123 => 
   array (
@@ -2455,6 +2578,7 @@
     'obtainedFrom' => NULL,
     'price' => 360,
     'isRecipeItem' => false,
+    'safeName' => 'log-stakes',
   ),
   124 => 
   array (
@@ -2473,6 +2597,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 480,
     'isRecipeItem' => false,
+    'safeName' => 'log-stool',
   ),
   125 => 
   array (
@@ -2494,6 +2619,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => 16250,
     'isRecipeItem' => false,
+    'safeName' => 'lunar-lander',
   ),
   126 => 
   array (
@@ -2510,6 +2636,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'lunar-rover',
   ),
   127 => 
   array (
@@ -2528,6 +2655,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 2250,
     'isRecipeItem' => false,
+    'safeName' => 'manhole-cover',
   ),
   128 => 
   array (
@@ -2544,6 +2672,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'maple-leaf-pond-stone',
   ),
   129 => 
   array (
@@ -2562,6 +2691,7 @@
     'obtainedFrom' => NULL,
     'price' => 240,
     'isRecipeItem' => false,
+    'safeName' => 'medium-cardboard-boxes',
   ),
   130 => 
   array (
@@ -2589,6 +2719,7 @@
     'obtainedFrom' => 'Test Your DIY Skills',
     'price' => 2580,
     'isRecipeItem' => true,
+    'safeName' => 'mini-diy-workbench',
   ),
   131 => 
   array (
@@ -2610,6 +2741,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'moon',
   ),
   132 => 
   array (
@@ -2631,6 +2763,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2550,
     'isRecipeItem' => false,
+    'safeName' => 'mossy-garden-rock',
   ),
   133 => 
   array (
@@ -2652,6 +2785,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1080,
     'isRecipeItem' => false,
+    'safeName' => 'mountain-standee',
   ),
   134 => 
   array (
@@ -2673,6 +2807,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mum-cushion',
   ),
   135 => 
   array (
@@ -2689,6 +2824,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-lamp',
   ),
   136 => 
   array (
@@ -2705,6 +2841,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-log',
   ),
   137 => 
   array (
@@ -2721,6 +2858,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-low-stool',
   ),
   138 => 
   array (
@@ -2737,6 +2875,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-parasol',
   ),
   139 => 
   array (
@@ -2753,6 +2892,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-partition',
   ),
   140 => 
   array (
@@ -2769,6 +2909,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'mush-table',
   ),
   141 => 
   array (
@@ -2787,6 +2928,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'music-stand',
   ),
   142 => 
   array (
@@ -2808,6 +2950,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2220,
     'isRecipeItem' => false,
+    'safeName' => 'natural-garden-chair',
   ),
   143 => 
   array (
@@ -2829,6 +2972,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 3330,
     'isRecipeItem' => false,
+    'safeName' => 'natural-garden-table',
   ),
   144 => 
   array (
@@ -2850,6 +2994,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1980,
     'isRecipeItem' => false,
+    'safeName' => 'natural-square-table',
   ),
   145 => 
   array (
@@ -2874,6 +3019,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'oil-barrel-bathtub',
   ),
   146 => 
   array (
@@ -2895,6 +3041,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2480,
     'isRecipeItem' => false,
+    'safeName' => 'orange-end-table',
   ),
   147 => 
   array (
@@ -2916,6 +3063,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 4350,
     'isRecipeItem' => false,
+    'safeName' => 'outdoor-bath',
   ),
   148 => 
   array (
@@ -2934,6 +3082,7 @@
     'obtainedFrom' => 'Isabelle',
     'price' => 4000,
     'isRecipeItem' => false,
+    'safeName' => 'outdoor-picnic-set',
   ),
   149 => 
   array (
@@ -2958,6 +3107,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 3280,
     'isRecipeItem' => false,
+    'safeName' => 'palm-tree-lamp',
   ),
   150 => 
   array (
@@ -2979,6 +3129,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 760,
     'isRecipeItem' => false,
+    'safeName' => 'pansy-table',
   ),
   151 => 
   array (
@@ -3000,6 +3151,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2600,
     'isRecipeItem' => false,
+    'safeName' => 'peach-chair',
   ),
   152 => 
   array (
@@ -3021,6 +3173,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2720,
     'isRecipeItem' => false,
+    'safeName' => 'pear-bed',
   ),
   153 => 
   array (
@@ -3042,6 +3195,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2600,
     'isRecipeItem' => false,
+    'safeName' => 'pear-wardrobe',
   ),
   154 => 
   array (
@@ -3063,6 +3217,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'pile-of-leaves',
   ),
   155 => 
   array (
@@ -3081,6 +3236,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 750,
     'isRecipeItem' => false,
+    'safeName' => 'pile-of-zen-cushions',
   ),
   156 => 
   array (
@@ -3108,6 +3264,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'pisces-lamp',
   ),
   157 => 
   array (
@@ -3132,6 +3289,7 @@
     'obtainedFrom' => 'Wildest Dreams DIY',
     'price' => 2270,
     'isRecipeItem' => false,
+    'safeName' => 'plain-sink',
   ),
   158 => 
   array (
@@ -3150,6 +3308,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 720,
     'isRecipeItem' => false,
+    'safeName' => 'plain-wooden-shop-sign',
   ),
   159 => 
   array (
@@ -3168,6 +3327,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1500,
     'isRecipeItem' => false,
+    'safeName' => 'pond-stone',
   ),
   160 => 
   array (
@@ -3186,6 +3346,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'raccoon-figurine',
   ),
   161 => 
   array (
@@ -3202,6 +3363,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'red-leaf-pile',
   ),
   162 => 
   array (
@@ -3232,6 +3394,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'robot-hero',
   ),
   163 => 
   array (
@@ -3253,6 +3416,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'rocket',
   ),
   164 => 
   array (
@@ -3274,6 +3438,7 @@
     'obtainedFrom' => 'Test Your DIY Skills',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'rocking-chair',
   ),
   165 => 
   array (
@@ -3292,6 +3457,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'rocking-horse',
   ),
   166 => 
   array (
@@ -3311,6 +3477,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'rose-bed',
   ),
   167 => 
   array (
@@ -3332,6 +3499,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'satellite',
   ),
   168 => 
   array (
@@ -3356,6 +3524,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'sauna-heater',
   ),
   169 => 
   array (
@@ -3377,6 +3546,7 @@
     'obtainedFrom' => NULL,
     'price' => 130,
     'isRecipeItem' => false,
+    'safeName' => 'scarecrow',
   ),
   170 => 
   array (
@@ -3395,6 +3565,7 @@
     'obtainedFrom' => NULL,
     'price' => 400,
     'isRecipeItem' => false,
+    'safeName' => 'scattered-papers',
   ),
   171 => 
   array (
@@ -3428,6 +3599,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'shell-arch',
   ),
   172 => 
   array (
@@ -3452,6 +3624,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 10200,
     'isRecipeItem' => false,
+    'safeName' => 'shell-bed',
   ),
   173 => 
   array (
@@ -3473,6 +3646,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 9450,
     'isRecipeItem' => false,
+    'safeName' => 'shell-fountain',
   ),
   174 => 
   array (
@@ -3494,6 +3668,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 8000,
     'isRecipeItem' => false,
+    'safeName' => 'shell-partition',
   ),
   175 => 
   array (
@@ -3512,6 +3687,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'shell-stool',
   ),
   176 => 
   array (
@@ -3533,6 +3709,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'shell-table',
   ),
   177 => 
   array (
@@ -3554,6 +3731,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'signpost',
   ),
   178 => 
   array (
@@ -3581,6 +3759,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 13920,
     'isRecipeItem' => false,
+    'safeName' => 'silo',
   ),
   179 => 
   array (
@@ -3602,6 +3781,7 @@
     'obtainedFrom' => 'Mail',
     'price' => 1350,
     'isRecipeItem' => false,
+    'safeName' => 'simple-diy-workbench',
   ),
   180 => 
   array (
@@ -3623,6 +3803,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 2850,
     'isRecipeItem' => false,
+    'safeName' => 'simple-well',
   ),
   181 => 
   array (
@@ -3641,6 +3822,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'sleigh',
   ),
   182 => 
   array (
@@ -3659,6 +3841,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'small-cardboard-boxes',
   ),
   183 => 
   array (
@@ -3680,6 +3863,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'space-shuttle',
   ),
   184 => 
   array (
@@ -3698,6 +3882,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'stall',
   ),
   185 => 
   array (
@@ -3716,6 +3901,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2250,
     'isRecipeItem' => false,
+    'safeName' => 'standard-umbrella-stand',
   ),
   186 => 
   array (
@@ -3737,6 +3923,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'street-piano',
   ),
   187 => 
   array (
@@ -3755,6 +3942,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 13500,
     'isRecipeItem' => false,
+    'safeName' => 'stone-arch',
   ),
   188 => 
   array (
@@ -3773,6 +3961,7 @@
     'obtainedFrom' => NULL,
     'price' => 3600,
     'isRecipeItem' => false,
+    'safeName' => 'stone-lion-dog',
   ),
   189 => 
   array (
@@ -3791,6 +3980,7 @@
     'obtainedFrom' => NULL,
     'price' => 450,
     'isRecipeItem' => false,
+    'safeName' => 'stone-stool',
   ),
   190 => 
   array (
@@ -3809,6 +3999,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'stone-table',
   ),
   191 => 
   array (
@@ -3827,6 +4018,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 1800,
     'isRecipeItem' => false,
+    'safeName' => 'stone-tablet',
   ),
   192 => 
   array (
@@ -3848,6 +4040,7 @@
     'obtainedFrom' => 'Test Your DIY Skills',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'swinging-bench',
   ),
   193 => 
   array (
@@ -3866,6 +4059,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 9000,
     'isRecipeItem' => false,
+    'safeName' => 'tall-garden-rock',
   ),
   194 => 
   array (
@@ -3884,6 +4078,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'tall-lantern',
   ),
   195 => 
   array (
@@ -3911,6 +4106,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'taurus-bathtub',
   ),
   196 => 
   array (
@@ -3929,6 +4125,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'tea-table',
   ),
   197 => 
   array (
@@ -3945,6 +4142,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'three-tiered-snowperson',
   ),
   198 => 
   array (
@@ -3966,6 +4164,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 650,
     'isRecipeItem' => false,
+    'safeName' => 'tiki-torch',
   ),
   199 => 
   array (
@@ -3987,6 +4186,7 @@
     'obtainedFrom' => NULL,
     'price' => 1035,
     'isRecipeItem' => false,
+    'safeName' => 'tiny-library',
   ),
   200 => 
   array (
@@ -4005,6 +4205,7 @@
     'obtainedFrom' => NULL,
     'price' => 60,
     'isRecipeItem' => false,
+    'safeName' => 'tire-stack',
   ),
   201 => 
   array (
@@ -4023,6 +4224,7 @@
     'obtainedFrom' => NULL,
     'price' => 20,
     'isRecipeItem' => false,
+    'safeName' => 'tire-toy',
   ),
   202 => 
   array (
@@ -4044,6 +4246,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 1560,
     'isRecipeItem' => false,
+    'safeName' => 'tree-standee',
   ),
   203 => 
   array (
@@ -4060,6 +4263,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'tree-s-bounty-arch',
   ),
   204 => 
   array (
@@ -4076,6 +4280,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'tree-s-bounty-big-tree',
   ),
   205 => 
   array (
@@ -4100,6 +4305,7 @@
     'obtainedFrom' => 'Isabelle',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'tree-s-bounty-little-tree',
   ),
   206 => 
   array (
@@ -4124,6 +4330,7 @@
     'obtainedFrom' => NULL,
     'price' => 33690,
     'isRecipeItem' => false,
+    'safeName' => 'trophy-case',
   ),
   207 => 
   array (
@@ -4145,6 +4352,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 760,
     'isRecipeItem' => false,
+    'safeName' => 'tulip-surprise-box',
   ),
   208 => 
   array (
@@ -4161,6 +4369,7 @@
     'obtainedFrom' => 'Celeste',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'virgo-harp',
   ),
   209 => 
   array (
@@ -4182,6 +4391,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2700,
     'isRecipeItem' => false,
+    'safeName' => 'water-pump',
   ),
   210 => 
   array (
@@ -4203,6 +4413,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 3500,
     'isRecipeItem' => false,
+    'safeName' => 'wave-breaker',
   ),
   211 => 
   array (
@@ -4221,6 +4432,7 @@
     'obtainedFrom' => 'Wildest Dreams DIY',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'wild-log-bench',
   ),
   212 => 
   array (
@@ -4242,6 +4454,7 @@
     'obtainedFrom' => 'Test Your DIY Skills',
     'price' => 720,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-bookshelf',
   ),
   213 => 
   array (
@@ -4263,6 +4476,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 2400,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-bed',
   ),
   214 => 
   array (
@@ -4284,6 +4498,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 840,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-bench',
   ),
   215 => 
   array (
@@ -4305,6 +4520,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 720,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-chair',
   ),
   216 => 
   array (
@@ -4326,6 +4542,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1800,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-chest',
   ),
   217 => 
   array (
@@ -4350,6 +4567,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 2460,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-stereo',
   ),
   218 => 
   array (
@@ -4371,6 +4589,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 600,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-stool',
   ),
   219 => 
   array (
@@ -4392,6 +4611,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1320,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-block-table',
   ),
   220 => 
   array (
@@ -4413,6 +4633,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-bookshelf',
   ),
   221 => 
   array (
@@ -4434,6 +4655,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1110,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-bucket',
   ),
   222 => 
   array (
@@ -4452,6 +4674,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 720,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-chair',
   ),
   223 => 
   array (
@@ -4470,6 +4693,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 1920,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-chest',
   ),
   224 => 
   array (
@@ -4488,6 +4712,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-double-bed',
   ),
   225 => 
   array (
@@ -4506,6 +4731,7 @@
     'obtainedFrom' => 'Island resident',
     'price' => 960,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-end-table',
   ),
   226 => 
   array (
@@ -4527,6 +4753,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 1350,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-full-length-mirror',
   ),
   227 => 
   array (
@@ -4545,6 +4772,7 @@
     'obtainedFrom' => NULL,
     'price' => 1200,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-low-table',
   ),
   228 => 
   array (
@@ -4563,6 +4791,7 @@
     'obtainedFrom' => NULL,
     'price' => 720,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-mini-table',
   ),
   229 => 
   array (
@@ -4581,6 +4810,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 2160,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-simple-bed',
   ),
   230 => 
   array (
@@ -4599,6 +4829,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 480,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-stool',
   ),
   231 => 
   array (
@@ -4617,6 +4848,7 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-table',
   ),
   232 => 
   array (
@@ -4635,6 +4867,7 @@
     'obtainedFrom' => 'Tom Nook',
     'price' => 1440,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-wardrobe',
   ),
   233 => 
   array (
@@ -4653,6 +4886,7 @@
     'obtainedFrom' => 'Message in a bottle',
     'price' => 480,
     'isRecipeItem' => false,
+    'safeName' => 'wooden-waste-bin',
   ),
   234 => 
   array (
@@ -4674,5 +4908,6 @@
     'obtainedFrom' => NULL,
     'price' => NULL,
     'isRecipeItem' => false,
+    'safeName' => 'yellow-leaf-pile',
   ),
 );

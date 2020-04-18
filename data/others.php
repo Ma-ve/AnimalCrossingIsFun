@@ -15,6 +15,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 96,
     'isRecipeItem' => NULL,
+    'safeName' => 'bamboo-lattice-fence',
   ),
   1 => 
   array (
@@ -36,6 +37,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 198,
     'isRecipeItem' => NULL,
+    'safeName' => 'barbed-wire-fence',
   ),
   2 => 
   array (
@@ -54,6 +56,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 120,
     'isRecipeItem' => NULL,
+    'safeName' => 'brick-fence',
   ),
   3 => 
   array (
@@ -87,6 +90,7 @@
     'obtainedFrom' => 'Bunny Day',
     'price' => 240,
     'isRecipeItem' => NULL,
+    'safeName' => 'bunny-day-fence',
   ),
   4 => 
   array (
@@ -105,6 +109,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 72,
     'isRecipeItem' => NULL,
+    'safeName' => 'corral-fence',
   ),
   5 => 
   array (
@@ -123,6 +128,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 72,
     'isRecipeItem' => NULL,
+    'safeName' => 'country-fence',
   ),
   6 => 
   array (
@@ -144,6 +150,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 120,
     'isRecipeItem' => NULL,
+    'safeName' => 'imperial-fence',
   ),
   7 => 
   array (
@@ -165,6 +172,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 315,
     'isRecipeItem' => NULL,
+    'safeName' => 'iron-and-stone-fence',
   ),
   8 => 
   array (
@@ -183,6 +191,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 450,
     'isRecipeItem' => NULL,
+    'safeName' => 'iron-fence',
   ),
   9 => 
   array (
@@ -201,6 +210,7 @@
     'obtainedFrom' => NULL,
     'price' => 200,
     'isRecipeItem' => NULL,
+    'safeName' => 'fish-bait',
   ),
   10 => 
   array (
@@ -219,6 +229,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 96,
     'isRecipeItem' => NULL,
+    'safeName' => 'lattice-fence',
   ),
   11 => 
   array (
@@ -240,6 +251,7 @@
     'obtainedFrom' => NULL,
     'price' => 100,
     'isRecipeItem' => NULL,
+    'safeName' => 'medicine',
   ),
   12 => 
   array (
@@ -258,6 +270,7 @@
     'obtainedFrom' => NULL,
     'price' => 1000,
     'isRecipeItem' => NULL,
+    'safeName' => 'ocarina',
   ),
   13 => 
   array (
@@ -276,6 +289,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 2800,
     'isRecipeItem' => NULL,
+    'safeName' => 'pan-flute',
   ),
   14 => 
   array (
@@ -297,6 +311,7 @@
     'obtainedFrom' => 'Balloon',
     'price' => 140,
     'isRecipeItem' => NULL,
+    'safeName' => 'pitfall-seed',
   ),
   15 => 
   array (
@@ -315,6 +330,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 300,
     'isRecipeItem' => NULL,
+    'safeName' => 'rope-fence',
   ),
   16 => 
   array (
@@ -333,6 +349,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 72,
     'isRecipeItem' => NULL,
+    'safeName' => 'simple-wooden-fence',
   ),
   17 => 
   array (
@@ -351,6 +368,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 96,
     'isRecipeItem' => NULL,
+    'safeName' => 'spiky-fence',
   ),
   18 => 
   array (
@@ -369,6 +387,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 60,
     'isRecipeItem' => NULL,
+    'safeName' => 'stone-fence',
   ),
   19 => 
   array (
@@ -390,6 +409,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 56,
     'isRecipeItem' => NULL,
+    'safeName' => 'straw-fence',
   ),
   20 => 
   array (
@@ -408,6 +428,7 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 96,
     'isRecipeItem' => NULL,
+    'safeName' => 'vertical-board-fence',
   ),
   21 => 
   array (
@@ -432,5 +453,6 @@
     'obtainedFrom' => 'Nook Stop',
     'price' => 330,
     'isRecipeItem' => NULL,
+    'safeName' => 'zen-fence',
   ),
 );
