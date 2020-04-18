@@ -253,42 +253,24 @@ abstract class Creature extends Collectible {
      * @return bool
      */
     public function hasIrregularMonths() {
-        switch($this->name) {
+        switch(strtolower($this->name)) {
             // Fish
-            case 'Blue marlin':
-            case 'Char':
-            case 'Cherry salmon':
-            case 'Golden trout':
+            case 'blue marlin':
+            case 'char':
+            case 'cherry salmon':
+            case 'golden trout':
             // Bugs
-            case 'Emperor butterfly':
-            case 'Ladybug':
-            case 'Rajah Brooke\'s birdwing':
-            case 'Violin beetle':
-            case 'Yellow butterfly':
+            case 'emperor butterfly':
+            case 'ladybug':
+            case 'rajah brooke\'s birdwing':
+            case 'violin beetle':
+            case 'yellow butterfly':
                 // @TODO: Case insensitivity
                 return true;
         }
 
         return false;
     }
-
-//    public function getBullets(): string {
-//        $html = '';
-//        foreach($this->months as $index => $value) {
-//            $monthLetter = $this->numToMonth[$index];
-//
-//            if($index === 6) {
-//                $html .= '<br>';
-//            }
-//            if(true === $value) {
-//                $html .= "<span class='badge badge-success'>{$monthLetter}</span> ";
-//                continue;
-//            }
-//            $html .= "<span class='badge'>{$monthLetter}</span> ";
-//        }
-//
-//        return $html;
-//    }
 
     public function getBullets(): array {
         $return = [];
