@@ -32,21 +32,25 @@ class ProgressService {
             [
                 'icon'  => 'fish',
                 'label' => 'Fish',
+                'group' => 'fish',
                 'count' => count($fish = (new FishRepository(null))->loadAll()->getAll()),
             ],
             [
                 'icon'  => 'bug',
                 'label' => 'Bugs',
+                'group' => 'bugs',
                 'count' => count($bugs = (new BugRepository(null))->loadAll()->getAll()),
             ],
             [
                 'icon'  => 'bone',
                 'label' => 'Fossils',
+                'group' => 'fossils',
                 'count' => count($fossils = (new FossilRepository(null))->loadAll()->getAll()),
             ],
             [
                 'icon'  => 'tools',
                 'label' => 'Recipes',
+                'group' => 'recipes',
                 'count' => count($recipes = (new CherryBlossomRecipeRepository(null))->loadAll()->getAll()),
             ],
         ];

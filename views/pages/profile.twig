@@ -2,6 +2,15 @@
 
 {% block content %}
 
+    {% set itemPlaceholders %}
+        {% for progressItem in progressItems.all %}
+            <div class="row mt-2">
+                <div class="col-4"><i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}</div>
+                <div class="col-4 js-storage-text" data-group="{{ progressItem.group }}">?</div>
+            </div>
+        {% endfor %}
+    {% endset %}
+
     <div class="row mx-0 mt-5 p-2" style="background-color: var(--bg-color);">
         <div class="col-12">
             <div class="row">
@@ -22,27 +31,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-6 js-browser-container">
                             <div class="row">
                                 <div class="col-8 align-self-center">
                                     <span>Currently in browser: </span>
-                                    <ul>
-                                    </ul>
+                                    {{ itemPlaceholders }}
                                 </div>
                                 <div class="col-4">
-                                    <a class="btn btn-sm btn-secondary text-white js-">Save to account</a>
+                                    <a class="btn btn-sm btn-secondary text-white js-save-to-account">Save to account</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 js-storage-container">
                             <div class="row">
                                 <div class="col-8 align-self-center">
                                     <span>Currently on account: </span>
+                                    {{ itemPlaceholders }}
                                     <ul>
                                     </ul>
                                 </div>
                                 <div class="col-4">
-                                    <a class="btn btn-sm btn-success text-white js-">Load into browser</a>
+                                    <a class="btn btn-sm btn-success text-white js-load-into-browser">Load into browser</a>
                                 </div>
                             </div>
                         </div>
