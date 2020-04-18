@@ -280,6 +280,7 @@ a:hover {
     border: 1px solid var(--color-bluewood-translucent);
 }
 
+.text-caps-lowercase,
 .top {
     font-variant:   small-caps;
     text-transform: lowercase;

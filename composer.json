@@ -25,7 +25,8 @@
     "nyholm/psr7": "^1.2",
     "nyholm/psr7-server": "^0.4.1",
     "slim/slim": "^4.0",
-    "slim/twig-view": "^3.0"
+    "slim/twig-view": "^3.0",
+    "cheprasov/php-redis-client": "^1.9"
   },
   "scripts": {
     "json-to-php": "php ./scripts/json-to-php.php data/*.json",
