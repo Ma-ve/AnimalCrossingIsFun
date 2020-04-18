@@ -36,32 +36,7 @@ $(function () {
         case '/profile/':
             promiseFuncs.push(checkProfile);
             promiseFuncs.push(loadStorage);
-            $('.js-save-to-account').on('click', function () {
-                $(this).css({
-                    opacity: 0.3,
-                    pointerEvents: 'none',
-                });
-                $.post(
-                    '/profile/api/save',
-                    JSON.stringify(progress.currentStorage),
-                    function (data) {
-                        if(data && 'success' in data && data.success) {
-                            writeStorageDataToDocument('.js-storage-container', progress.currentStorage);
-                        }
-                    }
-                );
-            });
-            $('.js-load-into-browser').on('click', function () {
-                $(this).css({
-                    opacity: 0.3,
-                    pointerEvents: 'none',
-                });
-
-                if(false !== loadedProfileData) {
-                    progress.save(loadedProfileData);
-                }
-                writeStorageDataToDocument('.js-browser-container', loadedProfileData);
-            });
+            registerSaveLoadButtons();
             break;
     }
 
@@ -239,12 +214,18 @@ function loadStorageFromDatabase(user) {
         }
 
         loadedProfileData = data.data;
+        if(JSON.stringify(loadedProfileData) === JSON.stringify(progress.currentStorage)) {
+            $('.js-load-into-browser, .js-save-to-account').css({
+                opacity: 0.3,
+                pointerEvents: 'none',
+            });
+        }
         writeStorageDataToDocument('.js-storage-container', loadedProfileData);
     }, undefined, 'json');
 }
 
 function loadStorageFromLocalStorage(progress) {
-    if(!progress || !progress.currentStorage || Object.keys(progress.currentStorage).length === 0) {
+    if (!progress || !progress.currentStorage || Object.keys(progress.currentStorage).length === 0) {
         writeStorageDataToDocument('.js-browser-container', 0);
         return;
     }
@@ -253,7 +234,7 @@ function loadStorageFromLocalStorage(progress) {
 }
 
 function writeStorageDataToDocument(selector, data) {
-    if(typeof data === 'number' && 0 === data) {
+    if (typeof data === 'number' && 0 === data) {
         $(selector + ' .js-storage-text').text(0);
         return;
     }
@@ -266,6 +247,35 @@ function writeStorageDataToDocument(selector, data) {
 
         $(selector + ' .js-storage-text[data-group="' + groupKey + '"]').text(groupLength);
     }
+}
+
+function registerSaveLoadButtons() {
+    $('.js-save-to-account').on('click', function () {
+        $(this).css({
+            opacity: 0.3,
+            pointerEvents: 'none',
+        });
+        $.post(
+            '/profile/api/save',
+            JSON.stringify(progress.currentStorage),
+            function (data) {
+                if (data && 'success' in data && data.success) {
+                    writeStorageDataToDocument('.js-storage-container', progress.currentStorage);
+                }
+            }
+        );
+    });
+    $('.js-load-into-browser').on('click', function () {
+        $(this).css({
+            opacity: 0.3,
+            pointerEvents: 'none',
+        });
+
+        if (false !== loadedProfileData) {
+            progress.save(loadedProfileData);
+        }
+        writeStorageDataToDocument('.js-browser-container', loadedProfileData);
+    });
 }
 
 
