@@ -6,7 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
 use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
-use Mave\AnimalCrossingIsFun\Repositories\Services\JsonService;
+use Mave\AnimalCrossingIsFun\Repositories\Services\PhpService;
 use Mave\AnimalCrossingIsFun\Repositories\Services\SortService;
 
 abstract class BaseRepository {
@@ -28,7 +28,7 @@ abstract class BaseRepository {
      * @param IDatabaseService $databaseService
      */
     public function __construct(?IDatabaseService $databaseService) {
-        $this->databaseService = $databaseService ?? new JsonService();
+        $this->databaseService = $databaseService ?? new PhpService();
         $this->sortService = new SortService();
     }
 

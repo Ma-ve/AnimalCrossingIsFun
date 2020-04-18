@@ -31,7 +31,7 @@ class FishRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = $this->databaseService->loadFromDatabase('fish.json');
+        $this->contents = $this->databaseService->loadFromDatabase('fish');
 
         return $this;
     }

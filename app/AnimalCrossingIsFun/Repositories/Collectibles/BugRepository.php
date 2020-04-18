@@ -31,7 +31,7 @@ class BugRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = $this->databaseService->loadFromDatabase('bugs.json');
+        $this->contents = $this->databaseService->loadFromDatabase('bugs');
 
         return $this;
     }

@@ -26,5 +26,11 @@
     "nyholm/psr7-server": "^0.4.1",
     "slim/slim": "^4.0",
     "slim/twig-view": "^3.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php ./scripts/json-to-php.php data/*.json",
+      "php ./scripts/php-item-safename.php data/*.php"
+    ]
   }
 }
