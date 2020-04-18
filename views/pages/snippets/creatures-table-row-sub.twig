@@ -1,5 +1,5 @@
 {% if item.hasIrregularMonths %}
-    {% set monthContainer, priceOffset = ' creature-month-container', 'offset-0' %}
+    {% set monthContainer, priceOffset, marginTops = ' creature-month-container', 'offset-0', 'mt-3 mt-lg-0' %}
 {% endif %}
 {% set hasIrregularMonths = item.hasIrregularMonths() %}
 <div class="col-lg-3 col-4 text-lg-left text-center{{ monthContainer|default('') }}">
@@ -18,12 +18,12 @@
         <span class="badge badge-info">{{ item.getPeriodOfYear() }}</span>
     {% endif %}
 </div>
-<div class="col-lg-2 col-4 text-lg-left text-center">
+<div class="col-lg-2 col-4 text-lg-left text-center {{ marginTops|default('') }}">
     {% for creatureTime in item.getTime() %}
         <span class="badge badge-danger">{{ creatureTime }}</span>
     {% endfor %}
 </div>
-<div class="col-lg-2 col-4 {{ priceOffset|default('offset-4') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning"><!--
+<div class="col-lg-2 col-4 {{ priceOffset|default('offset-4') }} {{ marginTops|default('') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning"><!--
     --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
     --></span><!--
 --></div>

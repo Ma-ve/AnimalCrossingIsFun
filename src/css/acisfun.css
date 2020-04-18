@@ -317,7 +317,9 @@ body.home .menu .progress {
     display: none;
 }
 
-.creature-month-container {
-    position: absolute;
-    top:      12px;
+@media (max-width: 768px) {
+    .creature-month-container {
+        position: absolute;
+        top:      12px;
+    }
 }
