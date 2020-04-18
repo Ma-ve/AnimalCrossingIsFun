@@ -31,7 +31,7 @@ class FossilRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = $this->databaseService->loadFromDatabase('fossils.json');
+        $this->contents = $this->databaseService->loadFromDatabase('fossils');
 
         return $this;
     }

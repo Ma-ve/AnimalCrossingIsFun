@@ -49,7 +49,11 @@ abstract class Collectible extends Dto {
      * @throws Exception
      */
     public function getSafeName(): string {
-        return str_replace('--', '-', strtolower(preg_replace("/[^\da-z]/i", "-", $this->name)));
+        return $this->safeName ?? self::getSafeNameForString($this->name);
+    }
+
+    public static function getSafeNameForString(string $string): string {
+        return str_replace('--', '-', strtolower(preg_replace("/[^\da-z]/i", "-", $string)));
     }
 
 }
