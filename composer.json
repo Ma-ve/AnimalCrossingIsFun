@@ -28,9 +28,7 @@
     "slim/twig-view": "^3.0"
   },
   "scripts": {
-    "post-install-cmd": [
-      "php ./scripts/json-to-php.php data/*.json",
-      "php ./scripts/php-item-safename.php data/*.php"
-    ]
+    "json-to-php": "php ./scripts/json-to-php.php data/*.json",
+    "safename-item": "php ./scripts/php-item-safename.php data/*.php"
   }
 }
