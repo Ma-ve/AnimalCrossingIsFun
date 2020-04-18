@@ -66,25 +66,23 @@ try {
         $collectorProxy->redirect('', '/profile/');
 
         $collectorProxy->group('/api', function(\Slim\Routing\RouteCollectorProxy $collectorProxy) {
-            // @TODO
-//            $collectorProxy->post('/save', function(Request $request, Response $response) {
-            $collectorProxy->get('/save', function(Request $request, Response $response) {
+            $collectorProxy->post('/save', function(Request $request, Response $response) {
                 return (new StorageService(UserService::getUser()))
                     ->saveToDatabase($request, $response);
             });
 
-            // @TODO
-//            $collectorProxy->post('/load', function(Request $request, Response $response) {
-            $collectorProxy->get('/load', function(Request $request, Response $response) {
+            $collectorProxy->post('/load', function(Request $request, Response $response) {
                 return (new StorageService(UserService::getUser()))
-                    ->loadFromDatabase($request, $response);
+                    ->loadFromDatabase($response);
             });
         });
 
         $collectorProxy->get('/', function(Request $request, Response $response) {
             $view = Twig::fromRequest($request);
 
-            return $view->render($response, 'pages/profile.twig');
+            return $view->render($response, 'pages/profile.twig', [
+                'progressItems' => (new ProgressService())->getAll(),
+            ]);
         });
     })
         ->add(function(Request $request, Psr\Http\Server\RequestHandlerInterface $requestHandler) {

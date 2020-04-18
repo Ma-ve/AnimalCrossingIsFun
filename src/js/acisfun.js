@@ -9,9 +9,11 @@ const AC_LOCALSTORAGE_VERSION_HISTORY = [
 ];
 
 let user = false;
+let progress = false;
+let loadedProfileData = false;
 
 $(function () {
-    let progress = new ProgressClass();
+    progress = new ProgressClass();
 
     let toggleCaughtCallback = function (event) {
         toggleCaught(event, progress);
@@ -24,7 +26,7 @@ $(function () {
     let promiseObj = loginPromise();
 
     let path = window.location.pathname;
-    switch(path) {
+    switch (path) {
         case '/bugs':
         case '/fish':
         case '/fossils':
@@ -33,6 +35,33 @@ $(function () {
             break;
         case '/profile/':
             promiseFuncs.push(checkProfile);
+            promiseFuncs.push(loadStorage);
+            $('.js-save-to-account').on('click', function () {
+                $(this).css({
+                    opacity: 0.3,
+                    pointerEvents: 'none',
+                });
+                $.post(
+                    '/profile/api/save',
+                    JSON.stringify(progress.currentStorage),
+                    function (data) {
+                        if(data && 'success' in data && data.success) {
+                            writeStorageDataToDocument('.js-storage-container', progress.currentStorage);
+                        }
+                    }
+                );
+            });
+            $('.js-load-into-browser').on('click', function () {
+                $(this).css({
+                    opacity: 0.3,
+                    pointerEvents: 'none',
+                });
+
+                if(false !== loadedProfileData) {
+                    progress.save(loadedProfileData);
+                }
+                writeStorageDataToDocument('.js-browser-container', loadedProfileData);
+            });
             break;
     }
 
@@ -49,9 +78,9 @@ $(function () {
 });
 
 function loginPromise() {
-    return new Promise(function(resolve, reject) {
-        $.get('/auth/me', function(data, text, xhr) {
-            if(
+    return new Promise(function (resolve, reject) {
+        $.get('/auth/me', function (data, text, xhr) {
+            if (
                 200 === xhr.status &&
                 (data && 'data' in data && data.data)
             ) {
@@ -174,7 +203,7 @@ function checkLogin() {
     let authContainer = $('.js-auth-container');
 
     return [
-        function(data) {
+        function (data) {
             if ('name' in data.data && data.data.name) {
                 user = new User();
                 user.setUser(data.data);
@@ -182,14 +211,14 @@ function checkLogin() {
             }
             authContainer.css('display', 'block')
         },
-        function(Error) {
+        function (Error) {
             authContainer.css('display', 'block');
         }
     ];
 }
 
 function checkProfile(data) {
-    if(!user) {
+    if (!user) {
         window.location = '/';
         return;
     }
@@ -197,6 +226,47 @@ function checkProfile(data) {
     $('.profile .name').text(user.get().name);
 }
 
+function loadStorage(data) {
+    loadStorageFromDatabase(user);
+    loadStorageFromLocalStorage(progress);
+}
+
+function loadStorageFromDatabase(user) {
+    $.post('/profile/api/load', function (data) {
+        if (!data || !('data' in data) || !data.data) {
+            writeStorageDataToDocument('.js-storage-container', 0);
+            return;
+        }
+
+        loadedProfileData = data.data;
+        writeStorageDataToDocument('.js-storage-container', loadedProfileData);
+    }, undefined, 'json');
+}
+
+function loadStorageFromLocalStorage(progress) {
+    if(!progress || !progress.currentStorage || Object.keys(progress.currentStorage).length === 0) {
+        writeStorageDataToDocument('.js-browser-container', 0);
+        return;
+    }
+
+    writeStorageDataToDocument('.js-browser-container', progress.currentStorage);
+}
+
+function writeStorageDataToDocument(selector, data) {
+    if(typeof data === 'number' && 0 === data) {
+        $(selector + ' .js-storage-text').text(0);
+        return;
+    }
+
+    var objKeys = Object.keys(data);
+    for (var i = 0; i < objKeys.length; i++) {
+        let groupKey = objKeys[i];
+        let groupData = data[groupKey];
+        let groupLength = Object.keys(groupData).length;
+
+        $(selector + ' .js-storage-text[data-group="' + groupKey + '"]').text(groupLength);
+    }
+}
 
 
 class ProgressClass {
@@ -222,7 +292,6 @@ class ProgressClass {
     }
 
 }
-
 
 
 class User {

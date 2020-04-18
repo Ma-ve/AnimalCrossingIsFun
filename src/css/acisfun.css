@@ -178,6 +178,7 @@ a:hover {
 
 /* Hover must be defined before the :checked part, as we don't want :checked being able to be hovered on */
 .caught-checkbox input[type="checkbox"]:hover + label::after,
+.caught-checkbox input[type="checkbox"]:focus + label::after,
 .navigation-column span a:hover {
     color: var(--body-color);
 }

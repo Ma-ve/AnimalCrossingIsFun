@@ -61,7 +61,7 @@ class CacheService {
      * @param string $data
      * @param int    $seconds
      */
-    public function set(string $key, string $data, int $seconds) {
+    public function set(string $key, string $data, ?int $seconds) {
         self::client()->set($this->keyPrefix . $key, $data, $seconds);
     }
 
