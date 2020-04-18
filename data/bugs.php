@@ -18,6 +18,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'common-butterfly',
   ),
   1 => 
   array (
@@ -38,6 +39,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'yellow-butterfly',
   ),
   2 => 
   array (
@@ -58,6 +60,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'tiger-butterfly',
   ),
   3 => 
   array (
@@ -78,6 +81,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'peacock-butterfly',
   ),
   4 => 
   array (
@@ -98,6 +102,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'common-bluebottle',
   ),
   5 => 
   array (
@@ -118,6 +123,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'paper-kite-butterfly',
   ),
   6 => 
   array (
@@ -138,6 +144,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'great-purple-emperor',
   ),
   7 => 
   array (
@@ -158,6 +165,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'monarch-butterfly',
   ),
   8 => 
   array (
@@ -178,6 +186,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'emperor-butterfly',
   ),
   9 => 
   array (
@@ -198,6 +207,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'agrias-butterfly',
   ),
   10 => 
   array (
@@ -218,6 +228,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'rajah-brooke-s-birdwing',
   ),
   11 => 
   array (
@@ -238,6 +249,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'queen-alexandra-s-birdwing',
   ),
   12 => 
   array (
@@ -258,6 +270,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'moth',
   ),
   13 => 
   array (
@@ -278,6 +291,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'atlas-moth',
   ),
   14 => 
   array (
@@ -298,6 +312,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'madagascan-sunset-moth',
   ),
   15 => 
   array (
@@ -318,6 +333,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'long-locust',
   ),
   16 => 
   array (
@@ -338,6 +354,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'migratory-locust',
   ),
   17 => 
   array (
@@ -358,6 +375,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'rice-grasshopper',
   ),
   18 => 
   array (
@@ -378,6 +396,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'grasshopper',
   ),
   19 => 
   array (
@@ -398,6 +417,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'cricket',
   ),
   20 => 
   array (
@@ -418,6 +438,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'bell-cricket',
   ),
   21 => 
   array (
@@ -438,6 +459,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'mantis',
   ),
   22 => 
   array (
@@ -458,6 +480,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'orchid-mantis',
   ),
   23 => 
   array (
@@ -478,6 +501,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'honeybee',
   ),
   24 => 
   array (
@@ -498,6 +522,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'wasp',
   ),
   25 => 
   array (
@@ -518,6 +543,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'brown-cicada',
   ),
   26 => 
   array (
@@ -538,6 +564,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'robust-cicada',
   ),
   27 => 
   array (
@@ -558,6 +585,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giant-cicada',
   ),
   28 => 
   array (
@@ -578,6 +606,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'walker-cicada',
   ),
   29 => 
   array (
@@ -598,6 +627,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'evening-cicada',
   ),
   30 => 
   array (
@@ -618,6 +648,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'cicada-shell',
   ),
   31 => 
   array (
@@ -638,6 +669,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'red-dragonfly',
   ),
   32 => 
   array (
@@ -658,6 +690,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'darner-dragonfly',
   ),
   33 => 
   array (
@@ -678,6 +711,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'banded-dragonfly',
   ),
   34 => 
   array (
@@ -698,6 +732,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'damselfly',
   ),
   35 => 
   array (
@@ -718,6 +753,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'firefly',
   ),
   36 => 
   array (
@@ -738,6 +774,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'mole-cricket',
   ),
   37 => 
   array (
@@ -758,6 +795,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'pondskater',
   ),
   38 => 
   array (
@@ -778,6 +816,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'diving-beetle',
   ),
   39 => 
   array (
@@ -798,6 +837,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giant-water-bug',
   ),
   40 => 
   array (
@@ -818,6 +858,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'stinkbug',
   ),
   41 => 
   array (
@@ -838,6 +879,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'man-faced-stink-bug',
   ),
   42 => 
   array (
@@ -858,6 +900,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'ladybug',
   ),
   43 => 
   array (
@@ -878,6 +921,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'tiger-beetle',
   ),
   44 => 
   array (
@@ -898,6 +942,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'jewel-beetle',
   ),
   45 => 
   array (
@@ -918,6 +963,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'violin-beetle',
   ),
   46 => 
   array (
@@ -938,6 +984,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'citrus-long-horned-beetle',
   ),
   47 => 
   array (
@@ -958,6 +1005,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'rosalia-batesi-beetle',
   ),
   48 => 
   array (
@@ -978,6 +1026,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'blue-weevil-beetle',
   ),
   49 => 
   array (
@@ -998,6 +1047,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'dung-beetle',
   ),
   50 => 
   array (
@@ -1018,6 +1068,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'earth-boring-dung-beetle',
   ),
   51 => 
   array (
@@ -1038,6 +1089,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'scarab-beetle',
   ),
   52 => 
   array (
@@ -1058,6 +1110,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'drone-beetle',
   ),
   53 => 
   array (
@@ -1078,6 +1131,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'goliath-beetle',
   ),
   54 => 
   array (
@@ -1098,6 +1152,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'saw-stag',
   ),
   55 => 
   array (
@@ -1118,6 +1173,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'miyama-stag',
   ),
   56 => 
   array (
@@ -1138,6 +1194,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giant-stag',
   ),
   57 => 
   array (
@@ -1158,6 +1215,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'rainbow-stag',
   ),
   58 => 
   array (
@@ -1178,6 +1236,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'cyclommatus-stag',
   ),
   59 => 
   array (
@@ -1198,6 +1257,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'golden-stag',
   ),
   60 => 
   array (
@@ -1218,6 +1278,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giraffe-stag',
   ),
   61 => 
   array (
@@ -1238,6 +1299,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'horned-dynastid',
   ),
   62 => 
   array (
@@ -1258,6 +1320,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'horned-atlas',
   ),
   63 => 
   array (
@@ -1278,6 +1341,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'horned-elephant',
   ),
   64 => 
   array (
@@ -1298,6 +1362,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'horned-hercules',
   ),
   65 => 
   array (
@@ -1318,6 +1383,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'walking-stick',
   ),
   66 => 
   array (
@@ -1338,6 +1404,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'walking-leaf',
   ),
   67 => 
   array (
@@ -1358,6 +1425,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'bagworm',
   ),
   68 => 
   array (
@@ -1378,6 +1446,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'ant',
   ),
   69 => 
   array (
@@ -1398,6 +1467,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'hermit-crab',
   ),
   70 => 
   array (
@@ -1418,6 +1488,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'wharf-roach',
   ),
   71 => 
   array (
@@ -1438,6 +1509,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'fly',
   ),
   72 => 
   array (
@@ -1458,6 +1530,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'mosquito',
   ),
   73 => 
   array (
@@ -1478,6 +1551,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'flea',
   ),
   74 => 
   array (
@@ -1498,6 +1572,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'snail',
   ),
   75 => 
   array (
@@ -1518,6 +1593,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'pill-bug',
   ),
   76 => 
   array (
@@ -1538,6 +1614,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'centipede',
   ),
   77 => 
   array (
@@ -1558,6 +1635,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'spider',
   ),
   78 => 
   array (
@@ -1578,6 +1656,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'tarantula',
   ),
   79 => 
   array (
@@ -1598,5 +1677,6 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'scorpion',
   ),
 );

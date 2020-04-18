@@ -19,6 +19,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'bitterling',
   ),
   1 => 
   array (
@@ -40,6 +41,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'pale-chub',
   ),
   2 => 
   array (
@@ -61,6 +63,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'crucian-carp',
   ),
   3 => 
   array (
@@ -82,6 +85,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'dace',
   ),
   4 => 
   array (
@@ -103,6 +107,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'carp',
   ),
   5 => 
   array (
@@ -124,6 +129,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'koi',
   ),
   6 => 
   array (
@@ -145,6 +151,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'goldfish',
   ),
   7 => 
   array (
@@ -166,6 +173,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'pop-eyed-goldfish',
   ),
   8 => 
   array (
@@ -187,6 +195,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'ranchu-goldfish',
   ),
   9 => 
   array (
@@ -208,6 +217,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'killifish',
   ),
   10 => 
   array (
@@ -229,6 +239,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'crawfish',
   ),
   11 => 
   array (
@@ -250,6 +261,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'soft-shelled-turtle',
   ),
   12 => 
   array (
@@ -271,6 +283,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'snapping-turtle',
   ),
   13 => 
   array (
@@ -292,6 +305,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'tadpole',
   ),
   14 => 
   array (
@@ -313,6 +327,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'frog',
   ),
   15 => 
   array (
@@ -334,6 +349,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'freshwater-goby',
   ),
   16 => 
   array (
@@ -355,6 +371,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'loach',
   ),
   17 => 
   array (
@@ -376,6 +393,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'catfish',
   ),
   18 => 
   array (
@@ -397,6 +415,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giant-snakehead',
   ),
   19 => 
   array (
@@ -418,6 +437,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'bluegill',
   ),
   20 => 
   array (
@@ -439,6 +459,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'yellow-perch',
   ),
   21 => 
   array (
@@ -460,6 +481,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'black-bass',
   ),
   22 => 
   array (
@@ -481,6 +503,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'tilapia',
   ),
   23 => 
   array (
@@ -502,6 +525,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'pike',
   ),
   24 => 
   array (
@@ -523,6 +547,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'pond-smelt',
   ),
   25 => 
   array (
@@ -544,6 +569,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'sweetfish',
   ),
   26 => 
   array (
@@ -565,6 +591,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'cherry-salmon',
   ),
   27 => 
   array (
@@ -586,6 +613,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'char',
   ),
   28 => 
   array (
@@ -607,6 +635,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'golden-trout',
   ),
   29 => 
   array (
@@ -628,6 +657,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'stringfish',
   ),
   30 => 
   array (
@@ -649,6 +679,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'salmon',
   ),
   31 => 
   array (
@@ -670,6 +701,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'king-salmon',
   ),
   32 => 
   array (
@@ -691,6 +723,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'mitten-crab',
   ),
   33 => 
   array (
@@ -712,6 +745,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'guppy',
   ),
   34 => 
   array (
@@ -733,6 +767,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'nibble-fish',
   ),
   35 => 
   array (
@@ -754,6 +789,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'angelfish',
   ),
   36 => 
   array (
@@ -775,6 +811,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'betta',
   ),
   37 => 
   array (
@@ -796,6 +833,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'neon-tetra',
   ),
   38 => 
   array (
@@ -817,6 +855,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'rainbowfish',
   ),
   39 => 
   array (
@@ -838,6 +877,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'piranha',
   ),
   40 => 
   array (
@@ -859,6 +899,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'arowana',
   ),
   41 => 
   array (
@@ -880,6 +921,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'dorado',
   ),
   42 => 
   array (
@@ -901,6 +943,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'gar',
   ),
   43 => 
   array (
@@ -922,6 +965,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'arapaima',
   ),
   44 => 
   array (
@@ -943,6 +987,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'saddled-bichir',
   ),
   45 => 
   array (
@@ -964,6 +1009,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'sturgeon',
   ),
   46 => 
   array (
@@ -985,6 +1031,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'sea-butterfly',
   ),
   47 => 
   array (
@@ -1006,6 +1053,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'sea-horse',
   ),
   48 => 
   array (
@@ -1027,6 +1075,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'clown-fish',
   ),
   49 => 
   array (
@@ -1048,6 +1097,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'surgeonfish',
   ),
   50 => 
   array (
@@ -1069,6 +1119,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'butterfly-fish',
   ),
   51 => 
   array (
@@ -1090,6 +1141,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'napoleonfish',
   ),
   52 => 
   array (
@@ -1111,6 +1163,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'zebra-turkeyfish',
   ),
   53 => 
   array (
@@ -1132,6 +1185,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'blowfish',
   ),
   54 => 
   array (
@@ -1153,6 +1207,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'puffer-fish',
   ),
   55 => 
   array (
@@ -1174,6 +1229,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'anchovy',
   ),
   56 => 
   array (
@@ -1195,6 +1251,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'horse-mackerel',
   ),
   57 => 
   array (
@@ -1216,6 +1273,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'barred-knifejaw',
   ),
   58 => 
   array (
@@ -1237,6 +1295,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'sea-bass',
   ),
   59 => 
   array (
@@ -1258,6 +1317,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'red-snapper',
   ),
   60 => 
   array (
@@ -1279,6 +1339,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'dab',
   ),
   61 => 
   array (
@@ -1300,6 +1361,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'olive-flounder',
   ),
   62 => 
   array (
@@ -1321,6 +1383,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'squid',
   ),
   63 => 
   array (
@@ -1342,6 +1405,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'moray-eel',
   ),
   64 => 
   array (
@@ -1363,6 +1427,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'ribbon-eel',
   ),
   65 => 
   array (
@@ -1384,6 +1449,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'tuna',
   ),
   66 => 
   array (
@@ -1405,6 +1471,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'blue-marlin',
   ),
   67 => 
   array (
@@ -1426,6 +1493,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'giant-trevally',
   ),
   68 => 
   array (
@@ -1447,6 +1515,7 @@
     'oct' => true,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'mahi-mahi',
   ),
   69 => 
   array (
@@ -1468,6 +1537,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'ocean-sunfish',
   ),
   70 => 
   array (
@@ -1489,6 +1559,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => false,
+    'safeName' => 'ray',
   ),
   71 => 
   array (
@@ -1510,6 +1581,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'saw-shark',
   ),
   72 => 
   array (
@@ -1531,6 +1603,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'hammerhead-shark',
   ),
   73 => 
   array (
@@ -1552,6 +1625,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'great-white-shark',
   ),
   74 => 
   array (
@@ -1573,6 +1647,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'whale-shark',
   ),
   75 => 
   array (
@@ -1594,6 +1669,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => false,
+    'safeName' => 'suckerfish',
   ),
   76 => 
   array (
@@ -1615,6 +1691,7 @@
     'oct' => false,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'football-fish',
   ),
   77 => 
   array (
@@ -1636,6 +1713,7 @@
     'oct' => false,
     'nov' => false,
     'dec' => true,
+    'safeName' => 'oarfish',
   ),
   78 => 
   array (
@@ -1657,6 +1735,7 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'barreleye',
   ),
   79 => 
   array (
@@ -1678,5 +1757,6 @@
     'oct' => true,
     'nov' => true,
     'dec' => true,
+    'safeName' => 'coelacanth',
   ),
 );
