@@ -1,10 +1,10 @@
 {% set icon = '' %}
 {% set sortProperty = property %}
 {% if sort == property %}
-    {% set icon = 'fa-sort-' ~ sortIcon ~ '-down' %}
+    {% set icon = sortIcon[0] %}
     {% set sortProperty = '-' ~ sortProperty %}
 {% elseif sort == '-' ~ sortProperty %}
-    {% set icon = 'fa-sort-' ~ sortIcon ~ '-down-alt' %}
+    {% set icon = sortIcon[1] %}
 {% endif %}
 <a href="{{ current_url() }}?sort={{ sortProperty }}">
     <strong>{{ label }}</strong>
