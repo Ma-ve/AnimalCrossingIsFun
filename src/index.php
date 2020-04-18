@@ -6,6 +6,9 @@ use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
+use Mave\AnimalCrossingIsFun\Services\ProgressService;
+use Mave\AnimalCrossingIsFun\Services\StorageService;
+use Mave\AnimalCrossingIsFun\Services\UserService;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
@@ -53,12 +56,30 @@ try {
     $app->get('/', function(Request $request, Response $response) {
         $view = Twig::fromRequest($request);
 
-        return $view->render($response, 'pages/home.twig');
+        return $view->render($response, 'pages/home.twig', [
+            'progressItems' => (new ProgressService())->getAll(),
+        ]);
     })
         ->setName('/');
 
     $app->group('/profile', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
         $collectorProxy->redirect('', '/profile/');
+
+        $collectorProxy->group('/api', function(\Slim\Routing\RouteCollectorProxy $collectorProxy) {
+            // @TODO
+//            $collectorProxy->post('/save', function(Request $request, Response $response) {
+            $collectorProxy->get('/save', function(Request $request, Response $response) {
+                return (new StorageService(UserService::getUser()))
+                    ->saveToDatabase($request, $response);
+            });
+
+            // @TODO
+//            $collectorProxy->post('/load', function(Request $request, Response $response) {
+            $collectorProxy->get('/load', function(Request $request, Response $response) {
+                return (new StorageService(UserService::getUser()))
+                    ->loadFromDatabase($request, $response);
+            });
+        });
 
         $collectorProxy->get('/', function(Request $request, Response $response) {
             $view = Twig::fromRequest($request);
