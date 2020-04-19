@@ -277,7 +277,8 @@ a:hover {
 }
 
 .progress-bars-container .progress {
-    border: 1px solid var(--color-bluewood-translucent);
+    border:     1px solid var(--color-bluewood-translucent);
+    min-height: 12px;
 }
 
 .text-caps-lowercase,
