@@ -221,10 +221,7 @@ function loadStorageFromDatabase(user) {
 
         loadedProfileData = data.data;
         if (JSON.stringify(loadedProfileData) === JSON.stringify(progress.currentStorage)) {
-            $('.js-load-into-browser, .js-save-to-account').css({
-                opacity: 0.3,
-                pointerEvents: 'none',
-            });
+            disableSaveLoadButtons();
         }
         writeStorageDataToDocument('.js-storage-container', loadedProfileData);
     }, undefined, 'json');
@@ -255,12 +252,16 @@ function writeStorageDataToDocument(selector, data) {
     }
 }
 
+function disableSaveLoadButtons() {
+    $('.js-save-to-account, .js-load-into-browser').css({
+        opacity: 0.3,
+        pointerEvents: 'none',
+    });
+}
+
 function registerSaveLoadButtons() {
     $('.js-save-to-account').on('click', function () {
-        $(this).css({
-            opacity: 0.3,
-            pointerEvents: 'none',
-        });
+        disableSaveLoadButtons();
         $.post(
             '/profile/api/save',
             JSON.stringify(progress.currentStorage),
@@ -272,11 +273,7 @@ function registerSaveLoadButtons() {
         );
     });
     $('.js-load-into-browser').on('click', function () {
-        $(this).css({
-            opacity: 0.3,
-            pointerEvents: 'none',
-        });
-
+        disableSaveLoadButtons();
         if (false !== loadedProfileData) {
             progress.save(loadedProfileData);
         }
@@ -320,19 +317,19 @@ function registerFilters() {
 
 function checkProgressForHomepage() {
     let dataGroupDivs = $('div[data-group]');
-    for(let i = 0; i < dataGroupDivs.length; i++) {
+    for (let i = 0; i < dataGroupDivs.length; i++) {
         let dataGroupDiv = dataGroupDivs[i];
         let items = $(dataGroupDiv).attr('data-items').split(',');
         let group = $(dataGroupDiv).attr('data-group');
 
         let count = 0;
 
-        for(let j = 0; j < items.length; j++) {
-            if(!(group in progress.currentStorage)) {
+        for (let j = 0; j < items.length; j++) {
+            if (!(group in progress.currentStorage)) {
                 continue;
             }
 
-            if(items[j] in progress.currentStorage[group]) {
+            if (items[j] in progress.currentStorage[group]) {
                 count++;
             }
         }
