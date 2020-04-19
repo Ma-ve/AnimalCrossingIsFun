@@ -1,11 +1,11 @@
-<div class="row filters-container py-2">
+<div class="row mx-0 filters-container py-2">
     <div class="col-12">
         {% for filterGroup in filters %}
             <div class="row">
-                <div class="col-4 col-lg-2 text-right">
+                <div class="col-12 col-lg-2 text-left text-lg-right">
                     <span class="text-caps-lowercase">{{ filterGroup.label }}</span>
                 </div>
-                <div class="col-8 col-lg-10">
+                <div class="col-12 col-lg-10">
                     {% for filter in filterGroup.filters %}
 
 
