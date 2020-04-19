@@ -188,7 +188,10 @@ function checkLogin() {
             if ('name' in data.data && data.data.name) {
                 user = new User();
                 user.setUser(data.data);
-                authContainer.html('<a href="/profile/">' + user.get().name + '</a>');
+                authContainer.find('a')
+                    .attr('href', '/profile/')
+                    .find('span')
+                    .text(user.get().name);
             }
             authContainer.css('display', 'block')
         },
