@@ -1,0 +1,20 @@
+<div class="row filters-container py-2">
+    <div class="col-12">
+        {% for filterGroup in filters %}
+            <div class="row">
+                <div class="col-4 col-lg-2 text-right">
+                    <span class="text-caps-lowercase">{{ filterGroup.label }}</span>
+                </div>
+                <div class="col-8 col-lg-10">
+                    {% for filter in filterGroup.filters %}
+
+
+                        <a href="#{{ filter|url_encode()|url_encode() }}" class="js-filter-item filter-item badge badge-light" data-value="{{ filter }}">
+                            {{ filter }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

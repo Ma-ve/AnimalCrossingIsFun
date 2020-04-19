@@ -146,13 +146,15 @@ try {
         $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
             $repository = $route->getRepository()
                 ->loadAll()
-                ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false));
+                ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
+                ->loadFiltersIntoData();
 
             $view = Twig::fromRequest($request);
 
             return $view->render($response, $route->getTwigView(), [
-                'items' => $repository->getAll(),
-                'sort'  => $sort,
+                'items'   => $repository->getAll(),
+                'filters' => $repository->getFilters(),
+                'sort'    => $sort,
             ]);
         })
             ->setName($route->getUrl());

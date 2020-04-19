@@ -32,6 +32,7 @@ $(function () {
         case '/fossils':
         case '/recipes':
             checkItemsOnLoad(progress);
+            registerFilters();
             break;
         case '/profile/':
             promiseFuncs.push(checkProfile);
@@ -44,8 +45,8 @@ $(function () {
     let checkLoginFuncs = checkLogin();
     promiseObj.then(checkLoginFuncs[0], checkLoginFuncs[1]);
 
-    for(let i = 0; i < promiseFuncs.length; i++) {
-        promiseObj.then(promiseFuncs[i], function(Error) {
+    for (let i = 0; i < promiseFuncs.length; i++) {
+        promiseObj.then(promiseFuncs[i], function (Error) {
         });
     }
 
@@ -276,6 +277,41 @@ function registerSaveLoadButtons() {
         }
         writeStorageDataToDocument('.js-browser-container', loadedProfileData);
     });
+}
+
+function registerFilters() {
+    $('.js-filter-item').on('click', function () {
+        if ($(this).hasClass('badge-warning')) {
+            $(this)
+                .removeClass('badge-warning')
+                .addClass('badge-light');
+
+            $('.js-filterable').removeClass('opacity-40')
+                .attr('style', '');
+            return;
+        }
+
+        $('.js-filter-item').removeClass('badge-warning').addClass('badge-light');
+        $('.js-filterable')
+            .removeClass('opacity-100')
+            .addClass('opacity-40')
+            .attr('style', '')
+        ;
+        $(this).removeClass('badge-light').addClass('badge-warning');
+        let selector = '.js-filterable[data-filters*=",' + $(this).attr('data-value') + ',"]';
+        let items = $(selector);
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.order = i;
+        }
+        $(selector).removeClass('opacity-40').addClass('opacity-100');
+        console.log(selector);
+    });
+
+
+    if (window.location.hash) {
+        let hash = decodeURI(decodeURI(window.location.hash.replace('#', '')));
+        $('.js-filter-item[data-value="' + hash + '"]').click();
+    }
 }
 
 
