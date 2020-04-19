@@ -8,7 +8,7 @@ use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Collectibles\Fish as FishDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
-class FishRepository extends BaseRepository implements IRepository {
+class FishRepository extends CreatureRepository implements IRepository {
 
     /**
      * @param string $name
@@ -40,94 +40,23 @@ class FishRepository extends BaseRepository implements IRepository {
      * @return $this
      */
     public function loadFiltersIntoData() {
-        $availableFilters = $this->getMonthFilters();
-        foreach($this->contents as &$item) {
-            foreach($availableFilters as $filter) {
-                if($item[$filter['property']]) {
-                    $item['filters'][] = $filter['label'];
-                }
-            }
-            $item['filters'][] = $item['shadowSize'];
-            $item['filters'][] = $item['location'];
-        }
+        parent::loadCreatureFiltersIntoData(['shadowSize']);
 
         return $this;
     }
 
-    private function getMonthFilters(): array {
-        return [
-            [
-                'property' => 'jan',
-                'label'    => 'January',
-            ],
-            [
-                'property' => 'feb',
-                'label'    => 'February',
-            ],
-            [
-                'property' => 'mar',
-                'label'    => 'March',
-            ],
-            [
-                'property' => 'apr',
-                'label'    => 'April',
-            ],
-            [
-                'property' => 'may',
-                'label'    => 'May',
-            ],
-            [
-                'property' => 'jun',
-                'label'    => 'June',
-            ],
-            [
-                'property' => 'jul',
-                'label'    => 'July',
-            ],
-            [
-                'property' => 'aug',
-                'label'    => 'August',
-            ],
-            [
-                'property' => 'sep',
-                'label'    => 'September',
-            ],
-            [
-                'property' => 'oct',
-                'label'    => 'October',
-            ],
-            [
-                'property' => 'nov',
-                'label'    => 'November',
-            ],
-            [
-                'property' => 'dec',
-                'label'    => 'December',
-            ],
-        ];
-    }
-
     public function getFilters(): array {
-        $locations = array_unique(array_column($this->contents, 'location'));
-        sort($locations);
+        $filters = parent::getFilters();
 
         $shadowSizes = array_unique(array_column($this->contents, 'shadowSize'));
         sort($shadowSizes);
 
-        return [
-            [
-                'label'   => 'Date',
-                'filters' => array_column($this->getMonthFilters(), 'label'),
-            ],
-            [
-                'label'   => 'Location',
-                'filters' => $locations,
-            ],
-            [
-                'label'   => 'Shadow size',
-                'filters' => $shadowSizes,
-            ],
+        $filters[] = [
+            'label'   => 'Shadow size',
+            'filters' => $shadowSizes,
         ];
+
+        return $filters;
     }
 
     /**
