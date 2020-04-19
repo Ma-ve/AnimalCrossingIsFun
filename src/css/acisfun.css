@@ -51,7 +51,6 @@ table tr td {
 }
 
 .container .item-row-container.table-header {
-    border-top:    2px solid var(--color-brown);
     border-bottom: 1px solid var(--color-brown);
 }
 
