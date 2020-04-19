@@ -309,7 +309,6 @@ function registerFilters() {
             items[i].style.order = i;
         }
         $(selector).removeClass('opacity-40').addClass('opacity-100');
-        console.log(selector);
     });
 
 
@@ -336,12 +335,9 @@ function checkProgressForHomepage() {
             if(items[j] in progress.currentStorage[group]) {
                 count++;
             }
-
-            console.log(group, count);
         }
 
         setTimeout(function () {
-            console.log(count, items.length);
             $(dataGroupDiv).find('.progress-bar').css({
                 width: Math.ceil((count / items.length) * 100) + '%',
             });
