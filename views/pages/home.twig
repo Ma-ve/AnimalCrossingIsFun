@@ -39,7 +39,7 @@
         </div>
         <div class="col-12 progress-bars-container" style="">
             {% for progressItem in progressItems.seasonal.items %}
-                <div class="col-12">
+                <div class="col-12" data-group="{{ progressItem.group }}" data-seasonal-items="{{ progressItem.names|join(',') }}">
                     <div class="row" style="padding: 16px 0;">
                         <div class="col-6 col-lg-2 order-0 mb-4 mb-lg-0 align-self-center">
                             <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
@@ -56,7 +56,7 @@
                             </span>
                         </div>
                         <div class="col-4 col-lg-2 order-3 text-right text-lg-left align-self-center">
-                            <a href="/{{ progressItem.label|lower() }}" class="btn btn-sm btn-warning">
+                            <a href="/{{ progressItem.label|lower() }}#{{ progressItems.seasonal.month }}" class="btn btn-sm btn-warning">
                                 Details <small><i class="fad fa-chevron-double-right"></i></small>
                             </a>
                         </div>
