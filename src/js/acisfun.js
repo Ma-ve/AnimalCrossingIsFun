@@ -214,7 +214,7 @@ function loadStorageFromDatabase(user) {
         }
 
         loadedProfileData = data.data;
-        if(JSON.stringify(loadedProfileData) === JSON.stringify(progress.currentStorage)) {
+        if (JSON.stringify(loadedProfileData) === JSON.stringify(progress.currentStorage)) {
             $('.js-load-into-browser, .js-save-to-account').css({
                 opacity: 0.3,
                 pointerEvents: 'none',
