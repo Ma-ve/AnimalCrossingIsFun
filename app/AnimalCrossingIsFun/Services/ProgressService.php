@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Services;
 
-use Mave\AnimalCrossingIsFun\Dto\Collectibles\Creature;
+use Mave\AnimalCrossingIsFun\Dto\Collectibles\Collectible;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
@@ -29,30 +29,41 @@ class ProgressService {
             return json_decode($result, true);
         }
 
+        $getSafeNames = function($items) {
+            return array_map(function(Collectible $item) {
+                return $item->getSafeName();
+            }, $items);
+        };
+
+
         $items = [
             [
                 'icon'  => 'fish',
                 'label' => 'Fish',
                 'group' => 'fish',
                 'count' => count($fish = (new FishRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($fish),
             ],
             [
                 'icon'  => 'bug',
                 'label' => 'Bugs',
                 'group' => 'bugs',
                 'count' => count($bugs = (new BugRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($bugs),
             ],
             [
                 'icon'  => 'bone',
                 'label' => 'Fossils',
                 'group' => 'fossils',
                 'count' => count($fossils = (new FossilRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($fossils),
             ],
             [
                 'icon'  => 'tools',
                 'label' => 'Recipes',
                 'group' => 'recipes',
                 'count' => count($recipes = (new CherryBlossomRecipeRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($recipes),
             ],
         ];
 
@@ -65,12 +76,6 @@ class ProgressService {
 
         $filteredFish = $filterItems($fish);
         $filteredBugs = $filterItems($bugs);
-
-        $getSafeNames = function($items) {
-            return array_map(function(Creature $item) {
-                return $item->getSafeName();
-            }, $items);
-        };
 
         $seasonalItems = [
             'month' => date('F'),

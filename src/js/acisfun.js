@@ -27,6 +27,11 @@ $(function () {
 
     let path = window.location.pathname;
     switch (path) {
+        case '/':
+            setTimeout(function () {
+                checkProgressForHomepage();
+            }, 500);
+            break;
         case '/bugs':
         case '/fish':
         case '/fossils':
@@ -311,6 +316,37 @@ function registerFilters() {
     if (window.location.hash) {
         let hash = decodeURI(decodeURI(window.location.hash.replace('#', '')));
         $('.js-filter-item[data-value="' + hash + '"]').click();
+    }
+}
+
+function checkProgressForHomepage() {
+    let dataGroupDivs = $('div[data-group]');
+    for(let i = 0; i < dataGroupDivs.length; i++) {
+        let dataGroupDiv = dataGroupDivs[i];
+        let items = $(dataGroupDiv).attr('data-items').split(',');
+        let group = $(dataGroupDiv).attr('data-group');
+
+        let count = 0;
+
+        for(let j = 0; j < items.length; j++) {
+            if(!(group in progress.currentStorage)) {
+                continue;
+            }
+
+            if(items[j] in progress.currentStorage[group]) {
+                count++;
+            }
+
+            console.log(group, count);
+        }
+
+        setTimeout(function () {
+            console.log(count, items.length);
+            $(dataGroupDiv).find('.progress-bar').css({
+                width: Math.ceil((count / items.length) * 100) + '%',
+            });
+            $(dataGroupDiv).find('.js-progress-text').text(count);
+        }, i * 150);
     }
 }
 

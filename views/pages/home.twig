@@ -5,12 +5,12 @@
     <div class="card row mx-0" style="background-color: var(--bg-color);">
         <div class="col-12 pt-2">
             <div class="col-12">
-                <h3><span style="text-decoration: line-through; opacity: 0.3;">Your progress</span> <small>Coming soon!</small></h3>
+                <h3>Your progress</h3>
             </div>
         </div>
         <div class="col-12 progress-bars-container" style="">
             {% for progressItem in progressItems.all %}
-                <div class="col-12">
+                <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
                     <div class="row" style="padding: 16px 0;">
                         <div class="col-6 col-lg-2 order-0 mb-2 mb-lg-0 align-self-center">
                             <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-6 col-lg-2 order-1 order-lg-2 text-right text-lg-left align-self-center">
                             <span class="badge badge-danger">
-                                <span class="js-progress-{{ progressItem.icon }}">?</span> / {{ progressItem.count|default('?') }}
+                                <span class="js-progress-text">?</span> / {{ progressItem.count|default('?') }}
                         </div>
                     </div>
                 </div>
@@ -34,12 +34,12 @@
     <div class="card row mx-0 mt-5" style="background-color: var(--bg-color);">
         <div class="col-12 pt-2">
             <div class="col-12">
-                <h3><span style="text-decoration: line-through; opacity: 0.3;">Stats for {{ progressItems.seasonal.month }}</span> <small>Coming soon!</small></h3>
+                <h3>Stats for {{ progressItems.seasonal.month }}</h3>
             </div>
         </div>
         <div class="col-12 progress-bars-container" style="">
             {% for progressItem in progressItems.seasonal.items %}
-                <div class="col-12" data-group="{{ progressItem.group }}" data-seasonal-items="{{ progressItem.names|join(',') }}">
+                <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
                     <div class="row" style="padding: 16px 0;">
                         <div class="col-6 col-lg-2 order-0 mb-4 mb-lg-0 align-self-center">
                             <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-6 col-lg-1 order-1 order-lg-2 text-right text-lg-left align-self-center">
                             <span class="badge badge-danger">
-                                <span class="js-progress-{{ progressItem.icon }}">?</span> / {{ progressItem.count|default('?') }}
+                                <span class="js-progress-text">?</span> / {{ progressItem.count|default('?') }}
                             </span>
                         </div>
                         <div class="col-4 col-lg-2 order-3 text-right text-lg-left align-self-center">
