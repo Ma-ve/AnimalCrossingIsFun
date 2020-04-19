@@ -64,6 +64,7 @@ table tr td {
 
 .container .item-row-container.table-header {
     border-bottom: 1px solid var(--color-brown);
+    order:         0;
 }
 
 .container {
