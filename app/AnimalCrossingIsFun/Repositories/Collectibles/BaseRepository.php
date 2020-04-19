@@ -116,5 +116,16 @@ abstract class BaseRepository {
         return $this;
     }
 
+    /**
+     * @return $this
+     */
+    public function loadFiltersIntoData() {
+        return $this;
+    }
+
+    public function getFilters(): array {
+        return [];
+    }
+
 
 }

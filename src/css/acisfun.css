@@ -47,7 +47,7 @@ table tr td {
 }
 
 .top + .container > .table-header {
-    margin-top: -48px;
+    /*margin-top: -48px;*/
 }
 
 .container .item-row-container.table-header {
@@ -324,4 +324,20 @@ body.home .menu .progress {
         position: absolute;
         top:      12px;
     }
+}
+
+.js-filterable {
+    order: 999;
+}
+
+.filter-item {
+    color: grey;
+}
+
+.opacity-40 {
+    opacity: 0.4;
+}
+
+.opacity-100 {
+    opacity: 1;
 }

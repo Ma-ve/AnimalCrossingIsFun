@@ -1,5 +1,8 @@
 
-<div class="item-row-container" style="order: {{ index }};" id="{{ item.getSafeName() }}">
+<div class="item-row-container js-filterable"
+     id="{{ item.getSafeName() }}"
+     data-filters=",{{ item.filters|join(',') }},"
+>
     <div class="row mx-0 m-sm-n2">
         <div class="col-lg-2 image-placeholder text-center">
             <img src="{{ item.getImageLink() }}">
