@@ -5,31 +5,43 @@
     --color-lime:                 #c6d942;
     --color-yellow:               #f5db6a;
     --color-brown:                #5a413e;
-
     --color-brown-lighter:        #afa09f;
-
-    --bg-color:                   #fffaf6;
-    --bg-color-darker:            #f5dac9;
-
-    --body-color:                 #9ed0b5;
-
-    --accent:                     var(--color-brown);
-
     --color-bluewood:             #2c3e50;
     --color-bluewood-translucent: rgba(44, 62, 80, 0.3);
 
-    --image-height:               58px;
+    --color-whiteish:             #fffaf6;
+    --color-whiteisher:           #f5dac9;
+    --color-muted:                #f6ede7;
 
+    --color-body:                 #9ed0b5;
+
+    --image-height:               58px;
     --footer-height:              56px;
 }
 
+.opacity-40 {
+    opacity: 0.4;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
 body {
-    /*background-image:      url(/img/bg2.jpg);*/
-    background-color:      var(--body-color);
+    background-color:      var(--color-body);
     background-repeat:     repeat;
     background-size:       300px;
     background-attachment: fixed;
     margin-bottom:         var(--footer-height);
+}
+
+body,
+a,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+    text-decoration: none;
 }
 
 table {
@@ -46,8 +58,8 @@ table tr td {
     margin-top: 24px;
 }
 
-.top + .container > .table-header {
-    /*margin-top: -48px;*/
+.item-row-container {
+    order: 999;
 }
 
 .container .item-row-container.table-header {
@@ -62,7 +74,7 @@ table tr td {
 .container .item-row-container {
     border-bottom:    2px solid #9ed0b5;
     padding:          16px 0;
-    background-color: var(--bg-color);
+    background-color: var(--color-whiteish);
     position:         relative;
 }
 
@@ -70,32 +82,66 @@ table tr td {
     border-bottom: 1px solid var(--color-brown);
 }
 
+.container .item-row-container.table-header {
+    background-color: var(--color-whiteisher);
+}
+
 .caught-checkbox {
     position:     initial;
     padding-left: initial;
 }
 
-.container .item-row-container.table-header {
-    background-color: var(--bg-color-darker);
-}
-
-.container .item-row {
-}
-
-body,
-a,
-a:visited,
-a:focus,
-a:active,
-a:hover {
-    text-decoration: none;
-}
-
 .table-header a,
 .item-row-container a {
-    color: var(--accent);
+    color: var(--color-brown);
 }
 
+
+
+/** Start top wave */
+
+.wave-container {
+    position:   relative;
+    background: var(--color-bluewood);
+    height:     100px;
+}
+
+.wave {
+    position:   absolute;
+    height:     32px;
+    width:      100%;
+    background: var(--color-bluewood);
+    bottom:     0;
+}
+
+.wave::before, .wave::after {
+    content:       "";
+    display:       block;
+    position:      absolute;
+    border-radius: 100% 50%;
+}
+
+.wave::before {
+    width:            53.5%;
+    height:           110%;
+    background-color: var(--color-body);
+    right:            0;
+    top:              60%;
+}
+
+.wave::after {
+    width:            53.5%;
+    height:           100%;
+    background-color: var(--color-bluewood);
+    left:             0;
+    top:              40%;
+}
+
+/** End top wave */
+
+
+
+/** Menu */
 .menu-items-container {
     background-color: var(--color-brown);
     text-align:       center;
@@ -106,19 +152,19 @@ a:hover {
 .menu a:visited,
 .menu a:focus,
 .menu a:active {
-    color:      var(--bg-color);
+    color:      var(--color-whiteish);
     transition: background-color 0.1s linear;
 }
 
 .menu a.active,
 .menu a:hover {
-    background-color: var(--body-color);
+    background-color: var(--color-body);
     color:            var(--color-brown);
 }
 
 .menu .row > div {
-    border-left:  2px solid var(--bg-color);
-    border-right: 2px solid var(--bg-color);
+    border-left:  2px solid var(--color-whiteish);
+    border-right: 2px solid var(--color-whiteish);
     max-height:   var(--footer-height);
 }
 
@@ -135,6 +181,31 @@ a:hover {
     border-right-width: 4px;
 }
 
+/** Start menu progress bar */
+
+.menu .progress {
+    height:           8px;
+    background-color: unset;
+    border-radius:    0;
+    transition:       height 0.1s linear;
+}
+
+.menu .progress .menu-progress-label {
+    display: none;
+}
+
+.menu .progress:hover {
+    height: 20px;
+}
+
+.menu .progress:hover .menu-progress-label {
+    display: initial;
+}
+
+/** End menu */
+
+
+
 .item-row .image-placeholder {
     min-height: var(--image-height);
 }
@@ -143,13 +214,9 @@ a:hover {
     height: var(--image-height);
 }
 
-.ml--15 {
-    margin-left: -15px !important;
-}
 
-.mr--15 {
-    margin-right: -15px !important;
-}
+
+/** Custom checkbox in table */
 
 .custom-control-input ~ .custom-control-label::before,
 .custom-control-input:checked ~ .custom-control-label::before,
@@ -179,7 +246,7 @@ a:hover {
 .caught-checkbox input[type="checkbox"]:hover + label::after,
 .caught-checkbox input[type="checkbox"]:focus + label::after,
 .navigation-column span a:hover {
-    color: var(--body-color);
+    color: var(--color-body);
 }
 
 /*noinspection CssNoGenericFontName*/
@@ -194,6 +261,66 @@ a:hover {
     text-shadow: 1px 1px 2px rgba(40, 167, 69, 0.2),
                  0 0 1em rgba(40, 167, 69, 0.2),
                  0 0 0.2em rgba(40, 167, 69, 0.2);
+}
+
+/** End checkbox in table */
+
+
+
+.homepage-card,
+.profile-container,
+.detail-recipe {
+    background-color: var(--color-whiteish);
+}
+
+.profile hr {
+    width:       50%;
+    margin-left: 0;
+}
+
+.navigation-column {
+    position: relative;
+}
+
+.navigation-column span {
+    display: block;
+    width:   16px;
+    height:  16px;
+}
+
+.navigation-column span a {
+    position:   absolute;
+    font-size:  34px;
+    top:        4px;
+    transition: color 0.1s linear;
+}
+
+.progress-bars-container .progress {
+    border:     1px solid var(--color-bluewood-translucent);
+    min-height: 16px;
+    height:     100%;
+}
+
+.text-caps-lowercase {
+    font-variant:   small-caps;
+    text-transform: lowercase;
+}
+
+.top,
+.top a {
+    color: var(--color-muted);
+}
+
+body.home .menu .progress {
+    display: none;
+}
+
+.auth-container {
+    display: none;
+}
+
+.filter-item {
+    color: grey;
 }
 
 @media (max-width: 992px) {
@@ -222,122 +349,9 @@ a:hover {
     }
 }
 
-.navigation-column {
-    position: relative;
-}
-
-.navigation-column span {
-    display: block;
-    width:   16px;
-    height:  16px;
-}
-
-.navigation-column span a {
-    position:   absolute;
-    font-size:  34px;
-    top:        4px;
-    transition: color 0.1s linear;
-}
-
-.wave-container {
-    position:   relative;
-    background: var(--color-bluewood);
-    height:     100px;
-}
-
-.wave {
-    position:   absolute;
-    height:     32px;
-    width:      100%;
-    background: var(--color-bluewood);
-    bottom:     0;
-}
-
-.wave::before, .wave::after {
-    content:       "";
-    display:       block;
-    position:      absolute;
-    border-radius: 100% 50%;
-}
-
-.wave::before {
-    width:            53.5%;
-    height:           110%;
-    background-color: var(--body-color);
-    right:            0;
-    top:              60%;
-}
-
-.wave::after {
-    width:            53.5%;
-    height:           100%;
-    background-color: var(--color-bluewood);
-    left:             0;
-    top:              40%;
-}
-
-.progress-bars-container .progress {
-    border:     1px solid var(--color-bluewood-translucent);
-    min-height: 12px;
-}
-
-.text-caps-lowercase,
-.top {
-    font-variant:   small-caps;
-    text-transform: lowercase;
-}
-
-.top a {
-    color: #f6ede7;
-}
-
-
-body.home .menu .progress {
-    display: none;
-}
-
-.menu .progress {
-    height:           8px;
-    background-color: unset;
-    border-radius:    0;
-    transition:       height 0.1s linear;
-}
-
-.menu .progress .menu-progress-label {
-    display: none;
-}
-
-.menu .progress:hover {
-    height: 20px;
-}
-
-.menu .progress:hover .menu-progress-label {
-    display: initial;
-}
-
-.auth-container {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .creature-month-container {
         position: absolute;
         top:      12px;
     }
-}
-
-.js-filterable {
-    order: 999;
-}
-
-.filter-item {
-    color: grey;
-}
-
-.opacity-40 {
-    opacity: 0.4;
-}
-
-.opacity-100 {
-    opacity: 1;
 }

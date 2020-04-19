@@ -2,38 +2,29 @@
 
 {% block content %}
 
-    <div class="row text-center" style="background-color: #f6ede7; padding: 16px;">
-        <div class="col-12">
+    <div class="row text-center py-4 detail-recipe">
+        <div class="col-4">
             <img src="{{ item.getImageLink() }}">
         </div>
-        <div class="col-4">
-            <em>Category</em>
-            <br>
-            <span class="badge badge-danger">{{ item.getCategory() }}</span>
-        </div>
-        <div class="col-4">
-            <em>Name</em>
-            <br>
-            <strong>{{ item.getName() }}</strong>
-        </div>
-        <div class="col-4">
-            <em>Price</em>
-            <br>
-            <span class="badge badge-warning"><!--
-                --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
-            --></span>
-        </div>
         <div class="col-8">
-            <em>Crafting materials</em>
-            <br>
-            {% for requirement in item.getRequirements() %}
-                <span class="badge badge-dark">{{ requirement }}</span>
-            {% endfor %}
-        </div>
-        <div class="col-4">
-            <em>Space on floor</em>
-            <br>
-            <span class="badge badge-info">{{ item.getSquareSize() }}</span>
+            <div class="row text-left">
+                <div class="col-12">
+                    <h2 class="text-left">{{ item.getName() }}</h2>
+                </div>
+                <div class="col-12">
+                    <span class="badge badge-danger" title="Category">{{ item.getCategory() }}</span>
+                    <span class="badge badge-warning ml-2">
+                        <i class="fad fa-bells"></i> {{ item.getPrice() }}
+                    </span>
+                    <span class="badge badge-info ml-2" title="Space requirement on floor">{{ item.getSquareSize() }}</span>
+                    <hr>
+                    <h6>Crafting Requirements</h6>
+
+                    {% for requirement in item.getRequirements() %}
+                        <span class="badge badge-dark">{{ requirement }}</span>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 
