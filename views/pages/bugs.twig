@@ -1,6 +1,9 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
+
+    {% include "pages/snippets/filters.twig" with {'filters': filters} only %}
+
     {% include "pages/snippets/table-header.twig" %}
 
     {% include "pages/snippets/creatures-table.twig" with {'items': items} only %}
