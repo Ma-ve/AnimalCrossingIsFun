@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Services;
 
+use Mave\AnimalCrossingIsFun\Dto\Collectibles\Creature;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
@@ -56,10 +57,19 @@ class ProgressService {
         ];
 
         $monthSubstr = 'is' . substr($month, 0, 3);
-        $countFilteredItems = function($items) use ($monthSubstr) {
-            return count(array_filter($items, function($item) use ($monthSubstr) {
+        $filterItems = function($items) use ($monthSubstr) {
+            return array_filter($items, function($item) use ($monthSubstr) {
                 return $item->{$monthSubstr}();
-            }));
+            });
+        };
+
+        $filteredFish = $filterItems($fish);
+        $filteredBugs = $filterItems($bugs);
+
+        $getSafeNames = function($items) {
+            return array_map(function(Creature $item) {
+                return $item->getSafeName();
+            }, $items);
         };
 
         $seasonalItems = [
@@ -68,12 +78,16 @@ class ProgressService {
                 [
                     'icon'  => 'fish',
                     'label' => 'Fish',
-                    'count' => $countFilteredItems($fish),
+                    'group' => 'fish',
+                    'count' => count($filteredFish),
+                    'names' => $getSafeNames($filteredFish),
                 ],
                 [
                     'icon'  => 'bug',
                     'label' => 'Bugs',
-                    'count' => $countFilteredItems($bugs),
+                    'group' => 'bugs',
+                    'count' => count($filteredBugs),
+                    'names' => $getSafeNames($filteredBugs),
                 ],
             ],
         ];
