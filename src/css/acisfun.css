@@ -315,6 +315,10 @@ body.home .menu .progress {
     display: none;
 }
 
+.home .homepage-card a {
+    color: var(--color-brown);
+}
+
 .auth-container {
     display: none;
 }
