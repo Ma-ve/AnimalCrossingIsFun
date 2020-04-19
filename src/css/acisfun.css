@@ -327,6 +327,10 @@ body.home .menu .progress {
     color: grey;
 }
 
+.detail-recipe img {
+    max-width: 100%;
+}
+
 @media (max-width: 992px) {
     .caught-checkbox input,
     .caught-checkbox input + label::before,
