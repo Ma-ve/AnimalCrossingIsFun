@@ -11,10 +11,17 @@
                         {% include "pages/snippets/table-header-column.twig" with vars only %}
 
                     </div>
-                    <div class="col-lg-4 offset-lg-2">
+                    <div class="col-lg-2">
+                        <strong>Time</strong>
+                    </div>
+                    <div class="col-lg-2">
                         {% set vars = {'sort': sort, 'label': 'Bells', 'property': 'price', 'sortIcon': ['fa-sort-numeric-down', 'fa-sort-numeric-down-alt']} %}
                         {% include "pages/snippets/table-header-column.twig" with vars only %}
 
+                    </div>
+                    <div class="col-lg-2">
+                        {% set vars = {'sort': sort, 'label': 'Location', 'property': 'location', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
+                        {% include "pages/snippets/table-header-column.twig" with vars only %}
                     </div>
                     <div class="col-lg-2 offset-lg-1">
                         <strong>{{ checkboxLabel|default('Caught') }}</strong>

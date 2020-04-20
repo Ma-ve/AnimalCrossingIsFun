@@ -52,6 +52,12 @@ abstract class BaseRepository {
             case '-price':
                 $this->sortByPriceDesc();
                 break;
+            case 'location':
+                $this->sortByLocationAsc();
+                break;
+            case '-location':
+                $this->sortByLocationDesc();
+                break;
         }
 
         return $this;

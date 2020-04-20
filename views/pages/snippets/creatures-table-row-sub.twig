@@ -1,8 +1,8 @@
 {% if item.hasIrregularMonths %}
-    {% set monthContainer, priceOffset, marginTops = ' creature-month-container', 'offset-0', 'mt-3 mt-lg-0' %}
+    {% set monthContainer, priceOffset, marginTops = ' creature-month-container', 'offset-4', '' %}
 {% endif %}
 {% set hasIrregularMonths = item.hasIrregularMonths() %}
-<div class="col-lg-3 col-4 text-lg-left text-center{{ monthContainer|default('') }}">
+<div class="col-lg-3 col-4 order-0 text-lg-left text-center{{ monthContainer|default('') }}">
     {% if item.hasIrregularMonths %}
         {% for bullet in item.getBullets() %}
             {% set bulletBadgeClass = '' %}
@@ -18,12 +18,15 @@
         <span class="badge badge-info">{{ item.getPeriodOfYear() }}</span>
     {% endif %}
 </div>
-<div class="col-lg-2 col-4 text-lg-left text-center {{ marginTops|default('') }}">
+<div class="col-lg-2 col-4 order-1 {{ priceOffset|default('offset-0') }} offset-lg-0 text-lg-left text-center {{ marginTops|default('') }}">
     {% for creatureTime in item.getTime() %}
         <span class="badge badge-danger">{{ creatureTime }}</span>
     {% endfor %}
 </div>
-<div class="col-lg-2 col-4 {{ priceOffset|default('offset-4') }} {{ marginTops|default('') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning"><!--
+<div class="col-lg-2 col-4 order-2 offset-0 offset-lg-0 order-lg-3 text-lg-left text-center {{ marginTops|default('') }}">
+    <span class="badge badge-dark text-wrap" style="max-width: 100%;">{{ item.getLocation() }}</span>
+</div>
+<div class="col-lg-2 col-4 order-3 order-lg-2 offset-4 {{ marginTops|default('') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning"><!--
     --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
     --></span><!--
 --></div>
