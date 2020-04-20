@@ -28,6 +28,24 @@ abstract class CreatureRepository extends BaseRepository {
         return $this;
     }
 
+    /**
+     * @return $this
+     */
+    public function sortByLocationAsc() {
+        $this->sort('location');
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function sortByLocationDesc() {
+        $this->sort('location', 'DESC');
+
+        return $this;
+    }
+
     private function getMonthFilters(): array {
         return [
             [

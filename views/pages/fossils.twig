@@ -1,8 +1,25 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
+    {% set columnConfiguration %}
+
+        <div class="col-lg-3">
+            {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
+            {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+        </div>
+        <div class="col-lg-2 offset-lg-2">
+            {% set vars = {'sort': sort, 'label': 'Bells', 'property': 'price', 'sortIcon': ['fa-sort-numeric-down', 'fa-sort-numeric-down-alt']} %}
+            {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+        </div>
+        <div class="col-lg-2 offset-lg-3">
+            <strong>Found</strong>
+        </div>
+    {% endset %}
+
     {% include "pages/snippets/table-header.twig" with {
-        'checkboxLabel': 'Found'
+        'columnConfiguration': columnConfiguration
     } %}
 
     {% for item in items %}
