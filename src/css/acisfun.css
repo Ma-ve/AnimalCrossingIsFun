@@ -84,7 +84,7 @@ table tr td {
 }
 
 .container .item-row-container.table-header {
-    background-color: var(--color-whiteisher);
+    background-color: var(--yellow);
 }
 
 .caught-checkbox {
@@ -326,6 +326,10 @@ body.home .menu .progress {
 
 .filter-item {
     color: grey;
+}
+
+.filter-item.badge-warning {
+    color: var(--color-brown);
 }
 
 .detail-recipe img {
