@@ -1,0 +1,11 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+
+    <div class="col-12 p-4" style="background-color: var(--color-whiteish);">
+        <h2>{{ error.code }}</h2>
+        <p>{{ error.message }}</p>
+        <p><a href="/">Back To Home <small><small><i class="fad fa-chevron-double-right"></i></small></small></a></p>
+    </div>
+
+{% endblock %}
