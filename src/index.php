@@ -4,6 +4,7 @@ use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
+use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
@@ -50,7 +51,14 @@ try {
 
     $app->add(TwigMiddleware::create($app, $twig));
 
-    $app->addErrorMiddleware(env('IS_DEV', false), env('IS_DEV', false), env('IS_DEV', false));
+    $errorMiddleware = $app->addErrorMiddleware(
+        env('IS_DEV', false),
+        !env('IS_DEV', true),
+        !env('IS_DEV', true)
+    );
+    $errorMiddleware
+        ->getDefaultErrorHandler()
+        ->registerErrorRenderer('text/html', ErrorRenderer::class);
 
 
     $app->get('/', function(Request $request, Response $response) {
