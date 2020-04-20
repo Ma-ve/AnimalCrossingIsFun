@@ -36,6 +36,7 @@ $(function () {
         case '/fish':
         case '/fossils':
         case '/recipes':
+        case '/recipes/cherry-blossom-season':
             checkItemsOnLoad(progress);
             registerFilters();
             break;
