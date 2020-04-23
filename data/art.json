@@ -1,0 +1,217 @@
+[
+  {
+    "name": "Academic Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Amazing Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Ancient Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Basic Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Beautiful Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Calm Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Common Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Detailed Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Dynamic Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Familiar Statue",
+    "category": "Statue",
+    "canBeFake": false
+  },
+  {
+    "name": "Famous Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Flowery Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Gallant Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Glowing Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Graceful Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Great Statue",
+    "category": "Statue",
+    "canBeFake": false
+  },
+  {
+    "name": "Informative Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Jolly Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Moody Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Motherly Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Moving Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Mysterious Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Mystic Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Nice Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Perfect Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Proper Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Quaint Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Robust Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Rock-head Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Scary Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Scenic Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Serene Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Sinking Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Solemn Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Tremendous Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Twinkling Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Valiant Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Warm Painting",
+    "category": "Painting",
+    "canBeFake": false
+  },
+  {
+    "name": "Warrior Statue",
+    "category": "Statue",
+    "canBeFake": true
+  },
+  {
+    "name": "Wild Painting Left Half",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Wild Painting Right Half",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Wistful Painting",
+    "category": "Painting",
+    "canBeFake": true
+  },
+  {
+    "name": "Worthy Painting",
+    "category": "Painting",
+    "canBeFake": false
+  }
+]

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Repositories;
 
 use Mave\AnimalCrossingIsFun\Dto\Route;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\ArtRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
@@ -36,6 +37,13 @@ class RoutesRepository {
                 'repository' => (new FossilRepository(null)),
                 'icon'       => 'fa-bone',
                 'label'      => 'Fossils',
+            ]),
+            new Route([
+                'url'        => '/art',
+                'twigView'   => 'pages/art.twig',
+                'repository' => (new ArtRepository(null)),
+                'icon'       => 'fa-palette',
+                'label'      => 'Art',
             ]),
             new Route([
                 'url'        => '/recipes/cherry-blossom-season',

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Services;
 
 use Mave\AnimalCrossingIsFun\Dto\Collectibles\Collectible;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\ArtRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
@@ -63,6 +64,13 @@ class ProgressService {
                 'label' => 'Recipes',
                 'group' => 'recipes',
                 'count' => count($recipes = (new CherryBlossomRecipeRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($recipes),
+            ],
+            [
+                'icon'  => 'palette',
+                'label' => 'Art',
+                'group' => 'art',
+                'count' => count($recipes = (new ArtRepository(null))->loadAll()->getAll()),
                 'names' => $getSafeNames($recipes),
             ],
         ];
