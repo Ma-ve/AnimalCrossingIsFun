@@ -36,4 +36,40 @@ class FossilRepository extends BaseRepository implements IRepository {
         return $this;
     }
 
+    /**
+     * @param bool|string $sort
+     *
+     * @return $this
+     */
+    public function sortItems($sort = false) {
+        switch($sort) {
+            default:
+                $this->sortByCategory();
+                break;
+            case 'name':
+                $this->sortByNameAsc();
+                break;
+            case '-name':
+                $this->sortByNameDesc();
+                break;
+            case 'price':
+                $this->sortByPriceAsc();
+                break;
+            case '-price':
+                $this->sortByPriceDesc();
+                break;
+        }
+
+        return $this;
+    }
+
+    private function sortByCategory() {
+        usort($this->contents, function($a, $b) {
+            $aSort = $a['category'] ?? $a['name'];
+            $bSort = $b['category'] ?? $b['name'];
+
+            return $aSort <=> $bSort;
+        });
+    }
+
 }
