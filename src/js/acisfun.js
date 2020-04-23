@@ -43,6 +43,7 @@ $(function () {
         case '/profile/':
             promiseFuncs.push(checkProfile);
             promiseFuncs.push(loadStorage);
+            promiseFuncs.push(compareStorages);
             registerSaveLoadButtons();
             break;
     }
@@ -242,7 +243,7 @@ function loadStorageFromLocalStorage(progress) {
 
 function writeStorageDataToDocument(selector, data) {
     if (typeof data === 'number' && 0 === data) {
-        $(selector + ' .js-storage-text').text(0);
+        $(selector + ' .js-storage-text-container .js-storage-text').text(0);
         return;
     }
 
@@ -252,7 +253,7 @@ function writeStorageDataToDocument(selector, data) {
         let groupData = data[groupKey];
         let groupLength = Object.keys(groupData).length;
 
-        $(selector + ' .js-storage-text[data-group="' + groupKey + '"]').text(groupLength);
+        $(selector + ' .js-storage-text-container[data-group="' + groupKey + '"] .js-storage-text').text(groupLength);
     }
 }
 
@@ -261,6 +262,7 @@ function disableSaveLoadButtons() {
         opacity: 0.3,
         pointerEvents: 'none',
     });
+    $('.js-storage-compare').addClass('d-none');
 }
 
 function registerSaveLoadButtons() {
@@ -283,6 +285,41 @@ function registerSaveLoadButtons() {
         }
         writeStorageDataToDocument('.js-browser-container', loadedProfileData);
     });
+}
+
+function compareStorages() {
+    setTimeout(function () {
+
+        let itemsInBrowser = $('.js-browser-container .js-storage-text-container');
+        let itemsInStorage = $('.js-storage-container .js-storage-text-container');
+        for (let i = 0; i < itemsInBrowser.length; i++) {
+            let browserItem = itemsInBrowser[i];
+            let browserCount = parseInt(browserItem.innerText);
+            if (isNaN(browserCount)) {
+                continue;
+            }
+
+            let storageItem = itemsInStorage[i];
+            let storageCount = parseInt(storageItem.innerText);
+            if (isNaN(storageCount)) {
+                continue;
+            }
+
+            if (storageCount > browserCount) {
+                $(browserItem).find('.js-storage-compare')
+                    .addClass('text-danger')
+                    .text('-' + (storageCount - browserCount));
+            }
+            if (storageCount < browserCount) {
+                $(browserItem).find('.js-storage-compare')
+                    .addClass('text-success')
+                    .text('+' + (browserCount - storageCount));
+            }
+
+
+            console.log(browserCount, typeof browserCount);
+        }
+    }, 1000);
 }
 
 function registerFilters() {
