@@ -13,7 +13,7 @@
             </div>
 
             {% for menuItem in menuItems %}
-                {% set colWidth = loop.index <= 2 ? 2 : 3 %}
+                {% set colWidth = loop.index <= 5 ? 2 : 3 %}
                 <div class="col-{{ colWidth }} px-0">
                     {% set class = is_current_url(menuItem.getUrl()) ? 'active' : '' %}
 
