@@ -12,16 +12,26 @@
             <div class="col-12">
                 <div class="row py-3">
                     <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
-                        <h5 class="text-caps-lowercase">In-game events</h5>
-                        {% include "pages/home/events.twig" %}
+                        <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
+                            <small><i class="fad fa-glass-cheers"></i></small>
+                            In-game events
+                        </h5>
+                        <div class="row homepage-event-container">
+                            {% include "pages/home/events.twig" %}
+                        </div>
                     </div>
                     <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
                         <div class="col-12 d-lg-none">
                             <hr>
                         </div>
 
-                        <h5 class="text-caps-lowercase">Villager Birthdays</h5>
-                        {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
+                        <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
+                            <small><i class="fad fa-birthday-cake"></i></small>
+                            Villager Birthdays
+                        </h5>
+                        <div class="row homepage-event-container">
+                            {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
+                        </div>
                     </div>
                 </div>
             </div>

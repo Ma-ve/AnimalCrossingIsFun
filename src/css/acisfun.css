@@ -274,6 +274,19 @@ table tr td {
     background-color: var(--color-whiteish);
 }
 
+.homepage-card h5 {
+    background-color: var(--yellow);
+}
+
+.homepage-card .homepage-event-container {
+    min-height:    120px;
+    align-content: start;
+}
+
+.homepage-card .homepage-event-container > div > .row {
+    padding-bottom: 0.25rem;
+}
+
 .profile hr {
     width:       50%;
     margin-left: 0;
