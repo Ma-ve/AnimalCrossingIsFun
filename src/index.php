@@ -6,6 +6,7 @@ use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\VillagerRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
 use Mave\AnimalCrossingIsFun\Services\StorageService;
@@ -66,6 +67,9 @@ try {
 
         return $view->render($response, 'pages/home.twig', [
             'progressItems' => (new ProgressService())->getAll(),
+            'villagers'     => (new VillagerRepository(null))
+                ->loadAll()
+                ->getByNearbyBirthdates(new DateTime())
         ]);
     })
         ->setName('/');

@@ -30,6 +30,7 @@
   },
   "scripts": {
     "json-to-php": "php ./scripts/json-to-php.php data/*.json",
-    "safename-item": "php ./scripts/php-item-safename.php data/*.php"
+    "safename-item": "php ./scripts/php-item-safename.php data/*.php",
+    "enrich-villager-data": "php ./scripts/enrich-villager-data.php data/villagers.php"
   }
 }
