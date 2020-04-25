@@ -1,0 +1,244 @@
+[
+  {
+    "monthData": "January",
+    "dayData": "1st",
+    "startDate": "01-01",
+    "endDate": "01-01",
+    "hemisphere": "Both",
+    "name": "New Year's Day",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/New_Year's_Day"
+  },
+  {
+    "monthData": "January",
+    "dayData": "Second Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Both",
+    "name": "Fishing Tourney",
+    "icon": "fa-fish",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Fishing_Tourney"
+  },
+  {
+    "monthData": "January",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Southern",
+    "name": "Bug Off",
+    "icon": "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "January or February",
+    "dayData": "Varies",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Both",
+    "name": "Lunar New Year",
+    "icon": "fa-eclipse",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Lunar_New_Year"
+  },
+  {
+    "monthData": "February",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Southern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "April",
+    "dayData": "1st through 10th",
+    "startDate": "04-01",
+    "endDate": "04-10",
+    "hemisphere": "Northern",
+    "name": "Cherry Blossom Season",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Cherry_Blossom_Season"
+  },
+  {
+    "monthData": "April",
+    "dayData": "1st through Easter",
+    "startDate": "04-01",
+    "endDate": false,
+    "endDateTimeFunction": "easter_date",
+    "hemisphere": "Both",
+    "name": "Bunny Day",
+    "icon": "fa-rabbit",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bunny_Day"
+  },
+  {
+    "monthData": "April",
+    "dayData": "Second Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Both",
+    "name": "Fishing Tourney",
+    "icon":  "fa-fish",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Fishing_Tourney"
+  },
+  {
+    "monthData": "April/May",
+    "dayData": "23rd of April through 4th of May",
+    "startDate": "04-23",
+    "endDate": "05-04",
+    "hemisphere": "Both",
+    "name": "Nature Day",
+    "icon": "fa-globe-europe",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Nature_Day"
+  },
+  {
+    "monthData": "May",
+    "dayData": "1st through 7th",
+    "startDate": "05-01",
+    "endDate": "05-07",
+    "hemisphere": "Both",
+    "name": "May Day",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/May_Day"
+  },
+  {
+    "monthData": "May",
+    "dayData": "1st through 31st",
+    "startDate": "05-01",
+    "endDate": "05-31",
+    "hemisphere": "Southern",
+    "name": "Mushrooming Season",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Mushrooming_Season"
+  },
+  {
+    "monthData": "May",
+    "dayData": "18th through 31st",
+    "startDate": "05-18",
+    "endDate": "05-31",
+    "hemisphere": "Both",
+    "name": "International Museum Day",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/International_Museum_Day"
+  },
+  {
+    "monthData": "June",
+    "dayData": "1st through 30th",
+    "startDate": "06-01",
+    "endDate": "06-30",
+    "hemisphere": "Both",
+    "name": "Wedding Season",
+    "icon": "fa-rings-wedding",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Wedding_Season"
+  },
+  {
+    "monthData": "June",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Northern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "July",
+    "dayData": "Second Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Both",
+    "name": "Fishing Tourney",
+    "icon":  "fa-fish",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Fishing_Tourney"
+  },
+  {
+    "monthData": "July",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Northern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "August",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Northern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "September",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Northern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "October",
+    "dayData": "1st through 10th",
+    "startDate": "10-01",
+    "endDate": "10-10",
+    "hemisphere": "Southern",
+    "name": "Cherry Blossom Season",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Cherry_Blossom_Season"
+  },
+  {
+    "monthData": "October",
+    "dayData": "Second Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Both",
+    "name": "Fishing Tourney",
+    "icon":  "fa-fish",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Fishing_Tourney"
+  },
+  {
+    "monthData": "November",
+    "dayData": "1st through 30th",
+    "startDate": "11-01",
+    "endDate": "11-30",
+    "hemisphere": "Northern",
+    "name": "Mushrooming Season",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Mushrooming_Season"
+  },
+  {
+    "monthData": "November",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Southern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "December",
+    "dayData": "Third Saturday",
+    "startDate": false,
+    "endDate": false,
+    "hemisphere": "Southern",
+    "name": "Bug Off",
+    "icon":  "fa-bug",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Bug_Off"
+  },
+  {
+    "monthData": "December",
+    "dayData": "31st",
+    "startDate": "12-31",
+    "endDate": "12-31",
+    "hemisphere": "Both",
+    "name": "New Year's Eve",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/New_Year's_Eve"
+  },
+  {
+    "monthData": "December/January",
+    "dayData": "December 15th to January 6th",
+    "startDate": "12-15",
+    "endDate": "01-06",
+    "hemisphere": "Both",
+    "name": "Festive Season",
+    "detailsLink": "https://animalcrossing.fandom.com/wiki/Festive_Season"
+  }
+]

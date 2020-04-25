@@ -1,25 +1,14 @@
+{% for event in events %}
 <div class="col-12">
     <div class="row">
-        <div class="col-6"><i class="fad fa-globe-europe"></i> <strong>Nature Day</strong></div>
-        <div class="col-6"><i class="fad fa-calendar-star"></i> Apr 23rd - May 4th</div>
+        <div class="col-6">
+            {% if event.getIcon() %}
+            <i class="fad {{ event.getIcon() }}"></i>
+            {% endif %}
+            <strong>{{ event.getName() }}</strong></div>
+        <div class="col-6">
+            <i class="fad fa-calendar-star"></i> {{ event.getDateRange('M jS', 'M jS') }}
+        </div>
     </div>
 </div>
-
-<div class="col-12">
-    <div class="row">
-        <div class="col-6"><strong>May Day Tour</strong></div>
-        <div class="col-6"><i class="fad fa-calendar-star"></i> May 1st - May 7th</div>
-    </div>
-</div>
-<div class="col-12">
-    <div class="row">
-        <div class="col-6"><strong>International Museum Day</strong></div>
-        <div class="col-6"><i class="fad fa-calendar-star"></i> May 18th</div>
-    </div>
-</div>
-<div class="col-12">
-    <div class="row">
-        <div class="col-6"><strong>Wedding Season</strong></div>
-        <div class="col-6"><i class="fad fa-calendar-star"></i> June 1st - June 30th</div>
-    </div>
-</div>
+{% endfor %}

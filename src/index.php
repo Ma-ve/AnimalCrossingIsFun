@@ -6,6 +6,7 @@ use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Repositories\VillagerRepository;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
@@ -69,7 +70,10 @@ try {
             'progressItems' => (new ProgressService())->getAll(),
             'villagers'     => (new VillagerRepository(null))
                 ->loadAll()
-                ->getByNearbyBirthdates(new DateTime())
+                ->getByNearbyBirthdates(new DateTime()),
+            'events'        => (new EventRepository(null))
+                ->loadAll()
+                ->getByNearbyStartDates(new DateTime()),
         ]);
     })
         ->setName('/');
