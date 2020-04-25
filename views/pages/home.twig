@@ -5,6 +5,32 @@
     <div class="card row mx-0 homepage-card">
         <div class="col-12 pt-2">
             <div class="col-12">
+                <h3 class="text-caps-lowercase">Events and happenings</h3>
+            </div>
+        </div>
+        <div class="col-12 progress-bars-container">
+            <div class="col-12">
+                <div class="row py-3">
+                    <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
+                        <h5 class="text-caps-lowercase">In-game events</h5>
+                        {% include "pages/home/events.twig" %}
+                    </div>
+                    <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
+                        <div class="col-12 d-lg-none">
+                            <hr>
+                        </div>
+
+                        <h5 class="text-caps-lowercase">Villager Birthdays</h5>
+                        {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card row mx-0 mt-5 homepage-card">
+        <div class="col-12 pt-2">
+            <div class="col-12">
                 <h3 class="text-caps-lowercase">Your progress</h3>
             </div>
         </div>
