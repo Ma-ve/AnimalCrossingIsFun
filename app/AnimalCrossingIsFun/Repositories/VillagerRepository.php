@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
+namespace Mave\AnimalCrossingIsFun\Repositories;
 
 use DateTime;
 use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Villager as VillagerDto;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BaseRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
 
 /**
@@ -22,7 +23,7 @@ class VillagerRepository extends BaseRepository implements IRepository {
     /**
      * @param DateTime $dt
      *
-     * @return \Mave\AnimalCrossingIsFun\Dto\Dto[]
+     * @return VillagerDto[]
      */
     public function getByNearbyBirthdates(DateTime $dt) {
         $this->contents = array_filter($this->contents, function($villager) use ($dt) {
