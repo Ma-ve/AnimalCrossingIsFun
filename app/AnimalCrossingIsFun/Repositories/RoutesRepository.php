@@ -52,6 +52,13 @@ class RoutesRepository {
                 'icon'       => 'fa-tools',
                 'label'      => 'Recipes',
             ]),
+            new Route([
+                'url'        => '/events',
+                'twigView'   => 'pages/events.twig',
+                'repository' => (new EventRepository(null)),
+                'icon'       => 'fa-glass-cheers',
+                'label'      => 'Events',
+            ]),
         ];
     }
 

@@ -1,0 +1,69 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+
+    <div class="item-row-container table-header d-lg-block d-none">
+        <div class="row item-row">
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-lg-4 pl-4">
+                        {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
+                        {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+                    </div>
+                    <div class="col-lg-3">
+                        <strong>Period</strong>
+                    </div>
+                    <div class="col-lg-2">
+                        {% set vars = {'sort': sort, 'label': 'Hemisphere', 'property': 'hemisphere', 'sortIcon': ['fa-sort-numeric-down', 'fa-sort-numeric-down-alt']} %}
+                        {% include "pages/snippets/table-header-column.twig" with vars only %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for item in items %}
+
+
+        <div class="item-row-container js-filterable"
+             id="{{ item.getSafeName() }}"
+             data-filters=",{{ item.filters|join(',') }},"
+        >
+            <div class="row mx-0 m-sm-n2">
+                <div class="col-lg-10 position-static">
+                    <div class="row item-row item-row-main pl-lg-0 pr-lg-0">
+                        <div class="col-lg-4 offset-lg-0 text-lg-left text-center">
+                            {% if item.getIcon() %}
+                            <small><i class="fad {{ item.getIcon() }}"></i></small>
+                            {% endif %}
+                            <strong>{{ item.getName() }}</strong>
+                        </div>
+                        <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
+                            <span class="badge badge-dark">{{ item.getDateRange() }}</span>
+                        </div>
+                        <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
+                            <span class="badge badge-info">{{ item.getHemisphere() }}</span>
+                        </div>
+                    </div>
+                    {#                    <div class="row item-row item-row-sub px-lg-0">#}
+                    {#                        <div class="col-lg-3 col-4 order-0 text-lg-left text-center">#}
+                    {#                            <span class="badge badge-info">{{ item.getHemisphere() }}</span>#}
+                    {#                        </div>#}
+                    {#                        <div class="col-lg-2 col-4 order-1 offset-lg-0 text-lg-left text-center">#}
+                    {#                            <span class="badge badge-danger">{{ creatureTime }}</span>#}
+                    {#                        </div>#}
+                    {#                        <div class="col-lg-2 col-4 order-2 offset-0 offset-lg-0 order-lg-3 text-lg-left text-center">#}
+                    {#                            <span class="badge badge-dark text-wrap" style="max-width: 100%;">{{ item.getLocation() }}</span>#}
+                    {#                        </div>#}
+                    {#                        <div class="col-lg-2 col-4 order-3 order-lg-2 offset-4 {{ marginTops|default('') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning">#}
+                    {#                                <i class="fad fa-bells"></i> {{ item.getPrice() }}#}
+                    {#                            </span>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
