@@ -4,12 +4,18 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Repositories\Collectibles;
 
+use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
 use Mave\AnimalCrossingIsFun\Repositories\Services\PhpService;
 use Mave\AnimalCrossingIsFun\Repositories\Services\SortService;
 
 abstract class BaseRepository {
+
+    /**
+     * @var string
+     */
+    protected $dto;
 
     /**
      * @var array
@@ -30,6 +36,31 @@ abstract class BaseRepository {
     public function __construct(?IDatabaseService $databaseService) {
         $this->databaseService = $databaseService ?? new PhpService();
         $this->sortService = new SortService();
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return bool|mixed
+     */
+    public function get(string $name) {
+        $search = array_search($name, array_map(function($name) {
+            return str_replace(" ", '-', strtolower($name));
+        }, array_column($this->contents, 'name')));
+
+        if(false === $search) {
+            return false;
+        }
+
+        return new $this->dto($this->contents[$search]);
+    }
+
+    public function getAll(): array {
+        if(empty($this->contents)) {
+            throw new Exception('Must first load data into repository');
+        }
+
+        return self::map(new $this->dto);
     }
 
     /**
