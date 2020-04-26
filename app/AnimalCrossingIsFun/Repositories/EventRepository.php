@@ -10,11 +10,27 @@ use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Dto\Event as EventDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BaseRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
+use Mave\AnimalCrossingIsFun\Services\DateService;
 
 /**
  * @method getAll()
  */
 class EventRepository extends BaseRepository implements IRepository {
+
+    /**
+     * @var DateService
+     */
+    private $dateService;
+
+    /**
+     * @param IDatabaseService|null $databaseService
+     * @param DateService|null      $dateService
+     */
+    public function __construct(?IDatabaseService $databaseService, ?DateService $dateService = null) {
+        parent::__construct($databaseService);
+        $this->dateService = $dateService ?? new DateService();
+    }
 
     /**
      * @var string
@@ -99,9 +115,13 @@ class EventRepository extends BaseRepository implements IRepository {
                     throw new Exception('Expected endDateTimeFunction');
                 }
 
-                if(function_exists($item['endDateTimeFunction'])) {
-                    $item['endDate'] = (new DateTime())
-                        ->setTimestamp($item['endDateTimeFunction']());
+                if(method_exists($this->dateService, ($item['endDateTimeFunction']))) {
+                    $year = (int)$this->dateService->getDateTime()->format('Y');
+
+                    if($this->hasMonthPassed($item['startDate'])) {
+                        $year++;
+                    }
+                    $item['endDate'] = $this->dateService->{$item['endDateTimeFunction']}($year);
                 }
             }
             if(false === $item['startDate']) {
@@ -139,7 +159,7 @@ class EventRepository extends BaseRepository implements IRepository {
      * @return bool
      */
     private function hasMonthPassed(DateTime $dateTime): bool {
-        return (int)$dateTime->format('m') < (int)(new DateTime())->format('m');
+        return (int)$dateTime->format('m') < (int)($this->dateService->getDateTime())->format('m');
     }
 
 }
