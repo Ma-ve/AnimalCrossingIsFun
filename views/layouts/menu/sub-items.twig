@@ -1,0 +1,22 @@
+<div class="col-2 px-0 position-relative">
+    <div class="dropdown">
+        <a href="#" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+            <i class="fad {{ menuItem.getIcon() }} d-none d-md-inline-block"></i> {{ menuItem.getLabel() }}
+        </a>
+        <div class="dropdown-menu py-0" aria-labelledby="dropdown08">
+            {% for route in menuItem.getRoutes() %}
+                {% set class = is_current_url(route.getUrl()) ? 'active' : '' %}
+
+                <a class="dropdown-item {{ class }}" href="{{ route.getUrl() }}"><i class="fad {{ route.getIcon() }} d-none d-md-inline-block"></i> {{ route.getLabel() }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="#" class="{{ class }}">
+    </a>
+
+
+    {#        <a href="{{ route.getUrl() }}" class="{{ class }}">#}
+    {#            <i class="fad {{ route.getIcon() }} d-none d-md-inline-block"></i> {{ route.getLabel() }}#}
+    {#        </a>#}
+</div>

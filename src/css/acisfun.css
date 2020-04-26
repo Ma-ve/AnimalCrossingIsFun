@@ -143,9 +143,14 @@ table tr td {
 
 
 /** Menu */
-.menu-items-container {
+.menu-items-container,
+.menu-items-container .dropdown-item {
     background-color: var(--color-brown);
     text-align:       center;
+}
+
+.menu-items-container .dropdown-menu {
+    width: 100%;
 }
 
 .menu,
@@ -163,14 +168,16 @@ table tr td {
     color:            var(--color-brown);
 }
 
-.menu .row > div {
+.menu .row > div,
+.nav-item {
     border-left:  2px solid var(--color-whiteish);
     border-right: 2px solid var(--color-whiteish);
     max-height:   var(--footer-height);
 }
 
-.menu .row a {
-    padding: 16px 0;
+.menu .row a,
+.nav-item a {
+    padding: 16px 1.5rem !important;
     display: block;
 }
 

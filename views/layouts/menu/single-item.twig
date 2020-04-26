@@ -1,0 +1,8 @@
+<div class="col-2 px-0">
+    {% set route = menuItem.getRoutes[0] %}
+    {% set class = is_current_url(route.getUrl()) ? 'active' : '' %}
+
+    <a href="{{ route.getUrl() }}" class="{{ class }}">
+        <i class="fad {{ route.getIcon() }} d-none d-md-inline-block"></i> {{ route.getLabel() }}
+    </a>
+</div>
