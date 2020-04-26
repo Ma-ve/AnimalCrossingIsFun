@@ -3,35 +3,31 @@
 {% block content %}
 
     <div class="card row mx-0 homepage-card homepage-happenings">
-        <div class="col-12 pt-2">
-            <div class="col-12">
-                <h3 class="text-caps-lowercase">Events and happenings</h3>
-            </div>
+        <div class="col-12 pt-2 px-4">
+            <h3 class="text-caps-lowercase">Events and happenings</h3>
         </div>
-        <div class="col-12 progress-bars-container">
-            <div class="col-12">
-                <div class="row py-3">
-                    <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
-                        <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
-                            <small><i class="fad fa-glass-cheers"></i></small>
-                            In-game events
-                        </h5>
-                        <div class="row homepage-event-container">
-                            {% include "pages/home/events.twig" %}
-                        </div>
+        <div class="col-12 progress-bars-container px-4">
+            <div class="row py-3">
+                <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
+                    <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
+                        <small><i class="fad fa-glass-cheers"></i></small>
+                        In-game events
+                    </h5>
+                    <div class="row homepage-event-container">
+                        {% include "pages/home/events.twig" %}
                     </div>
-                    <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
-                        <div class="col-12 d-lg-none">
-                            <hr>
-                        </div>
+                </div>
+                <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
+                    <div class="col-12 d-lg-none">
+                        <hr>
+                    </div>
 
-                        <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
-                            <small><i class="fad fa-birthday-cake"></i></small>
-                            Villager Birthdays
-                        </h5>
-                        <div class="row homepage-event-container">
-                            {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
-                        </div>
+                    <h5 class="text-caps-lowercase py-1 px-2 d-inline-block">
+                        <small><i class="fad fa-birthday-cake"></i></small>
+                        Villager Birthdays
+                    </h5>
+                    <div class="row homepage-event-container">
+                        {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
                     </div>
                 </div>
             </div>
@@ -39,27 +35,27 @@
     </div>
 
     <div class="card row mx-0 mt-5 homepage-card">
-        <div class="col-12 pt-2">
-            <div class="col-12">
-                <h3 class="text-caps-lowercase">Your progress</h3>
-            </div>
+        <div class="col-12 pt-2 px-4">
+            <h3 class="text-caps-lowercase">Your progress</h3>
         </div>
-        <div class="col-12 progress-bars-container">
+        <div class="col-12 px-4 progress-bars-container">
             {% for progressItem in progressItems.all %}
-                <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
-                    <div class="row py-3">
-                        <div class="col-6 col-lg-2 order-0 mb-2 mb-lg-0 align-self-center">
-                            <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
-                        </div>
-                        <div class="col-12 col-lg-8 order-2 order-lg-1">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="row">
+                    <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
+                        <div class="row py-3">
+                            <div class="col-6 col-lg-2 order-0 mb-2 mb-lg-0 align-self-center">
+                                <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
+                            </div>
+                            <div class="col-12 col-lg-8 order-2 order-lg-1">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-lg-2 order-1 order-lg-2 text-right text-lg-left align-self-center">
+                            <div class="col-6 col-lg-2 order-1 order-lg-2 text-right text-lg-left align-self-center">
                             <span class="badge badge-danger">
                                 <span class="js-progress-text">?</span> / {{ progressItem.count|default('?') }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,33 +64,33 @@
     </div>
 
     <div class="card row mx-0 mt-5 homepage-card">
-        <div class="col-12 pt-2">
-            <div class="col-12">
-                <h3 class="text-caps-lowercase">Stats for {{ progressItems.seasonal.month }}</h3>
-            </div>
+        <div class="col-12 pt-2 px-4">
+            <h3 class="text-caps-lowercase">Stats for {{ progressItems.seasonal.month }}</h3>
         </div>
-        <div class="col-12 progress-bars-container">
+        <div class="col-12 px-4 progress-bars-container">
             {% for progressItem in progressItems.seasonal.items %}
-                <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
-                    <div class="row py-3">
-                        <div class="col-6 col-lg-2 order-0 mb-4 mb-lg-0 align-self-center">
-                            <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
-                        </div>
-                        <div class="col-8 col-lg-7 order-2 order-lg-1">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                <div class="row">
+                    <div class="col-12" data-group="{{ progressItem.group }}" data-items="{{ progressItem.names|join(',') }}">
+                        <div class="row py-3">
+                            <div class="col-6 col-lg-2 order-0 mb-4 mb-lg-0 align-self-center">
+                                <i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}
+                            </div>
+                            <div class="col-8 col-lg-7 order-2 order-lg-1">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 0;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-lg-1 order-1 order-lg-2 text-right text-lg-left align-self-center">
+                            <div class="col-6 col-lg-1 order-1 order-lg-2 text-right text-lg-left align-self-center">
                             <span class="badge badge-danger">
                                 <span class="js-progress-text">?</span> / {{ progressItem.count|default('?') }}
                             </span>
-                        </div>
-                        <div class="col-4 col-lg-2 order-3 text-right text-lg-left align-self-center">
-                            <a href="/{{ progressItem.label|lower() }}#{{ progressItems.seasonal.month }}" class="btn btn-sm btn-warning">
-                                Details <small><i class="fad fa-chevron-double-right"></i></small>
-                            </a>
+                            </div>
+                            <div class="col-4 col-lg-2 order-3 text-right text-lg-left align-self-center">
+                                <a href="/{{ progressItem.label|lower() }}#{{ progressItems.seasonal.month }}" class="btn btn-sm btn-warning">
+                                    Details <small><i class="fad fa-chevron-double-right"></i></small>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,12 +99,10 @@
     </div>
 
     <div class="row mx-0 mt-5 about-card">
-        <div class="col-12 col-lg-7 homepage-card py-3">
-            <div class="col-12">
-                <h5 class="text-caps-lowercase">Animal Crossing Is Fun</h5>
-                <p class="mb-0">You can keep track of your progress in <em>Animal Crossing: New Horizons</em> here! See how you're faring in
-                    Fish, Bugs, Fossils, but also crafting Recipes, as well as Art from our good ol' friend Redd!</p>
-            </div>
+        <div class="col-12 col-lg-7 homepage-card py-3 px-4">
+            <h5 class="text-caps-lowercase">Animal Crossing Is Fun</h5>
+            <p class="mb-0">You can keep track of your progress in <em>Animal Crossing: New Horizons</em> here! See how you're faring in
+                Fish, Bugs, Fossils, but also crafting Recipes, as well as Art from our good ol' friend Redd!</p>
         </div>
         <div class="col-12 col-lg-4 offset-0 offset-lg-1 homepage-card py-3 mt-3 mt-lg-0 text-right">
             <div class="col-12">
