@@ -158,8 +158,13 @@ try {
         });;
 
 
+    $routesRegistered = [];
     foreach($routesRepository->getAll() as $menuItem) {
         foreach($menuItem->getRoutes() as $route) {
+            if(isset($routesRegistered[$route->getUrl()])) {
+                continue;
+            }
+            $routesRegistered[$route->getUrl()] = true;
             $app->get($route->getUrl(), function(Request $request, Response $response) use ($route) {
                 $repository = $route->getRepository()
                     ->loadAll()

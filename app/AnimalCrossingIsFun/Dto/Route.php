@@ -23,6 +23,9 @@ class Route extends Dto {
     /** @var string */
     protected $label;
 
+    /** @var string */
+    protected $cssClass;
+
     /**
      * @return string
      */
@@ -56,6 +59,13 @@ class Route extends Dto {
      */
     public function getLabel(): string {
         return $this->label;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCssClass(): ?string {
+        return $this->cssClass;
     }
 
 }
