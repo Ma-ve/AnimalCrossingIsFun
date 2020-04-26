@@ -274,7 +274,7 @@ table tr td {
     background-color: var(--color-whiteish);
 }
 
-.homepage-card h5 {
+.homepage-card.homepage-happenings h5 {
     background-color: var(--yellow);
 }
 

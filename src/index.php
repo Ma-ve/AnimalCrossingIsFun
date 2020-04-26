@@ -158,22 +158,24 @@ try {
         });;
 
 
-    foreach($routesRepository->getAll() as $route) {
-        $app->get($route->getUrl(), function(Request $request, Response $response) use($route) {
-            $repository = $route->getRepository()
-                ->loadAll()
-                ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
-                ->loadFiltersIntoData();
+    foreach($routesRepository->getAll() as $menuItem) {
+        foreach($menuItem->getRoutes() as $route) {
+            $app->get($route->getUrl(), function(Request $request, Response $response) use ($route) {
+                $repository = $route->getRepository()
+                    ->loadAll()
+                    ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
+                    ->loadFiltersIntoData();
 
-            $view = Twig::fromRequest($request);
+                $view = Twig::fromRequest($request);
 
-            return $view->render($response, $route->getTwigView(), [
-                'items'   => $repository->getAll(),
-                'filters' => $repository->getFilters(),
-                'sort'    => $sort,
-            ]);
-        })
-            ->setName($route->getUrl());
+                return $view->render($response, $route->getTwigView(), [
+                    'items'   => $repository->getAll(),
+                    'filters' => $repository->getFilters(),
+                    'sort'    => $sort,
+                ]);
+            })
+                ->setName($route->getUrl());
+        }
     }
 
     $app->get('/recipes/{category}/{recipe}', function(Request $request, Response $response, $args) {
