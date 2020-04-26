@@ -177,8 +177,9 @@ table tr td {
 
 .menu .row a,
 .nav-item a {
-    padding: 16px 1.5rem !important;
-    display: block;
+    padding-top:    16px;
+    padding-bottom: 16px;
+    display:        block;
 }
 
 .menu .row > div:first-child {
