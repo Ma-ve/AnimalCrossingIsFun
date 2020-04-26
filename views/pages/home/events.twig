@@ -1,13 +1,16 @@
 {% for event in events %}
 <div class="col-12">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             {% if event.getIcon() %}
             <i class="fad {{ event.getIcon() }}"></i>
             {% endif %}
             <strong>{{ event.getName() }}</strong></div>
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
             <i class="fad fa-calendar-star"></i> {{ event.getShortDateRange() }}
+        </div>
+        <div class="d-md-none">
+            <hr>
         </div>
     </div>
 </div>
