@@ -13,16 +13,11 @@
             </div>
 
             {% for menuItem in menuItems %}
-                {% for route in menuItem.getRoutes() %}
-                    {% set colWidth = loop.index <= 5 ? 2 : 3 %}
-                    <div class="col-{{ colWidth }} px-0">
-                        {% set class = is_current_url(route.getUrl()) ? 'active' : '' %}
-
-                        <a href="{{ route.getUrl() }}" class="{{ class }}">
-                            <i class="fad {{ route.getIcon() }} d-none d-md-inline-block"></i> {{ route.getLabel() }}
-                        </a>
-                    </div>
-                {% endfor %}
+                {% if menuItem.routes|length == 1 %}
+                    {% include "layouts/menu/single-item.twig" with {'menuItem': menuItem} only %}
+                {% else %}
+                    {% include "layouts/menu/sub-items.twig" with {'menuItem': menuItem} only %}
+                {% endif %}
             {% endfor %}
         </div>
     </div>
