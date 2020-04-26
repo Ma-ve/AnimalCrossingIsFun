@@ -69,7 +69,7 @@
     'dayData' => '1st through Easter',
     'startDate' => '04-01',
     'endDate' => false,
-    'endDateTimeFunction' => 'easter_date',
+    'endDateTimeFunction' => 'getEasterDateTime',
     'hemisphere' => 'Both',
     'name' => 'Bunny Day',
     'icon' => 'fa-rabbit',
