@@ -55,13 +55,9 @@ class RoutesRepository {
 
             new MenuItem([
                 'routes' => [
-                    new Route([
-                        'url'        => '/art',
-                        'twigView'   => 'pages/art.twig',
-                        'repository' => (new ArtRepository(null)),
-                        'icon'       => 'fa-palette',
-                        'label'      => 'Art',
-                    ]),
+                    new Route($this->getRouteArtParams() + [
+                            'cssClass' => 'd-none d-md-inline-block',
+                        ]),
                 ],
             ]),
             new MenuItem([
@@ -81,8 +77,24 @@ class RoutesRepository {
                         'icon'       => 'fa-glass-cheers',
                         'label'      => 'Events',
                     ]),
+                    new Route($this->getRouteArtParams() + [
+                            'cssClass' => 'd-inline-block d-md-none',
+                        ]),
                 ],
             ]),
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function getRouteArtParams() {
+        return [
+            'url'        => '/art',
+            'twigView'   => 'pages/art.twig',
+            'repository' => (new ArtRepository(null)),
+            'icon'       => 'fa-palette',
+            'label'      => 'Art',
         ];
     }
 
