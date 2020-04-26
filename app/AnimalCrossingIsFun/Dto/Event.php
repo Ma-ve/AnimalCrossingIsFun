@@ -93,12 +93,26 @@ class Event extends Dto {
     }
 
     /**
+     * @return DateTime|string
+     */
+    public function getFullDateRange() {
+        return $this->getDateRange($formatWithoutYear = 'F jS', $formatWithYear = 'F jS, Y');
+    }
+
+    /**
+     * @return DateTime|string
+     */
+    public function getShortDateRange() {
+        return $this->getDateRange($formatWithoutYear = 'M jS', $formatWithYear = 'M jS');
+    }
+
+    /**
      * @param string $formatWithoutYear
      * @param string $formatWithYear
      *
      * @return string
      */
-    public function getDateRange($formatWithoutYear = 'F jS', $formatWithYear = 'F jS, Y') {
+    private function getDateRange($formatWithoutYear = 'F jS', $formatWithYear = 'F jS, Y') {
         if(is_string($this->startDate)) {
             return $this->startDate;
         }
