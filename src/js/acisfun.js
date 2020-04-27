@@ -25,6 +25,8 @@ $(function () {
     let promiseFuncs = [];
     let promiseObj = loginPromise();
 
+    $('[data-toggle="tooltip"]').tooltip();
+
     let path = window.location.pathname;
     switch (path) {
         case '/':

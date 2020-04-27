@@ -5,7 +5,15 @@
             {% if event.getIcon() %}
             <i class="fad {{ event.getIcon() }}"></i>
             {% endif %}
-            <strong>{{ event.getName() }}</strong></div>
+            <strong>{{ event.getName() }}</strong>
+            {% set hemisphereAbbr, hemisphereTitle = "N+S", "North + South" %}
+            {% if event.getHemisphere() != "Both" %}
+                {% set hemisphereAbbr, hemisphereTitle = event.getHemisphere()|slice(0, 1), event.getHemisphere() %}
+            {% endif %}
+            <span class="badge badge-info" data-toggle="tooltip" title="{{ hemisphereTitle }} Hemisphere">
+                {{ hemisphereAbbr }}
+            </span>
+        </div>
         <div class="col-12 col-lg-6">
             <i class="fad fa-calendar-star"></i> {{ event.getShortDateRange() }}
         </div>
