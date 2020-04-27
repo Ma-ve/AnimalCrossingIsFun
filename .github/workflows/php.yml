@@ -12,22 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.2'
-      run: composer validate
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.2
+          extensions: curl json calendar
 
-    - name: Install dependencies
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.2'
-      run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Check PHP Version
+        run: php -v
 
-    - name: Run tests
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.2'
-      run: ./vendor/phpunit/phpunit/phpunit ./tests/
+      - name: Run tests
+        run: ./vendor/phpunit/phpunit/phpunit ./tests/
