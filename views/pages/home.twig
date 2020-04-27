@@ -14,7 +14,7 @@
                         In-game events
                     </h5>
                     <div class="row homepage-event-container">
-                        {% include "pages/home/events.twig" %}
+                        {% include "pages/home/_events.twig" %}
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 order-0 mb-2 mb-lg-0 align-self-center">
@@ -27,7 +27,7 @@
                         Villager Birthdays
                     </h5>
                     <div class="row homepage-event-container">
-                        {% include "pages/home/villagers.twig" with { 'villagers': villagers } only %}
+                        {% include "pages/home/_villagers.twig" with { 'villagers': villagers } only %}
                     </div>
                 </div>
             </div>
