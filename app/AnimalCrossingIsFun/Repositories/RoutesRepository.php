@@ -11,6 +11,7 @@ use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\SongRepository;
 
 class RoutesRepository {
 
@@ -76,6 +77,13 @@ class RoutesRepository {
                         'repository' => (new EventRepository(null)),
                         'icon'       => 'fa-glass-cheers',
                         'label'      => 'Events',
+                    ]),
+                    new Route([
+                        'url'        => '/songs',
+                        'twigView'   => 'pages/songs.twig',
+                        'repository' => (new SongRepository(null)),
+                        'icon'       => 'fa-record-vinyl',
+                        'label'      => 'Songs',
                     ]),
                     new Route($this->getRouteArtParams() + [
                             'cssClass' => 'd-inline-block d-md-none',
