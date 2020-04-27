@@ -10,8 +10,7 @@ use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Repositories\VillagerRepository;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
-use Mave\AnimalCrossingIsFun\Services\StorageService;
-use Mave\AnimalCrossingIsFun\Services\UserService;
+use Mave\AnimalCrossingIsFun\Services\RoutesService;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
@@ -35,6 +34,8 @@ if(env('IS_DEV', false)) {
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 }
+
+define('ROUTES_PATH', BASE_PATH . 'data/routes/');
 
 try {
 
@@ -78,85 +79,9 @@ try {
     })
         ->setName('/');
 
-    $app->group('/profile', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
-        $collectorProxy->redirect('', '/profile/');
-
-        $collectorProxy->group('/api', function(\Slim\Routing\RouteCollectorProxy $collectorProxy) {
-            $collectorProxy->post('/save', function(Request $request, Response $response) {
-                return (new StorageService(UserService::getUser()))
-                    ->saveToDatabase($request, $response);
-            });
-
-            $collectorProxy->post('/load', function(Request $request, Response $response) {
-                return (new StorageService(UserService::getUser()))
-                    ->loadFromDatabase($response);
-            });
-        });
-
-        $collectorProxy->get('/', function(Request $request, Response $response) {
-            $view = Twig::fromRequest($request);
-
-            return $view->render($response, 'pages/profile.twig', [
-                'progressItems' => (new ProgressService())->getAll(),
-            ]);
-        });
-    })
-        ->add(function(Request $request, Psr\Http\Server\RequestHandlerInterface $requestHandler) {
-            session_start();
-
-            if(empty($_SESSION)) {
-                header("Location: /");
-                exit;
-            }
-
-            return $requestHandler->handle($request);
-        });
-
-    $app->group('/auth', function(Slim\Routing\RouteCollectorProxy $collectorProxy) {
-        $collectorProxy->get('/me', function(Request $request, Response $response) {
-            $user = user();
-            $data = false;
-            if($user) {
-                $data = [
-                    'name' => $user->getUsername(),
-                ];
-            }
-
-            $response
-                ->getBody()
-                ->write(json_encode([
-                    'data' => $data,
-                ]));
-
-            return $response->withHeader('Content-Type', 'application/json');
-        });
-
-        $collectorProxy->get('/logout', function() {
-            $_SESSION = [];
-            session_destroy();
-            header("Location: /");
-            exit;
-        });
-
-        $collectorProxy->get('/reddit/login', function() {
-            (new RedditProvider())
-                ->start();
-        });
-
-        $collectorProxy->get('/reddit/callback', function(Request $request, Response $response) {
-            (new RedditProvider())
-                ->handleCallback($request);
-
-            header("Location: /");
-            exit;
-        });
-    })
-        ->add(function(Request $request, Psr\Http\Server\RequestHandlerInterface $requestHandler) {
-            session_start();
-
-            return $requestHandler->handle($request);
-        });;
-
+    (new RoutesService($app))
+        ->registerProfileRoutes()
+        ->registerAuthRoutes();
 
     $routesRegistered = [];
     foreach($routesRepository->getAll() as $menuItem) {
