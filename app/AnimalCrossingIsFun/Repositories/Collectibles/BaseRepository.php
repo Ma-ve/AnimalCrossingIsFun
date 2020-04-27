@@ -41,18 +41,40 @@ abstract class BaseRepository {
     /**
      * @param string $name
      *
-     * @return bool|mixed
+     * @return bool|Dto
      */
     public function get(string $name) {
-        $search = array_search($name, array_map(function($name) {
-            return str_replace(" ", '-', strtolower($name));
-        }, array_column($this->contents, 'name')));
+        $search = array_search($name, array_column($this->contents, 'safeName'));
 
         if(false === $search) {
             return false;
         }
 
         return new $this->dto($this->contents[$search]);
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Dto[]
+     */
+    public function getMultipleBySingleKey(string $name) {
+        $arrayKeys = array_keys(array_column($this->contents, 'safeName'), $name);
+
+        if(empty($arrayKeys)) {
+            return [];
+        }
+
+        return array_values(
+            array_map(
+                function($item) {
+                    return new $this->dto($item);
+                },
+                array_intersect_key(
+                    $this->contents,
+                    array_flip($arrayKeys)
+                ))
+        );
     }
 
     public function getAll(): array {
@@ -163,6 +185,5 @@ abstract class BaseRepository {
     public function getFilters(): array {
         return [];
     }
-
 
 }

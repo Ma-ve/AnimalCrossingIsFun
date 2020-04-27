@@ -64,9 +64,6 @@ class EventRepository extends BaseRepository implements IRepository {
 
             return false;
         });
-        usort($this->contents, function($a, $b) {
-            return $a['startDate'] <=> $b['startDate'];
-        });
 
         return parent::map(new $this->dto);
     }
@@ -79,6 +76,9 @@ class EventRepository extends BaseRepository implements IRepository {
     public function sortItems($sort = false) {
         switch($sort) {
             default:
+                usort($this->contents, function($a, $b) {
+                    return $a['startDate'] <=> $b['startDate'];
+                });
                 break;
             case 'name':
                 $this->sortByNameAsc();
@@ -96,7 +96,7 @@ class EventRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $this->contents = array_map(function($item) {
+        $mapped = array_map(function($item) {
             if(isset($item['startDate']) && $item['startDate']) {
                 $item['startDate'] = DateTime::createFromFormat('m-d', $item['startDate']);
                 if($this->hasMonthPassed($item['startDate'])) {
@@ -148,7 +148,8 @@ class EventRepository extends BaseRepository implements IRepository {
 
             return $item;
         }, $this->databaseService->loadFromDatabase('events'));
-        
+
+        $this->contents = $mapped;
 
         return $this;
     }

@@ -4,9 +4,9 @@
 
     <div class="item-row-container table-header d-lg-block d-none">
         <div class="row item-row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-4 pl-4">
+                    <div class="col-lg-3 pl-4">
                         {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
                         {% include "pages/snippets/table-header-column.twig" with vars only %}
 
@@ -31,9 +31,9 @@
              data-filters=",{{ item.filters|join(',') }},"
         >
             <div class="row mx-0 m-sm-n2">
-                <div class="col-lg-10 position-static">
+                <div class="col-lg-12 position-static">
                     <div class="row item-row item-row-main pl-lg-0 pr-lg-0">
-                        <div class="col-lg-4 offset-lg-0 text-lg-left text-center">
+                        <div class="col-lg-3 offset-lg-0 text-lg-left text-center pl-4">
                             {% if item.getIcon() %}
                             <small><i class="fad {{ item.getIcon() }}"></i></small>
                             {% endif %}
@@ -43,24 +43,14 @@
                             <span class="badge badge-dark">{{ item.getFullDateRange() }}</span>
                         </div>
                         <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
-                            <span class="badge badge-info">{{ item.getHemisphere() }}</span>
+                            <span class="badge badge-danger">{{ item.getHemisphere() }}</span>
+                        </div>
+                        <div class="col-lg-3 col-4 offset-lg-0 offset-8 text-lg-right pr-5 text-center navigation-column">
+                            <a class="btn btn-sm btn-warning" href="/events/{{ item.getSafeName() }}">Details
+                                <small><i class="fad fa-chevron-double-right"></i></small>
+                            </a>
                         </div>
                     </div>
-                    {#                    <div class="row item-row item-row-sub px-lg-0">#}
-                    {#                        <div class="col-lg-3 col-4 order-0 text-lg-left text-center">#}
-                    {#                            <span class="badge badge-info">{{ item.getHemisphere() }}</span>#}
-                    {#                        </div>#}
-                    {#                        <div class="col-lg-2 col-4 order-1 offset-lg-0 text-lg-left text-center">#}
-                    {#                            <span class="badge badge-danger">{{ creatureTime }}</span>#}
-                    {#                        </div>#}
-                    {#                        <div class="col-lg-2 col-4 order-2 offset-0 offset-lg-0 order-lg-3 text-lg-left text-center">#}
-                    {#                            <span class="badge badge-dark text-wrap" style="max-width: 100%;">{{ item.getLocation() }}</span>#}
-                    {#                        </div>#}
-                    {#                        <div class="col-lg-2 col-4 order-3 order-lg-2 offset-4 {{ marginTops|default('') }} offset-lg-0 text-lg-left text-center"><span class="badge badge-warning">#}
-                    {#                                <i class="fad fa-bells"></i> {{ item.getPrice() }}#}
-                    {#                            </span>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
                 </div>
             </div>
         </div>

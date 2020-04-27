@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-12 text-left">
+        <hr>
+        <h5>{{ title }}</h5>
+        {% for occurence in occurences %}
+            <span class="badge badge-dark">
+                <i class="fad fa-calendar-star"></i> {{ occurence.getFullDateRange() }}
+            </span>
+        {% endfor %}
+    </div>
+</div>

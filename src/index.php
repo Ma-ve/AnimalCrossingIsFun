@@ -108,6 +108,30 @@ try {
         }
     }
 
+    $app->get('/events/{event}', function(Request $request, Response $response, $args) {
+        $events = (new EventRepository(null))
+            ->loadAll()
+            ->sortItems()
+            ->getMultipleBySingleKey($args['event']);
+
+        $view = Twig::fromRequest($request);
+
+        if(empty($events)) {
+            return $view->render($response, 'pages/error/error.twig', [
+                'error' => [
+                    'code'    => 404,
+                    'message' => 'Event Not Found!',
+                ],
+            ]);
+        }
+
+        return $view->render($response, 'pages/detail/event.twig', [
+            'events' => $events,
+        ]);
+    });
+
+    $app->redirect('/recipes', '/recipes/cherry-blossom-season');
+
     $app->get('/recipes/{category}/{recipe}', function(Request $request, Response $response, $args) {
         $item = (new CherryBlossomRecipeRepository(null))
             ->loadAll()
@@ -116,7 +140,12 @@ try {
         $view = Twig::fromRequest($request);
 
         if(false === $item) {
-            return $view->render($response, '404');
+            return $view->render($response, 'pages/error/error.twig', [
+                'error' => [
+                    'code'    => 404,
+                    'message' => 'Recipe Not Found',
+                ],
+            ]);
         }
 
         return $view->render($response, 'pages/detail/recipe.twig', [
