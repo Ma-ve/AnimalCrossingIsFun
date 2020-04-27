@@ -44,6 +44,11 @@ class Event extends Dto {
     protected $detailsLink;
 
     /**
+     * @var string
+     */
+    protected $safeName;
+
+    /**
      * @return string
      */
     public function getName(): string {
@@ -90,6 +95,13 @@ class Event extends Dto {
      */
     public function getDetailsLink(): string {
         return $this->detailsLink;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSafeName(): string {
+        return $this->safeName;
     }
 
     /**

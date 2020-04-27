@@ -1,0 +1,50 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+    {% set event = events[0] %}
+
+    <div class="row text-center py-4 detail-recipe px-2">
+        <div class="col-12 col-lg-4">
+            <h2>
+                {% if event.getIcon() %}
+                    <i class="fad {{ event.getIcon() }}"></i>
+                {% endif %}
+                {{ event.getName() }}
+            </h2>
+            {% set hemisphereBoth = events|filter(e => e.hemisphere == "Both") %}
+            {% set hemisphereNorthern = events|filter(e => e.hemisphere == "Northern") %}
+            {% set hemisphereSouthern = events|filter(e => e.hemisphere == "Southern") %}
+
+            {% if hemisphereBoth|length > 0 %}
+                {% include "pages/detail/_event-occurences.twig" with {'title': 'Both Hemispheres', 'occurences': hemisphereBoth} only %}
+            {% endif %}
+            {% if hemisphereNorthern|length > 0 %}
+                {% include "pages/detail/_event-occurences.twig" with {'title': 'Northern Hemisphere', 'occurences': hemisphereNorthern} only %}
+            {% endif %}
+            {% if hemisphereSouthern|length > 0 %}
+                {% include "pages/detail/_event-occurences.twig" with {'title': 'Southern Hemisphere', 'occurences': hemisphereSouthern} only %}
+            {% endif %}
+            <div class="d-block d-md-none">
+                <hr>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8">
+            <div class="row text-left">
+                <div class="col-12 position-relative">
+                    <a href="/events" class="btn btn-sm btn-warning back-to-overview position-absolute">
+                        <small><i class="fad fa-chevron-double-left"></i></small> Back To Events
+                    </a>
+                    <h5>About</h5>
+                    <p>{{ event.getDescription()|replace({'\n': '<br>'})|raw }}</p>
+                    <p>
+                        <a href="{{ event.getDetailsLink() }}" target="_blank" class="font-italic text-caps-lowercase">
+                            Text by animalcrossing.fandom.com
+                            <small><small><i class="fad fa-chevron-double-right"></i></small></small>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

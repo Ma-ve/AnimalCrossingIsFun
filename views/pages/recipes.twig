@@ -26,11 +26,11 @@
     {% for item in items %}
 
         {% set lastColumn %}
-        <div class="col-lg-2 col-4 offset-lg-0 offset-8 text-lg-left text-center navigation-column">
-            <span>
-                <a href="/recipes/cherry-blossom-season/{{ item.getSafeName() }}"><i class="fad fa-chevron-double-right"></i></a>
-            </span>
-        </div>
+            <div class="col-lg-2 col-4 offset-lg-0 offset-8 text-lg-left text-center navigation-column">
+                <a class="btn btn-sm btn-warning position-absolute" href="/recipes/cherry-blossom-season/{{ item.getSafeName() }}">Details
+                    <small><i class="fad fa-chevron-double-right"></i></small>
+                </a>
+            </div>
         {% endset %}
 
 

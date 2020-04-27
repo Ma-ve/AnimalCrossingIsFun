@@ -14,22 +14,24 @@ namespace {
     array_shift($arguments);
 
     $allNames = [];
-
     foreach($arguments as $phpFile) {
+        $canBeDuplicate = false;
+        switch($phpFile) {
+            case 'data/events.php':
+                $canBeDuplicate = true;
+                break;
+        }
+
         $phpFilePath = __DIR__ . '/../' . $phpFile;
         $data = require($phpFilePath);
 
         foreach($data as &$item) {
-            $suffix = '';
             $safeName = Collectible::getSafeNameForString($item['name']);
-            if(isset($allNames[$safeName])) {
-                echo "Safe name '{$safeName}' already exists... ";
-                $suffix = "-" . (string)++$allNames[$safeName];
-                echo ", suffixing it... New name: '{$safeName}{$suffix}'\n";
-            } else {
-                $allNames[$safeName] = 1;
+            if(isset($allNames[$safeName]) && !$canBeDuplicate) {
+                throw new Exception('Safe name ' . $safeName . ' already exists');
             }
-            $item['safeName'] = $safeName . $suffix;
+            $allNames[$safeName] = true;
+            $item['safeName'] = $safeName;
         }
 
         $varExport = var_export($data, true);

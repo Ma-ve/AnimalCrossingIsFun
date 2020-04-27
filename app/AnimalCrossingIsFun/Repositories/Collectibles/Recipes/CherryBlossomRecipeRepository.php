@@ -26,6 +26,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2880,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'blossom-viewing-lantern',
             ],
 
             [
@@ -40,6 +41,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 3300,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-bonsai',
             ],
 
             [
@@ -53,6 +55,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 4240,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-branches',
             ],
 
             [
@@ -65,6 +68,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2750,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-clock',
             ],
 
             [
@@ -77,6 +81,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 4400,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-flooring',
             ],
 
             [
@@ -88,6 +93,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2000,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-petal-pile',
             ],
 
             [
@@ -99,6 +105,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2400,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-pochette',
             ],
 
             [
@@ -111,6 +118,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2700,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-pond-stone',
             ],
 
             [
@@ -123,6 +131,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 4600,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-trees-wall',
             ],
 
             [
@@ -134,6 +143,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2800,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-umbrella',
             ],
 
             [
@@ -146,6 +156,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 2700,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'cherry-blossom-wand',
             ],
 
             [
@@ -157,6 +168,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season) / Isabelle announcement (Cherry-blossom season)',
                 'price'        => 4000,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'putdoor-picnic-set',
             ],
 
             [
@@ -169,6 +181,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 3200,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'sakura-wood-flooring',
             ],
 
             [
@@ -181,6 +194,7 @@ class CherryBlossomRecipeRepository extends RecipeRepository implements IReposit
                 'location'     => 'Balloon (Cherry-blossom season)',
                 'price'        => 3200,
                 'category'     => 'Cherry-blossom season',
+                'safeName'     => 'sakura-wood-wall',
             ],
         ];
 

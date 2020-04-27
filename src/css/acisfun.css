@@ -304,17 +304,15 @@ table tr td {
     position: relative;
 }
 
-.navigation-column span {
-    display: block;
-    width:   16px;
-    height:  16px;
+.navigation-column a {
+    top:        13px;
+    transition: color 0.1s linear;
 }
 
-.navigation-column span a {
-    position:   absolute;
-    font-size:  34px;
-    top:        4px;
-    transition: color 0.1s linear;
+a.back-to-overview {
+    right:   1rem;
+    top:     -0.5rem;
+    z-index: 9999;
 }
 
 .progress-bars-container .progress {
@@ -370,8 +368,10 @@ body.home .menu .progress {
     }
 
     .navigation-column a {
-        top:  -16px !important;
-        left: 15px;
+        top:       0;
+        left:      15px;
+        font-size: 12px;
+        width:     70px;
     }
 
     .caught-checkbox input + label {
