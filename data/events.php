@@ -8,6 +8,7 @@
     'hemisphere' => 'Both',
     'name' => 'New Year\'s Day',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/New_Year\'s_Day',
+    'safeName' => 'new-year-s-day',
   ),
   1 => 
   array (
@@ -19,6 +20,7 @@
     'name' => 'Fishing Tourney',
     'icon' => 'fa-fish',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Fishing_Tourney',
+    'safeName' => 'fishing-tourney',
   ),
   2 => 
   array (
@@ -30,6 +32,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off',
   ),
   3 => 
   array (
@@ -41,6 +44,7 @@
     'name' => 'Lunar New Year',
     'icon' => 'fa-eclipse',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Lunar_New_Year',
+    'safeName' => 'lunar-new-year',
   ),
   4 => 
   array (
@@ -52,6 +56,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-2',
   ),
   5 => 
   array (
@@ -62,6 +67,7 @@
     'hemisphere' => 'Northern',
     'name' => 'Cherry Blossom Season',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Cherry_Blossom_Season',
+    'safeName' => 'cherry-blossom-season',
   ),
   6 => 
   array (
@@ -74,6 +80,7 @@
     'name' => 'Bunny Day',
     'icon' => 'fa-rabbit',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bunny_Day',
+    'safeName' => 'bunny-day',
   ),
   7 => 
   array (
@@ -85,6 +92,7 @@
     'name' => 'Fishing Tourney',
     'icon' => 'fa-fish',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Fishing_Tourney',
+    'safeName' => 'fishing-tourney-2',
   ),
   8 => 
   array (
@@ -96,6 +104,7 @@
     'name' => 'Nature Day',
     'icon' => 'fa-globe-europe',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Nature_Day',
+    'safeName' => 'nature-day',
   ),
   9 => 
   array (
@@ -106,6 +115,7 @@
     'hemisphere' => 'Both',
     'name' => 'May Day',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/May_Day',
+    'safeName' => 'may-day',
   ),
   10 => 
   array (
@@ -116,6 +126,7 @@
     'hemisphere' => 'Southern',
     'name' => 'Mushrooming Season',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Mushrooming_Season',
+    'safeName' => 'mushrooming-season',
   ),
   11 => 
   array (
@@ -126,6 +137,7 @@
     'hemisphere' => 'Both',
     'name' => 'International Museum Day',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/International_Museum_Day',
+    'safeName' => 'international-museum-day',
   ),
   12 => 
   array (
@@ -137,6 +149,7 @@
     'name' => 'Wedding Season',
     'icon' => 'fa-rings-wedding',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Wedding_Season',
+    'safeName' => 'wedding-season',
   ),
   13 => 
   array (
@@ -148,6 +161,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-3',
   ),
   14 => 
   array (
@@ -159,6 +173,7 @@
     'name' => 'Fishing Tourney',
     'icon' => 'fa-fish',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Fishing_Tourney',
+    'safeName' => 'fishing-tourney-3',
   ),
   15 => 
   array (
@@ -170,6 +185,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-4',
   ),
   16 => 
   array (
@@ -181,6 +197,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-5',
   ),
   17 => 
   array (
@@ -192,6 +209,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-6',
   ),
   18 => 
   array (
@@ -202,6 +220,7 @@
     'hemisphere' => 'Southern',
     'name' => 'Cherry Blossom Season',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Cherry_Blossom_Season',
+    'safeName' => 'cherry-blossom-season-2',
   ),
   19 => 
   array (
@@ -213,6 +232,7 @@
     'name' => 'Fishing Tourney',
     'icon' => 'fa-fish',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Fishing_Tourney',
+    'safeName' => 'fishing-tourney-4',
   ),
   20 => 
   array (
@@ -223,6 +243,7 @@
     'hemisphere' => 'Northern',
     'name' => 'Mushrooming Season',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Mushrooming_Season',
+    'safeName' => 'mushrooming-season-2',
   ),
   21 => 
   array (
@@ -234,6 +255,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-7',
   ),
   22 => 
   array (
@@ -245,6 +267,7 @@
     'name' => 'Bug Off',
     'icon' => 'fa-bug',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Bug_Off',
+    'safeName' => 'bug-off-8',
   ),
   23 => 
   array (
@@ -255,6 +278,7 @@
     'hemisphere' => 'Both',
     'name' => 'New Year\'s Eve',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/New_Year\'s_Eve',
+    'safeName' => 'new-year-s-eve',
   ),
   24 => 
   array (
@@ -265,5 +289,6 @@
     'hemisphere' => 'Both',
     'name' => 'Festive Season',
     'detailsLink' => 'https://animalcrossing.fandom.com/wiki/Festive_Season',
+    'safeName' => 'festive-season',
   ),
 );
