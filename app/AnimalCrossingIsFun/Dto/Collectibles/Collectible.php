@@ -53,7 +53,13 @@ abstract class Collectible extends Dto {
     }
 
     public static function getSafeNameForString(string $string): string {
-        return str_replace('--', '-', strtolower(preg_replace("/[^\da-z]/i", "-", $string)));
+        $replaced = strtolower(preg_replace("/[^\da-z]/i", "-", trim($string)));
+
+        while(strpos($replaced, '--') !== false) {
+            $replaced = str_replace('--', '-', $replaced);
+        }
+
+        return trim($replaced, '-');
     }
 
 }

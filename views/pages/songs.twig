@@ -1,0 +1,39 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+    {% set columnConfiguration %}
+            <div class="col-lg-3">
+                {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
+                {% include "pages/snippets/table-header-column.twig" with vars only %}
+
+            </div>
+            <div class="col-lg-2 offset-lg-6">
+                <strong>Registered</strong>
+            </div>
+
+    {% endset %}
+
+    {% include "pages/snippets/table-header.twig" with {
+        'columnConfiguration': columnConfiguration
+    } %}
+
+    {% for item in items %}
+
+        {% embed "pages/snippets/table-content.twig" with {
+            'item':                 item,
+            'index':                loop.index,
+            'caughtCheckboxOffset': 5,
+            'lastColumn':           lastColumn
+        } only %}
+            {% block subRow %}
+                <div class="col-lg-3 col-5 text-lg-left text-center">
+                    {% if item.getCategory() %}
+                        <span class="badge badge-danger">{{ item.getCategory() }}</span>
+                    {% endif %}
+                </div>
+            {% endblock %}
+        {% endembed %}
+
+    {% endfor %}
+
+{% endblock %}

@@ -10,6 +10,7 @@ use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\SongRepository;
 
 class ProgressService {
 
@@ -65,6 +66,13 @@ class ProgressService {
                 'group' => 'recipes',
                 'count' => count($recipes = (new CherryBlossomRecipeRepository(null))->loadAll()->getAll()),
                 'names' => $getSafeNames($recipes),
+            ],
+            [
+                'icon'  => 'record-vinyl',
+                'label' => 'Songs',
+                'group' => 'songs',
+                'count' => count($songs = (new SongRepository(null))->loadAll()->getAll()),
+                'names' => $getSafeNames($songs),
             ],
             [
                 'icon'  => 'palette',
