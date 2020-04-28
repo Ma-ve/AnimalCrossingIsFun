@@ -1,6 +1,7 @@
 <?php
 
 use Mave\AnimalCrossingIsFun\Dto\User;
+use Mave\AnimalCrossingIsFun\Services\UserService;
 
 if(!function_exists('env')) {
     /**
@@ -62,7 +63,12 @@ if(!function_exists('value')) {
 }
 
 if(!function_exists('user')) {
-    function user(): ?User {
-        return \Mave\AnimalCrossingIsFun\Services\UserService::getUser();
+    /**
+     * @param bool $removeCachedValueIfExists
+     *
+     * @return User|null
+     */
+    function user(bool $removeCachedValueIfExists = false): ?User {
+        return UserService::getUser($removeCachedValueIfExists);
     }
 }
