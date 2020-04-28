@@ -198,10 +198,10 @@ function checkLogin() {
                     .find('span')
                     .text(user.get().name);
             }
-            authContainer.css('display', 'block')
+            authContainer.css('opacity', '1')
         },
         function (Error) {
-            authContainer.css('display', 'block');
+            authContainer.css('opacity', '1');
         }
     ];
 }

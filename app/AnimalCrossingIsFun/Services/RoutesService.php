@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Services;
 
+use Mave\AnimalCrossingIsFun\OAuth\LoginProvider;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Psr\Http\Server\RequestHandlerInterface;
 use Slim\App;
@@ -75,8 +76,20 @@ class RoutesService {
     public function registerAuthRoutes(): self {
         $this->app->group('/auth', function(RouteCollectorProxy $collectorProxy) {
             $collectorProxy->get('/me', function(Request $request, Response $response) {
-                $user = user();
                 $data = false;
+
+                $getUser = function() {
+                    $user = user();
+                    if(!$user) {
+                        (new LoginProvider())
+                            ->restoreUserFromLoginCookie();
+                        $user = user(true);
+                    }
+
+                    return $user;
+                };
+                $user = $getUser();
+
                 if($user) {
                     $data = [
                         'name' => $user->getUsername(),
@@ -93,6 +106,8 @@ class RoutesService {
             });
 
             $collectorProxy->get('/logout', function() {
+                (new CookieService())
+                    ->setLoginCookie(null);
                 $_SESSION = [];
                 session_destroy();
                 header("Location: /");

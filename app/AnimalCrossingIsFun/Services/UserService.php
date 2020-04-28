@@ -13,7 +13,16 @@ class UserService {
      */
     private static $user = false;
 
-    public static function getUser(): ?User {
+    /**
+     * @param bool $removeCachedValueIfExists
+     *
+     * @return User|null
+     */
+    public static function getUser(bool $removeCachedValueIfExists): ?User {
+        if($removeCachedValueIfExists) {
+            self::$user = false;
+        }
+
         if(false !== self::$user) {
             return self::$user;
         }
