@@ -340,7 +340,7 @@ body.home .menu .progress {
 }
 
 .auth-container {
-    display: none;
+    opacity: 0.3;
 }
 
 .filter-item {

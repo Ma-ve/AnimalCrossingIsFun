@@ -6,7 +6,7 @@ namespace Mave\AnimalCrossingIsFun\OAuth;
 
 use Nyholm\Psr7\ServerRequest as Request;
 
-class RedditProvider {
+class RedditProvider extends LoginProvider {
 
     /**
      * @var string
@@ -24,6 +24,8 @@ class RedditProvider {
     private $redirectUrl;
 
     public function __construct() {
+        parent::__construct();
+
         $this->clientId = env('REDDIT_CLIENT_ID');
         $this->clientSecret = env('REDDIT_CLIENT_SECRET');
         $this->redirectUrl = env('REDDIT_CALLBACK_URL');
@@ -57,10 +59,13 @@ class RedditProvider {
             )
         );
 
-        $_SESSION['user'] = [
+        $params = [
             'id'       => $user['id'],
             'username' => $user['name'],
         ];
+        parent
+            ::setUserData($params)
+            ->setUserCookie($params);
     }
 
     /**
