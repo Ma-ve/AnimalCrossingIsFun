@@ -65,4 +65,11 @@ class CacheService {
         self::client()->set($this->keyPrefix . $key, $data, $seconds);
     }
 
+    /**
+     * @param string $key
+     */
+    public function delete(string $key) {
+        self::client()->del($key);
+    }
+
 }
