@@ -18,6 +18,11 @@ abstract class BaseRepository {
     protected $dto;
 
     /**
+     * @var string
+     */
+    protected $indexColumn = 'safeName';
+
+    /**
      * @var array
      */
     protected $contents;
@@ -44,7 +49,7 @@ abstract class BaseRepository {
      * @return bool|Dto
      */
     public function get(string $name) {
-        $search = array_search($name, array_column($this->contents, 'safeName'));
+        $search = array_search($name, array_column($this->contents, $this->indexColumn));
 
         if(false === $search) {
             return false;

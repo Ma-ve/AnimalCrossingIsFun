@@ -343,6 +343,10 @@ body.home .menu .progress {
     opacity: 0.3;
 }
 
+.config {
+    font-size: 20px;
+}
+
 .filter-item {
     color: grey;
 }

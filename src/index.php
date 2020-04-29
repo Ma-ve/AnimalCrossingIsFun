@@ -3,10 +3,12 @@
 use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
+use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
+use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Repositories\VillagerRepository;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
@@ -82,6 +84,19 @@ try {
     (new RoutesService($app))
         ->registerProfileRoutes()
         ->registerAuthRoutes();
+
+    $app->get('/settings', function(Request $request, Response $response) {
+        $view = Twig::fromRequest($request);
+
+        /** @var LanguageDto[] $languages */
+        $languages = (new LanguageRepository(null))
+            ->loadAll()
+            ->getAll();
+
+        return $view->render($response, 'pages/settings.twig', [
+            'languages' => $languages,
+        ]);
+    });
 
     $routesRegistered = [];
     foreach($routesRepository->getAll() as $menuItem) {
