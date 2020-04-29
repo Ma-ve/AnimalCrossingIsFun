@@ -43,6 +43,10 @@ $(function () {
             checkItemsOnLoad(progress);
             registerFilters();
             break;
+        case '/settings':
+            setActiveValuesFromStorage();
+            registerOnchangeSave();
+            break;
         case '/profile/':
             promiseFuncs.push(checkProfile);
             promiseFuncs.push(loadStorage);
@@ -396,6 +400,45 @@ function checkProgressForHomepage() {
             $(dataGroupDiv).find('.js-progress-text').text(count);
         }, i * 150);
     }
+}
+
+function setActiveValuesFromStorage() {
+    if(
+        !progress ||
+        !('currentStorage' in progress) ||
+        !progress.currentStorage ||
+        !('settings' in progress.currentStorage) ||
+        !progress.currentStorage.settings
+    ) {
+        return;
+    }
+
+    let keys = Object.keys(progress.currentStorage.settings);
+    for(let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        let selector = 'select[name="{key}"], input[name="{key}"]'.replace('{key}', key);
+        $(selector).val(progress.currentStorage.settings[key]);
+    }
+}
+
+function registerOnchangeSave() {
+    $('form input, form select').on('change', function() {
+        let storage = progress.currentStorage;
+        if(!('settings' in storage)) {
+            storage.settings = {};
+        }
+
+        var that = $(this);
+
+        let inputName = that.attr('name');
+        storage.settings[inputName] = that.val();
+        progress.save(storage);
+
+        that.addClass('is-valid');
+        setTimeout(function() {
+            that.removeClass('is-valid');
+        }, 5000);
+    })
 }
 
 
