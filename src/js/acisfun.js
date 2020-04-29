@@ -224,6 +224,7 @@ function loadStorageFromDatabase(user) {
     $.post('/profile/api/load', function (data) {
         if (!data || !('data' in data) || !data.data) {
             writeStorageDataToDocument('.js-storage-container', 0);
+            $('.js-storage-container').addClass('loaded');
             return;
         }
 
@@ -232,16 +233,19 @@ function loadStorageFromDatabase(user) {
             disableSaveLoadButtons();
         }
         writeStorageDataToDocument('.js-storage-container', loadedProfileData);
+        $('.js-storage-container').addClass('loaded');
     }, undefined, 'json');
 }
 
 function loadStorageFromLocalStorage(progress) {
     if (!progress || !progress.currentStorage || Object.keys(progress.currentStorage).length === 0) {
         writeStorageDataToDocument('.js-browser-container', 0);
+        $('.js-browser-container').addClass('loaded');
         return;
     }
 
     writeStorageDataToDocument('.js-browser-container', progress.currentStorage);
+    $('.js-browser-container').addClass('loaded');
 }
 
 function writeStorageDataToDocument(selector, data) {
@@ -291,21 +295,29 @@ function registerSaveLoadButtons() {
 }
 
 function compareStorages() {
-    setTimeout(function () {
+    let interval = setInterval(function () {
+
+        if(
+            !$('.js-browser-container').hasClass('loaded') ||
+            !$('.js-storage-container').hasClass('loaded')
+        ) {
+            return;
+        }
 
         let itemsInBrowser = $('.js-browser-container .js-storage-text-container');
         let itemsInStorage = $('.js-storage-container .js-storage-text-container');
+
         for (let i = 0; i < itemsInBrowser.length; i++) {
             let browserItem = itemsInBrowser[i];
             let browserCount = parseInt(browserItem.innerText);
             if (isNaN(browserCount)) {
-                continue;
+                browserCount = 0;
             }
 
             let storageItem = itemsInStorage[i];
             let storageCount = parseInt(storageItem.innerText);
             if (isNaN(storageCount)) {
-                continue;
+                storageCount = 0;
             }
 
             if (storageCount > browserCount) {
@@ -318,11 +330,10 @@ function compareStorages() {
                     .addClass('text-success')
                     .text('+' + (browserCount - storageCount));
             }
-
-
-            console.log(browserCount, typeof browserCount);
         }
-    }, 1000);
+
+        clearInterval(interval);
+    }, 300);
 }
 
 function registerFilters() {
