@@ -1,5 +1,7 @@
 <div class="col-lg-4 offset-lg-0 text-lg-left text-center {{ nameColumnClasses|default('col-4 offset-4') }}">
-    <strong>{{ item.getName() }}</strong>
+    <span class="js-translateable" tabindex="0">
+        <strong>{{ item.getName() }}</strong>
+    </span>
 </div>
 <div class="col-lg-2 offset-lg-{{ caughtCheckboxOffset|default('6') }} {{ checkboxColumnClasses|default('col-4') }}">
     <div class="custom-control caught-checkbox">

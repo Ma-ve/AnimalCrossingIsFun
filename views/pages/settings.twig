@@ -1,0 +1,42 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+
+    <div class="row mx-0 mt-5 p-2 profile-container">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-lg-10 pt-2">
+                    <h3>Settings</h3>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 js-browser-container">
+                            <form>
+                                <div class="form-group position-relative">
+                                    <label for="language">Language</label>
+                                    <select class="custom-select" name="language" id="language">
+                                        {% for language in languages %}
+                                            <option value="{{ language.getLangCode() }}">{{ language.getLabel() }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="valid-feedback position-absolute" style="top: 0; right: 0; width: auto;">
+                                        Saved!
+                                    </div>
+                                    <small class="form-text text-muted">More languages coming soon!</small>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-6 js-storage-container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

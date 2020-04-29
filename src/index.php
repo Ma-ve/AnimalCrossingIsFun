@@ -85,6 +85,27 @@ try {
         ->registerProfileRoutes()
         ->registerAuthRoutes();
 
+    $app->post('/translations/suggest', function(Request $request, Response $response) {
+        $json = json_decode($request->getBody()->getContents(), true);
+
+        $return = function(array $data) use ($response) {
+            $response->getBody()->write(json_encode($data));
+
+            return $response
+                ->withHeader('Content-Type', 'application/json');
+        };
+
+        if(!$json || json_last_error() !== JSON_ERROR_NONE || !is_array($json) || !isset($json['key']) || !isset($json['translation'])) {
+            return $return(['errors' => 'Invalid data']);
+        }
+
+        // @TODO: validate safe
+
+        return $return([
+            'data' => true,
+        ]);
+    });
+
     $app->get('/settings', function(Request $request, Response $response) {
         $view = Twig::fromRequest($request);
 

@@ -42,6 +42,8 @@ $(function () {
         case '/recipes/cherry-blossom-season':
             checkItemsOnLoad(progress);
             registerFilters();
+            let translationsClass = new TranslationsClass(progress);
+            checkTranslations(translationsClass);
             break;
         case '/settings':
             setActiveValuesFromStorage();
@@ -63,7 +65,6 @@ $(function () {
         promiseObj.then(promiseFuncs[i], function (Error) {
         });
     }
-
 
 });
 
@@ -457,6 +458,169 @@ class ProgressClass {
         }
 
         return JSON.parse(currentStorage);
+    }
+
+    save(data) {
+        this.currentStorage = data;
+        localStorage.setItem(AC_LOCALSTORAGE_VERSION, JSON.stringify(data));
+    }
+
+}
+
+function checkTranslations(translationsClass) {
+    let group = getCurrentGroupForPage();
+
+    if (!(group in translationsClass.translations)) {
+        return;
+    }
+
+    let translations = translationsClass.translations[group];
+    let keys = Object.keys(translations);
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        $('.js-filterable[id="' + key + '"] .js-translateable')
+            .addClass('is-translated')
+            .find('strong')
+            .text(translations[key]);
+    }
+
+    let whitelist = $.fn.tooltip.Constructor.Default.whiteList
+    whitelist.h3 = ['style']
+    whitelist.i = ['style']
+
+
+    $('.js-filterable .js-translateable:not(.is-translated)').each(function (index, elem) {
+        let itemKey = elem.closest('.item-row-container').getAttribute('id');
+        $(elem)
+            .find('strong')
+            .css('border-bottom', '2px dotted #666');
+        $(elem)
+            .append(
+                '<i class="fad fa-comment-alt-edit ml-2"></i>'
+            )
+            .on('click', function () {
+                $(this).popover({
+                    html: true,
+                    content: getTranslateSuggestionForm(itemKey),
+                    title: 'Suggest translation',
+                    placement: 'top',
+                    template: '<div class="popover" role="tooltip">' +
+                        '<div class="arrow"></div>' +
+                        '<div class="popover-container">' +
+                        '<h3 class="popover-header" style="display: inline-block;"></h3>' +
+                        '<i class="fad fa-window-close float-right pt-2 pr-2" style="font-size: 22px;"></i>' +
+                        '</div>' +
+                        '<div class="popover-body"></div>' +
+                        '</div>',
+                    whiteList: whitelist,
+                    trigger: 'click' // @TODO 'click'
+                })
+                    .on('inserted.bs.popover', function (event) {
+                        let popoverId = $(event.target).attr('aria-describedby');
+
+                        let popoverElem = $(this);
+                        let closePopover = function () {
+                            $(popoverElem).popover('hide');
+                        };
+                        $('div[id="' + popoverId + '"] i').on('click', closePopover);
+                        $('.form-popover input').on('keyup', function (e) {
+                            if (e.keyCode === 27) {
+                                $(this).blur();
+                                closePopover();
+                            }
+                        });
+                        $('.form-popover input[type="text"]').focus();
+
+                        $('.form-popover').on('submit', function (e) {
+                            e.preventDefault();
+
+                            let that = $(this);
+                            that.find('button').html('<i class="fad fa-spinner fa-pulse"></i>');
+
+                            let data = {};
+                            let inputs = that.find('input');
+                            for (let i = 0; i < inputs.length; i++ ) {
+                                data[$(inputs[i]).attr('name')] = $(inputs[i]).val();
+                            }
+                            $.post(
+                                '/translations/suggest',
+                                JSON.stringify(data),
+                                function (data) {
+                                    if(data && 'data' in data && data.data) {
+                                        that.find('button')
+                                            .addClass('btn-success')
+                                            .html('<i class="fad fa-check"></i>');
+                                        setTimeout(function () {
+                                            closePopover();
+                                        }, 5000);
+                                        return;
+                                    }
+
+                                    that.find('button')
+                                        .addClass('btn-error')
+                                        .html('<i class="fad fa-times"></i>');
+                                }
+                            );
+                        });
+                    })
+                    .popover('toggle');
+            });
+    });
+}
+
+function getTranslateSuggestionForm(key) {
+    return $('<form class="form-inline form-popover">' +
+        '<input type="hidden" name="key" value="' + key + '">' +
+        '<input type="text" class="form-control form-control-sm" required name="translation" placeholder="Translation">' +
+        '<button type="submit" class="btn btn-sm btn-primary ml-1">Submit</button>' +
+        '</form>');
+}
+
+
+class TranslationsClass {
+
+    constructor(progressClass) {
+        this.progressClass = progressClass;
+        if(
+            !progressClass ||
+            !progressClass.currentStorage ||
+            !('settings' in progressClass.currentStorage) ||
+            !('language' in progressClass.currentStorage.settings) ||
+            progressClass.currentStorage.settings.language === 'en'
+        ) {
+            console.log('not loading translations');
+        }
+
+        this.translations = this.loadTranslations(progressClass.currentStorage.settings.language);
+    }
+
+    loadTranslations(langCode) {
+        let currentStorage = localStorage.getItem('translations-' + langCode);
+        if (null === currentStorage) {
+            return this.refreshLanguage(langCode);
+            // Could migrate from older versions here
+
+            return {};
+        }
+
+        return JSON.parse(currentStorage);
+    }
+
+    refreshLanguage(langCode) {
+        console.log('refreshing language for ' + langCode);
+
+        // @TODO
+
+        // $.post data
+        let data = {
+            'fish': {
+                'anchovy': 'Ansjovis'
+            }
+        };
+
+        localStorage.setItem('translations-' + langCode, JSON.stringify(data));
+
+        return data;
     }
 
     save(data) {
