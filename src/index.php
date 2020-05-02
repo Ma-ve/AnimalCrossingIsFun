@@ -84,52 +84,8 @@ try {
 
     (new RoutesService($app))
         ->registerProfileRoutes()
-        ->registerAuthRoutes();
-
-    $app->post('/translations/suggest', function(Request $request, Response $response) {
-        $json = json_decode($request->getBody()->getContents(), true);
-
-        $return = function(array $data) use ($response) {
-            $response->getBody()->write(json_encode($data));
-
-            return $response
-                ->withHeader('Content-Type', 'application/json');
-        };
-
-        if(
-            !$json ||
-            json_last_error() !== JSON_ERROR_NONE ||
-            !is_array($json) ||
-            !isset($json['key']) ||
-            !isset($json['translation']) ||
-            !isset($json['langCode'])
-        ) {
-            return $return(['errors' => 'Invalid data']);
-        }
-
-        $key = $json['key'];
-        $suggestion = $json['translation'];
-        $langCode = $json['langCode'];
-
-        if(!is_string($key) || $key > 40) {
-            throw new Exception("Invalid key: '{$key}'");
-        }
-        if(!is_string($langCode) || $langCode > 8) {
-            throw new Exception("Invalid language: '{$langCode}'");
-        }
-        if(!is_string($suggestion) || $suggestion > 40) {
-            throw new Exception("Invalid suggestion: '{$suggestion}'");
-        }
-
-        $uq = uniqid();
-
-        $cacheService = new CacheService();
-        $cacheService->set("suggestion.{$langCode}.{$key}.{$uq}", $suggestion, 60 * 60 * 24 * 180);
-
-        return $return([
-            'data' => true,
-        ]);
-    });
+        ->registerAuthRoutes()
+        ->registerTranslationsRoutes();
 
     $app->get('/settings', function(Request $request, Response $response) {
         $view = Twig::fromRequest($request);
