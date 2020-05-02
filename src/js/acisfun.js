@@ -43,7 +43,6 @@ $(function () {
             checkItemsOnLoad(progress);
             registerFilters();
             let translationsClass = new TranslationsClass(progress);
-            checkTranslations(translationsClass);
             break;
         case '/settings':
             setActiveValuesFromStorage();
@@ -551,7 +550,12 @@ function checkTranslations(translationsClass) {
 function setTranslations(translationsClass) {
     let group = getCurrentGroupForPage();
 
-    if (!(group in translationsClass.translations)) {
+    if (
+        !translationsClass ||
+        !('translations' in translationsClass) ||
+        !translationsClass.translations ||
+        !(group in translationsClass.translations)
+    ) {
         return;
     }
 
@@ -559,6 +563,10 @@ function setTranslations(translationsClass) {
     let keys = Object.keys(translations);
     for (let i = 0; i < keys.length; i++) {
         let key = keys[i];
+        if (translations[key].length <= 0) {
+            continue;
+        }
+
         $('.js-filterable[id="' + key + '"] .js-translateable')
             .addClass('is-translated')
             .find('strong')
@@ -583,7 +591,7 @@ class TranslationsClass {
         }
 
         this.languageCode = progressClass.currentStorage.settings.language;
-        this.translations = this.loadTranslations();
+        this.loadTranslations();
     }
 
     loadTranslations() {
@@ -591,37 +599,58 @@ class TranslationsClass {
 
         let currentStorage = localStorage.getItem('translations-' + langCode);
         if (null === currentStorage) {
-            return this.refreshLanguage();
-            // Could migrate from older versions here
-
-            return {};
+            this.refreshLanguage();
+            return;
         }
 
         // Check for timestamp, if recent, cache for an hour etc
 
-        return JSON.parse(currentStorage);
+        let parsedJson = JSON.parse(currentStorage);
+
+        if(!('timestamp' in parsedJson)) {
+            this.refreshLanguage();
+            return;
+        }
+
+        // Current time = 22:20
+        // Date in cache = 21:45
+        // Is expired = false, it needs to be an hour
+
+        // Current time = 22:00
+        // Date in cache = 16:00
+        // Is expired = true
+        let dateFromCache = new Date(parsedJson.timestamp);
+
+        let oneHourAgo = new Date();
+        oneHourAgo.setHours(oneHourAgo.getHours() - 1);
+
+        if(oneHourAgo <= dateFromCache) {
+            this.translations = parsedJson.data;
+            checkTranslations(this);
+            return;
+        }
+
+        this.refreshLanguage();
     }
 
     refreshLanguage() {
-        console.log('refreshing language for ' + this.languageCode);
+        let translations = false;
 
-        // @TODO
-
-        // $.post data
-        let data = {
-            'fish': {
-                'anchovy': 'Ansjovis'
+        let that = this;
+        $.get('/translations/load/' + this.languageCode, function (data) {
+            if(data && 'data' in data && data.data) {
+                that.save(data.data);
+                checkTranslations(that);
             }
-        };
-
-        save(data);
-
-        return data;
+        });
     }
 
     save(data) {
-        this.currentStorage = data;
-        localStorage.setItem('translations-' + this.languageCode, JSON.stringify(data));
+        this.translations = data;
+        localStorage.setItem('translations-' + this.languageCode, JSON.stringify({
+            timestamp: new Date().toISOString().split('.')[0] + "Z",
+            data: data
+        }));
     }
 
 }
