@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Services;
 
+use Exception;
+use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
 use Mave\AnimalCrossingIsFun\OAuth\LoginProvider;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
+use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
+use Mave\AnimalCrossingIsFun\Repositories\TranslationsRepository;
 use Psr\Http\Server\RequestHandlerInterface;
 use Slim\App;
 use Nyholm\Psr7\ServerRequest as Request;
@@ -134,6 +138,94 @@ class RoutesService {
             });
 
         return $this;
+    }
+
+    /** @noinspection PhpUnusedParameterInspection */
+    /**
+     * @return $this
+     */
+    public function registerTranslationsRoutes(): self {
+        $this->app->group('/translations', function(RouteCollectorProxy $collectorProxy) {
+            $collectorProxy->get('/load/{language}', function(Request $request, Response $response, $args) {
+                $languageRepository = new LanguageRepository(null);
+
+                /** @var LanguageDto $language */
+                $language = $languageRepository->loadAll()->get($args['language']);
+                if(!$language) {
+                    return $this->returnJson($response, ['errors' => 'Invalid data']);
+                }
+
+                $cacheKey = "translations.{$language->getLangCode()}";
+                $cacheService = new CacheService();
+                $cachedData = $cacheService->get($cacheKey);
+                if(null !== $cachedData) {
+                    return $this->returnJson($response, ['data' => json_decode($cachedData, true)]);
+                }
+
+                $data = (new TranslationsRepository(null))
+                    ->loadAll()
+                    ->get($language->getLangCode());
+
+                $cacheService->set($cacheKey, json_encode($data), 60 * 60);
+
+                return $this->returnJson($response, [
+                    'data' => $data,
+                ]);
+            });
+
+            $collectorProxy->post('/suggest', function(Request $request, Response $response) {
+                $json = json_decode($request->getBody()->getContents(), true);
+
+                if(
+                    !$json ||
+                    json_last_error() !== JSON_ERROR_NONE ||
+                    !is_array($json) ||
+                    !isset($json['key']) ||
+                    !isset($json['translation']) ||
+                    !isset($json['langCode'])
+                ) {
+                    return $this->returnJson($response, ['errors' => 'Invalid data']);
+                }
+
+                $key = $json['key'];
+                $suggestion = $json['translation'];
+                $langCode = $json['langCode'];
+
+                if(!is_string($key) || $key > 40) {
+                    throw new Exception("Invalid key: '{$key}'");
+                }
+                if(!is_string($langCode) || $langCode > 8) {
+                    throw new Exception("Invalid language: '{$langCode}'");
+                }
+                if(!is_string($suggestion) || $suggestion > 40) {
+                    throw new Exception("Invalid suggestion: '{$suggestion}'");
+                }
+
+                $uq = uniqid();
+
+                $cacheService = new CacheService();
+                $cacheService->set("suggestion.{$langCode}.{$key}.{$uq}", $suggestion, 60 * 60 * 24 * 180);
+
+                return $this->returnJson($response, [
+                    'data' => true,
+                ]);
+            });
+        });
+
+        return $this;
+    }
+
+    /**
+     * @param Response $response
+     * @param array    $data
+     *
+     * @return Response
+     */
+    private function returnJson(Response $response, array $data) {
+        $response->getBody()->write(json_encode($data));
+
+        return $response
+            ->withHeader('Content-Type', 'application/json');
     }
 
 }
