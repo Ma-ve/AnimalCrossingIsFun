@@ -6,6 +6,7 @@ namespace Mave\AnimalCrossingIsFun\Repositories;
 
 use DateTime;
 use Exception;
+use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Dto\Villager as VillagerDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BaseRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
@@ -23,9 +24,11 @@ class VillagerRepository extends BaseRepository implements IRepository {
     /**
      * @param DateTime $dt
      *
-     * @return VillagerDto[]
+     * @return Dto[]|VillagerDto[]
      */
     public function getByNearbyBirthdates(DateTime $dt) {
+        $dt->setTime(0, 0, 0);
+
         $this->contents = array_filter($this->contents, function($villager) use ($dt) {
             $diff = DateTime::createFromFormat('m-d', $villager['date'])
                 ->diff($dt);
