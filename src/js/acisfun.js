@@ -10,10 +10,19 @@ const AC_LOCALSTORAGE_VERSION_HISTORY = [
 
 let user = false;
 let progress = false;
+let translationsClass = false;
 let loadedProfileData = false;
 
 $(function () {
+    // Make :contains case insensitive
+    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function( elem ) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
+
     progress = new ProgressClass();
+    translationsClass = new TranslationsClass(progress);
 
     let toggleCaughtCallback = function (event) {
         toggleCaught(event, progress);
@@ -42,7 +51,6 @@ $(function () {
         case '/recipes/cherry-blossom-season':
             checkItemsOnLoad(progress);
             registerFilters();
-            let translationsClass = new TranslationsClass(progress);
             break;
         case '/settings':
             setActiveValuesFromStorage();
@@ -340,15 +348,21 @@ function compareStorages() {
     }, 300);
 }
 
+function resetAllItems() {
+    $('.js-filterable').removeClass('opacity-40')
+        .attr('style', '');
+}
+
 function registerFilters() {
     $('.js-filter-item').on('click', function () {
+        $('.js-search input').val('');
+
         if ($(this).hasClass('badge-warning')) {
             $(this)
                 .removeClass('badge-warning')
                 .addClass('badge-light');
 
-            $('.js-filterable').removeClass('opacity-40')
-                .attr('style', '');
+            resetAllItems();
             return;
         }
 
@@ -367,9 +381,45 @@ function registerFilters() {
         $(selector).removeClass('opacity-40').addClass('opacity-100');
     });
 
+    $('.js-search').on('submit', function (e) {
+        e.preventDefault();
+
+        $('.js-filter-item.badge-warning')
+            .removeClass('badge-warning')
+            .addClass('badge-light');
+
+        let searchTerm = $(this).find('input').val();
+
+        window.location.hash = '#search-' + encodeURIComponent(encodeURIComponent(searchTerm));
+        if (searchTerm === '') {
+            resetAllItems();
+            return;
+        }
+
+        $('.js-filterable')
+            .removeClass('opacity-100')
+            .addClass('opacity-40')
+            .attr('style', '')
+
+        searchTerm = searchTerm.replace('"', '');
+
+        let selector = '.js-translateable:contains("' + searchTerm + '")';
+        let items = $(selector);
+        for (let i = 0; i < items.length; i++) {
+            $(items[i]).closest('.js-filterable')
+                .css('order', i)
+                .removeClass('opacity-40')
+                .addClass('opacity-100');
+        }
+    });
+
 
     if (window.location.hash) {
         let hash = decodeURI(decodeURI(window.location.hash.replace('#', '')));
+        if (hash.indexOf('search-') === 0) {
+            translationsClass.setSearchHash(hash.replace('search-', ''));
+            return;
+        }
         $('.js-filter-item[data-value="' + hash + '"]').click();
     }
 }
@@ -572,10 +622,18 @@ function setTranslations(translationsClass) {
             .find('strong')
             .text(translations[key]);
     }
+
+    if(translationsClass.searchHash) {
+        translationsClass.setSearchHash();
+    }
+
+    return;
 }
 
 
 class TranslationsClass {
+
+    searchHash = false;
 
     constructor(progressClass) {
         this.progressClass = progressClass;
@@ -592,6 +650,17 @@ class TranslationsClass {
 
         this.languageCode = progressClass.currentStorage.settings.language;
         this.loadTranslations();
+    }
+
+    setSearchHash(hash) {
+        if (typeof hash !== 'undefined') {
+            this.searchHash = hash;
+        }
+
+        $('.js-search input')
+            .val(this.searchHash)
+            .closest('form')
+            .submit();
     }
 
     loadTranslations() {
