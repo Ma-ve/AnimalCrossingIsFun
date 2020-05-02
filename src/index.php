@@ -11,6 +11,7 @@ use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
 use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Repositories\VillagerRepository;
+use Mave\AnimalCrossingIsFun\Services\CacheService;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
 use Mave\AnimalCrossingIsFun\Services\RoutesService;
 use Nyholm\Psr7\ServerRequest as Request;
@@ -95,11 +96,35 @@ try {
                 ->withHeader('Content-Type', 'application/json');
         };
 
-        if(!$json || json_last_error() !== JSON_ERROR_NONE || !is_array($json) || !isset($json['key']) || !isset($json['translation'])) {
+        if(
+            !$json ||
+            json_last_error() !== JSON_ERROR_NONE ||
+            !is_array($json) ||
+            !isset($json['key']) ||
+            !isset($json['translation']) ||
+            !isset($json['langCode'])
+        ) {
             return $return(['errors' => 'Invalid data']);
         }
 
-        // @TODO: validate safe
+        $key = $json['key'];
+        $suggestion = $json['translation'];
+        $langCode = $json['langCode'];
+
+        if(!is_string($key) || $key > 40) {
+            throw new Exception("Invalid key: '{$key}'");
+        }
+        if(!is_string($langCode) || $langCode > 8) {
+            throw new Exception("Invalid language: '{$langCode}'");
+        }
+        if(!is_string($suggestion) || $suggestion > 40) {
+            throw new Exception("Invalid suggestion: '{$suggestion}'");
+        }
+
+        $uq = uniqid();
+
+        $cacheService = new CacheService();
+        $cacheService->set("suggestion.{$langCode}.{$key}.{$uq}", $suggestion, 60 * 60 * 24 * 180);
 
         return $return([
             'data' => true,
