@@ -284,6 +284,10 @@ table tr td {
     background-color: var(--yellow);
 }
 
+.homepage-card.homepage-happenings h5 a {
+    color: #212529;
+}
+
 .homepage-card .homepage-event-container {
     min-height:    120px;
     align-content: start;
