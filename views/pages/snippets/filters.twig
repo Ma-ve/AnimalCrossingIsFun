@@ -1,5 +1,5 @@
 <div class="row mx-0 filters-container py-2">
-    <div class="col-9">
+    <div class="col-12 col-lg-9">
         {% for filterGroup in filters %}
             <div class="row">
                 <div class="col-12 col-lg-2 text-left text-lg-right">
@@ -17,8 +17,9 @@
             </div>
         {% endfor %}
     </div>
-    <div class="col-3 pr-0 align-self-end">
+    <div class="col-12 col-lg-3 pt-3 pt-lg-0 pr-lg-0 align-self-end">
         <form class="js-search">
+            <span class="text-caps-lowercase">Search</span>
             <div class="input-group">
                 <input type="text" class="form-control form-control-sm" placeholder="Anchovy...">
                 <div class="input-group-append">
