@@ -413,5 +413,13 @@ body.home .menu .progress {
         border-right: 0;
     }
 
+    .menu .row > .col > a > i + span {
+        display:        block;
+        font-variant:   small-caps;
+        text-transform: lowercase;
+        font-size:      16px;
+        margin-top:     -2px;
+    }
+
     .
 }

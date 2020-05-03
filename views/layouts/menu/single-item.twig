@@ -3,6 +3,7 @@
     {% set class = is_current_url(route.getUrl()) ? 'active' : '' %}
 
     <a href="{{ route.getUrl() }}" class="{{ class }}">
-        <i class="fad {{ route.getIcon() }} d-none d-md-inline-block"></i> {{ route.getLabel() }}
+        <i class="fad {{ route.getIcon() }} d-block d-md-inline-block"></i>
+        <span>{{ route.getLabel() }}</span>
     </a>
 </div>
