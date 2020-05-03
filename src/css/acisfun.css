@@ -168,15 +168,13 @@ table tr td {
     color:            var(--color-brown);
 }
 
-.menu .row > div,
-.nav-item {
+.menu .row > div {
     border-left:  2px solid var(--color-whiteish);
     border-right: 2px solid var(--color-whiteish);
     max-height:   var(--footer-height);
 }
 
-.menu .row a,
-.nav-item a {
+.menu .row a {
     padding-top:    16px;
     padding-bottom: 16px;
     display:        block;
@@ -405,4 +403,15 @@ body.home .menu .progress {
         position: absolute;
         top:      12px;
     }
+
+    .menu .row > div {
+        border-left:  0;
+        border-right: 1px solid var(--color-whiteish);
+    }
+
+    .menu .row > div:last-child {
+        border-right: 0;
+    }
+
+    .
 }
