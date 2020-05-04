@@ -39,7 +39,10 @@
                             {% if item.getIcon() %}
                             <small><i class="fad {{ item.getIcon() }}"></i></small>
                             {% endif %}
-                            <strong>{{ item.getName() }}</strong>
+                            <span class="js-translateable" data-toggle="modal" data-target="#translation-modal" tabindex="0">
+                                <strong>{{ item.getName() }}</strong>
+                            </span>
+
                         </div>
                         <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
                             <span class="badge badge-dark">{{ item.getFullDateRange() }}</span>
