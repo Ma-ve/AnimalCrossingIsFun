@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% include "pages/snippets/filters.twig" only %}
+    {% include "pages/snippets/filters.twig" with {'placeholder': random(items).getName()} only %}
 
     {% set columnConfiguration %}
 
