@@ -132,7 +132,7 @@ class RoutesService {
                     ]);
                 }
 
-                return $view->render($response, 'pages/detail/recipe.twig', [
+                return $view->render($response, 'pages/recipes/detail.twig', [
                     'item' => $item,
                 ]);
             });
