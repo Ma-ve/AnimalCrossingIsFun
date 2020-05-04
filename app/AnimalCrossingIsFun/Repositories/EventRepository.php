@@ -18,6 +18,7 @@ use Mave\AnimalCrossingIsFun\Services\DateService;
  * @method getAll()
  */
 class EventRepository extends BaseRepository implements IRepository {
+
     use StartEndDateTrait;
 
     /**
@@ -53,7 +54,6 @@ class EventRepository extends BaseRepository implements IRepository {
 
             $diff = $event['startDate']
                 ->diff($dt);
-
 
             if($diff->invert) {
                 return $diff->days < 30;
@@ -103,6 +103,37 @@ class EventRepository extends BaseRepository implements IRepository {
         $this->contents = $mapped;
 
         return $this;
+    }
+
+    /**
+     * @return $this|EventRepository
+     */
+    public function loadFiltersIntoData() {
+        foreach($this->contents as &$item) {
+            $item['filters'][] = $item['hemisphere'];
+
+            // Register North and South for 'Both' as well
+            switch($item['hemisphere']) {
+                case 'Both':
+                    $item['filters'][] = 'Northern';
+                    $item['filters'][] = 'Southern';
+                    break;
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFilters(): array {
+        $hemispheres = array_unique(array_column($this->contents, 'hemisphere'));
+        sort($hemispheres);
+
+        return [
+            [
+                'label'   => 'Hemipshere',
+                'filters' => $hemispheres,
+            ],
+        ];
     }
 
 }
