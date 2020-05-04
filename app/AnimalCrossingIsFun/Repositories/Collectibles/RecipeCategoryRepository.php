@@ -8,6 +8,8 @@ use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Collectibles\RecipeCategory as RecipeCategoryDto;
 use Mave\AnimalCrossingIsFun\Dto\Event as EventDto;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Interfaces\IRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\YoungSpringBambooRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Traits\StartEndDateTrait;
 use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
@@ -47,50 +49,60 @@ class RecipeCategoryRepository extends BaseRepository implements IRepository {
         $cherryBlossomEvents = $eventRepository->getMultipleBySingleKey('cherry-blossom-season');
         foreach($cherryBlossomEvents as $cherryBlossomEvent) {
             $this->contents[] = [
-                'name'       => $cherryBlossomEvent->getName(),
-                'eventName'  => $cherryBlossomEvent->getName(),
-                'hemisphere' => $cherryBlossomEvent->getHemisphere(),
-                'startDate'  => $cherryBlossomEvent->getStartDate(),
-                'endDate'    => $cherryBlossomEvent->getEndDate(),
+                'name'             => $cherryBlossomEvent->getName(),
+                'eventName'        => $cherryBlossomEvent->getName(),
+                'hemisphere'       => $cherryBlossomEvent->getHemisphere(),
+                'startDate'        => $cherryBlossomEvent->getStartDate(),
+                'endDate'          => $cherryBlossomEvent->getEndDate(),
+                'safeName'         => $cherryBlossomEvent->getSafeName(),
+                'recipeRepository' => CherryBlossomRecipeRepository::class,
             ];
         }
 
         $this->contents = array_merge($this->contents, [
             [
-                'name'       => 'Young Spring Bamboo',
-                'hemisphere' => 'Northern',
-                'startDate'  => '03-01',
-                'endDate'    => '05-31',
+                'name'             => 'Young Spring Bamboo',
+                'hemisphere'       => 'Northern',
+                'startDate'        => '03-01',
+                'endDate'          => '05-31',
+                'safeName'         => 'young-spring-bamboo',
+                'recipeRepository' => YoungSpringBambooRepository::class,
             ],
             [
-                'name'       => 'Young Spring Bamboo',
-                'hemisphere' => 'Southern',
-                'startDate'  => '09-01',
-                'endDate'    => '11-30',
+                'name'             => 'Young Spring Bamboo',
+                'hemisphere'       => 'Southern',
+                'startDate'        => '09-01',
+                'endDate'          => '11-30',
+                'safeName'         => 'young-spring-bamboo',
+                'recipeRepository' => YoungSpringBambooRepository::class,
             ],
 //            [
 //                'name'       => 'Maple Leaf',
 //                'hemisphere' => 'Southern',
 //                'startDate'  => '05-16',
 //                'endDate'    => '05-26',
+//                'safeName'   => 'maple-leaf',
 //            ],
 //            [
 //                'name'       => 'Tree\'s Bounty',
 //                'hemisphere' => 'Southern',
 //                'startDate'  => '03-01',
 //                'endDate'    => '06-11',
+//                'safeName'   => 'tree-s-bounty',
 //            ],
 //            [
 //                'name'       => 'Tree\'s Bounty',
 //                'hemisphere' => 'Northern',
 //                'startDate'  => '09-01',
 //                'endDate'    => '12-11',
+//                'safeName'   => 'tree-s-bounty',
 //            ],
 //            [
 //                'name'       => 'Mushrooming Season',
 //                'hemisphere' => 'Southern',
 //                'startDate'  => '05-01',
 //                'endDate'    => '06-01',
+//                'safeName'   => 'mushrooming-season',
 //            ],
         ]);
 

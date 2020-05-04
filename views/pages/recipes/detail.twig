@@ -7,8 +7,8 @@
             <img src="{{ item.getImageLink() }}">
         </div>
         <div class="col-8">
-            <a href="/recipes" class="btn btn-sm btn-warning back-to-overview position-absolute">
-                <small><i class="fad fa-chevron-double-left"></i></small> Back To Recipes
+            <a href="/recipes/{{ recipeCategory.getSafeName() }}" class="btn btn-sm btn-warning back-to-overview position-absolute">
+                <small><i class="fad fa-chevron-double-left"></i></small> Back To {{ recipeCategory.getName() }}
             </a>
             <div class="row text-left">
                 <div class="col-12">

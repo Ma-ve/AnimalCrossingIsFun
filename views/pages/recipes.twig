@@ -14,7 +14,7 @@
                             <span class="badge badge-info">{{ item.getHemisphere() }}</span>
                             {% if item.getStartDate() and item.getEndDate() %}
                                 <span class="badge badge-danger">{{ item.getFullDateRange() }}</span>
-                            {% endif %}
+                             {% endif %}
                         </div>
                         <div class="col-2">
                             <a href="/recipes/{{ item.getSafeName() }}"><i class="fad fa-chevron-double-right"></i></a>
