@@ -56,5 +56,31 @@
     <nav class="menu fixed-bottom">
         {% include "layouts/menu.twig" %}
     </nav>
+    <div class="modal fade" id="translations-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">New translation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="translation-suggest-translation" class="col-form-label">
+                                New translation for <code class="modal-translation-code"></code>:</label>
+                            <input type="text" class="form-control" name="translation" id="translation-suggest-translation" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Suggest</button>
+                    </div>
+                </div>
+                <input type="hidden" name="key" id="translation-suggest-key" value="">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
