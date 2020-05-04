@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% include "pages/snippets/filters.twig" with {'filters': filters} only %}
+    {% include "pages/snippets/filters.twig" with {'filters': filters, 'placeholder': random(items).getName()} only %}
 
     {% include "pages/snippets/table-header.twig" %}
 
