@@ -2,60 +2,29 @@
 
 {% block content %}
 
-    {% include "pages/snippets/filters.twig" only %}
+    <div class="row">
 
-    {% set columnConfiguration %}
-            <div class="col-lg-3">
-                {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
-                {% include "pages/snippets/table-header-column.twig" with vars only %}
+        {% for item in items %}
 
-            </div>
-            <div class="col-lg-2 offset-lg-1">
-                {% set vars = {'sort': sort, 'label': 'Bells', 'property': 'price', 'sortIcon': 'numeric'} %}
-                {% include "pages/snippets/table-header-column.twig" with vars only %}
-
-            </div>
-            <div class="col-lg-2 offset-lg-2">
-                <strong>Learned</strong>
-            </div>
-            <div class="col-lg-1"></div>
-
-    {% endset %}
-
-    {% include "pages/snippets/table-header.twig" with {
-        'columnConfiguration': columnConfiguration
-    } %}
-
-    {% for item in items %}
-
-        {% set lastColumn %}
-            <div class="col-lg-2 col-4 offset-lg-0 offset-8 text-lg-left text-center navigation-column">
-                <a class="btn btn-sm btn-warning position-absolute" href="/recipes/cherry-blossom-season/{{ item.getSafeName() }}">Details
-                    <small><i class="fad fa-chevron-double-right"></i></small>
-                </a>
-            </div>
-        {% endset %}
-
-
-        {% embed "pages/snippets/table-content.twig" with {
-            'item':                 item,
-            'index':                loop.index,
-            'caughtCheckboxOffset': 4,
-            'lastColumn':           lastColumn
-        } only %}
-            {% block subRow %}
-                <div class="col-lg-3 col-5 text-lg-left text-center">
-                    {% if item.getCategory() %}
-                        <span class="badge badge-danger">{{ item.getCategory() }}</span>
-                    {% endif %}
+            <div class="col-4 col-lg-3 p-1 ">
+                <div class="p-2" style="background-color: var(--color-whiteish);">
+                    <div class="row">
+                        <div class="col-10">
+                            <h5>{{ item.getName() }}</h5>
+                            <span class="badge badge-info">{{ item.getHemisphere() }}</span>
+                            {% if item.getStartDate() and item.getEndDate() %}
+                                <span class="badge badge-danger">{{ item.getFullDateRange() }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="col-2">
+                            <a href="/recipes/{{ item.getSafeName() }}"><i class="fad fa-chevron-double-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-4 text-lg-left text-center"><span class="badge badge-warning"><!--
-                    --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
-                    --></span><!--
-                --></div>
-            {% endblock %}
-        {% endembed %}
+            </div>
 
-    {% endfor %}
+        {% endfor %}
+
+    </div>
 
 {% endblock %}

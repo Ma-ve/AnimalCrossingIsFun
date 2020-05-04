@@ -4,14 +4,11 @@ use Dotenv\Dotenv;
 use Dotenv\Repository\Adapter\EnvConstAdapter;
 use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
-use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
 use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
-use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
 use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
 use Mave\AnimalCrossingIsFun\Repositories\RoutesRepository;
 use Mave\AnimalCrossingIsFun\Repositories\VillagerRepository;
-use Mave\AnimalCrossingIsFun\Services\CacheService;
 use Mave\AnimalCrossingIsFun\Services\ProgressService;
 use Mave\AnimalCrossingIsFun\Services\RoutesService;
 use Nyholm\Psr7\ServerRequest as Request;
@@ -83,6 +80,7 @@ try {
         ->setName('/');
 
     (new RoutesService($app))
+        ->registerRecipesRoutes()
         ->registerProfileRoutes()
         ->registerAuthRoutes()
         ->registerTranslationsRoutes();
@@ -144,29 +142,6 @@ try {
 
         return $view->render($response, 'pages/detail/event.twig', [
             'events' => $events,
-        ]);
-    });
-
-    $app->redirect('/recipes', '/recipes/cherry-blossom-season');
-
-    $app->get('/recipes/{category}/{recipe}', function(Request $request, Response $response, $args) {
-        $item = (new CherryBlossomRecipeRepository(null))
-            ->loadAll()
-            ->get($args['recipe']);
-
-        $view = Twig::fromRequest($request);
-
-        if(false === $item) {
-            return $view->render($response, 'pages/error/error.twig', [
-                'error' => [
-                    'code'    => 404,
-                    'message' => 'Recipe Not Found',
-                ],
-            ]);
-        }
-
-        return $view->render($response, 'pages/detail/recipe.twig', [
-            'item' => $item,
         ]);
     });
 

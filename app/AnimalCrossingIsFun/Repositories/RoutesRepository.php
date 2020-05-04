@@ -10,6 +10,7 @@ use Mave\AnimalCrossingIsFun\Repositories\Collectibles\ArtRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\BugRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FishRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\FossilRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\RecipeCategoryRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\SongRepository;
 
@@ -65,9 +66,9 @@ class RoutesRepository {
                 'label'  => 'Misc.',
                 'routes' => [
                     new Route([
-                        'url'        => '/recipes/cherry-blossom-season',
+                        'url'        => '/recipes',
                         'twigView'   => 'pages/recipes.twig',
-                        'repository' => (new CherryBlossomRecipeRepository(null)),
+                        'repository' => (new RecipeCategoryRepository(null)),
                         'icon'       => 'fa-tools',
                         'label'      => 'Recipes',
                     ]),
