@@ -8,6 +8,8 @@ use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
 use Mave\AnimalCrossingIsFun\OAuth\LoginProvider;
 use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\CherryBlossomRecipeRepository;
+use Mave\AnimalCrossingIsFun\Repositories\Collectibles\Recipes\YoungSpringBambooRepository;
 use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
 use Mave\AnimalCrossingIsFun\Repositories\TranslationsRepository;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -69,6 +71,73 @@ class RoutesService {
 
                 return $requestHandler->handle($request);
             });
+
+        return $this;
+    }
+
+    /** @noinspection PhpUnusedParameterInspection */
+    /**
+     * @return $this
+     */
+    public function registerRecipesRoutes(): self {
+        $this->app->group('/recipes', function(RouteCollectorProxy $collectorProxy) {
+            $collectorProxy->get('/', function(Request $request, Response $response, $args) {
+
+            });
+
+            $collectorProxy->get('/{category}', function(Request $request, Response $response, $args) {
+                $view = Twig::fromRequest($request);
+
+                switch($args['category']) {
+                    case 'cherry-blossom-season':
+                        $repository = new CherryBlossomRecipeRepository(null);
+                        break;
+                    case 'young-spring-bamboo':
+                        $repository = new YoungSpringBambooRepository(null);
+                        break;
+                    default:
+                        return $view->render($response, 'pages/error/error.twig', [
+                            'error' => [
+                                'code'    => 404,
+                                'message' => 'Recipe Category Not Found',
+                            ],
+                        ]);
+                }
+
+                $repository
+                    ->loadAll()
+                    ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
+                    ->loadFiltersIntoData();
+
+                return $view->render($response, 'pages/recipes/category.twig', [
+                    'items'   => $repository->getAll(),
+                    'filters' => $repository->getFilters(),
+                    'sort'    => $sort,
+                ]);
+            });
+
+            $collectorProxy->get('/{category}/{recipe}', function(Request $request, Response $response, $args) {
+                $item = (new CherryBlossomRecipeRepository(null))
+                    ->loadAll()
+                    ->get($args['recipe']);
+
+                $view = Twig::fromRequest($request);
+
+                if(false === $item) {
+                    return $view->render($response, 'pages/error/error.twig', [
+                        'error' => [
+                            'code'    => 404,
+                            'message' => 'Recipe Not Found',
+                        ],
+                    ]);
+                }
+
+                return $view->render($response, 'pages/detail/recipe.twig', [
+                    'item' => $item,
+                ]);
+            });
+
+        });
 
         return $this;
     }
