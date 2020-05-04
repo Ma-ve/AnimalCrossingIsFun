@@ -4,6 +4,8 @@
 
     {% include "pages/snippets/filters.twig" only %}
 
+    {% set recipeCategory = recipeCategories[0] %}
+
     {% set columnConfiguration %}
             <div class="col-lg-3">
                 {% set vars = {'sort': sort, 'label': 'Name', 'property': 'name', 'sortIcon': 'alpha'} %}
@@ -30,7 +32,7 @@
 
         {% set lastColumn %}
             <div class="col-lg-2 col-4 offset-lg-0 offset-8 text-lg-left text-center navigation-column">
-                <a class="btn btn-sm btn-warning position-absolute" href="/recipes/cherry-blossom-season/{{ item.getSafeName() }}">Details
+                <a class="btn btn-sm btn-warning position-absolute" href="/recipes/{{ recipeCategory.getSafeName() }}/{{ item.getSafeName() }}">Details
                     <small><i class="fad fa-chevron-double-right"></i></small>
                 </a>
             </div>
