@@ -37,7 +37,11 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     let path = window.location.pathname;
-    switch (path) {
+    let explode = path.split('/');
+
+    let imploded = explode.slice(0, 2).join('/');
+
+    switch (imploded) {
         case '/':
             setTimeout(function () {
                 checkProgressForHomepage();
@@ -48,7 +52,7 @@ $(function () {
         case '/fossils':
         case '/recipes':
         case '/songs':
-        case '/recipes/cherry-blossom-season':
+        case '/events':
             checkItemsOnLoad(progress);
             registerFilters();
             break;
@@ -56,7 +60,7 @@ $(function () {
             setActiveValuesFromStorage();
             registerOnchangeSave();
             break;
-        case '/profile/':
+        case '/profile':
             promiseFuncs.push(checkProfile);
             promiseFuncs.push(loadStorage);
             promiseFuncs.push(compareStorages);
