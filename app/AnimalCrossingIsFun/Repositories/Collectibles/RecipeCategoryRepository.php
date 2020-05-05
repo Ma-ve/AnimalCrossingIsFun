@@ -115,4 +115,35 @@ class RecipeCategoryRepository extends BaseRepository implements IRepository {
         return $this;
     }
 
+    /**
+     * @return $this|EventRepository
+     */
+    public function loadFiltersIntoData() {
+        foreach($this->contents as &$item) {
+            $item['filters'][] = $item['hemisphere'];
+
+            // Register North and South for 'Both' as well
+            switch($item['hemisphere']) {
+                case 'Both':
+                    $item['filters'][] = 'Northern';
+                    $item['filters'][] = 'Southern';
+                    break;
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFilters(): array {
+        $hemispheres = array_unique(array_column($this->contents, 'hemisphere'));
+        sort($hemispheres);
+
+        return [
+            [
+                'label'   => 'Hemipshere',
+                'filters' => $hemispheres,
+            ],
+        ];
+    }
+
 }

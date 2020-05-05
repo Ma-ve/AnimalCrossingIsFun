@@ -25,8 +25,7 @@
         {% embed "pages/snippets/table-content.twig" with {
             'item':                 item,
             'index':                loop.index,
-            'caughtCheckboxOffset': 5,
-            'lastColumn':           lastColumn
+            'caughtCheckboxOffset': 5
         } only %}
             {% block subRow %}
                 <div class="col-lg-3 col-5 text-lg-left text-center">
