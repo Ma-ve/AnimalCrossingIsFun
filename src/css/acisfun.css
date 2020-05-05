@@ -425,5 +425,9 @@ body.home .menu .progress {
         margin-top:     -2px;
     }
 
+    .menu .row > .col > a > i {
+        margin-top:     -4px;
+    }
+
     .
 }
