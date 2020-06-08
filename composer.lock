@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca5a7a4fc3c9975195ca8c0bedcdad1e",
+    "content-hash": "9a6da7926c7e8f7a5aedb425769dfe18",
     "packages": [
         {
             "name": "cheprasov/php-redis-client",
@@ -157,16 +157,16 @@
         },
         {
             "name": "nyholm/psr7-server",
-            "version": "0.4.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nyholm/psr7-server.git",
-                "reference": "e6a526e9170e6e33a13efc2b61703ca476b7ea68"
+                "reference": "862529918766fb3825116d39e96feabf1e4bee4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7-server/zipball/e6a526e9170e6e33a13efc2b61703ca476b7ea68",
-                "reference": "e6a526e9170e6e33a13efc2b61703ca476b7ea68",
+                "url": "https://api.github.com/repos/Nyholm/psr7-server/zipball/862529918766fb3825116d39e96feabf1e4bee4e",
+                "reference": "862529918766fb3825116d39e96feabf1e4bee4e",
                 "shasum": ""
             },
             "require": {
@@ -176,7 +176,7 @@
             },
             "require-dev": {
                 "nyholm/nsa": "^1.1",
-                "nyholm/psr7": "^1.0",
+                "nyholm/psr7": "^1.3",
                 "phpunit/phpunit": "^7.0"
             },
             "type": "library",
@@ -205,7 +205,7 @@
                 "psr-17",
                 "psr-7"
             ],
-            "time": "2019-11-05T20:36:33+00:00"
+            "time": "2020-06-06T12:17:00+00:00"
         },
         {
             "name": "php-http/message-factory",
