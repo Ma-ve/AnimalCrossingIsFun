@@ -23,7 +23,7 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-calendar": "*",
-    "vlucas/phpdotenv": "^4.1",
+    "vlucas/phpdotenv": "^5.3",
     "nyholm/psr7": "^1.2",
     "nyholm/psr7-server": "^1.0.0",
     "slim/slim": "^4.0",
