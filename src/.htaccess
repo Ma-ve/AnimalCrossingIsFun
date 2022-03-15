@@ -1,4 +1,6 @@
 RewriteEngine On
+RedirectMatch 404 /\.git
+
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
