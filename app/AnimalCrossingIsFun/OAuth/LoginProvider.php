@@ -44,7 +44,7 @@ class LoginProvider {
      */
     public function restoreUserFromLoginCookie() {
         return $this->setUserData(
-            $this->cookieService->getDataFromLoginCookie()
+            $this->cookieService->getDataFromLoginCookie() ?? []
         );
     }
 
