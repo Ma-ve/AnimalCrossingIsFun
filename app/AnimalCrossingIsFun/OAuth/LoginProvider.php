@@ -22,7 +22,7 @@ class LoginProvider {
      *
      * @return LoginProvider
      */
-    protected function setUserData(array $params) {
+    protected function setUserData(array $params): self {
         $_SESSION['user'] = $params;
 
         return $this;
@@ -33,7 +33,7 @@ class LoginProvider {
      *
      * @return $this
      */
-    protected function setUserCookie(array $params) {
+    protected function setUserCookie(array $params): self {
         $this->cookieService->setLoginCookie($params);
 
         return $this;
@@ -42,7 +42,7 @@ class LoginProvider {
     /**
      * @return $this
      */
-    public function restoreUserFromLoginCookie() {
+    public function restoreUserFromLoginCookie(): self {
         return $this->setUserData(
             $this->cookieService->getDataFromLoginCookie() ?? []
         );
