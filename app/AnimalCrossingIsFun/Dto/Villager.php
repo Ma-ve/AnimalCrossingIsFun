@@ -44,6 +44,11 @@ class Villager extends Dto {
     /**
      * @var string
      */
+    protected $safeName;
+
+    /**
+     * @var string
+     */
     protected $gender;
 
     /**
