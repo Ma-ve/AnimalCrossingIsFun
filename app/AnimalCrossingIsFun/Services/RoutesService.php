@@ -287,13 +287,13 @@ class RoutesService {
                 $suggestion = $json['translation'];
                 $langCode = $json['langCode'];
 
-                if(!is_string($key) || $key > 40) {
+                if(!is_string($key) || strlen($key) > 40) {
                     throw new Exception("Invalid key: '{$key}'");
                 }
-                if(!is_string($langCode) || $langCode > 8) {
+                if(!is_string($langCode) || strlen($langCode) > 8) {
                     throw new Exception("Invalid language: '{$langCode}'");
                 }
-                if(!is_string($suggestion) || $suggestion > 40) {
+                if(!is_string($suggestion) || strlen($suggestion) > 40) {
                     throw new Exception("Invalid suggestion: '{$suggestion}'");
                 }
 
