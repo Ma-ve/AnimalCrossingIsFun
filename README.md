@@ -50,4 +50,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Contact
 
-Feel free to contact me through a GitHub issue, Pull Request, or by email via `contact [at] animalcrossing [dot] fun`
+Feel free to contact me through a GitHub issue, Pull Request, or by email via `animalcrossing [at] mave [dot] me`
