@@ -50,6 +50,7 @@ $(function () {
         case '/bugs':
         case '/fish':
         case '/fossils':
+        case '/deep-sea-creatures':
         case '/recipes':
         case '/songs':
         case '/events':
@@ -67,7 +68,6 @@ $(function () {
             registerSaveLoadButtons();
             break;
     }
-
 
     let checkLoginFuncs = checkLogin();
     promiseObj.then(checkLoginFuncs[0], checkLoginFuncs[1]);

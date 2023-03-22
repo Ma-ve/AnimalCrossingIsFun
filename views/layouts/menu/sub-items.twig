@@ -1,14 +1,14 @@
-<div class="col col-g-2 px-0 position-relative">
+<div class="col px-0 position-relative">
     <div class="dropdown">
         <a href="#" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-            <i class="fad {{ menuItem.getIcon() }} d-block d-md-inline-block"></i> {{ menuItem.getLabel() }}
+            <i class="{{ menuItem.getIcon() }} d-block d-md-inline-block"></i> {{ menuItem.getLabel() }}
         </a>
         <div class="dropdown-menu py-0" aria-labelledby="dropdown08">
             {% for route in menuItem.getRoutes() %}
                 {% set class = is_current_url(route.getUrl()) ? 'active' : '' %}
 
                 <a class="dropdown-item {{ class }} {{ route.getCssClass() }}" href="{{ route.getUrl() }}">
-                    <i class="fad {{ route.getIcon() }} d-inline-block"></i>
+                    <i class="{{ route.getIcon() }} d-inline-block"></i>
                     <span>{{ route.getLabel() }}</span>
                 </a>
             {% endfor %}
