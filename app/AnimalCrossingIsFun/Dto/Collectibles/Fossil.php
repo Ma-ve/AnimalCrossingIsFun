@@ -13,6 +13,7 @@ class Fossil extends Collectible {
 
     /** @var bool */
     protected $isMultiPart;
+    protected $isMultipart;
 
     /** @var string */
     protected $category;
