@@ -20,9 +20,11 @@ namespace {
             $dt = DateTime::createFromFormat('F jS', trim($item['birthday']));
             $item['date'] = $dt->format('m-d');
 
-            $exploded = explode(' ', $item['personality']);
-            $item['gender'] = $exploded[0] === '♂' ? 'Male' : 'Female';
-            $item['personality'] = $exploded[1];
+            $exploded = explode(' ', $item['personality'] ?? '');
+            if(count($exploded) === 2) {
+                $item['gender'] = $exploded[0] === '♂' ? 'Male' : 'Female';
+                $item['personality'] = $exploded[1];
+            }
 
         }
 
