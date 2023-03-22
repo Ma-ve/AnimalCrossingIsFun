@@ -37,6 +37,23 @@ class Event extends Dto {
     /**
      * @var string
      */
+    protected $monthData;
+
+    /**
+     * @var string
+     */
+    protected $dayData;
+
+    /**
+     * @var string
+     */
+    protected $endDateTimeFunction;
+
+    public $filters;
+
+    /**
+     * @var string
+     */
     protected $safeName;
 
     /**

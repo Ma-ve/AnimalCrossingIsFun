@@ -23,6 +23,8 @@ abstract class Collectible extends Dto {
     /** @var string */
     protected $safeName;
 
+    public $filters;
+
     /**
      * @return string
      */
