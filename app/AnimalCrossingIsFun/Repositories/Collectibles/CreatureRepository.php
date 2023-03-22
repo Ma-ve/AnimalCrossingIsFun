@@ -15,12 +15,17 @@ abstract class CreatureRepository extends BaseRepository {
         $availableFilters = $this->getMonthFilters();
         foreach($this->contents as &$item) {
             foreach($availableFilters as $filter) {
-                if($item[$filter['property']]) {
+                if(!empty($item[$filter['property']])) {
                     $item['filters'][] = $filter['label'];
                 }
             }
-            $item['filters'][] = $item['location'];
+            if(isset($item['location'])) {
+                $item['filters'][] = $item['location'];
+            }
             foreach($properties as $property) {
+                if(!isset($item[$property])) {
+                    continue;
+                }
                 $item['filters'][] = $item[$property];
             }
         }

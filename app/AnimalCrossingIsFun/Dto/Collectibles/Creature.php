@@ -65,11 +65,13 @@ abstract class Creature extends Collectible {
         if(empty($properties)) {
             return;
         }
-        $this->months = [
-            $properties['jan'], $properties['feb'], $properties['mar'], $properties['apr'],
-            $properties['may'], $properties['jun'], $properties['jul'], $properties['aug'],
-            $properties['sep'], $properties['oct'], $properties['nov'], $properties['dec'],
-        ];
+        if(isset($properties['jan'])) {
+            $this->months = [
+                $properties['jan'], $properties['feb'], $properties['mar'], $properties['apr'],
+                $properties['may'], $properties['jun'], $properties['jul'], $properties['aug'],
+                $properties['sep'], $properties['oct'], $properties['nov'], $properties['dec'],
+            ];
+        }
     }
 
     /**
@@ -90,7 +92,7 @@ abstract class Creature extends Collectible {
      * @return string[]
      */
     public function getTime(): array {
-        return explode(" & ", $this->time);
+        return is_array($this->time) ? $this->time : explode(" & ", $this->time ?? '');
     }
 
     /**
@@ -193,6 +195,24 @@ abstract class Creature extends Collectible {
         9  => 'Oct',
         10 => 'Nov',
         11 => 'Dec',
+    ];
+
+    /**
+     * @var string[]
+     */
+    protected $numToMonthName = [
+        0  => 'January',
+        1  => 'February',
+        2  => 'March',
+        3  => 'April',
+        4  => 'May',
+        5  => 'June',
+        6  => 'July',
+        7  => 'August',
+        8  => 'September',
+        9  => 'October',
+        10 => 'November',
+        11 => 'December',
     ];
 
     /**

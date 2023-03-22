@@ -5,7 +5,7 @@
     {% set itemPlaceholders %}
         {% for progressItem in progressItems.all %}
             <div class="row mt-2">
-                <div class="col-4"><i class="fad fa-{{ progressItem.icon }}"></i> {{ progressItem.label }}</div>
+                <div class="col-4"><i class="{{ progressItem.icon }}"></i> {{ progressItem.label }}</div>
                 <div class="col-4 js-storage-text-container" data-group="{{ progressItem.group }}">
                     <span class="js-storage-text">?</span>
                     <span class="js-storage-compare"></span>
