@@ -20,7 +20,7 @@
 
         </div>
         <div class="col-lg-2">
-            {% set vars = {'sort': sort, 'label': 'Swimming pattern', 'property': 'swimming_pattern', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
+            {% set vars = {'sort': sort, 'label': 'Swim. pattern', 'property': 'swimming_pattern', 'sortIcon': ['fa-sort-alpha-down', 'fa-sort-alpha-down-alt']} %}
             {% include "pages/snippets/table-header-column.twig" with vars only %}
 
         </div>
@@ -39,7 +39,7 @@
             'index': loop.index
         } only %}
             {% block subRow %}
-                <div class="col-lg-3 col-2 order-lg-0 order-1 text-lg-left text-center">
+                <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
                     {% for bullet in item.getBullets() %}
                         {% set bulletBadgeClass = '' %}
                         {% if bullet.value %}
@@ -51,18 +51,18 @@
                         {{ bullet|raw }}
                     {% endfor %}
                 </div>
-                <div class="col-lg-2 col-4 {{ priceOffset|default('offset-0') }} offset-lg-0 text-lg-left text-center {{ marginTops|default('') }}">
+                <div class="col-lg-2 col-4 order-1 offset-0 offset-lg-0 text-lg-left text-center ">
                     {% for creatureTime in item.getTime() %}
                         <span class="badge badge-danger">{{ creatureTime }}</span>
                     {% endfor %}
                 </div>
-                <div class="col-lg-2 order-lg-1 col-4 order-0 text-lg-left text-center"><span class="badge badge-warning"><!--
+                <div class="col-lg-2 col-4 order-2 offset-0 offset-lg-0 order-lg-3 text-lg-left text-center ">
+                    <span class="badge badge-dark badge-lg">{{ item.getSwimmingPattern() }}</span>
+                </div>
+                <div class="col-lg-2 col-4 order-3 order-lg-2 offset-4  offset-lg-0 text-lg-left text-center"><span class="badge badge-warning"><!--
                     --><i class="fad fa-bells"></i> {{ item.getPrice() }}<!--
                     --></span><!--
                 --></div>
-                <div class="col-lg-2 order-lg-1 col-4 order-1 text-lg-left text-center">
-                    <span class="badge badge-dark">{{ item.getSwimmingPattern() }}</span>
-                </div>
             {% endblock %}
         {% endembed %}
 
