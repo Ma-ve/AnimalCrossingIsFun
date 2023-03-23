@@ -40,16 +40,20 @@
         } only %}
             {% block subRow %}
                 <div class="col-lg-3 col-4 order-0 text-lg-left text-center">
-                    {% for bullet in item.getBullets() %}
-                        {% set bulletBadgeClass = '' %}
-                        {% if bullet.value %}
-                            {% set bulletBadgeClass = ' badge-info' %}
-                        {% endif %}
-                        <span class="badge{{ bulletBadgeClass }}">{{ bullet.month }}</span>
+                    {% if item.hasIrregularMonths %}
+                        {% for bullet in item.getBullets() %}
+                            {% set bulletBadgeClass = '' %}
+                            {% if bullet.value %}
+                                {% set bulletBadgeClass = ' badge-info' %}
+                            {% endif %}
+                            <span class="badge{{ bulletBadgeClass }}">{{ bullet.month }}</span>
+                        {% else %}
+                            <span class="badge">{{ bullet.month }}</span>
+                            {{ bullet|raw }}
+                        {% endfor %}
                     {% else %}
-                        <span class="badge">{{ bullet.month }}</span>
-                        {{ bullet|raw }}
-                    {% endfor %}
+                        <span class="badge badge-info">{{ item.getPeriodOfYear() }}</span>
+                    {% endif %}
                 </div>
                 <div class="col-lg-2 col-4 order-1 offset-0 offset-lg-0 text-lg-left text-center ">
                     {% for creatureTime in item.getTime() %}
