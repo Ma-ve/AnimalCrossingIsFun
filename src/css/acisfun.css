@@ -429,5 +429,10 @@ body.home .menu .progress {
         margin-top:     -4px;
     }
 
-    .
+}
+
+.badge-lg {
+    word-break: break-word;
+    white-space: normal;
+    line-height: 16px;
 }
