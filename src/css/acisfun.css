@@ -343,6 +343,7 @@ body.home .menu .progress {
 
 .auth-container {
     opacity: 0.3;
+    transition: 100ms linear opacity;
 }
 
 .config {
@@ -435,4 +436,30 @@ body.home .menu .progress {
     word-break: break-word;
     white-space: normal;
     line-height: 16px;
+}
+
+.comparison-badge {
+    vertical-align: text-bottom;
+    margin-left: 12px;
+}
+
+.login .provider {
+    transition: background-color 100ms linear,
+                box-shadow 100ms linear;
+}
+
+.login .provider.reddit {
+    background-color: #ff4500;
+}
+
+.login .provider.reddit:hover {
+    background-color: #ff4500bb;
+}
+
+.login .provider.google {
+    background-color: #4285f4;
+}
+
+.login .provider.google:hover {
+    background-color: #4285f4bb;
 }
