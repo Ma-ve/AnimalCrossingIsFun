@@ -58,13 +58,12 @@ $(function () {
             registerFilters();
             break;
         case '/settings':
-            setActiveValuesFromStorage();
-            registerOnchangeSave();
-            break;
-        case '/profile':
             promiseFuncs.push(checkProfile);
             promiseFuncs.push(loadStorage);
             promiseFuncs.push(compareStorages);
+            setActiveValuesFromStorage();
+            registerOnchangeSave();
+
             registerSaveLoadButtons();
             break;
     }
@@ -206,7 +205,7 @@ function checkLogin() {
 
     return [
         function (data) {
-            if ('name' in data.data && data.data.name) {
+            if (data?.data?.name) {
                 user = new User();
                 user.setUser(data.data);
                 authContainer.find('a')
@@ -228,7 +227,7 @@ function checkProfile(data) {
         return;
     }
 
-    $('.profile .name').text(user.get().name);
+    $('.settings .name').text(user.get().name);
 }
 
 function loadStorage(data) {
@@ -237,7 +236,7 @@ function loadStorage(data) {
 }
 
 function loadStorageFromDatabase(user) {
-    $.post('/profile/api/load', function (data) {
+    $.post('/settings/api/load', function (data) {
         if (!data || !('data' in data) || !data.data) {
             writeStorageDataToDocument('.js-storage-container', 0);
             $('.js-storage-container').addClass('loaded');
@@ -292,7 +291,7 @@ function registerSaveLoadButtons() {
     $('.js-save-to-account').on('click', function () {
         disableSaveLoadButtons();
         $.post(
-            '/profile/api/save',
+            '/settings/api/save',
             JSON.stringify(progress.currentStorage),
             function (data) {
                 if (data && 'success' in data && data.success) {
@@ -338,12 +337,16 @@ function compareStorages() {
 
             if (storageCount > browserCount) {
                 $(browserItem).find('.js-storage-compare')
-                    .addClass('text-danger')
+                    .addClass('badge')
+                    .addClass('badge-danger')
+                    .addClass('comparison-badge')
                     .text('-' + (storageCount - browserCount));
             }
             if (storageCount < browserCount) {
                 $(browserItem).find('.js-storage-compare')
-                    .addClass('text-success')
+                    .addClass('badge')
+                    .addClass('badge-success')
+                    .addClass('comparison-badge')
                     .text('+' + (browserCount - storageCount));
             }
         }

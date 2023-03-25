@@ -1,0 +1,23 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+
+    <div class="row mx-0 mt-5 p-2 profile-container">
+        <div class="col-12 pt-3">
+            {% for loginProvider in providers %}
+                {% set route = loginProvider.getRouteName() %}
+                {% set name = loginProvider.getProviderName() %}
+                <div class="row text-center mb-3">
+                    <div class="col-12">
+                        <a href="/auth/{{ route }}/login"
+                           class="btn provider {{ route }} text-white">
+                            <i class="fab fa-{{ route }} "></i>
+                            <span>Log in with {{ name }}</span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

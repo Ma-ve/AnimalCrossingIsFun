@@ -14,6 +14,7 @@ use Mave\AnimalCrossingIsFun\Services\RoutesService;
 use Nyholm\Psr7\ServerRequest as Request;
 use Nyholm\Psr7\Response;
 use Slim\Factory\AppFactory;
+use Slim\Routing\RouteCollectorProxy;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 use Twig\Extension\DebugExtension;
@@ -28,7 +29,6 @@ $adapters = [
 
 Dotenv::createImmutable(BASE_PATH)
     ->load();
-
 
 if(env('IS_DEV', false)) {
     error_reporting(E_ALL);
@@ -81,21 +81,15 @@ try {
 
     (new RoutesService($app))
         ->registerRecipesRoutes()
-        ->registerProfileRoutes()
+        ->registerSettingsRoutes()
         ->registerAuthRoutes()
         ->registerTranslationsRoutes();
 
-    $app->get('/settings', function(Request $request, Response $response) {
-        $view = Twig::fromRequest($request);
-
-        /** @var LanguageDto[] $languages */
-        $languages = (new LanguageRepository(null))
-            ->loadAll()
-            ->getAll();
-
-        return $view->render($response, 'pages/settings.twig', [
-            'languages' => $languages,
-        ]);
+    $app->group('/profile', function(RouteCollectorProxy $collectorProxy) {
+        $collectorProxy->redirect('', '/settings/');
+        $collectorProxy->get('/', function(Request $request, Response $response) {
+            return $response->withStatus(302)->withHeader('Location', '/settings');
+        });
     });
 
     $routesRegistered = [];
@@ -150,4 +144,5 @@ try {
 
     return;
 } catch(Throwable $throwable) {
+    throw $throwable;
 }

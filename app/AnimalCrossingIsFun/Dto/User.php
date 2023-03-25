@@ -16,12 +16,21 @@ class User extends Dto {
      */
     protected $username;
 
+    /**
+     * @var string
+     */
+    protected $name;
+
     public function getId(): string {
         return $this->id;
     }
 
     public function getUsername(): string {
-        return (string)$this->username;
+        return (string)($this->username ?? $this->name);
+    }
+
+    public function getName(): string {
+        return (string)$this->name;
     }
 
 }

@@ -8,15 +8,15 @@ use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Collectibles\RecipeCategory as RecipeCategoryDto;
 use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
-use Mave\AnimalCrossingIsFun\OAuth\LoginProvider;
-use Mave\AnimalCrossingIsFun\OAuth\RedditProvider;
+use Mave\AnimalCrossingIsFun\OAuth\LoginProviderRepository;
+use Mave\AnimalCrossingIsFun\OAuth\RestoreCookieLoginProvider;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\RecipeCategoryRepository;
 use Mave\AnimalCrossingIsFun\Repositories\LanguageRepository;
 use Mave\AnimalCrossingIsFun\Repositories\TranslationsRepository;
+use Nyholm\Psr7\Response;
+use Nyholm\Psr7\ServerRequest as Request;
 use Psr\Http\Server\RequestHandlerInterface;
 use Slim\App;
-use Nyholm\Psr7\ServerRequest as Request;
-use Nyholm\Psr7\Response;
 use Slim\Routing\RouteCollectorProxy;
 use Slim\Views\Twig;
 
@@ -38,9 +38,9 @@ class RoutesService {
     /**
      * @return $this
      */
-    public function registerProfileRoutes(): self {
-        $this->app->group('/profile', function(RouteCollectorProxy $collectorProxy) {
-            $collectorProxy->redirect('', '/profile/');
+    public function registerSettingsRoutes(): self {
+        $this->app->group('/settings', function(RouteCollectorProxy $collectorProxy) {
+            $collectorProxy->redirect('', '/settings/');
 
             $collectorProxy->group('/api', function(RouteCollectorProxy $collectorProxy) {
                 $collectorProxy->post('/save', function(Request $request, Response $response) {
@@ -56,22 +56,27 @@ class RoutesService {
 
             $collectorProxy->get('/', function(Request $request, Response $response) {
                 $view = Twig::fromRequest($request);
+                /** @var LanguageDto[] $languages */
+                $languages = (new LanguageRepository(null))
+                    ->loadAll()
+                    ->getAll();
 
-                return $view->render($response, 'pages/profile.twig', [
+                return $view->render($response, 'pages/settings.twig', [
+                    'languages' => $languages,
                     'progressItems' => (new ProgressService())->getAll(),
                 ]);
             });
         })
-            ->add(function(Request $request, RequestHandlerInterface $requestHandler) {
-                session_start();
+                  ->add(function(Request $request, RequestHandlerInterface $requestHandler) {
+                      session_start();
 
-                if(empty($_SESSION)) {
-                    header("Location: /");
-                    exit;
-                }
+                      if(empty($_SESSION)) {
+                          header("Location: /");
+                          exit;
+                      }
 
-                return $requestHandler->handle($request);
-            });
+                      return $requestHandler->handle($request);
+                  });
 
         return $this;
     }
@@ -93,15 +98,15 @@ class RoutesService {
                 $recipeCategory = $recipeCategories[0];
 
                 $repositoryRepository = $recipeCategory->getRecipeRepository()
-                    ->loadAll()
-                    ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
-                    ->loadFiltersIntoData();
+                                                       ->loadAll()
+                                                       ->sortItems($sort = ($request->getQueryParams()['sort'] ?? false))
+                                                       ->loadFiltersIntoData();
 
                 return $view->render($response, 'pages/recipes/category.twig', [
-                    'items'            => $repositoryRepository->getAll(),
-                    'filters'          => $repositoryRepository->getFilters(),
+                    'items' => $repositoryRepository->getAll(),
+                    'filters' => $repositoryRepository->getFilters(),
                     'recipeCategories' => $recipeCategories,
-                    'sort'             => $sort,
+                    'sort' => $sort,
                 ]);
             });
 
@@ -116,20 +121,20 @@ class RoutesService {
                 $recipeCategory = $recipeCategories[0];
 
                 $item = $recipeCategory->getRecipeRepository()
-                    ->loadAll()
-                    ->get($args['recipe']);
+                                       ->loadAll()
+                                       ->get($args['recipe']);
 
                 if(false === $item) {
                     return $view->render($response, 'pages/error/error.twig', [
                         'error' => [
-                            'code'    => 404,
+                            'code' => 404,
                             'message' => 'Recipe Not Found',
                         ],
                     ]);
                 }
 
                 return $view->render($response, 'pages/recipes/detail.twig', [
-                    'item'           => $item,
+                    'item' => $item,
                     'recipeCategory' => $recipeCategory,
                 ]);
             });
@@ -152,7 +157,7 @@ class RoutesService {
     }
 
     /**
-     * @param Twig     $view
+     * @param Twig $view
      * @param Response $response
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -163,7 +168,7 @@ class RoutesService {
     private function categoryNotFound(Twig $view, Response $response) {
         return $view->render($response, 'pages/error/error.twig', [
             'error' => [
-                'code'    => 404,
+                'code' => 404,
                 'message' => 'Recipe Category Not Found',
             ],
         ]);
@@ -181,7 +186,7 @@ class RoutesService {
                 $getUser = function() {
                     $user = user();
                     if(!$user) {
-                        (new LoginProvider())
+                        (new RestoreCookieLoginProvider())
                             ->restoreUserFromLoginCookie();
                         $user = user(true);
                     }
@@ -214,24 +219,92 @@ class RoutesService {
                 exit;
             });
 
-            $collectorProxy->get('/reddit/login', function() {
-                (new RedditProvider())
-                    ->start();
+            $loginProviderRepository = new LoginProviderRepository();
+
+            $collectorProxy->get('/login', function(Request $request, Response $response) use ($loginProviderRepository) {
+                $view = Twig::fromRequest($request);
+
+                $providers = $loginProviderRepository
+                    ->getAll();
+
+                return $view->render($response, 'pages/login.twig', [
+                    'providers' => $providers,
+                ]);
             });
 
-            $collectorProxy->get('/reddit/callback', function(Request $request, Response $response) {
-                (new RedditProvider())
-                    ->handleCallback($request);
+            foreach($loginProviderRepository->getAll() as $loginProvider) {
+                $collectorProxy->group(
+                    sprintf('/%s', $loginProvider->getRouteName()),
+                    function(RouteCollectorProxy $collectorProxy) use ($loginProvider) {
 
-                header("Location: /");
-                exit;
-            });
+                        $collectorProxy->get(
+                            '/login',
+                            function(Request $request, Response $response) use ($loginProvider) {
+                                return $response
+                                    ->withStatus(302)
+                                    ->withHeader(
+                                        'Location',
+                                        $loginProvider
+                                            ->getOAuthProvider()
+                                            ->getAuthorizationUrl()
+                                    );
+                            }
+                        );
+
+                        $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProvider) {
+                            $loginProvider->loginUser($request);
+
+                            return $response
+                                ->withStatus(302)
+                                ->withHeader('Location', '/');
+                        });
+                    });
+            }
+//            $collectorProxy->group('/reddit', function(RouteCollectorProxy $collectorProxy) use ($loginProviderRepository) {
+//                $collectorProxy->get('/login', function() use ($loginProviderRepository) {
+//
+//                    (new RedditProvider())
+//                        ->start();
+//                });
+//
+//                $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProviderRepository) {
+//                    (new RedditProvider())
+//                        ->handleCallback($request);
+//
+//                    header("Location: /");
+//                    exit;
+//                });
+//            });
+
+//            $collectorProxy->group('/google', function(RouteCollectorProxy $collectorProxy) use ($loginProviderRepository) {
+//                $collectorProxy->get('/login', function(Request $request, Response $response) use ($loginProviderRepository) {
+//                    return $response
+//                        ->withStatus(302)
+//                        ->withHeader(
+//                            'Location',
+//                            $loginProviderRepository
+//                                ->getGoogleProvider()
+//                                ->getAuthorizationUrl()
+//                        );
+//                });
+//
+//                $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProviderRepository) {
+//                    var_dump('cool', $request->getQueryParams());
+//                    exit;
+//
+//                    (new RedditProvider())
+//                        ->handleCallback($request);
+//
+//                    header("Location: /");
+//                    exit;
+//                });
+//            });
         })
-            ->add(function(Request $request, RequestHandlerInterface $requestHandler) {
-                session_start();
+                  ->add(function(Request $request, RequestHandlerInterface $requestHandler) {
+                      session_start();
 
-                return $requestHandler->handle($request);
-            });
+                      return $requestHandler->handle($request);
+                  });
 
         return $this;
     }
@@ -313,7 +386,7 @@ class RoutesService {
 
     /**
      * @param Response $response
-     * @param array    $data
+     * @param array $data
      *
      * @return Response
      */
