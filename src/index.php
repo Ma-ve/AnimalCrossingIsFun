@@ -67,11 +67,24 @@ try {
     $app->get('/', function(Request $request, Response $response) {
         $view = Twig::fromRequest($request);
 
+        $villagers = (new VillagerRepository(null))
+            ->loadAll()
+            ->getByNearbyBirthdates(new DateTime());
+        $villagers[] = $villagers[0];
+
+        $firstVillagers = array_slice($villagers, 0, ceil(count($villagers) / 2));
+        $secondVillagers = array_slice($villagers, ceil(count($villagers) / 2), floor(count($villagers) / 2));
+        $columnedVillagers = [];
+        foreach($firstVillagers as $index => $villager) {
+            $columnedVillagers[$index][] = $villager;
+        }
+        foreach($secondVillagers as $index => $villager) {
+            $columnedVillagers[$index][] = $villager;
+        }
+
         return $view->render($response, 'pages/home.twig', [
             'progressItems' => (new ProgressService())->getAll(),
-            'villagers'     => (new VillagerRepository(null))
-                ->loadAll()
-                ->getByNearbyBirthdates(new DateTime()),
+            'villagers'     => array_merge(...$columnedVillagers),
             'events'        => (new EventRepository(null))
                 ->loadAll()
                 ->getByNearbyStartDates(new DateTime()),

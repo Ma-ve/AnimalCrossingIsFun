@@ -356,7 +356,7 @@ function compareStorages() {
 }
 
 function resetAllItems() {
-    $('.js-filterable').removeClass('opacity-40')
+    $('.js-filterable').removeClass('opacity-60')
         .attr('style', '');
 }
 
@@ -376,7 +376,7 @@ function registerFilters() {
         $('.js-filter-item').removeClass('badge-warning').addClass('badge-light');
         $('.js-filterable')
             .removeClass('opacity-100')
-            .addClass('opacity-40')
+            .addClass('opacity-60')
             .attr('style', '')
         ;
         $(this).removeClass('badge-light').addClass('badge-warning');
@@ -385,7 +385,7 @@ function registerFilters() {
         for (let i = 0; i < items.length; i++) {
             items[i].style.order = i;
         }
-        $(selector).removeClass('opacity-40').addClass('opacity-100');
+        $(selector).removeClass('opacity-60').addClass('opacity-100');
     });
 
     $('.js-search').on('submit', function (e) {
@@ -405,7 +405,7 @@ function registerFilters() {
 
         $('.js-filterable')
             .removeClass('opacity-100')
-            .addClass('opacity-40')
+            .addClass('opacity-60')
             .attr('style', '')
 
         searchTerm = searchTerm.replace('"', '');
@@ -415,7 +415,7 @@ function registerFilters() {
         for (let i = 0; i < items.length; i++) {
             $(items[i]).closest('.js-filterable')
                 .css('order', i)
-                .removeClass('opacity-40')
+                .removeClass('opacity-60')
                 .addClass('opacity-100');
         }
     });
