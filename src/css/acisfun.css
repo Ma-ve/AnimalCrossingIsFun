@@ -1,10 +1,10 @@
 :root {
     --color-red:                  #f77172;
-    --color-blue:                 #04a9ab;
+    --color-blue:                 #6cbdb6;
     --color-green:                #70c1a0;
     --color-lime:                 #c6d942;
     --color-yellow:               #f5db6a;
-    --color-brown:                #5a413e;
+    --color-brown:                #7b6c53;
     --color-brown-lighter:        #afa09f;
     --color-bluewood:             #2c3e50;
     --color-bluewood-translucent: rgba(44, 62, 80, 0.3);
@@ -13,7 +13,7 @@
     --color-whiteisher:           #f5dac9;
     --color-muted:                #f6ede7;
 
-    --color-body:                 #9ed0b5;
+    --color-body:                 #6cbdb6;
 
     --image-height:               58px;
     --footer-height:              56px;
@@ -23,16 +23,18 @@
     opacity: 0.4;
 }
 
+.opacity-60 {
+    opacity: 0.6;
+}
+
 .opacity-100 {
     opacity: 1;
 }
 
 body {
-    background-color:      var(--color-body);
-    background-repeat:     repeat;
-    background-size:       300px;
-    background-attachment: fixed;
-    margin-bottom:         var(--footer-height);
+    background:      url('/img/pattern-leaves-turquoise.jpg') repeat fixed;
+    background-size: 300px;
+    margin-bottom:   var(--footer-height);
 }
 
 body,
@@ -104,14 +106,14 @@ table tr td {
 .wave-container {
     position:   relative;
     background: var(--color-bluewood);
-    height:     100px;
+    height:     85px;
 }
 
 .wave {
     position:   absolute;
     height:     32px;
     width:      100%;
-    background: var(--color-bluewood);
+    /*background: var(--color-bluewood);*/
     bottom:     0;
 }
 
@@ -125,7 +127,7 @@ table tr td {
 .wave::before {
     width:            53.5%;
     height:           110%;
-    background-color: var(--color-body);
+    /*background-color: var(--color-body);*/
     right:            0;
     top:              60%;
 }
@@ -133,7 +135,7 @@ table tr td {
 .wave::after {
     width:            53.5%;
     height:           100%;
-    background-color: var(--color-bluewood);
+    /*background-color: var(--color-bluewood);*/
     left:             0;
     top:              40%;
 }

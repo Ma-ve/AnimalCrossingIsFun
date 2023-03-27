@@ -20,14 +20,14 @@
     </script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/acisfun.css?v=2023-03-25">
+    <link rel="stylesheet" href="/css/acisfun.css?v={{ 'now' | date('U') }}">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <title>AC is fun</title>
 </head>
 <body class="body{{ current_url()|split('/')|join(' ') }}{{ is_current_url('/') ? 'home' : '' }}">
     <div class="top text-caps-lowercase">
+
         <section class="wave-container">
-            <div class="wave"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-7 col-lg-4 pl-sm-3 pl-lg-0">
@@ -47,6 +47,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div style="height: 100px; overflow: hidden;">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C154.34,98.18 271.15,-26.15 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: var(--color-bluewood);"></path>
+                </svg>
+                test???
             </div>
         </section>
     </div>
