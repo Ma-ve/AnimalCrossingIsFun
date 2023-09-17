@@ -1,6 +1,6 @@
 # Animal Crossing is Fun
 
-https://animalcrossing.fun/
+https://animalcrossing.mave.me/
 
 ---
 
@@ -9,7 +9,7 @@ Animal Crossing is Fun is a website where you can keep track of your caught bugs
 ## Installation
 
 Requirements:
-* PHP 7.2
+* PHP >= 8.2
 * Composer
 * An available Redis instance (see below)
 * A webserver (Apache / Nginx)
