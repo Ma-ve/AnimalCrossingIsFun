@@ -1,8 +1,6 @@
 <?php
 
 use Dotenv\Dotenv;
-use Dotenv\Repository\Adapter\EnvConstAdapter;
-use Dotenv\Repository\Adapter\ServerConstAdapter;
 use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
 use Mave\AnimalCrossingIsFun\Renderers\ErrorRenderer;
 use Mave\AnimalCrossingIsFun\Repositories\EventRepository;
@@ -22,12 +20,8 @@ use Twig\Extension\DebugExtension;
 define('BASE_PATH', __DIR__ . '/../');
 require(BASE_PATH . 'vendor/autoload.php');
 
-$adapters = [
-    new EnvConstAdapter(),
-    new ServerConstAdapter(),
-];
-
-Dotenv::createImmutable(BASE_PATH)
+// The env() helper reads through getenv(), so the putenv adapter is required
+Dotenv::createUnsafeImmutable(BASE_PATH)
     ->load();
 
 if(env('IS_DEV', false)) {
