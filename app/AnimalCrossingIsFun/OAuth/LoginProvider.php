@@ -62,6 +62,10 @@ abstract class LoginProvider {
         return $this->oauthProvider;
     }
 
+    public function getAuthorizationUrl(): string {
+        return $this->oauthProvider->getAuthorizationUrl();
+    }
+
     public function loginUser(Nyholm\Psr7\ServerRequest $request): void {
         $queryParams = $request->getQueryParams();
         $resourceOwner = $this->oauthProvider->getResourceOwner(

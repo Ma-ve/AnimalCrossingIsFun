@@ -232,12 +232,7 @@ class RoutesService {
                             '/login',
                             fn(Request $request, Response $response) => $response
                                 ->withStatus(302)
-                                ->withHeader(
-                                    'Location',
-                                    $loginProvider
-                                        ->getOAuthProvider()
-                                        ->getAuthorizationUrl()
-                                )
+                                ->withHeader('Location', $loginProvider->getAuthorizationUrl())
                         );
 
                         $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProvider) {
