@@ -34,7 +34,8 @@
     "predis/predis": "^3"
   },
   "require-dev": {
-    "phpunit/phpunit": "^12"
+    "phpunit/phpunit": "^12",
+    "rector/rector": "^2"
   },
   "scripts": {
     "json-to-php": "php ./scripts/json-to-php.php data/*.json",
