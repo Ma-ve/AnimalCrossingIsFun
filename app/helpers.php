@@ -13,10 +13,16 @@ if(!function_exists('env')) {
      * @return mixed
      */
     function env($key, $default = null) {
-        $value = getenv($key);
+        // Dotenv always fills $_ENV and $_SERVER, but only calls putenv() when it is
+        // available, so getenv() alone misses values when putenv is disabled
+        $value = $_ENV[$key] ?? $_SERVER[$key] ?? getenv($key);
 
-        if($value === false) {
+        if($value === false || $value === null) {
             return value($default);
+        }
+
+        if(!is_string($value)) {
+            return $value;
         }
 
         switch(strtolower($value)) {
