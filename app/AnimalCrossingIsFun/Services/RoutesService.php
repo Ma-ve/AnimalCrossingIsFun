@@ -8,6 +8,7 @@ use Exception;
 use Mave\AnimalCrossingIsFun\Dto\Collectibles\RecipeCategory as RecipeCategoryDto;
 use Mave\AnimalCrossingIsFun\Dto\Dto;
 use Mave\AnimalCrossingIsFun\Dto\Language as LanguageDto;
+use Mave\AnimalCrossingIsFun\OAuth\LoginFailedException;
 use Mave\AnimalCrossingIsFun\OAuth\LoginProviderRepository;
 use Mave\AnimalCrossingIsFun\OAuth\RestoreCookieLoginProvider;
 use Mave\AnimalCrossingIsFun\Repositories\Collectibles\RecipeCategoryRepository;
@@ -21,6 +22,8 @@ use Slim\Routing\RouteCollectorProxy;
 use Slim\Views\Twig;
 
 class RoutesService {
+
+    public const string SESSION_LOGIN_ERROR_KEY = 'loginError';
 
     /**
      * @param App $app
@@ -218,8 +221,13 @@ class RoutesService {
                 $providers = $loginProviderRepository
                     ->getAll();
 
+                // Shown once, after a failed login redirected back here
+                $loginError = $_SESSION[self::SESSION_LOGIN_ERROR_KEY] ?? null;
+                unset($_SESSION[self::SESSION_LOGIN_ERROR_KEY]);
+
                 return $view->render($response, 'pages/login.twig', [
                     'providers' => $providers,
+                    'loginError' => $loginError,
                 ]);
             });
 
@@ -236,7 +244,20 @@ class RoutesService {
                         );
 
                         $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProvider) {
-                            $loginProvider->loginUser($request);
+                            try {
+                                $loginProvider->loginUser($request);
+                            } catch(LoginFailedException $exception) {
+                                error_log(sprintf(
+                                    '%s login failed: %s',
+                                    $loginProvider->getProviderName(),
+                                    ($exception->getPrevious() ?? $exception)->getMessage()
+                                ));
+                                $_SESSION[self::SESSION_LOGIN_ERROR_KEY] = $exception->getMessage();
+
+                                return $response
+                                    ->withStatus(302)
+                                    ->withHeader('Location', '/auth/login');
+                            }
 
                             return $response
                                 ->withStatus(302)

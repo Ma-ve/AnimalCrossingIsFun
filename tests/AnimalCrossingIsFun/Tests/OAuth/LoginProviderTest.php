@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mave\AnimalCrossingIsFun\Tests\OAuth;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Token\AccessToken;
 use Mave\AnimalCrossingIsFun\OAuth\LoginFailedException;
@@ -72,6 +73,38 @@ class LoginProviderTest extends TestCase {
 
         $this->expectException(LoginFailedException::class);
         $this->loginProvider->loginUser($this->callbackRequest(['code' => 'abc', 'state' => 'expected-state']));
+    }
+
+    public function testLoginFailsWhenUserDeclinedAccess(): void {
+        $this->loginProvider->getAuthorizationUrl();
+        $this->oauthProvider->expects(self::never())->method('getAccessToken');
+
+        $this->expectException(LoginFailedException::class);
+        $this->expectExceptionMessage('Logging in with Test was cancelled.');
+        $this->loginProvider->loginUser($this->callbackRequest(['error' => 'access_denied', 'state' => 'expected-state']));
+    }
+
+    public function testLoginFailsWithoutCode(): void {
+        $this->loginProvider->getAuthorizationUrl();
+        $this->oauthProvider->expects(self::never())->method('getAccessToken');
+
+        $this->expectException(LoginFailedException::class);
+        $this->loginProvider->loginUser($this->callbackRequest(['state' => 'expected-state']));
+    }
+
+    public function testProviderErrorsBecomeLoginFailures(): void {
+        $this->loginProvider->getAuthorizationUrl();
+        $providerError = new IdentityProviderException('Unauthorized', 401, []);
+        $this->oauthProvider->expects(self::once())->method('getAccessToken')->willThrowException($providerError);
+
+        try {
+            $this->loginProvider->loginUser($this->callbackRequest(['code' => 'abc', 'state' => 'expected-state']));
+            self::fail('Expected a LoginFailedException');
+        } catch(LoginFailedException $exception) {
+            self::assertSame('Could not log in with Test, please try again.', $exception->getMessage());
+            self::assertSame($providerError, $exception->getPrevious());
+            self::assertArrayNotHasKey('user', $_SESSION);
+        }
     }
 
     private function expectTokenExchange(): void {

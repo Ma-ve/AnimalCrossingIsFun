@@ -4,6 +4,13 @@
 
     <div class="row mx-0 mt-5 p-2 profile-container">
         <div class="col-12 pt-3">
+            {% if loginError %}
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="alert alert-danger text-center mb-0" role="alert">{{ loginError }}</div>
+                    </div>
+                </div>
+            {% endif %}
             {% for loginProvider in providers %}
                 {% set route = loginProvider.getRouteName() %}
                 {% set name = loginProvider.getProviderName() %}
