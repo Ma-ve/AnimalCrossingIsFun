@@ -6,14 +6,13 @@ namespace Mave\AnimalCrossingIsFun\OAuth;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use Nyholm\Psr7\ServerRequest as Request;
-use Rudolf\OAuth2\Client\Provider\Reddit;
 
 class RedditProvider extends LoginProvider {
 
     public function __construct() {
         parent::__construct();
 
-        $this->oauthProvider = new Reddit([
+        $this->oauthProvider = new RedditOAuthProvider([
             'clientId' => env('REDDIT_CLIENT_ID'),
             'clientSecret' => env('REDDIT_CLIENT_SECRET'),
             'redirectUri' => env('REDDIT_CALLBACK_URL'),
