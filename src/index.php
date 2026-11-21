@@ -20,8 +20,7 @@ use Twig\Extension\DebugExtension;
 define('BASE_PATH', __DIR__ . '/../');
 require(BASE_PATH . 'vendor/autoload.php');
 
-// The env() helper reads through getenv(), so the putenv adapter is required
-Dotenv::createUnsafeImmutable(BASE_PATH)
+Dotenv::createImmutable(BASE_PATH)
     ->load();
 
 if(env('IS_DEV', false)) {
