@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Mave\AnimalCrossingIsFun\Services;
 
-use RedisClient\Client\Version\RedisClient5x0;
-use RedisClient\ClientFactory;
-use RedisClient\RedisClient;
+use Predis\Client;
+use Predis\ClientInterface;
 
 class CacheService {
 
@@ -20,16 +19,17 @@ class CacheService {
     }
 
     /**
-     * @var RedisClient5x0
+     * @var ClientInterface|null
      */
     private static $client;
 
-    private function client(): RedisClient {
+    private function client(): ClientInterface {
         if(null === self::$client) {
-            self::$client = ClientFactory::create([
-                'server'  => '127.0.0.1:6379',
+            self::$client = new Client([
+                'scheme'  => 'tcp',
+                'host'    => env('REDIS_HOST', '127.0.0.1'),
+                'port'    => (int)env('REDIS_PORT', 6379),
                 'timeout' => 1,
-                'version' => '5.0.8',
             ]);
         }
 
@@ -42,34 +42,40 @@ class CacheService {
      * @return string|null
      */
     public function get(string $key): ?string {
-        return self::client()->get($this->keyPrefix . $key);
+        return $this->client()->get($this->keyPrefix . $key);
     }
 
     /**
      * @param array $keys
      *
-     * @return string|string[]
+     * @return array<string|null>
      */
     public function getMultiple(array $keys): ?array {
-        return self::client()->mget(array_map(function($key) {
+        return $this->client()->mget(array_map(function($key) {
             return $this->keyPrefix . $key;
         }, $keys));
     }
 
     /**
-     * @param string $key
-     * @param string $data
-     * @param int    $seconds
+     * @param string   $key
+     * @param string   $data
+     * @param int|null $seconds
      */
     public function set(string $key, string $data, ?int $seconds) {
-        self::client()->set($this->keyPrefix . $key, $data, $seconds);
+        if(null === $seconds) {
+            $this->client()->set($this->keyPrefix . $key, $data);
+
+            return;
+        }
+
+        $this->client()->set($this->keyPrefix . $key, $data, 'EX', $seconds);
     }
 
     /**
      * @param string $key
      */
     public function delete(string $key) {
-        self::client()->del($this->keyPrefix . $key);
+        $this->client()->del($this->keyPrefix . $key);
     }
 
 }
