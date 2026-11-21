@@ -13,6 +13,7 @@ class TranslationsRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = LanguageDto::class;
 
     /**
@@ -30,9 +31,7 @@ class TranslationsRepository extends BaseRepository implements IRepository {
      * @return array
      */
     public function get(string $langCode) {
-        $filtered = array_map(function($data) use ($langCode) {
-            return $data[$langCode];
-        }, $this->contents);
+        $filtered = array_map(fn($data) => $data[$langCode], $this->contents);
 
         unset(
             $filtered['housewares'],

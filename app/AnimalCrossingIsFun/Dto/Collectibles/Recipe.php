@@ -24,6 +24,7 @@ class Recipe extends Collectible {
     protected $category;
 
     /** @var string */
+    #[\Override]
     protected $group = 'recipes';
 
     /**

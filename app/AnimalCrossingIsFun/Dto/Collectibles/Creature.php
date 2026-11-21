@@ -272,24 +272,13 @@ abstract class Creature extends Collectible {
     /**
      * @return bool
      */
-    public function hasIrregularMonths() {
-        switch(strtolower($this->name)) {
-            // Fish
-            case 'blue marlin':
-            case 'char':
-            case 'cherry salmon':
-            case 'golden trout':
-            // Bugs
-            case 'emperor butterfly':
-            case 'ladybug':
-            case 'rajah brooke\'s birdwing':
-            case 'violin beetle':
-            case 'yellow butterfly':
-                // @TODO: Case insensitivity
-                return true;
-        }
-
-        return false;
+    public function hasIrregularMonths()
+    {
+        return match (strtolower($this->name)) {
+            // @TODO: Case insensitivity
+            'blue marlin', 'char', 'cherry salmon', 'golden trout', 'emperor butterfly', 'ladybug', 'rajah brooke\'s birdwing', 'violin beetle', 'yellow butterfly' => true,
+            default => false,
+        };
     }
 
     public function getBullets(): array {

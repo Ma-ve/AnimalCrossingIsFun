@@ -26,7 +26,7 @@ class ErrorRenderer implements ErrorRendererInterface {
             $view = Twig::fromRequest($exception->getRequest());
 
             $message = $exception->getMessage();
-            switch(get_class($exception)) {
+            switch($exception::class) {
                 case HttpNotFoundException::class:
                     $message = 'This page doesn\'t exist!';
                     break;

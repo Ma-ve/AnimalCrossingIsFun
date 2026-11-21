@@ -17,6 +17,7 @@ class SongRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = SongDto::class;
 
     /**

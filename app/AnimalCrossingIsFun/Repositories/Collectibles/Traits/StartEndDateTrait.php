@@ -52,7 +52,7 @@ trait StartEndDateTrait {
                     $timeString = "{$item['dayData']} of {$item['monthData']}";
                     try {
                         $dateTime = (new DateTime($timeString));
-                    } catch(Exception $exception) {
+                    } catch(Exception) {
                         $item['endDate'] =
                         $item['startDate'] = "{$item['dayData']} of {$item['monthData']}";
 
@@ -61,7 +61,7 @@ trait StartEndDateTrait {
 
                     $hasMonthPassed = DateTime::createFromFormat('F', $item['monthData']);
                     if($this->hasMonthPassed($hasMonthPassed)) {
-                        $dateTime = (new DateTime('+1 year'))->modify($timeString);
+                        $dateTime = new DateTime('+1 year')->modify($timeString);
                     }
 
                     $item['endDate'] =

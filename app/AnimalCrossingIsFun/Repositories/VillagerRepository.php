@@ -19,6 +19,7 @@ class VillagerRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = VillagerDto::class;
 
     /**
@@ -38,9 +39,7 @@ class VillagerRepository extends BaseRepository implements IRepository {
 
             return false;
         });
-        usort($this->contents, function($a, $b) {
-            return $a['date'] <=> $b['date'];
-        });
+        usort($this->contents, fn($a, $b) => $a['date'] <=> $b['date']);
 
         return parent::map(new VillagerDto());
     }

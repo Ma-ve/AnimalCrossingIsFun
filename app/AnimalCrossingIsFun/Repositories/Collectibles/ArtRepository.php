@@ -13,6 +13,7 @@ class ArtRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = ArtDto::class;
 
     /**
@@ -31,23 +32,13 @@ class ArtRepository extends BaseRepository implements IRepository {
      * @return $this
      */
     public function sortItems($sort = false) {
-        switch($sort) {
-            default:
-                $this->sortByCategory();
-                break;
-            case 'name':
-                $this->sortByNameAsc();
-                break;
-            case '-name':
-                $this->sortByNameDesc();
-                break;
-            case 'price':
-                $this->sortByPriceAsc();
-                break;
-            case '-price':
-                $this->sortByPriceDesc();
-                break;
-        }
+        match ($sort) {
+            'name' => $this->sortByNameAsc(),
+            '-name' => $this->sortByNameDesc(),
+            'price' => $this->sortByPriceAsc(),
+            '-price' => $this->sortByPriceDesc(),
+            default => $this->sortByCategory(),
+        };
 
         return $this;
     }

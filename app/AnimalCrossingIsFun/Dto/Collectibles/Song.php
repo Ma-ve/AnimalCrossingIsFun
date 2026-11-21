@@ -9,6 +9,7 @@ class Song extends Collectible {
     protected const IMAGE_PATH = 'songs';
 
     /** @var string */
+    #[\Override]
     protected $group = 'songs';
 
 }

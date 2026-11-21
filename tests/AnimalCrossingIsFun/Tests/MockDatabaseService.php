@@ -9,15 +9,10 @@ use Mave\AnimalCrossingIsFun\Repositories\Services\Interfaces\IDatabaseService;
 class MockDatabaseService implements IDatabaseService {
 
     /**
-     * @var array
+     * @param array $contents
      */
-    private $contents;
-
-    /**
-     * @param array $data
-     */
-    public function __construct(array $data) {
-        $this->contents = $data;
+    public function __construct(private readonly array $contents)
+    {
     }
 
     public function loadFromDatabase(string $origin): array {

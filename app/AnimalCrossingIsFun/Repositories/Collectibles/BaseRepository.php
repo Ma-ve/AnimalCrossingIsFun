@@ -72,9 +72,7 @@ abstract class BaseRepository {
 
         return array_values(
             array_map(
-                function($item) {
-                    return new $this->dto($item);
-                },
+                fn($item) => new $this->dto($item),
                 array_intersect_key(
                     $this->contents,
                     array_flip($arrayKeys)
@@ -96,27 +94,14 @@ abstract class BaseRepository {
      * @return $this
      */
     public function sortItems($sort = false) {
-        switch($sort) {
-            case 'name':
-            default:
-                $this->sortByNameAsc();
-                break;
-            case '-name':
-                $this->sortByNameDesc();
-                break;
-            case 'price':
-                $this->sortByPriceAsc();
-                break;
-            case '-price':
-                $this->sortByPriceDesc();
-                break;
-            case 'location':
-                $this->sortByLocationAsc();
-                break;
-            case '-location':
-                $this->sortByLocationDesc();
-                break;
-        }
+        match ($sort) {
+            '-name' => $this->sortByNameDesc(),
+            'price' => $this->sortByPriceAsc(),
+            '-price' => $this->sortByPriceDesc(),
+            'location' => $this->sortByLocationAsc(),
+            '-location' => $this->sortByLocationDesc(),
+            default => $this->sortByNameAsc(),
+        };
 
         return $this;
     }
@@ -127,9 +112,7 @@ abstract class BaseRepository {
      * @return Dto[]
      */
     protected function map(Dto $dtoClass) {
-        return array_map(function($item) use ($dtoClass) {
-            return new $dtoClass($item);
-        }, $this->contents);
+        return array_map(fn($item) => new $dtoClass($item), $this->contents);
     }
 
     /**

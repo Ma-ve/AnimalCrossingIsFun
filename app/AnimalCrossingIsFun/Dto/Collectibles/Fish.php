@@ -7,12 +7,14 @@ namespace Mave\AnimalCrossingIsFun\Dto\Collectibles;
 class Fish extends Creature {
 
     /** @var string */
+    #[\Override]
     protected $location;
 
     /** @var int */
     protected $shadowSize;
 
     /** @var string */
+    #[\Override]
     protected $group = 'fish';
 
     /**

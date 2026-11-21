@@ -23,15 +23,10 @@ use Slim\Views\Twig;
 class RoutesService {
 
     /**
-     * @var App
-     */
-    private $app;
-
-    /**
      * @param App $app
      */
-    public function __construct(App $app) {
-        $this->app = $app;
+    public function __construct(private readonly App $app)
+    {
     }
 
     /** @noinspection PhpUnusedParameterInspection */
@@ -43,27 +38,23 @@ class RoutesService {
             $collectorProxy->redirect('', '/settings/');
 
             $collectorProxy->group('/api', function(RouteCollectorProxy $collectorProxy) {
-                $collectorProxy->post('/save', function(Request $request, Response $response) {
-                    return (new StorageService(UserService::getUser(false)))
-                        ->saveToDatabase($request, $response);
-                });
+                $collectorProxy->post('/save', fn(Request $request, Response $response) => new StorageService(UserService::getUser(false))
+                    ->saveToDatabase($request, $response));
 
-                $collectorProxy->post('/load', function(Request $request, Response $response) {
-                    return (new StorageService(UserService::getUser(false)))
-                        ->loadFromDatabase($response);
-                });
+                $collectorProxy->post('/load', fn(Request $request, Response $response) => new StorageService(UserService::getUser(false))
+                    ->loadFromDatabase($response));
             });
 
             $collectorProxy->get('/', function(Request $request, Response $response) {
                 $view = Twig::fromRequest($request);
                 /** @var LanguageDto[] $languages */
-                $languages = (new LanguageRepository(null))
+                $languages = new LanguageRepository(null)
                     ->loadAll()
                     ->getAll();
 
                 return $view->render($response, 'pages/settings.twig', [
                     'languages' => $languages,
-                    'progressItems' => (new ProgressService())->getAll(),
+                    'progressItems' => new ProgressService()->getAll(),
                 ]);
             });
         })
@@ -151,7 +142,7 @@ class RoutesService {
      * @throws Exception
      */
     private function getRecipeCategoriesForCategory(string $category) {
-        return (new RecipeCategoryRepository(null))
+        return new RecipeCategoryRepository(null)
             ->loadAll()
             ->getMultipleBySingleKey($category);
     }
@@ -186,7 +177,7 @@ class RoutesService {
                 $getUser = function() {
                     $user = user();
                     if(!$user) {
-                        (new RestoreCookieLoginProvider())
+                        new RestoreCookieLoginProvider()
                             ->restoreUserFromLoginCookie();
                         $user = user(true);
                     }
@@ -211,7 +202,7 @@ class RoutesService {
             });
 
             $collectorProxy->get('/logout', function() {
-                (new CookieService())
+                new CookieService()
                     ->setLoginCookie(null);
                 $_SESSION = [];
                 session_destroy();
@@ -239,16 +230,14 @@ class RoutesService {
 
                         $collectorProxy->get(
                             '/login',
-                            function(Request $request, Response $response) use ($loginProvider) {
-                                return $response
-                                    ->withStatus(302)
-                                    ->withHeader(
-                                        'Location',
-                                        $loginProvider
-                                            ->getOAuthProvider()
-                                            ->getAuthorizationUrl()
-                                    );
-                            }
+                            fn(Request $request, Response $response) => $response
+                                ->withStatus(302)
+                                ->withHeader(
+                                    'Location',
+                                    $loginProvider
+                                        ->getOAuthProvider()
+                                        ->getAuthorizationUrl()
+                                )
                         );
 
                         $collectorProxy->get('/callback', function(Request $request, Response $response) use ($loginProvider) {
@@ -331,7 +320,7 @@ class RoutesService {
                     return $this->returnJson($response, ['data' => json_decode($cachedData, true)]);
                 }
 
-                $data = (new TranslationsRepository(null))
+                $data = new TranslationsRepository(null)
                     ->loadAll()
                     ->get($language->getLangCode());
 

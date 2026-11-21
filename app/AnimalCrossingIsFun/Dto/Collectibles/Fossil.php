@@ -19,6 +19,7 @@ class Fossil extends Collectible {
     protected $category;
 
     /** @var string */
+    #[\Override]
     protected $group = 'fossils';
 
     /**

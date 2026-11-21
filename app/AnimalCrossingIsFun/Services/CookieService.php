@@ -81,7 +81,7 @@ class CookieService {
      * @param int    $expiryInSeconds
      */
     private function setCookie(string $value, int $expiryInSeconds) {
-        setcookie(self::COOKIE_REMEMBER_ME, $value, time() + $expiryInSeconds, '/', '', true, true);
+        setcookie(self::COOKIE_REMEMBER_ME, $value, ['expires' => time() + $expiryInSeconds, 'path' => '/', 'domain' => '', 'secure' => true, 'httponly' => true]);
     }
 
 }

@@ -160,7 +160,7 @@ class EventRepositoryTest extends TestCase {
         foreach($data as $assertData) {
             $mockDatabaseService = new MockDatabaseService([$assertData['attributes']]);
             $dateService = new DateService($assertData['dateTime']);
-            $dtoList = (new EventRepository($mockDatabaseService, $dateService))
+            $dtoList = new EventRepository($mockDatabaseService, $dateService)
                 ->loadAll()
                 ->getAll();
             self::assertCount(1, $dtoList);

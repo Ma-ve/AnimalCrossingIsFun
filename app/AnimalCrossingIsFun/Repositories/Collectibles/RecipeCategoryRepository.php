@@ -21,6 +21,7 @@ class RecipeCategoryRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = RecipeCategoryDto::class;
 
     /**
@@ -42,7 +43,7 @@ class RecipeCategoryRepository extends BaseRepository implements IRepository {
      * @throws Exception
      */
     public function loadAll() {
-        $eventRepository = (new EventRepository(null))
+        $eventRepository = new EventRepository(null)
             ->loadAll();
 
         /** @var EventDto[] $cherryBlossomEvents */
@@ -108,9 +109,7 @@ class RecipeCategoryRepository extends BaseRepository implements IRepository {
 
         $this->contents = $this->transformDates($this->contents);
 
-        usort($this->contents, function($a, $b) {
-            return $a['startDate'] <=> $b['startDate'];
-        });
+        usort($this->contents, fn($a, $b) => $a['startDate'] <=> $b['startDate']);
 
         return $this;
     }

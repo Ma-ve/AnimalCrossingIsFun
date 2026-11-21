@@ -33,9 +33,7 @@ class DateService {
      * @return DateTime
      */
     public function getEasterDateTime(?int $year = null) {
-        if(null === $year) {
-            $year = (int)date('Y');
-        }
+        $year ??= (int)date('Y');
         $base = new DateTime("{$year}-03-21");
         $days = easter_days($year);
 

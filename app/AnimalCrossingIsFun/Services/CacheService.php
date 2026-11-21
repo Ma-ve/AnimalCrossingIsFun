@@ -24,14 +24,12 @@ class CacheService {
     private static $client;
 
     private function client(): ClientInterface {
-        if(null === self::$client) {
-            self::$client = new Client([
-                'scheme'  => 'tcp',
-                'host'    => env('REDIS_HOST', '127.0.0.1'),
-                'port'    => (int)env('REDIS_PORT', 6379),
-                'timeout' => 1,
-            ]);
-        }
+        self::$client ??= new Client([
+            'scheme'  => 'tcp',
+            'host'    => env('REDIS_HOST', '127.0.0.1'),
+            'port'    => (int)env('REDIS_PORT', 6379),
+            'timeout' => 1,
+        ]);
 
         return self::$client;
     }
@@ -51,9 +49,7 @@ class CacheService {
      * @return array<string|null>
      */
     public function getMultiple(array $keys): ?array {
-        return $this->client()->mget(array_map(function($key) {
-            return $this->keyPrefix . $key;
-        }, $keys));
+        return $this->client()->mget(array_map(fn($key) => $this->keyPrefix . $key, $keys));
     }
 
     /**

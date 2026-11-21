@@ -18,6 +18,7 @@ class Art extends Collectible {
     protected $category;
 
     /** @var string */
+    #[\Override]
     protected $group = 'art';
 
     /**
@@ -47,17 +48,11 @@ class Art extends Collectible {
      * @return string
      */
     public function getImageLink(): string {
-        switch($this->category) {
-            case 'Painting':
-                $placeholder = 'painting';
-                break;
-            case 'Statue':
-                $placeholder = 'statue';
-                break;
-            default:
-                $placeholder = 'unknown';
-                break;
-        }
+        $placeholder = match ($this->category) {
+            'Painting' => 'painting',
+            'Statue' => 'statue',
+            default => 'unknown',
+        };
         $path = static::IMAGE_PATH;
 
         return "/img/{$path}/{$placeholder}.png";

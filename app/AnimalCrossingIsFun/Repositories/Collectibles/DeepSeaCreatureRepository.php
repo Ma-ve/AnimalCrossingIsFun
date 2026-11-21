@@ -13,6 +13,7 @@ class DeepSeaCreatureRepository extends CreatureRepository implements IRepositor
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = DeepSeaCreatureDto::class;
 
     /**
@@ -72,27 +73,14 @@ class DeepSeaCreatureRepository extends CreatureRepository implements IRepositor
      * @return $this
      */
     public function sortItems($sort = false) {
-        switch($sort) {
-            case 'name':
-            default:
-                $this->sortByNameAsc();
-                break;
-            case '-name':
-                $this->sortByNameDesc();
-                break;
-            case 'price':
-                $this->sortByPriceAsc();
-                break;
-            case '-price':
-                $this->sortByPriceDesc();
-                break;
-            case 'swimming_pattern':
-                $this->sortBySwimmingPatternAsc();
-                break;
-            case '-swimming_pattern':
-                $this->sortBySwimmingPatternDesc();
-                break;
-        }
+        match ($sort) {
+            '-name' => $this->sortByNameDesc(),
+            'price' => $this->sortByPriceAsc(),
+            '-price' => $this->sortByPriceDesc(),
+            'swimming_pattern' => $this->sortBySwimmingPatternAsc(),
+            '-swimming_pattern' => $this->sortBySwimmingPatternDesc(),
+            default => $this->sortByNameAsc(),
+        };
 
         return $this;
     }

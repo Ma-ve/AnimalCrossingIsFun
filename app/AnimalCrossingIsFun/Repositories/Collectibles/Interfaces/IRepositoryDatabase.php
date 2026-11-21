@@ -11,6 +11,6 @@ interface IRepositoryDatabase {
      *
      * @return array
      */
-    function loadFromDatabase(string $fileName): array;
+    public function loadFromDatabase(string $fileName): array;
 
 }

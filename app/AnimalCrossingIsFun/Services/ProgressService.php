@@ -32,70 +32,62 @@ class ProgressService {
             return json_decode($result, true);
         }
 
-        $getSafeNames = function($items) {
-            return array_map(function(Collectible $item) {
-                return $item->getSafeName();
-            }, $items);
-        };
+        $getSafeNames = (fn($items) => array_map(fn(Collectible $item) => $item->getSafeName(), $items));
 
         $items = [
             [
                 'icon'  => 'fad fa-fish',
                 'label' => 'Fish',
                 'group' => 'fish',
-                'count' => count($fish = (new FishRepository(null))->loadAll()->getAll()),
+                'count' => count($fish = new FishRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($fish),
             ],
             [
                 'icon'  => 'fad fa-bug',
                 'label' => 'Bugs',
                 'group' => 'bugs',
-                'count' => count($bugs = (new BugRepository(null))->loadAll()->getAll()),
+                'count' => count($bugs = new BugRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($bugs),
             ],
             [
                 'icon'  => 'fad fa-bone',
                 'label' => 'Fossils',
                 'group' => 'fossils',
-                'count' => count($fossils = (new FossilRepository(null))->loadAll()->getAll()),
+                'count' => count($fossils = new FossilRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($fossils),
             ],
             [
                 'icon'  => 'fab fa-octopus-deploy',
                 'label' => 'Deep-Sea',
                 'group' => 'deep-sea-creatures',
-                'count' => count($deepSeaCreatures = (new DeepSeaCreatureRepository(null))->loadAll()->getAll()),
+                'count' => count($deepSeaCreatures = new DeepSeaCreatureRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($deepSeaCreatures),
             ],
             [
                 'icon'  => 'fad fa-tools',
                 'label' => 'Recipes',
                 'group' => 'recipes',
-                'count' => count($recipes = (new CherryBlossomRecipeRepository(null))->loadAll()->getAll()),
+                'count' => count($recipes = new CherryBlossomRecipeRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($recipes),
             ],
             [
                 'icon'  => 'fad fa-record-vinyl',
                 'label' => 'Songs',
                 'group' => 'songs',
-                'count' => count($songs = (new SongRepository(null))->loadAll()->getAll()),
+                'count' => count($songs = new SongRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($songs),
             ],
             [
                 'icon'  => 'fad fa-palette',
                 'label' => 'Art',
                 'group' => 'art',
-                'count' => count($recipes = (new ArtRepository(null))->loadAll()->getAll()),
+                'count' => count($recipes = new ArtRepository(null)->loadAll()->getAll()),
                 'names' => $getSafeNames($recipes),
             ],
         ];
 
         $monthSubstr = 'is' . substr($month, 0, 3);
-        $filterItems = function($items) use ($monthSubstr) {
-            return array_filter($items, function($item) use ($monthSubstr) {
-                return $item->{$monthSubstr}();
-            });
-        };
+        $filterItems = (fn($items) => array_filter($items, fn($item) => $item->{$monthSubstr}()));
 
         $filteredFish = $filterItems($fish);
         $filteredBugs = $filterItems($bugs);

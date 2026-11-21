@@ -13,6 +13,7 @@ class BugRepository extends CreatureRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = BugDto::class;
 
     /**

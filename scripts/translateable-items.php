@@ -16,7 +16,7 @@ namespace {
     array_shift($arguments);
 
     /** @var LanguageDto[] $languages */
-    $languages = (new LanguageRepository(null))
+    $languages = new LanguageRepository(null)
         ->loadAll()
         ->getAll();
 

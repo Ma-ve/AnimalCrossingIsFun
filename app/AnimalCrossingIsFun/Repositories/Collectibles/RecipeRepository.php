@@ -13,6 +13,7 @@ class RecipeRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = RecipeDto::class;
 
     /**

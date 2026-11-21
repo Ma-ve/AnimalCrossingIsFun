@@ -61,7 +61,7 @@ try {
     $app->get('/', function(Request $request, Response $response) {
         $view = Twig::fromRequest($request);
 
-        $villagers = (new VillagerRepository(null))
+        $villagers = new VillagerRepository(null)
             ->loadAll()
             ->getByNearbyBirthdates(new DateTime());
         $villagers[] = $villagers[0];
@@ -77,16 +77,16 @@ try {
         }
 
         return $view->render($response, 'pages/home.twig', [
-            'progressItems' => (new ProgressService())->getAll(),
+            'progressItems' => new ProgressService()->getAll(),
             'villagers'     => array_merge(...$columnedVillagers),
-            'events'        => (new EventRepository(null))
+            'events'        => new EventRepository(null)
                 ->loadAll()
                 ->getByNearbyStartDates(new DateTime()),
         ]);
     })
         ->setName('/');
 
-    (new RoutesService($app))
+    new RoutesService($app)
         ->registerRecipesRoutes()
         ->registerSettingsRoutes()
         ->registerAuthRoutes()
@@ -94,9 +94,7 @@ try {
 
     $app->group('/profile', function(RouteCollectorProxy $collectorProxy) {
         $collectorProxy->redirect('', '/settings/');
-        $collectorProxy->get('/', function(Request $request, Response $response) {
-            return $response->withStatus(302)->withHeader('Location', '/settings');
-        });
+        $collectorProxy->get('/', fn(Request $request, Response $response) => $response->withStatus(302)->withHeader('Location', '/settings'));
     });
 
     $routesRegistered = [];
@@ -125,7 +123,7 @@ try {
     }
 
     $app->get('/events/{event}', function(Request $request, Response $response, $args) {
-        $events = (new EventRepository(null))
+        $events = new EventRepository(null)
             ->loadAll()
             ->sortItems()
             ->getMultipleBySingleKey($args['event']);

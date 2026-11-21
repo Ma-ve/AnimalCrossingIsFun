@@ -24,6 +24,7 @@ class EventRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = EventDto::class;
 
     /**
@@ -76,19 +77,11 @@ class EventRepository extends BaseRepository implements IRepository {
      * @return $this
      */
     public function sortItems($sort = false) {
-        switch($sort) {
-            default:
-                usort($this->contents, function($a, $b) {
-                    return $a['startDate'] <=> $b['startDate'];
-                });
-                break;
-            case 'name':
-                $this->sortByNameAsc();
-                break;
-            case '-name':
-                $this->sortByNameDesc();
-                break;
-        }
+        match ($sort) {
+            'name' => $this->sortByNameAsc(),
+            '-name' => $this->sortByNameDesc(),
+            default => usort($this->contents, fn($a, $b) => $a['startDate'] <=> $b['startDate']),
+        };
 
         return $this;
     }

@@ -13,6 +13,7 @@ class FishRepository extends CreatureRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = FishDto::class;
 
     /**

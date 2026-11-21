@@ -13,13 +13,10 @@ class SortService {
      * @return callable
      */
     public function getSortableCallback(string $property, string $order): callable {
-        switch($order) {
-            case 'DESC':
-                return $this->sortDescending($property);
-            case 'ASC':
-            default:
-                return $this->sortAscending($property);
-        }
+        return match ($order) {
+            'DESC' => $this->sortDescending($property),
+            default => $this->sortAscending($property),
+        };
     }
 
     /**
@@ -28,9 +25,7 @@ class SortService {
      * @return callable
      */
     private function sortAscending(string $property): callable {
-        return function($a, $b) use ($property) {
-            return $a[$property] <=> $b[$property];
-        };
+        return fn($a, $b) => $a[$property] <=> $b[$property];
     }
 
     /**
@@ -39,9 +34,7 @@ class SortService {
      * @return callable
      */
     private function sortDescending(string $property): callable {
-        return function($b, $a) use ($property) {
-            return $a[$property] <=> $b[$property];
-        };
+        return fn($b, $a) => $a[$property] <=> $b[$property];
     }
 
 }

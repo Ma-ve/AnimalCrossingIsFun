@@ -13,11 +13,6 @@ use Throwable;
 class StorageService {
 
     /**
-     * @var User
-     */
-    private $user;
-
-    /**
      * @var CacheService
      */
     private $cacheService;
@@ -25,8 +20,7 @@ class StorageService {
     /**
      * @param User $user
      */
-    public function __construct(User $user) {
-        $this->user = $user;
+    public function __construct(private readonly User $user) {
         $this->cacheService = new CacheService();
     }
 
@@ -52,7 +46,7 @@ class StorageService {
 
             $this->cacheService->set($this->getCacheKey(), json_encode($saveData), null);
             $result = true;
-        } catch(Throwable $throwable) {
+        } catch(Throwable) {
             $result = false;
         }
 

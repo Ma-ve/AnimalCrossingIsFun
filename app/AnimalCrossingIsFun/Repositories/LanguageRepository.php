@@ -13,11 +13,13 @@ class LanguageRepository extends BaseRepository implements IRepository {
     /**
      * @var string
      */
+    #[\Override]
     protected $dto = LanguageDto::class;
 
     /**
      * @var string
      */
+    #[\Override]
     protected $indexColumn = 'langCode';
 
     /**

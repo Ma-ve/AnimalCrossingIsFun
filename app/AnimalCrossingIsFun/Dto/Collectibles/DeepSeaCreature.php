@@ -17,20 +17,20 @@ class DeepSeaCreature extends Creature {
     protected $swimming_pattern;
 
     /** @var string */
+    #[\Override]
     protected $location;
 
     /** @var int */
     protected $shadowSize;
 
     /** @var string */
+    #[\Override]
     protected $group = 'deep-sea-creatures';
 
     public function __construct(array $properties = []) {
         parent::__construct($properties);
         // @TODO: need to fix weird months => northern = [1, 5] format
-        $this->months = array_map(function(int $i) {
-            return $i - 1;
-        }, $this->months['northern'] ?? []);
+        $this->months = array_map(fn(int $i) => $i - 1, $this->months['northern'] ?? []);
 
         foreach($this->months as $month) {
             $monthName = $this->numToMonth[$month] ?? false;
